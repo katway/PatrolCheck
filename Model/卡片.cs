@@ -1,15 +1,15 @@
-// File:    ¿¨Æ¬.cs
+ï»¿// File:    å¡ç‰‡.cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class ¿¨Æ¬
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class å¡ç‰‡
 
 using System;
 
-public class ¿¨Æ¬
+public class å¡ç‰‡
 {
-   public long ±àºÅ;
-   public string Ãû×Ö;
-   public string ±ğÃû;
-   public string ¿¨Æ¬Î¨Ò»Âë;
+   public long ç¼–å·;
+   public string åå­—;
+   public string åˆ«å;
+   public string å¡ç‰‡å”¯ä¸€ç ;
 
 }

@@ -1,10 +1,10 @@
-// File:    ¸ÚÎ»Ô±¹¤.cs
+ï»¿// File:    å²—ä½å‘˜å·¥.cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class ¸ÚÎ»Ô±¹¤
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class å²—ä½å‘˜å·¥
 
 using System;
 
-public class ¸ÚÎ»Ô±¹¤
+public class å²—ä½å‘˜å·¥
 {
 }

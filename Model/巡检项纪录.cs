@@ -1,16 +1,16 @@
-// File:    Ñ²¼ìÏî¼ÍÂ¼.cs
+ï»¿// File:    å·¡æ£€é¡¹çºªå½•.cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class Ñ²¼ìÏî¼ÍÂ¼
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class å·¡æ£€é¡¹çºªå½•
 
 using System;
 
-public class Ñ²¼ìÏî¼ÍÂ¼
+public class å·¡æ£€é¡¹çºªå½•
 {
-   public long ±àºÅ;
-   public bool ²¼¶ûÖµ;
-   public decimal ÊıÖµ;
-   public string ÎÄ±¾Öµ;
-   public string Í¼Æ¬Á´½Ó;
+   public long ç¼–å·;
+   public bool å¸ƒå°”å€¼;
+   public decimal æ•°å€¼;
+   public string æ–‡æœ¬å€¼;
+   public string å›¾ç‰‡é“¾æ¥;
 
 }

@@ -1,14 +1,14 @@
-// File:    ½ÇÉ«.cs
+ï»¿// File:    è§’è‰².cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class ½ÇÉ«
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class è§’è‰²
 
 using System;
 
-public class ½ÇÉ«
+public class è§’è‰²
 {
-   public string ±ğÃû;
-   public string Ãû×Ö;
-   public int ±àºÅ;
+   public string åˆ«å;
+   public string åå­—;
+   public int ç¼–å·;
 
 }
