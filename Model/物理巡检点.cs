@@ -1,137 +1,137 @@
-// File:    ÎïÀíÑ²¼ìµã.cs
+ï»¿// File:    ç‰©ç†å·¡æ£€ç‚¹.cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class ÎïÀíÑ²¼ìµã
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class ç‰©ç†å·¡æ£€ç‚¹
 
 using System;
 
-public class ÎïÀíÑ²¼ìµã
+public class ç‰©ç†å·¡æ£€ç‚¹
 {
-   public long ±àºÅ;
-   public string Ãû×Ö;
-   public string ±ğÃû;
+   public long ç¼–å·;
+   public string åå­—;
+   public string åˆ«å;
    
-   public System.Collections.Generic.List<Ñ²¼ìÏîÄ¿> Ñ²¼ìÏîÄ¿;
+   public System.Collections.Generic.List<å·¡æ£€é¡¹ç›®> å·¡æ£€é¡¹ç›®;
    
    /// <summary>
-   /// Property for collection of Ñ²¼ìÏîÄ¿
+   /// Property for collection of å·¡æ£€é¡¹ç›®
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<Ñ²¼ìÏîÄ¿> Ñ²¼ìÏîÄ¿
+   public System.Collections.Generic.List<å·¡æ£€é¡¹ç›®> å·¡æ£€é¡¹ç›®
    {
       get
       {
-         if (Ñ²¼ìÏîÄ¿ == null)
-            Ñ²¼ìÏîÄ¿ = new System.Collections.Generic.List<Ñ²¼ìÏîÄ¿>();
-         return Ñ²¼ìÏîÄ¿;
+         if (å·¡æ£€é¡¹ç›® == null)
+            å·¡æ£€é¡¹ç›® = new System.Collections.Generic.List<å·¡æ£€é¡¹ç›®>();
+         return å·¡æ£€é¡¹ç›®;
       }
       set
       {
-         RemoveAllÑ²¼ìÏîÄ¿();
+         RemoveAllå·¡æ£€é¡¹ç›®();
          if (value != null)
          {
-            foreach (Ñ²¼ìÏîÄ¿ oÑ²¼ìÏîÄ¿ in value)
-               AddÑ²¼ìÏîÄ¿(oÑ²¼ìÏîÄ¿);
+            foreach (å·¡æ£€é¡¹ç›® oå·¡æ£€é¡¹ç›® in value)
+               Addå·¡æ£€é¡¹ç›®(oå·¡æ£€é¡¹ç›®);
          }
       }
    }
    
    /// <summary>
-   /// Add a new Ñ²¼ìÏîÄ¿ in the collection
+   /// Add a new å·¡æ£€é¡¹ç›® in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void AddÑ²¼ìÏîÄ¿(Ñ²¼ìÏîÄ¿ newÑ²¼ìÏîÄ¿)
+   public void Addå·¡æ£€é¡¹ç›®(å·¡æ£€é¡¹ç›® newå·¡æ£€é¡¹ç›®)
    {
-      if (newÑ²¼ìÏîÄ¿ == null)
+      if (newå·¡æ£€é¡¹ç›® == null)
          return;
-      if (this.Ñ²¼ìÏîÄ¿ == null)
-         this.Ñ²¼ìÏîÄ¿ = new System.Collections.Generic.List<Ñ²¼ìÏîÄ¿>();
-      if (!this.Ñ²¼ìÏîÄ¿.Contains(newÑ²¼ìÏîÄ¿))
-         this.Ñ²¼ìÏîÄ¿.Add(newÑ²¼ìÏîÄ¿);
+      if (this.å·¡æ£€é¡¹ç›® == null)
+         this.å·¡æ£€é¡¹ç›® = new System.Collections.Generic.List<å·¡æ£€é¡¹ç›®>();
+      if (!this.å·¡æ£€é¡¹ç›®.Contains(newå·¡æ£€é¡¹ç›®))
+         this.å·¡æ£€é¡¹ç›®.Add(newå·¡æ£€é¡¹ç›®);
    }
    
    /// <summary>
-   /// Remove an existing Ñ²¼ìÏîÄ¿ from the collection
+   /// Remove an existing å·¡æ£€é¡¹ç›® from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void RemoveÑ²¼ìÏîÄ¿(Ñ²¼ìÏîÄ¿ oldÑ²¼ìÏîÄ¿)
+   public void Removeå·¡æ£€é¡¹ç›®(å·¡æ£€é¡¹ç›® oldå·¡æ£€é¡¹ç›®)
    {
-      if (oldÑ²¼ìÏîÄ¿ == null)
+      if (oldå·¡æ£€é¡¹ç›® == null)
          return;
-      if (this.Ñ²¼ìÏîÄ¿ != null)
-         if (this.Ñ²¼ìÏîÄ¿.Contains(oldÑ²¼ìÏîÄ¿))
-            this.Ñ²¼ìÏîÄ¿.Remove(oldÑ²¼ìÏîÄ¿);
+      if (this.å·¡æ£€é¡¹ç›® != null)
+         if (this.å·¡æ£€é¡¹ç›®.Contains(oldå·¡æ£€é¡¹ç›®))
+            this.å·¡æ£€é¡¹ç›®.Remove(oldå·¡æ£€é¡¹ç›®);
    }
    
    /// <summary>
-   /// Remove all instances of Ñ²¼ìÏîÄ¿ from the collection
+   /// Remove all instances of å·¡æ£€é¡¹ç›® from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAllÑ²¼ìÏîÄ¿()
+   public void RemoveAllå·¡æ£€é¡¹ç›®()
    {
-      if (Ñ²¼ìÏîÄ¿ != null)
-         Ñ²¼ìÏîÄ¿.Clear();
+      if (å·¡æ£€é¡¹ç›® != null)
+         å·¡æ£€é¡¹ç›®.Clear();
    }
-   public System.Collections.Generic.List<Âß¼­Ñ²¼ìµã> Âß¼­Ñ²¼ìµã;
+   public System.Collections.Generic.List<é€»è¾‘å·¡æ£€ç‚¹> é€»è¾‘å·¡æ£€ç‚¹;
    
    /// <summary>
-   /// Property for collection of Âß¼­Ñ²¼ìµã
+   /// Property for collection of é€»è¾‘å·¡æ£€ç‚¹
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<Âß¼­Ñ²¼ìµã> Âß¼­Ñ²¼ìµã
+   public System.Collections.Generic.List<é€»è¾‘å·¡æ£€ç‚¹> é€»è¾‘å·¡æ£€ç‚¹
    {
       get
       {
-         if (Âß¼­Ñ²¼ìµã == null)
-            Âß¼­Ñ²¼ìµã = new System.Collections.Generic.List<Âß¼­Ñ²¼ìµã>();
-         return Âß¼­Ñ²¼ìµã;
+         if (é€»è¾‘å·¡æ£€ç‚¹ == null)
+            é€»è¾‘å·¡æ£€ç‚¹ = new System.Collections.Generic.List<é€»è¾‘å·¡æ£€ç‚¹>();
+         return é€»è¾‘å·¡æ£€ç‚¹;
       }
       set
       {
-         RemoveAllÂß¼­Ñ²¼ìµã();
+         RemoveAllé€»è¾‘å·¡æ£€ç‚¹();
          if (value != null)
          {
-            foreach (Âß¼­Ñ²¼ìµã oÂß¼­Ñ²¼ìµã in value)
-               AddÂß¼­Ñ²¼ìµã(oÂß¼­Ñ²¼ìµã);
+            foreach (é€»è¾‘å·¡æ£€ç‚¹ oé€»è¾‘å·¡æ£€ç‚¹ in value)
+               Addé€»è¾‘å·¡æ£€ç‚¹(oé€»è¾‘å·¡æ£€ç‚¹);
          }
       }
    }
    
    /// <summary>
-   /// Add a new Âß¼­Ñ²¼ìµã in the collection
+   /// Add a new é€»è¾‘å·¡æ£€ç‚¹ in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void AddÂß¼­Ñ²¼ìµã(Âß¼­Ñ²¼ìµã newÂß¼­Ñ²¼ìµã)
+   public void Addé€»è¾‘å·¡æ£€ç‚¹(é€»è¾‘å·¡æ£€ç‚¹ newé€»è¾‘å·¡æ£€ç‚¹)
    {
-      if (newÂß¼­Ñ²¼ìµã == null)
+      if (newé€»è¾‘å·¡æ£€ç‚¹ == null)
          return;
-      if (this.Âß¼­Ñ²¼ìµã == null)
-         this.Âß¼­Ñ²¼ìµã = new System.Collections.Generic.List<Âß¼­Ñ²¼ìµã>();
-      if (!this.Âß¼­Ñ²¼ìµã.Contains(newÂß¼­Ñ²¼ìµã))
-         this.Âß¼­Ñ²¼ìµã.Add(newÂß¼­Ñ²¼ìµã);
+      if (this.é€»è¾‘å·¡æ£€ç‚¹ == null)
+         this.é€»è¾‘å·¡æ£€ç‚¹ = new System.Collections.Generic.List<é€»è¾‘å·¡æ£€ç‚¹>();
+      if (!this.é€»è¾‘å·¡æ£€ç‚¹.Contains(newé€»è¾‘å·¡æ£€ç‚¹))
+         this.é€»è¾‘å·¡æ£€ç‚¹.Add(newé€»è¾‘å·¡æ£€ç‚¹);
    }
    
    /// <summary>
-   /// Remove an existing Âß¼­Ñ²¼ìµã from the collection
+   /// Remove an existing é€»è¾‘å·¡æ£€ç‚¹ from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void RemoveÂß¼­Ñ²¼ìµã(Âß¼­Ñ²¼ìµã oldÂß¼­Ñ²¼ìµã)
+   public void Removeé€»è¾‘å·¡æ£€ç‚¹(é€»è¾‘å·¡æ£€ç‚¹ oldé€»è¾‘å·¡æ£€ç‚¹)
    {
-      if (oldÂß¼­Ñ²¼ìµã == null)
+      if (oldé€»è¾‘å·¡æ£€ç‚¹ == null)
          return;
-      if (this.Âß¼­Ñ²¼ìµã != null)
-         if (this.Âß¼­Ñ²¼ìµã.Contains(oldÂß¼­Ñ²¼ìµã))
-            this.Âß¼­Ñ²¼ìµã.Remove(oldÂß¼­Ñ²¼ìµã);
+      if (this.é€»è¾‘å·¡æ£€ç‚¹ != null)
+         if (this.é€»è¾‘å·¡æ£€ç‚¹.Contains(oldé€»è¾‘å·¡æ£€ç‚¹))
+            this.é€»è¾‘å·¡æ£€ç‚¹.Remove(oldé€»è¾‘å·¡æ£€ç‚¹);
    }
    
    /// <summary>
-   /// Remove all instances of Âß¼­Ñ²¼ìµã from the collection
+   /// Remove all instances of é€»è¾‘å·¡æ£€ç‚¹ from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAllÂß¼­Ñ²¼ìµã()
+   public void RemoveAllé€»è¾‘å·¡æ£€ç‚¹()
    {
-      if (Âß¼­Ñ²¼ìµã != null)
-         Âß¼­Ñ²¼ìµã.Clear();
+      if (é€»è¾‘å·¡æ£€ç‚¹ != null)
+         é€»è¾‘å·¡æ£€ç‚¹.Clear();
    }
 
 }
