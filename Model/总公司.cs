@@ -1,76 +1,76 @@
-// File:    ×Ü¹«Ë¾.cs
+ï»¿// File:    æ€»å…¬å¸.cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class ×Ü¹«Ë¾
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class æ€»å…¬å¸
 
 using System;
 
-public class ×Ü¹«Ë¾
+public class æ€»å…¬å¸
 {
-   public int ±àºÅ;
-   public string Ãû×Ö;
-   public string ±ğÃû;
+   public int ç¼–å·;
+   public string åå­—;
+   public string åˆ«å;
    
-   public System.Collections.Generic.List<³§Çø> ³§Çø;
+   public System.Collections.Generic.List<å‚åŒº> å‚åŒº;
    
    /// <summary>
-   /// Property for collection of ³§Çø
+   /// Property for collection of å‚åŒº
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<³§Çø> ³§Çø
+   public System.Collections.Generic.List<å‚åŒº> å‚åŒº
    {
       get
       {
-         if (³§Çø == null)
-            ³§Çø = new System.Collections.Generic.List<³§Çø>();
-         return ³§Çø;
+         if (å‚åŒº == null)
+            å‚åŒº = new System.Collections.Generic.List<å‚åŒº>();
+         return å‚åŒº;
       }
       set
       {
-         RemoveAll³§Çø();
+         RemoveAllå‚åŒº();
          if (value != null)
          {
-            foreach (³§Çø o³§Çø in value)
-               Add³§Çø(o³§Çø);
+            foreach (å‚åŒº oå‚åŒº in value)
+               Addå‚åŒº(oå‚åŒº);
          }
       }
    }
    
    /// <summary>
-   /// Add a new ³§Çø in the collection
+   /// Add a new å‚åŒº in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void Add³§Çø(³§Çø new³§Çø)
+   public void Addå‚åŒº(å‚åŒº newå‚åŒº)
    {
-      if (new³§Çø == null)
+      if (newå‚åŒº == null)
          return;
-      if (this.³§Çø == null)
-         this.³§Çø = new System.Collections.Generic.List<³§Çø>();
-      if (!this.³§Çø.Contains(new³§Çø))
-         this.³§Çø.Add(new³§Çø);
+      if (this.å‚åŒº == null)
+         this.å‚åŒº = new System.Collections.Generic.List<å‚åŒº>();
+      if (!this.å‚åŒº.Contains(newå‚åŒº))
+         this.å‚åŒº.Add(newå‚åŒº);
    }
    
    /// <summary>
-   /// Remove an existing ³§Çø from the collection
+   /// Remove an existing å‚åŒº from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void Remove³§Çø(³§Çø old³§Çø)
+   public void Removeå‚åŒº(å‚åŒº oldå‚åŒº)
    {
-      if (old³§Çø == null)
+      if (oldå‚åŒº == null)
          return;
-      if (this.³§Çø != null)
-         if (this.³§Çø.Contains(old³§Çø))
-            this.³§Çø.Remove(old³§Çø);
+      if (this.å‚åŒº != null)
+         if (this.å‚åŒº.Contains(oldå‚åŒº))
+            this.å‚åŒº.Remove(oldå‚åŒº);
    }
    
    /// <summary>
-   /// Remove all instances of ³§Çø from the collection
+   /// Remove all instances of å‚åŒº from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAll³§Çø()
+   public void RemoveAllå‚åŒº()
    {
-      if (³§Çø != null)
-         ³§Çø.Clear();
+      if (å‚åŒº != null)
+         å‚åŒº.Clear();
    }
 
 }

@@ -1,320 +1,320 @@
-// File:    ³§Çø.cs
+ï»¿// File:    å‚åŒº.cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class ³§Çø
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class å‚åŒº
 
 using System;
 
-public class ³§Çø
+public class å‚åŒº
 {
-   public int ±àºÅ;
-   public string Ãû×Ö;
-   public string ±ğÃû;
+   public int ç¼–å·;
+   public string åå­—;
+   public string åˆ«å;
    
-   public System.Collections.Generic.List<¸ÚÎ»> ¸ÚÎ»;
+   public System.Collections.Generic.List<å²—ä½> å²—ä½;
    
    /// <summary>
-   /// Property for collection of ¸ÚÎ»
+   /// Property for collection of å²—ä½
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<¸ÚÎ»> ¸ÚÎ»
+   public System.Collections.Generic.List<å²—ä½> å²—ä½
    {
       get
       {
-         if (¸ÚÎ» == null)
-            ¸ÚÎ» = new System.Collections.Generic.List<¸ÚÎ»>();
-         return ¸ÚÎ»;
+         if (å²—ä½ == null)
+            å²—ä½ = new System.Collections.Generic.List<å²—ä½>();
+         return å²—ä½;
       }
       set
       {
-         RemoveAll¸ÚÎ»();
+         RemoveAllå²—ä½();
          if (value != null)
          {
-            foreach (¸ÚÎ» o¸ÚÎ» in value)
-               Add¸ÚÎ»(o¸ÚÎ»);
+            foreach (å²—ä½ oå²—ä½ in value)
+               Addå²—ä½(oå²—ä½);
          }
       }
    }
    
    /// <summary>
-   /// Add a new ¸ÚÎ» in the collection
+   /// Add a new å²—ä½ in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void Add¸ÚÎ»(¸ÚÎ» new¸ÚÎ»)
+   public void Addå²—ä½(å²—ä½ newå²—ä½)
    {
-      if (new¸ÚÎ» == null)
+      if (newå²—ä½ == null)
          return;
-      if (this.¸ÚÎ» == null)
-         this.¸ÚÎ» = new System.Collections.Generic.List<¸ÚÎ»>();
-      if (!this.¸ÚÎ».Contains(new¸ÚÎ»))
-         this.¸ÚÎ».Add(new¸ÚÎ»);
+      if (this.å²—ä½ == null)
+         this.å²—ä½ = new System.Collections.Generic.List<å²—ä½>();
+      if (!this.å²—ä½.Contains(newå²—ä½))
+         this.å²—ä½.Add(newå²—ä½);
    }
    
    /// <summary>
-   /// Remove an existing ¸ÚÎ» from the collection
+   /// Remove an existing å²—ä½ from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void Remove¸ÚÎ»(¸ÚÎ» old¸ÚÎ»)
+   public void Removeå²—ä½(å²—ä½ oldå²—ä½)
    {
-      if (old¸ÚÎ» == null)
+      if (oldå²—ä½ == null)
          return;
-      if (this.¸ÚÎ» != null)
-         if (this.¸ÚÎ».Contains(old¸ÚÎ»))
-            this.¸ÚÎ».Remove(old¸ÚÎ»);
+      if (this.å²—ä½ != null)
+         if (this.å²—ä½.Contains(oldå²—ä½))
+            this.å²—ä½.Remove(oldå²—ä½);
    }
    
    /// <summary>
-   /// Remove all instances of ¸ÚÎ» from the collection
+   /// Remove all instances of å²—ä½ from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAll¸ÚÎ»()
+   public void RemoveAllå²—ä½()
    {
-      if (¸ÚÎ» != null)
-         ¸ÚÎ».Clear();
+      if (å²—ä½ != null)
+         å²—ä½.Clear();
    }
-   public System.Collections.Generic.List<Ñ²¼ìÂ·Ïß> Ñ²¼ìÂ·Ïß;
+   public System.Collections.Generic.List<å·¡æ£€è·¯çº¿> å·¡æ£€è·¯çº¿;
    
    /// <summary>
-   /// Property for collection of Ñ²¼ìÂ·Ïß
+   /// Property for collection of å·¡æ£€è·¯çº¿
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<Ñ²¼ìÂ·Ïß> Ñ²¼ìÂ·Ïß
+   public System.Collections.Generic.List<å·¡æ£€è·¯çº¿> å·¡æ£€è·¯çº¿
    {
       get
       {
-         if (Ñ²¼ìÂ·Ïß == null)
-            Ñ²¼ìÂ·Ïß = new System.Collections.Generic.List<Ñ²¼ìÂ·Ïß>();
-         return Ñ²¼ìÂ·Ïß;
+         if (å·¡æ£€è·¯çº¿ == null)
+            å·¡æ£€è·¯çº¿ = new System.Collections.Generic.List<å·¡æ£€è·¯çº¿>();
+         return å·¡æ£€è·¯çº¿;
       }
       set
       {
-         RemoveAllÑ²¼ìÂ·Ïß();
+         RemoveAllå·¡æ£€è·¯çº¿();
          if (value != null)
          {
-            foreach (Ñ²¼ìÂ·Ïß oÑ²¼ìÂ·Ïß in value)
-               AddÑ²¼ìÂ·Ïß(oÑ²¼ìÂ·Ïß);
+            foreach (å·¡æ£€è·¯çº¿ oå·¡æ£€è·¯çº¿ in value)
+               Addå·¡æ£€è·¯çº¿(oå·¡æ£€è·¯çº¿);
          }
       }
    }
    
    /// <summary>
-   /// Add a new Ñ²¼ìÂ·Ïß in the collection
+   /// Add a new å·¡æ£€è·¯çº¿ in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void AddÑ²¼ìÂ·Ïß(Ñ²¼ìÂ·Ïß newÑ²¼ìÂ·Ïß)
+   public void Addå·¡æ£€è·¯çº¿(å·¡æ£€è·¯çº¿ newå·¡æ£€è·¯çº¿)
    {
-      if (newÑ²¼ìÂ·Ïß == null)
+      if (newå·¡æ£€è·¯çº¿ == null)
          return;
-      if (this.Ñ²¼ìÂ·Ïß == null)
-         this.Ñ²¼ìÂ·Ïß = new System.Collections.Generic.List<Ñ²¼ìÂ·Ïß>();
-      if (!this.Ñ²¼ìÂ·Ïß.Contains(newÑ²¼ìÂ·Ïß))
-         this.Ñ²¼ìÂ·Ïß.Add(newÑ²¼ìÂ·Ïß);
+      if (this.å·¡æ£€è·¯çº¿ == null)
+         this.å·¡æ£€è·¯çº¿ = new System.Collections.Generic.List<å·¡æ£€è·¯çº¿>();
+      if (!this.å·¡æ£€è·¯çº¿.Contains(newå·¡æ£€è·¯çº¿))
+         this.å·¡æ£€è·¯çº¿.Add(newå·¡æ£€è·¯çº¿);
    }
    
    /// <summary>
-   /// Remove an existing Ñ²¼ìÂ·Ïß from the collection
+   /// Remove an existing å·¡æ£€è·¯çº¿ from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void RemoveÑ²¼ìÂ·Ïß(Ñ²¼ìÂ·Ïß oldÑ²¼ìÂ·Ïß)
+   public void Removeå·¡æ£€è·¯çº¿(å·¡æ£€è·¯çº¿ oldå·¡æ£€è·¯çº¿)
    {
-      if (oldÑ²¼ìÂ·Ïß == null)
+      if (oldå·¡æ£€è·¯çº¿ == null)
          return;
-      if (this.Ñ²¼ìÂ·Ïß != null)
-         if (this.Ñ²¼ìÂ·Ïß.Contains(oldÑ²¼ìÂ·Ïß))
-            this.Ñ²¼ìÂ·Ïß.Remove(oldÑ²¼ìÂ·Ïß);
+      if (this.å·¡æ£€è·¯çº¿ != null)
+         if (this.å·¡æ£€è·¯çº¿.Contains(oldå·¡æ£€è·¯çº¿))
+            this.å·¡æ£€è·¯çº¿.Remove(oldå·¡æ£€è·¯çº¿);
    }
    
    /// <summary>
-   /// Remove all instances of Ñ²¼ìÂ·Ïß from the collection
+   /// Remove all instances of å·¡æ£€è·¯çº¿ from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAllÑ²¼ìÂ·Ïß()
+   public void RemoveAllå·¡æ£€è·¯çº¿()
    {
-      if (Ñ²¼ìÂ·Ïß != null)
-         Ñ²¼ìÂ·Ïß.Clear();
+      if (å·¡æ£€è·¯çº¿ != null)
+         å·¡æ£€è·¯çº¿.Clear();
    }
-   public System.Collections.Generic.List<×°ÖÃ> ×°ÖÃ;
+   public System.Collections.Generic.List<è£…ç½®> è£…ç½®;
    
    /// <summary>
-   /// Property for collection of ×°ÖÃ
+   /// Property for collection of è£…ç½®
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<×°ÖÃ> ×°ÖÃ
+   public System.Collections.Generic.List<è£…ç½®> è£…ç½®
    {
       get
       {
-         if (×°ÖÃ == null)
-            ×°ÖÃ = new System.Collections.Generic.List<×°ÖÃ>();
-         return ×°ÖÃ;
+         if (è£…ç½® == null)
+            è£…ç½® = new System.Collections.Generic.List<è£…ç½®>();
+         return è£…ç½®;
       }
       set
       {
-         RemoveAll×°ÖÃ();
+         RemoveAllè£…ç½®();
          if (value != null)
          {
-            foreach (×°ÖÃ o×°ÖÃ in value)
-               Add×°ÖÃ(o×°ÖÃ);
+            foreach (è£…ç½® oè£…ç½® in value)
+               Addè£…ç½®(oè£…ç½®);
          }
       }
    }
    
    /// <summary>
-   /// Add a new ×°ÖÃ in the collection
+   /// Add a new è£…ç½® in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void Add×°ÖÃ(×°ÖÃ new×°ÖÃ)
+   public void Addè£…ç½®(è£…ç½® newè£…ç½®)
    {
-      if (new×°ÖÃ == null)
+      if (newè£…ç½® == null)
          return;
-      if (this.×°ÖÃ == null)
-         this.×°ÖÃ = new System.Collections.Generic.List<×°ÖÃ>();
-      if (!this.×°ÖÃ.Contains(new×°ÖÃ))
-         this.×°ÖÃ.Add(new×°ÖÃ);
+      if (this.è£…ç½® == null)
+         this.è£…ç½® = new System.Collections.Generic.List<è£…ç½®>();
+      if (!this.è£…ç½®.Contains(newè£…ç½®))
+         this.è£…ç½®.Add(newè£…ç½®);
    }
    
    /// <summary>
-   /// Remove an existing ×°ÖÃ from the collection
+   /// Remove an existing è£…ç½® from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void Remove×°ÖÃ(×°ÖÃ old×°ÖÃ)
+   public void Removeè£…ç½®(è£…ç½® oldè£…ç½®)
    {
-      if (old×°ÖÃ == null)
+      if (oldè£…ç½® == null)
          return;
-      if (this.×°ÖÃ != null)
-         if (this.×°ÖÃ.Contains(old×°ÖÃ))
-            this.×°ÖÃ.Remove(old×°ÖÃ);
+      if (this.è£…ç½® != null)
+         if (this.è£…ç½®.Contains(oldè£…ç½®))
+            this.è£…ç½®.Remove(oldè£…ç½®);
    }
    
    /// <summary>
-   /// Remove all instances of ×°ÖÃ from the collection
+   /// Remove all instances of è£…ç½® from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAll×°ÖÃ()
+   public void RemoveAllè£…ç½®()
    {
-      if (×°ÖÃ != null)
-         ×°ÖÃ.Clear();
+      if (è£…ç½® != null)
+         è£…ç½®.Clear();
    }
-   public System.Collections.Generic.List<Ô±¹¤> Ô±¹¤;
+   public System.Collections.Generic.List<å‘˜å·¥> å‘˜å·¥;
    
    /// <summary>
-   /// Property for collection of Ô±¹¤
+   /// Property for collection of å‘˜å·¥
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<Ô±¹¤> Ô±¹¤
+   public System.Collections.Generic.List<å‘˜å·¥> å‘˜å·¥
    {
       get
       {
-         if (Ô±¹¤ == null)
-            Ô±¹¤ = new System.Collections.Generic.List<Ô±¹¤>();
-         return Ô±¹¤;
+         if (å‘˜å·¥ == null)
+            å‘˜å·¥ = new System.Collections.Generic.List<å‘˜å·¥>();
+         return å‘˜å·¥;
       }
       set
       {
-         RemoveAllÔ±¹¤();
+         RemoveAllå‘˜å·¥();
          if (value != null)
          {
-            foreach (Ô±¹¤ oÔ±¹¤ in value)
-               AddÔ±¹¤(oÔ±¹¤);
+            foreach (å‘˜å·¥ oå‘˜å·¥ in value)
+               Addå‘˜å·¥(oå‘˜å·¥);
          }
       }
    }
    
    /// <summary>
-   /// Add a new Ô±¹¤ in the collection
+   /// Add a new å‘˜å·¥ in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void AddÔ±¹¤(Ô±¹¤ newÔ±¹¤)
+   public void Addå‘˜å·¥(å‘˜å·¥ newå‘˜å·¥)
    {
-      if (newÔ±¹¤ == null)
+      if (newå‘˜å·¥ == null)
          return;
-      if (this.Ô±¹¤ == null)
-         this.Ô±¹¤ = new System.Collections.Generic.List<Ô±¹¤>();
-      if (!this.Ô±¹¤.Contains(newÔ±¹¤))
-         this.Ô±¹¤.Add(newÔ±¹¤);
+      if (this.å‘˜å·¥ == null)
+         this.å‘˜å·¥ = new System.Collections.Generic.List<å‘˜å·¥>();
+      if (!this.å‘˜å·¥.Contains(newå‘˜å·¥))
+         this.å‘˜å·¥.Add(newå‘˜å·¥);
    }
    
    /// <summary>
-   /// Remove an existing Ô±¹¤ from the collection
+   /// Remove an existing å‘˜å·¥ from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void RemoveÔ±¹¤(Ô±¹¤ oldÔ±¹¤)
+   public void Removeå‘˜å·¥(å‘˜å·¥ oldå‘˜å·¥)
    {
-      if (oldÔ±¹¤ == null)
+      if (oldå‘˜å·¥ == null)
          return;
-      if (this.Ô±¹¤ != null)
-         if (this.Ô±¹¤.Contains(oldÔ±¹¤))
-            this.Ô±¹¤.Remove(oldÔ±¹¤);
+      if (this.å‘˜å·¥ != null)
+         if (this.å‘˜å·¥.Contains(oldå‘˜å·¥))
+            this.å‘˜å·¥.Remove(oldå‘˜å·¥);
    }
    
    /// <summary>
-   /// Remove all instances of Ô±¹¤ from the collection
+   /// Remove all instances of å‘˜å·¥ from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAllÔ±¹¤()
+   public void RemoveAllå‘˜å·¥()
    {
-      if (Ô±¹¤ != null)
-         Ô±¹¤.Clear();
+      if (å‘˜å·¥ != null)
+         å‘˜å·¥.Clear();
    }
-   public System.Collections.Generic.List<ÎïÀíÑ²¼ìµã> ÎïÀíÑ²¼ìµã;
+   public System.Collections.Generic.List<ç‰©ç†å·¡æ£€ç‚¹> ç‰©ç†å·¡æ£€ç‚¹;
    
    /// <summary>
-   /// Property for collection of ÎïÀíÑ²¼ìµã
+   /// Property for collection of ç‰©ç†å·¡æ£€ç‚¹
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<ÎïÀíÑ²¼ìµã> ÎïÀíÑ²¼ìµã
+   public System.Collections.Generic.List<ç‰©ç†å·¡æ£€ç‚¹> ç‰©ç†å·¡æ£€ç‚¹
    {
       get
       {
-         if (ÎïÀíÑ²¼ìµã == null)
-            ÎïÀíÑ²¼ìµã = new System.Collections.Generic.List<ÎïÀíÑ²¼ìµã>();
-         return ÎïÀíÑ²¼ìµã;
+         if (ç‰©ç†å·¡æ£€ç‚¹ == null)
+            ç‰©ç†å·¡æ£€ç‚¹ = new System.Collections.Generic.List<ç‰©ç†å·¡æ£€ç‚¹>();
+         return ç‰©ç†å·¡æ£€ç‚¹;
       }
       set
       {
-         RemoveAllÎïÀíÑ²¼ìµã();
+         RemoveAllç‰©ç†å·¡æ£€ç‚¹();
          if (value != null)
          {
-            foreach (ÎïÀíÑ²¼ìµã oÎïÀíÑ²¼ìµã in value)
-               AddÎïÀíÑ²¼ìµã(oÎïÀíÑ²¼ìµã);
+            foreach (ç‰©ç†å·¡æ£€ç‚¹ oç‰©ç†å·¡æ£€ç‚¹ in value)
+               Addç‰©ç†å·¡æ£€ç‚¹(oç‰©ç†å·¡æ£€ç‚¹);
          }
       }
    }
    
    /// <summary>
-   /// Add a new ÎïÀíÑ²¼ìµã in the collection
+   /// Add a new ç‰©ç†å·¡æ£€ç‚¹ in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void AddÎïÀíÑ²¼ìµã(ÎïÀíÑ²¼ìµã newÎïÀíÑ²¼ìµã)
+   public void Addç‰©ç†å·¡æ£€ç‚¹(ç‰©ç†å·¡æ£€ç‚¹ newç‰©ç†å·¡æ£€ç‚¹)
    {
-      if (newÎïÀíÑ²¼ìµã == null)
+      if (newç‰©ç†å·¡æ£€ç‚¹ == null)
          return;
-      if (this.ÎïÀíÑ²¼ìµã == null)
-         this.ÎïÀíÑ²¼ìµã = new System.Collections.Generic.List<ÎïÀíÑ²¼ìµã>();
-      if (!this.ÎïÀíÑ²¼ìµã.Contains(newÎïÀíÑ²¼ìµã))
-         this.ÎïÀíÑ²¼ìµã.Add(newÎïÀíÑ²¼ìµã);
+      if (this.ç‰©ç†å·¡æ£€ç‚¹ == null)
+         this.ç‰©ç†å·¡æ£€ç‚¹ = new System.Collections.Generic.List<ç‰©ç†å·¡æ£€ç‚¹>();
+      if (!this.ç‰©ç†å·¡æ£€ç‚¹.Contains(newç‰©ç†å·¡æ£€ç‚¹))
+         this.ç‰©ç†å·¡æ£€ç‚¹.Add(newç‰©ç†å·¡æ£€ç‚¹);
    }
    
    /// <summary>
-   /// Remove an existing ÎïÀíÑ²¼ìµã from the collection
+   /// Remove an existing ç‰©ç†å·¡æ£€ç‚¹ from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void RemoveÎïÀíÑ²¼ìµã(ÎïÀíÑ²¼ìµã oldÎïÀíÑ²¼ìµã)
+   public void Removeç‰©ç†å·¡æ£€ç‚¹(ç‰©ç†å·¡æ£€ç‚¹ oldç‰©ç†å·¡æ£€ç‚¹)
    {
-      if (oldÎïÀíÑ²¼ìµã == null)
+      if (oldç‰©ç†å·¡æ£€ç‚¹ == null)
          return;
-      if (this.ÎïÀíÑ²¼ìµã != null)
-         if (this.ÎïÀíÑ²¼ìµã.Contains(oldÎïÀíÑ²¼ìµã))
-            this.ÎïÀíÑ²¼ìµã.Remove(oldÎïÀíÑ²¼ìµã);
+      if (this.ç‰©ç†å·¡æ£€ç‚¹ != null)
+         if (this.ç‰©ç†å·¡æ£€ç‚¹.Contains(oldç‰©ç†å·¡æ£€ç‚¹))
+            this.ç‰©ç†å·¡æ£€ç‚¹.Remove(oldç‰©ç†å·¡æ£€ç‚¹);
    }
    
    /// <summary>
-   /// Remove all instances of ÎïÀíÑ²¼ìµã from the collection
+   /// Remove all instances of ç‰©ç†å·¡æ£€ç‚¹ from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAllÎïÀíÑ²¼ìµã()
+   public void RemoveAllç‰©ç†å·¡æ£€ç‚¹()
    {
-      if (ÎïÀíÑ²¼ìµã != null)
-         ÎïÀíÑ²¼ìµã.Clear();
+      if (ç‰©ç†å·¡æ£€ç‚¹ != null)
+         ç‰©ç†å·¡æ£€ç‚¹.Clear();
    }
 
 }

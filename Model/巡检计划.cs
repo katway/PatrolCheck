@@ -1,85 +1,85 @@
-// File:    Ñ²¼ì¼Æ»®.cs
+ï»¿// File:    å·¡æ£€è®¡åˆ’.cs
 // Author:  John
-// Created: 2012Äê10ÔÂ8ÈÕ 10:27:04
-// Purpose: Definition of Class Ñ²¼ì¼Æ»®
+// Created: 2012å¹´10æœˆ8æ—¥ 10:27:04
+// Purpose: Definition of Class å·¡æ£€è®¡åˆ’
 
 using System;
 
-public class Ñ²¼ì¼Æ»®
+public class å·¡æ£€è®¡åˆ’
 {
-   public int ±àºÅ;
-   public string Ãû×Ö;
-   public string ±ğÃû;
-   public long ¸ÚÎ»;
-   public long Â·Ïß;
-   public DateTime ¿ªÊ¼Ê±¼ä;
-   public DateTime ³ÖĞøÊ±¼ä;
-   public DateTime ½áÊøÊ±¼ä;
-   public int ÖÜÆÚ;
-   public string ÖÜÆÚµ¥Î»;
-   public DateTime ÊÂÎñÉúĞ§Ê±¼ä;
-   public DateTime ÊÂÎñÊ§Ğ§Ê±¼ä;
+   public int ç¼–å·;
+   public string åå­—;
+   public string åˆ«å;
+   public long å²—ä½;
+   public long è·¯çº¿;
+   public DateTime å¼€å§‹æ—¶é—´;
+   public DateTime æŒç»­æ—¶é—´;
+   public DateTime ç»“æŸæ—¶é—´;
+   public int å‘¨æœŸ;
+   public string å‘¨æœŸå•ä½;
+   public DateTime äº‹åŠ¡ç”Ÿæ•ˆæ—¶é—´;
+   public DateTime äº‹åŠ¡å¤±æ•ˆæ—¶é—´;
    
-   public System.Collections.Generic.List<ÏêÏ¸Ñ²¼ìÈÎÎñ> ÏêÏ¸Ñ²¼ìÈÎÎñ;
+   public System.Collections.Generic.List<è¯¦ç»†å·¡æ£€ä»»åŠ¡> è¯¦ç»†å·¡æ£€ä»»åŠ¡;
    
    /// <summary>
-   /// Property for collection of ÏêÏ¸Ñ²¼ìÈÎÎñ
+   /// Property for collection of è¯¦ç»†å·¡æ£€ä»»åŠ¡
    /// </summary>
    /// <pdGenerated>Default opposite class collection property</pdGenerated>
-   public System.Collections.Generic.List<ÏêÏ¸Ñ²¼ìÈÎÎñ> ÏêÏ¸Ñ²¼ìÈÎÎñ
+   public System.Collections.Generic.List<è¯¦ç»†å·¡æ£€ä»»åŠ¡> è¯¦ç»†å·¡æ£€ä»»åŠ¡
    {
       get
       {
-         if (ÏêÏ¸Ñ²¼ìÈÎÎñ == null)
-            ÏêÏ¸Ñ²¼ìÈÎÎñ = new System.Collections.Generic.List<ÏêÏ¸Ñ²¼ìÈÎÎñ>();
-         return ÏêÏ¸Ñ²¼ìÈÎÎñ;
+         if (è¯¦ç»†å·¡æ£€ä»»åŠ¡ == null)
+            è¯¦ç»†å·¡æ£€ä»»åŠ¡ = new System.Collections.Generic.List<è¯¦ç»†å·¡æ£€ä»»åŠ¡>();
+         return è¯¦ç»†å·¡æ£€ä»»åŠ¡;
       }
       set
       {
-         RemoveAllÏêÏ¸Ñ²¼ìÈÎÎñ();
+         RemoveAllè¯¦ç»†å·¡æ£€ä»»åŠ¡();
          if (value != null)
          {
-            foreach (ÏêÏ¸Ñ²¼ìÈÎÎñ oÏêÏ¸Ñ²¼ìÈÎÎñ in value)
-               AddÏêÏ¸Ñ²¼ìÈÎÎñ(oÏêÏ¸Ñ²¼ìÈÎÎñ);
+            foreach (è¯¦ç»†å·¡æ£€ä»»åŠ¡ oè¯¦ç»†å·¡æ£€ä»»åŠ¡ in value)
+               Addè¯¦ç»†å·¡æ£€ä»»åŠ¡(oè¯¦ç»†å·¡æ£€ä»»åŠ¡);
          }
       }
    }
    
    /// <summary>
-   /// Add a new ÏêÏ¸Ñ²¼ìÈÎÎñ in the collection
+   /// Add a new è¯¦ç»†å·¡æ£€ä»»åŠ¡ in the collection
    /// </summary>
    /// <pdGenerated>Default Add</pdGenerated>
-   public void AddÏêÏ¸Ñ²¼ìÈÎÎñ(ÏêÏ¸Ñ²¼ìÈÎÎñ newÏêÏ¸Ñ²¼ìÈÎÎñ)
+   public void Addè¯¦ç»†å·¡æ£€ä»»åŠ¡(è¯¦ç»†å·¡æ£€ä»»åŠ¡ newè¯¦ç»†å·¡æ£€ä»»åŠ¡)
    {
-      if (newÏêÏ¸Ñ²¼ìÈÎÎñ == null)
+      if (newè¯¦ç»†å·¡æ£€ä»»åŠ¡ == null)
          return;
-      if (this.ÏêÏ¸Ñ²¼ìÈÎÎñ == null)
-         this.ÏêÏ¸Ñ²¼ìÈÎÎñ = new System.Collections.Generic.List<ÏêÏ¸Ñ²¼ìÈÎÎñ>();
-      if (!this.ÏêÏ¸Ñ²¼ìÈÎÎñ.Contains(newÏêÏ¸Ñ²¼ìÈÎÎñ))
-         this.ÏêÏ¸Ñ²¼ìÈÎÎñ.Add(newÏêÏ¸Ñ²¼ìÈÎÎñ);
+      if (this.è¯¦ç»†å·¡æ£€ä»»åŠ¡ == null)
+         this.è¯¦ç»†å·¡æ£€ä»»åŠ¡ = new System.Collections.Generic.List<è¯¦ç»†å·¡æ£€ä»»åŠ¡>();
+      if (!this.è¯¦ç»†å·¡æ£€ä»»åŠ¡.Contains(newè¯¦ç»†å·¡æ£€ä»»åŠ¡))
+         this.è¯¦ç»†å·¡æ£€ä»»åŠ¡.Add(newè¯¦ç»†å·¡æ£€ä»»åŠ¡);
    }
    
    /// <summary>
-   /// Remove an existing ÏêÏ¸Ñ²¼ìÈÎÎñ from the collection
+   /// Remove an existing è¯¦ç»†å·¡æ£€ä»»åŠ¡ from the collection
    /// </summary>
    /// <pdGenerated>Default Remove</pdGenerated>
-   public void RemoveÏêÏ¸Ñ²¼ìÈÎÎñ(ÏêÏ¸Ñ²¼ìÈÎÎñ oldÏêÏ¸Ñ²¼ìÈÎÎñ)
+   public void Removeè¯¦ç»†å·¡æ£€ä»»åŠ¡(è¯¦ç»†å·¡æ£€ä»»åŠ¡ oldè¯¦ç»†å·¡æ£€ä»»åŠ¡)
    {
-      if (oldÏêÏ¸Ñ²¼ìÈÎÎñ == null)
+      if (oldè¯¦ç»†å·¡æ£€ä»»åŠ¡ == null)
          return;
-      if (this.ÏêÏ¸Ñ²¼ìÈÎÎñ != null)
-         if (this.ÏêÏ¸Ñ²¼ìÈÎÎñ.Contains(oldÏêÏ¸Ñ²¼ìÈÎÎñ))
-            this.ÏêÏ¸Ñ²¼ìÈÎÎñ.Remove(oldÏêÏ¸Ñ²¼ìÈÎÎñ);
+      if (this.è¯¦ç»†å·¡æ£€ä»»åŠ¡ != null)
+         if (this.è¯¦ç»†å·¡æ£€ä»»åŠ¡.Contains(oldè¯¦ç»†å·¡æ£€ä»»åŠ¡))
+            this.è¯¦ç»†å·¡æ£€ä»»åŠ¡.Remove(oldè¯¦ç»†å·¡æ£€ä»»åŠ¡);
    }
    
    /// <summary>
-   /// Remove all instances of ÏêÏ¸Ñ²¼ìÈÎÎñ from the collection
+   /// Remove all instances of è¯¦ç»†å·¡æ£€ä»»åŠ¡ from the collection
    /// </summary>
    /// <pdGenerated>Default removeAll</pdGenerated>
-   public void RemoveAllÏêÏ¸Ñ²¼ìÈÎÎñ()
+   public void RemoveAllè¯¦ç»†å·¡æ£€ä»»åŠ¡()
    {
-      if (ÏêÏ¸Ñ²¼ìÈÎÎñ != null)
-         ÏêÏ¸Ñ²¼ìÈÎÎñ.Clear();
+      if (è¯¦ç»†å·¡æ£€ä»»åŠ¡ != null)
+         è¯¦ç»†å·¡æ£€ä»»åŠ¡.Clear();
    }
 
 }
