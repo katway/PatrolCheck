@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Model", "Model\Model.csproj", "{274882FC-F42C-4969-9BA1-EE5CBF5C37A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{7E891505-264A-413F-B105-8AAE7A0E326A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkStation", "Application\WorkStation.csproj", "{7E891505-264A-413F-B105-8AAE7A0E326A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
