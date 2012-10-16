@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace WorkStation
 {
     partial class frmain
     {
