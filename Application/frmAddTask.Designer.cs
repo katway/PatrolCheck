@@ -66,7 +66,6 @@
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "名称";
-            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // lblAlias
             // 
@@ -76,7 +75,6 @@
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 1;
             this.lblAlias.Text = "别名";
-            this.lblAlias.Click += new System.EventHandler(this.lblAlias_Click);
             // 
             // lblRount
             // 
@@ -86,7 +84,6 @@
             this.lblRount.Size = new System.Drawing.Size(53, 12);
             this.lblRount.TabIndex = 2;
             this.lblRount.Text = "巡检路线";
-            this.lblRount.Click += new System.EventHandler(this.lblRount_Click);
             // 
             // lblPost
             // 
@@ -96,7 +93,6 @@
             this.lblPost.Size = new System.Drawing.Size(53, 12);
             this.lblPost.TabIndex = 3;
             this.lblPost.Text = "指派岗位";
-            this.lblPost.Click += new System.EventHandler(this.lblPost_Click);
             // 
             // lblTime
             // 
@@ -106,7 +102,6 @@
             this.lblTime.Size = new System.Drawing.Size(53, 12);
             this.lblTime.TabIndex = 4;
             this.lblTime.Text = "巡检时间";
-            this.lblTime.Click += new System.EventHandler(this.label5_Click);
             // 
             // lblCycle
             // 
@@ -116,7 +111,6 @@
             this.lblCycle.Size = new System.Drawing.Size(53, 12);
             this.lblCycle.TabIndex = 5;
             this.lblCycle.Text = "巡检周期";
-            this.lblCycle.Click += new System.EventHandler(this.label6_Click);
             // 
             // lblshengxiao
             // 
@@ -126,7 +120,6 @@
             this.lblshengxiao.Size = new System.Drawing.Size(53, 12);
             this.lblshengxiao.TabIndex = 6;
             this.lblshengxiao.Text = "生效时间";
-            this.lblshengxiao.Click += new System.EventHandler(this.lblshengxiao_Click);
             // 
             // lblshixiao
             // 
@@ -136,7 +129,6 @@
             this.lblshixiao.Size = new System.Drawing.Size(53, 12);
             this.lblshixiao.TabIndex = 7;
             this.lblshixiao.Text = "失效时间";
-            this.lblshixiao.Click += new System.EventHandler(this.lblshixiao_Click);
             // 
             // txtName
             // 
@@ -144,7 +136,6 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(183, 21);
             this.txtName.TabIndex = 8;
-            this.txtName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtAlias
             // 
@@ -152,7 +143,6 @@
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(183, 21);
             this.txtAlias.TabIndex = 9;
-            this.txtAlias.TextChanged += new System.EventHandler(this.txtAlias_TextChanged);
             // 
             // txtgangwei
             // 
@@ -160,7 +150,6 @@
             this.txtgangwei.Name = "txtgangwei";
             this.txtgangwei.Size = new System.Drawing.Size(183, 21);
             this.txtgangwei.TabIndex = 11;
-            this.txtgangwei.TextChanged += new System.EventHandler(this.txtgangwei_TextChanged);
             // 
             // listView1
             // 
@@ -181,7 +170,6 @@
             this.listView1.TabIndex = 16;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -243,7 +231,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(183, 20);
             this.comboBox1.TabIndex = 18;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // dateTimePicker1
             // 
@@ -251,7 +238,6 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(183, 21);
             this.dateTimePicker1.TabIndex = 19;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox1
             // 
@@ -259,7 +245,6 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(68, 21);
             this.textBox1.TabIndex = 20;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // listBox1
             // 
@@ -275,7 +260,6 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(99, 40);
             this.listBox1.TabIndex = 21;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // dateTimePicker2
             // 
@@ -283,7 +267,6 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(183, 21);
             this.dateTimePicker2.TabIndex = 22;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker3
             // 
@@ -291,7 +274,6 @@
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(183, 21);
             this.dateTimePicker3.TabIndex = 23;
-            this.dateTimePicker3.ValueChanged += new System.EventHandler(this.dateTimePicker3_ValueChanged);
             // 
             // frmAddTask
             // 
@@ -319,7 +301,6 @@
             this.Controls.Add(this.lblName);
             this.Name = "frmAddTask";
             this.Text = "新建任务";
-            this.Load += new System.EventHandler(this.frmAddTask_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

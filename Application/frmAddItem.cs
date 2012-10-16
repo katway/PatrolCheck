@@ -16,9 +16,5 @@ namespace WorkStation
             InitializeComponent();
         }
 
-        private void txtPoint_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

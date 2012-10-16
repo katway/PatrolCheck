@@ -60,7 +60,6 @@
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 1;
             this.lblAlias.Text = "别名";
-            this.lblAlias.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblRelated
             // 

@@ -73,11 +73,11 @@
     <Compile Include="frmAddTask.Designer.cs">
       <DependentUpon>frmAddTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmain.cs">
+    <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmain.Designer.cs">
-      <DependentUpon>frmain.cs</DependentUpon>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddItem.cs">
       <SubType>Form</SubType>
@@ -135,8 +135,8 @@
     <EmbeddedResource Include="frmAddTask.resx">
       <DependentUpon>frmAddTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmain.resx">
-      <DependentUpon>frmain.cs</DependentUpon>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddItem.resx">
       <DependentUpon>frmAddItem.cs</DependentUpon>
