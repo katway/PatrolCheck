@@ -175,8 +175,24 @@ namespace WorkStation
 
         }
 
-      
+        //新建巡检项
+        private void tsmixunjianxiangs_Click(object sender, EventArgs e)
+        {
+            frmAddItem additem = new frmAddItem();
+            additem.ShowDialog();
+        }
 
+        private void tsmigongshimingcheng_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //新建巡检点
+        private void tsmixunjiandian_Click(object sender, EventArgs e)
+        {
+            frmAddPoint addpoint = new frmAddPoint();
+            addpoint.ShowDialog();
+        } 
        
     }
 }

@@ -145,6 +145,7 @@
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // listView1
             // 
@@ -187,7 +188,7 @@
             // 
             this.columnHeader6.Text = "备注";
             // 
-            // frmBuildItem
+            // frmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,7 +205,7 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.Name = "frmBuildItem";
+            this.Name = "frmAddItem";
             this.Text = "新建巡检项";
             this.ResumeLayout(false);
             this.PerformLayout();
