@@ -8,8 +8,8 @@
     <ProjectGuid>{7E891505-264A-413F-B105-8AAE7A0E326A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Application</RootNamespace>
-    <AssemblyName>Application</AssemblyName>
+    <RootNamespace>WorkStation</RootNamespace>
+    <AssemblyName>WorkStation</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -49,12 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAddCard.cs">
       <SubType>Form</SubType>
     </Compile>
