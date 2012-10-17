@@ -14,8 +14,15 @@ namespace WorkStation
     /// </summary>
     public sealed class SqlHelper
     {
+        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;UserId=sa;Password=sa123";
+        
         #region 私有构造函数和方法
-        private SqlHelper() { }
+        private SqlHelper() 
+        {
+            WorkStation.Properties.Settings wset = new Properties.Settings();
+            sqlConnectionStr = wset.ConnectionString;
+        }
+        
         /// <summary>
         /// 将SqlParameter参数数组(参数值)分配给SqlCommand命令.
         /// 这个方法将给任何一个参数分配DBNull.Value;
@@ -161,6 +168,15 @@ namespace WorkStation
         #endregion 私有构造函数和方法结束
 
         #region ExecuteNonQuery命令
+        /// <summary>
+        /// 执行SQL语句，返回受影响的行数
+        /// </summary>
+        /// <param name="commandText">Sql语句</param>
+        /// <returns></returns>
+        public static int ExecuteNonQuery(string commandText)
+        {
+            return ExecuteNonQuery(sqlConnectionStr,CommandType.Text,commandText);
+        }
         /// <summary>
         /// 执行指定连接字符串,类型的SqlCommand.
         /// </summary>
@@ -390,6 +406,15 @@ namespace WorkStation
         #endregion ExecuteNonQuery方法结束
 
         #region ExecuteDataset方法
+        /// <summary>
+        /// 执行Sql语句，返回DataSet
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <returns></returns>
+        public static DataSet ExecuteDataset(string commandText)
+        {
+            return ExecuteDataset(sqlConnectionStr, CommandType.Text, commandText);
+        }
         /// <summary>
         /// 执行指定数据库连接字符串的命令,返回DataSet.
         /// </summary>
@@ -634,6 +659,31 @@ namespace WorkStation
         }
 
         /// <summary>
+        /// 执行Sql语句，返回数据阅读器
+        /// </summary>
+        /// <param name="commandText">Sql语句</param>
+        /// <returns></returns>
+        public static SqlDataReader ExecuteReader(string commandText)
+        {
+            return ExecuteReader(sqlConnectionStr,CommandType.Text,commandText);
+        }
+        /// <summary>
+        /// 执行指定数据库连接字符串的数据阅读器.
+        /// </summary>
+        /// <remarks>
+        /// 示例:  
+        ///  SqlDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
+        /// </remarks>
+        /// <param name="connectionString">一个有效的数据库连接字符串</param>
+        /// <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
+        /// <param name="commandText">存储过程名或T-SQL语句</param>
+        /// <returns>返回包含结果集的SqlDataReader</returns>
+        public static SqlDataReader ExecuteReader(string connectionString, CommandType commandType, string commandText)
+        {
+            return ExecuteReader(connectionString, commandType, commandText, (SqlParameter[])null);
+        }
+
+        /// <summary>
         /// 执行指定数据库连接对象的数据阅读器.
         /// </summary>
         /// <remarks>
@@ -692,22 +742,6 @@ namespace WorkStation
                     connection.Close();
                 throw;
             }
-        }
-
-        /// <summary>
-        /// 执行指定数据库连接字符串的数据阅读器.
-        /// </summary>
-        /// <remarks>
-        /// 示例:  
-        ///  SqlDataReader dr = ExecuteReader(connString, CommandType.StoredProcedure, "GetOrders");
-        /// </remarks>
-        /// <param name="connectionString">一个有效的数据库连接字符串</param>
-        /// <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
-        /// <param name="commandText">存储过程名或T-SQL语句</param>
-        /// <returns>返回包含结果集的SqlDataReader</returns>
-        public static SqlDataReader ExecuteReader(string connectionString, CommandType commandType, string commandText)
-        {
-            return ExecuteReader(connectionString, commandType, commandText, (SqlParameter[])null);
         }
 
         /// <summary>
@@ -900,6 +934,15 @@ namespace WorkStation
         #endregion ExecuteReader数据阅读器
 
         #region ExecuteScalar 返回结果集中的第一行第一列
+        /// <summary>
+        /// 执行Sql语句，返回结果集的第一行第一列
+        /// </summary>
+        /// <param name="commandText">Sql语句</param>
+        /// <returns></returns>
+        public static object ExecuteScalar(string commandText)
+        {
+            return ExecuteScalar(sqlConnectionStr,CommandType.Text,commandText);
+        }
         /// <summary>
         /// 执行指定数据库连接字符串的命令,返回结果集中的第一行第一列.
         /// </summary>

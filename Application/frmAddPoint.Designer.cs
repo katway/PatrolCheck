@@ -60,7 +60,6 @@
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 1;
             this.lblAlias.Text = "别名";
-            this.lblAlias.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblRelated
             // 
@@ -100,6 +99,7 @@
             this.btnRead.TabIndex = 6;
             this.btnRead.Text = "读取";
             this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
             // 
             // btnSave
             // 
@@ -129,6 +129,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "巡检点编号";
+            this.columnHeader1.Width = 115;
             // 
             // columnHeader2
             // 
@@ -158,6 +159,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "frmAddPoint";
             this.Text = "新建巡检点";
+            this.Load += new System.EventHandler(this.frmAddPoint_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

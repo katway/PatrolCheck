@@ -657,18 +657,18 @@
             // tsmixinjian
             // 
             this.tsmixinjian.Name = "tsmixinjian";
-            this.tsmixinjian.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian.Size = new System.Drawing.Size(94, 22);
             // 
             // tsmibianji
             // 
             this.tsmibianji.Name = "tsmibianji";
-            this.tsmibianji.Size = new System.Drawing.Size(152, 22);
+            this.tsmibianji.Size = new System.Drawing.Size(94, 22);
             this.tsmibianji.Text = "编辑";
             // 
             // tsmidelete
             // 
             this.tsmidelete.Name = "tsmidelete";
-            this.tsmidelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmidelete.Size = new System.Drawing.Size(94, 22);
             this.tsmidelete.Text = "删除";
             // 
             // tsmrenwu
@@ -736,25 +736,25 @@
             // tsmirenyuanchuqin
             // 
             this.tsmirenyuanchuqin.Name = "tsmirenyuanchuqin";
-            this.tsmirenyuanchuqin.Size = new System.Drawing.Size(152, 22);
+            this.tsmirenyuanchuqin.Size = new System.Drawing.Size(142, 22);
             this.tsmirenyuanchuqin.Text = "人员出勤统计";
             // 
             // tsmixunjianxiang
             // 
             this.tsmixunjianxiang.Name = "tsmixunjianxiang";
-            this.tsmixunjianxiang.Size = new System.Drawing.Size(152, 22);
+            this.tsmixunjianxiang.Size = new System.Drawing.Size(142, 22);
             this.tsmixunjianxiang.Text = "巡检项统计";
             // 
             // tsmichuqinyichang
             // 
             this.tsmichuqinyichang.Name = "tsmichuqinyichang";
-            this.tsmichuqinyichang.Size = new System.Drawing.Size(152, 22);
+            this.tsmichuqinyichang.Size = new System.Drawing.Size(142, 22);
             this.tsmichuqinyichang.Text = "出勤异常统计";
             // 
             // tsmidianjianyichang
             // 
             this.tsmidianjianyichang.Name = "tsmidianjianyichang";
-            this.tsmidianjianyichang.Size = new System.Drawing.Size(152, 22);
+            this.tsmidianjianyichang.Size = new System.Drawing.Size(142, 22);
             this.tsmidianjianyichang.Text = "点检异常统计";
             // 
             // tsmxunjian
@@ -819,31 +819,31 @@
             // tsmichangquguanli
             // 
             this.tsmichangquguanli.Name = "tsmichangquguanli";
-            this.tsmichangquguanli.Size = new System.Drawing.Size(118, 22);
+            this.tsmichangquguanli.Size = new System.Drawing.Size(152, 22);
             this.tsmichangquguanli.Text = "厂区管理";
             // 
             // tsmichejian
             // 
             this.tsmichejian.Name = "tsmichejian";
-            this.tsmichejian.Size = new System.Drawing.Size(118, 22);
+            this.tsmichejian.Size = new System.Drawing.Size(152, 22);
             this.tsmichejian.Text = "车间管理";
             // 
             // tsmigangwei
             // 
             this.tsmigangwei.Name = "tsmigangwei";
-            this.tsmigangwei.Size = new System.Drawing.Size(118, 22);
+            this.tsmigangwei.Size = new System.Drawing.Size(152, 22);
             this.tsmigangwei.Text = "岗位管理";
             // 
             // tsmirenyuan
             // 
             this.tsmirenyuan.Name = "tsmirenyuan";
-            this.tsmirenyuan.Size = new System.Drawing.Size(118, 22);
+            this.tsmirenyuan.Size = new System.Drawing.Size(152, 22);
             this.tsmirenyuan.Text = "人员管理";
             // 
             // tsmibanci
             // 
             this.tsmibanci.Name = "tsmibanci";
-            this.tsmibanci.Size = new System.Drawing.Size(118, 22);
+            this.tsmibanci.Size = new System.Drawing.Size(152, 22);
             this.tsmibanci.Text = "班次管理";
             // 
             // tsmkapiam

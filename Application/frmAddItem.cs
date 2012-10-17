@@ -16,17 +16,31 @@ namespace WorkStation
         {
             InitializeComponent();
         }
-        
-        private void txtPoint_TextChanged(object sender, EventArgs e)
-        {
 
+        private void frmAddItem_Load(object sender, EventArgs e)
+        {
+            WorkStation.Properties.Settings wset = new Properties.Settings();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sql = "Insert into ";
-            SqlParameter p1 = new SqlParameter();
-            
+            SqlParameter[] pars = new SqlParameter[]{
+                new SqlParameter(),
+            };
+        }
+
+        private void getMachine()
+        {
+            SqlDataReader dataread=SqlHelper.ExecuteReader();
+            this.cboMachine.i
+        }
+        private void getValueType()
+        {
+ 
+        }
+        private void getPoint()
+        {
+ 
         }
     }
 }
