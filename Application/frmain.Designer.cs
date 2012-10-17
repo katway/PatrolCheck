@@ -657,18 +657,19 @@
             // tsmixinjian
             // 
             this.tsmixinjian.Name = "tsmixinjian";
-            this.tsmixinjian.Size = new System.Drawing.Size(94, 22);
+            this.tsmixinjian.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian.Text = "新建";
             // 
             // tsmibianji
             // 
             this.tsmibianji.Name = "tsmibianji";
-            this.tsmibianji.Size = new System.Drawing.Size(94, 22);
+            this.tsmibianji.Size = new System.Drawing.Size(152, 22);
             this.tsmibianji.Text = "编辑";
             // 
             // tsmidelete
             // 
             this.tsmidelete.Name = "tsmidelete";
-            this.tsmidelete.Size = new System.Drawing.Size(94, 22);
+            this.tsmidelete.Size = new System.Drawing.Size(152, 22);
             this.tsmidelete.Text = "删除";
             // 
             // tsmrenwu
@@ -774,6 +775,7 @@
             this.tsmixunjianluxian.Name = "tsmixunjianluxian";
             this.tsmixunjianluxian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianluxian.Text = "巡检路线管理";
+            this.tsmixunjianluxian.Click += new System.EventHandler(this.tsmixunjianluxian_Click);
             // 
             // tsmixunjiandian
             // 
@@ -812,38 +814,38 @@
             // tsmigongshimingcheng
             // 
             this.tsmigongshimingcheng.Name = "tsmigongshimingcheng";
-            this.tsmigongshimingcheng.Size = new System.Drawing.Size(152, 22);
+            this.tsmigongshimingcheng.Size = new System.Drawing.Size(118, 22);
             this.tsmigongshimingcheng.Text = "公司名称";
             this.tsmigongshimingcheng.Click += new System.EventHandler(this.tsmigongshimingcheng_Click);
             // 
             // tsmichangquguanli
             // 
             this.tsmichangquguanli.Name = "tsmichangquguanli";
-            this.tsmichangquguanli.Size = new System.Drawing.Size(152, 22);
+            this.tsmichangquguanli.Size = new System.Drawing.Size(118, 22);
             this.tsmichangquguanli.Text = "厂区管理";
             // 
             // tsmichejian
             // 
             this.tsmichejian.Name = "tsmichejian";
-            this.tsmichejian.Size = new System.Drawing.Size(152, 22);
+            this.tsmichejian.Size = new System.Drawing.Size(118, 22);
             this.tsmichejian.Text = "车间管理";
             // 
             // tsmigangwei
             // 
             this.tsmigangwei.Name = "tsmigangwei";
-            this.tsmigangwei.Size = new System.Drawing.Size(152, 22);
+            this.tsmigangwei.Size = new System.Drawing.Size(118, 22);
             this.tsmigangwei.Text = "岗位管理";
             // 
             // tsmirenyuan
             // 
             this.tsmirenyuan.Name = "tsmirenyuan";
-            this.tsmirenyuan.Size = new System.Drawing.Size(152, 22);
+            this.tsmirenyuan.Size = new System.Drawing.Size(118, 22);
             this.tsmirenyuan.Text = "人员管理";
             // 
             // tsmibanci
             // 
             this.tsmibanci.Name = "tsmibanci";
-            this.tsmibanci.Size = new System.Drawing.Size(152, 22);
+            this.tsmibanci.Size = new System.Drawing.Size(118, 22);
             this.tsmibanci.Text = "班次管理";
             // 
             // tsmkapiam

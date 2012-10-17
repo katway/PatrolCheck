@@ -28,153 +28,200 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblAlias = new System.Windows.Forms.Label();
-            this.lblGenus = new System.Windows.Forms.Label();
-            this.lblPoint = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtGenus = new System.Windows.Forms.TextBox();
-            this.txtAlias = new System.Windows.Forms.TextBox();
-            this.txtPoint = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.新建路线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除路线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tvRoute = new System.Windows.Forms.TreeView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lstPoint = new System.Windows.Forms.ListBox();
+            this.btnMoveDown = new System.Windows.Forms.Button();
+            this.btnMoveUp = new System.Windows.Forms.Button();
+            this.btnDelAll = new System.Windows.Forms.Button();
+            this.btnAddAll = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.lstRoutePoint = new System.Windows.Forms.ListBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblName
+            // menuStrip1
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(206, 59);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(29, 12);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "名称";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新建路线ToolStripMenuItem,
+            this.删除路线ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(751, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // lblAlias
+            // 新建路线ToolStripMenuItem
             // 
-            this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(206, 99);
-            this.lblAlias.Name = "lblAlias";
-            this.lblAlias.Size = new System.Drawing.Size(29, 12);
-            this.lblAlias.TabIndex = 1;
-            this.lblAlias.Text = "别名";
+            this.新建路线ToolStripMenuItem.Name = "新建路线ToolStripMenuItem";
+            this.新建路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.新建路线ToolStripMenuItem.Text = "新建路线";
             // 
-            // lblGenus
+            // 删除路线ToolStripMenuItem
             // 
-            this.lblGenus.AutoSize = true;
-            this.lblGenus.Location = new System.Drawing.Point(182, 133);
-            this.lblGenus.Name = "lblGenus";
-            this.lblGenus.Size = new System.Drawing.Size(53, 12);
-            this.lblGenus.TabIndex = 2;
-            this.lblGenus.Text = "所属厂区";
+            this.删除路线ToolStripMenuItem.Name = "删除路线ToolStripMenuItem";
+            this.删除路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.删除路线ToolStripMenuItem.Text = "删除路线";
             // 
-            // lblPoint
+            // groupBox1
             // 
-            this.lblPoint.AutoSize = true;
-            this.lblPoint.Location = new System.Drawing.Point(158, 169);
-            this.lblPoint.Name = "lblPoint";
-            this.lblPoint.Size = new System.Drawing.Size(77, 12);
-            this.lblPoint.TabIndex = 3;
-            this.lblPoint.Text = "包含的巡检点";
+            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.tvRoute);
+            this.groupBox1.Location = new System.Drawing.Point(13, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(223, 486);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "巡检路线";
             // 
-            // txtName
+            // checkBox1
             // 
-            this.txtName.Location = new System.Drawing.Point(295, 56);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(224, 21);
-            this.txtName.TabIndex = 4;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(93, 458);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(108, 16);
+            this.checkBox1.TabIndex = 1;
+            this.checkBox1.Text = "打开时自动展开";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
-            // txtGenus
+            // tvRoute
             // 
-            this.txtGenus.Location = new System.Drawing.Point(295, 124);
-            this.txtGenus.Name = "txtGenus";
-            this.txtGenus.Size = new System.Drawing.Size(224, 21);
-            this.txtGenus.TabIndex = 5;
+            this.tvRoute.Location = new System.Drawing.Point(6, 20);
+            this.tvRoute.Name = "tvRoute";
+            this.tvRoute.Size = new System.Drawing.Size(211, 432);
+            this.tvRoute.TabIndex = 0;
+            this.tvRoute.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRoute_AfterSelect);
             // 
-            // txtAlias
+            // groupBox2
             // 
-            this.txtAlias.Location = new System.Drawing.Point(295, 90);
-            this.txtAlias.Name = "txtAlias";
-            this.txtAlias.Size = new System.Drawing.Size(224, 21);
-            this.txtAlias.TabIndex = 6;
+            this.groupBox2.Controls.Add(this.btnSave);
+            this.groupBox2.Controls.Add(this.lstPoint);
+            this.groupBox2.Controls.Add(this.btnMoveDown);
+            this.groupBox2.Controls.Add(this.btnMoveUp);
+            this.groupBox2.Controls.Add(this.btnDelAll);
+            this.groupBox2.Controls.Add(this.btnAddAll);
+            this.groupBox2.Controls.Add(this.btnDel);
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Controls.Add(this.lstRoutePoint);
+            this.groupBox2.Location = new System.Drawing.Point(254, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(461, 486);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "路线巡检点设置";
             // 
-            // txtPoint
+            // lstPoint
             // 
-            this.txtPoint.Location = new System.Drawing.Point(295, 160);
-            this.txtPoint.Name = "txtPoint";
-            this.txtPoint.Size = new System.Drawing.Size(224, 21);
-            this.txtPoint.TabIndex = 8;
+            this.lstPoint.FormattingEnabled = true;
+            this.lstPoint.ItemHeight = 12;
+            this.lstPoint.Location = new System.Drawing.Point(271, 20);
+            this.lstPoint.Name = "lstPoint";
+            this.lstPoint.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lstPoint.Size = new System.Drawing.Size(156, 448);
+            this.lstPoint.TabIndex = 7;
             // 
-            // listView1
+            // btnMoveDown
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(106, 231);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(577, 180);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.btnMoveDown.Location = new System.Drawing.Point(170, 179);
+            this.btnMoveDown.Name = "btnMoveDown";
+            this.btnMoveDown.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveDown.TabIndex = 6;
+            this.btnMoveDown.Text = "下移";
+            this.btnMoveDown.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
+            // 
+            // btnMoveUp
+            // 
+            this.btnMoveUp.Location = new System.Drawing.Point(170, 150);
+            this.btnMoveUp.Name = "btnMoveUp";
+            this.btnMoveUp.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveUp.TabIndex = 5;
+            this.btnMoveUp.Text = "上移";
+            this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
+            // 
+            // btnDelAll
+            // 
+            this.btnDelAll.Location = new System.Drawing.Point(170, 121);
+            this.btnDelAll.Name = "btnDelAll";
+            this.btnDelAll.Size = new System.Drawing.Size(75, 23);
+            this.btnDelAll.TabIndex = 4;
+            this.btnDelAll.Text = "全部移除";
+            this.btnDelAll.UseVisualStyleBackColor = true;
+            // 
+            // btnAddAll
+            // 
+            this.btnAddAll.Location = new System.Drawing.Point(170, 92);
+            this.btnAddAll.Name = "btnAddAll";
+            this.btnAddAll.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAll.TabIndex = 3;
+            this.btnAddAll.Text = "全部添加";
+            this.btnAddAll.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(170, 62);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 2;
+            this.btnDel.Text = "移除";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(170, 32);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // lstRoutePoint
+            // 
+            this.lstRoutePoint.FormattingEnabled = true;
+            this.lstRoutePoint.ItemHeight = 12;
+            this.lstRoutePoint.Location = new System.Drawing.Point(7, 21);
+            this.lstRoutePoint.Name = "lstRoutePoint";
+            this.lstRoutePoint.Size = new System.Drawing.Size(156, 448);
+            this.lstRoutePoint.TabIndex = 0;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(597, 169);
+            this.btnSave.Location = new System.Drawing.Point(170, 215);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "巡检路线编号";
-            this.columnHeader1.Width = 116;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "名称";
-            this.columnHeader2.Width = 75;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "别名";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "所属厂区";
-            this.columnHeader4.Width = 85;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "包含的巡检点";
-            this.columnHeader5.Width = 111;
             // 
             // frmAddRoute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 457);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.txtPoint);
-            this.Controls.Add(this.txtAlias);
-            this.Controls.Add(this.txtGenus);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblPoint);
-            this.Controls.Add(this.lblGenus);
-            this.Controls.Add(this.lblAlias);
-            this.Controls.Add(this.lblName);
+            this.ClientSize = new System.Drawing.Size(751, 526);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAddRoute";
             this.Text = "新建巡检路线";
+            this.Load += new System.EventHandler(this.frmAddRoute_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,20 +229,23 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblAlias;
-        private System.Windows.Forms.Label lblGenus;
-        private System.Windows.Forms.Label lblPoint;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtGenus;
-        private System.Windows.Forms.TextBox txtAlias;
-        private System.Windows.Forms.TextBox txtPoint;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 新建路线ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除路线ToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TreeView tvRoute;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ListBox lstPoint;
+        private System.Windows.Forms.Button btnMoveDown;
+        private System.Windows.Forms.Button btnMoveUp;
+        private System.Windows.Forms.Button btnDelAll;
+        private System.Windows.Forms.Button btnAddAll;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.ListBox lstRoutePoint;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+
+
     }
 }

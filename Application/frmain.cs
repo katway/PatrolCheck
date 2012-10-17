@@ -192,7 +192,12 @@ namespace WorkStation
         {
             frmAddPoint addpoint = new frmAddPoint();
             addpoint.ShowDialog();
-        } 
+        }
+
+        private void tsmixunjianluxian_Click(object sender, EventArgs e)
+        {
+
+        }
        
     }
 }
