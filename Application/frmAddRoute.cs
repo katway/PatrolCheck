@@ -15,12 +15,12 @@ namespace WorkStation
         public frmAddRoute()
         {
             InitializeComponent();
-            lstPointInit();
         }
 
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
             tvRouteInit();
+            lstPointInit();
         }
 
         private void tvRouteInit()
@@ -108,15 +108,71 @@ namespace WorkStation
         private void btnMoveUp_Click(object sender, EventArgs e)
         {
             int index=lstRoutePoint.SelectedIndex;
+            if (index == 0)
+            {
+                MessageBox.Show("已经到顶");
+                return;
+            }
             object selobj = lstRoutePoint.SelectedItem;
             object upobj = lstRoutePoint.Items[index - 1];
+            lstRoutePoint.Items[index] = upobj;
+            lstRoutePoint.Items[index - 1] = selobj;
 
-               
+            lstRoutePoint.SelectedIndex = index - 1;
         }
 
         private void btnMoveDown_Click(object sender, EventArgs e)
         {
-            lstRoutePoint.SelectedIndex = lstRoutePoint.SelectedIndex -1;
+            int index = lstRoutePoint.SelectedIndex;
+            if (index == lstRoutePoint.Items.Count - 1)
+            {
+                MessageBox.Show("已经到底");
+                return;
+            }
+            object selobj = lstRoutePoint.SelectedItem;
+            object downobj=lstRoutePoint.Items[index+1];
+            lstRoutePoint.Items[index] = downobj;
+            lstRoutePoint.Items[index + 1] = selobj;
+
+            lstRoutePoint.SelectedIndex = index + 1;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string route_id="";
+            if (tvRoute.SelectedNode.Level == 2 && tvRoute.SelectedNode.Nodes.Count == 0)
+            {
+                route_id = tvRoute.SelectedNode.Tag.ToString();
+            }
+            else
+            {
+                MessageBox.Show("请选择要保存的路线");
+                return;
+            }
+            string[] strSqls=null;
+            if (lstRoutePoint.Items.Count > 0)
+            {
+                strSqls = new string[lstRoutePoint.Items.Count];
+            }
+            else
+            {
+                MessageBox.Show("请往路线中添加巡检点");
+                return;
+            }
+            for (int i = 0; i < lstRoutePoint.Items.Count; i++)
+            {
+                BoxItem obj = (BoxItem)lstRoutePoint.Items[i];
+                strSqls[i] = "Insert Into LogicalCheckPoint(Route_ID,PhysicalPoint_ID) values("+route_id+","+obj.Value+")";
+            }
+            try
+            {
+                int _ret = SqlHelper.ExecuteSqls(strSqls);
+            }
+            catch
+            {
+                MessageBox.Show("保存失败，请稍后再试");
+            }
+            
         }
 
     }

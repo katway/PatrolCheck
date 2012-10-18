@@ -8,7 +8,7 @@ namespace WorkStation
     public class CommonClass
     {
     }
-    public class ComboBoxItem
+    public class BoxItem
     {
         private string _text = null;
         private object _value = null;

@@ -405,6 +405,44 @@ namespace WorkStation
         }
         #endregion ExecuteNonQuery方法结束
 
+        #region ExecuteSqls
+        /// <summary>
+        /// 执行Sql语句数组
+        /// </summary>
+        /// <param name="strs">Sql数组</param>
+        /// <returns></returns>
+        public static int ExecuteSqls(string[] strs)
+        {
+            int count = 0;
+            SqlConnection conn = new SqlConnection(sqlConnectionStr);
+            conn.Open();
+            SqlTransaction tran = conn.BeginTransaction();
+            SqlCommand command = new SqlCommand();
+            command.Connection = conn;
+            try
+            {
+                foreach (string s in strs)
+                {
+                    command.CommandType = CommandType.Text;
+                    command.CommandText = s;
+                    count = count + command.ExecuteNonQuery();
+                }
+                tran.Commit();
+            }
+            catch(Exception ex)
+            {
+                tran.Rollback();
+                count = 0;
+                throw new ArgumentNullException(ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return count;
+        }
+        #endregion
+
         #region ExecuteDataset方法
         /// <summary>
         /// 执行Sql语句，返回DataSet
