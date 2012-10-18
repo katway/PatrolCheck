@@ -182,11 +182,6 @@ namespace WorkStation
             additem.ShowDialog();
         }
 
-        private void tsmigongshimingcheng_Click(object sender, EventArgs e)
-        {
-
-        }
-
         //新建巡检点
         private void tsmixunjiandian_Click(object sender, EventArgs e)
         {
@@ -194,9 +189,11 @@ namespace WorkStation
             addpoint.ShowDialog();
         }
 
-        private void tsmixunjianluxian_Click(object sender, EventArgs e)
+        //新建设备
+        private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
         {
-
+            frmAddMachine fm = new frmAddMachine();
+            fm.ShowDialog();
         }
        
     }

@@ -19,12 +19,13 @@ namespace WorkStation
 
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
-            tvRouteInit();
+            tvRouteInit(tvRoute);
             lstPointInit();
         }
 
-        private void tvRouteInit()
+        public static void tvRouteInit(TreeView tvRoute)
         {
+            tvRoute.Nodes.Clear();
             SqlDataReader dr= SqlHelper.ExecuteReader("Select ID,Name From Company");
             if(dr==null)
             {
@@ -46,7 +47,7 @@ namespace WorkStation
             
         }
 
-        private TreeNode tvNodeAdd( TreeNode node,string comstr)
+        private static TreeNode tvNodeAdd( TreeNode node,string comstr)
         {
             SqlDataReader dr = SqlHelper.ExecuteReader(comstr);
             if (dr == null)
@@ -173,6 +174,12 @@ namespace WorkStation
                 MessageBox.Show("保存失败，请稍后再试");
             }
             
+        }
+
+        private void 新建路线ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAddRoutName rn = new frmAddRoutName(ref this.tvRoute);
+            rn.Show();
         }
 
     }

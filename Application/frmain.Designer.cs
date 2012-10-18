@@ -657,19 +657,19 @@
             // tsmixinjian
             // 
             this.tsmixinjian.Name = "tsmixinjian";
-            this.tsmixinjian.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian.Size = new System.Drawing.Size(94, 22);
             this.tsmixinjian.Text = "新建";
             // 
             // tsmibianji
             // 
             this.tsmibianji.Name = "tsmibianji";
-            this.tsmibianji.Size = new System.Drawing.Size(152, 22);
+            this.tsmibianji.Size = new System.Drawing.Size(94, 22);
             this.tsmibianji.Text = "编辑";
             // 
             // tsmidelete
             // 
             this.tsmidelete.Name = "tsmidelete";
-            this.tsmidelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmidelete.Size = new System.Drawing.Size(94, 22);
             this.tsmidelete.Text = "删除";
             // 
             // tsmrenwu
@@ -775,7 +775,6 @@
             this.tsmixunjianluxian.Name = "tsmixunjianluxian";
             this.tsmixunjianluxian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianluxian.Text = "巡检路线管理";
-            this.tsmixunjianluxian.Click += new System.EventHandler(this.tsmixunjianluxian_Click);
             // 
             // tsmixunjiandian
             // 
@@ -796,6 +795,7 @@
             this.tsmishebeixunjianxiang.Name = "tsmishebeixunjianxiang";
             this.tsmishebeixunjianxiang.Size = new System.Drawing.Size(154, 22);
             this.tsmishebeixunjianxiang.Text = "设备巡检项管理";
+            this.tsmishebeixunjianxiang.Click += new System.EventHandler(this.tsmishebeixunjianxiang_Click);
             // 
             // tsmjichu
             // 
@@ -816,7 +816,6 @@
             this.tsmigongshimingcheng.Name = "tsmigongshimingcheng";
             this.tsmigongshimingcheng.Size = new System.Drawing.Size(118, 22);
             this.tsmigongshimingcheng.Text = "公司名称";
-            this.tsmigongshimingcheng.Click += new System.EventHandler(this.tsmigongshimingcheng_Click);
             // 
             // tsmichangquguanli
             // 

@@ -65,6 +65,7 @@
             this.新建路线ToolStripMenuItem.Name = "新建路线ToolStripMenuItem";
             this.新建路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.新建路线ToolStripMenuItem.Text = "新建路线";
+            this.新建路线ToolStripMenuItem.Click += new System.EventHandler(this.新建路线ToolStripMenuItem_Click);
             // 
             // 删除路线ToolStripMenuItem
             // 

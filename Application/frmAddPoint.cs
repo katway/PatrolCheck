@@ -20,7 +20,7 @@ namespace WorkStation
         private void frmAddPoint_Load(object sender, EventArgs e)
         {
             this.btnSave.Enabled = false;
-            getList();
+            getDgvPoint();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -37,14 +37,14 @@ namespace WorkStation
             string str_rfid = (SqlHelper.ExecuteScalar("connectionstring",CommandType.Text,str_select)).ToString();
             pars[2].Value = str_rfid;
 
-            string str_insert = "Insert Into PhysicalCheckPoint([Name],Alias,Rfi_Id) values(@name,@alias,@rfid)";
+            string str_insert = "Insert Into PhysicalCheckPoint([Name],Alias,Rfid_Id) values(@name,@alias,@rfid)";
 
             Object obj_ret = SqlHelper.ExecuteNonQuery(str_insert);
             if (obj_ret.ToString() == "1")
             {
                 MessageBox.Show("保存成功");
             }
-            getList();
+            getDgvPoint();
         }
 
         private void btnRead_Click(object sender, EventArgs e)
@@ -52,19 +52,15 @@ namespace WorkStation
             this.btnSave.Enabled = true;
         }
 
-        private void getList()
+        private void getDgvPoint()
         {
-            SqlDataReader datareader= SqlHelper.ExecuteReader("Select P.ID,P.Name,P.Alias,R.RFID from PhysicalCheckPoint P,Rfid R where P.Rfi_ID=R.ID");
-            if (datareader.Read())
-            {
-                listView1.Items.Add(new ListViewItem(new string[]{
-                   datareader["ID"].ToString(),
-                   datareader["Name"].ToString(),
-                   datareader["Alias"].ToString(),
-                   datareader["RFID"].ToString()
-                }));
-            }
-            datareader.Close();
+            DataSet ds = SqlHelper.ExecuteDataset("Select P.ID as 编号,P.Name as 巡检名称,P.Alias as 别名,R.RFID as 关联标签卡 from PhysicalCheckPoint as P left  join  Rfid as R on P.Rfid_ID=R.ID");
+            dgvPoint.DataSource=ds.Tables[0];
+        }
+
+        private void dgvPoint_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
        
     }

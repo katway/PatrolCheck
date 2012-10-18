@@ -39,15 +39,10 @@
             this.txtRemarks = new System.Windows.Forms.TextBox();
             this.cboPoint = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.cboMachine = new System.Windows.Forms.ComboBox();
+            this.dgvItems = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
@@ -112,9 +107,6 @@
             // cboValue
             // 
             this.cboValue.FormattingEnabled = true;
-            this.cboValue.Items.AddRange(new object[] {
-            "正常/不正常",
-            "数值"});
             this.cboValue.Location = new System.Drawing.Point(232, 147);
             this.cboValue.Name = "cboValue";
             this.cboValue.Size = new System.Drawing.Size(171, 20);
@@ -149,47 +141,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // listView1
-            // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(27, 322);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(587, 175);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "编号";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "名称";
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "别名";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "值类型";
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "所属巡检点";
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "备注";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -202,22 +153,28 @@
             // cboMachine
             // 
             this.cboMachine.FormattingEnabled = true;
-            this.cboMachine.Items.AddRange(new object[] {
-            "正常/不正常",
-            "数值"});
             this.cboMachine.Location = new System.Drawing.Point(232, 110);
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Size = new System.Drawing.Size(171, 20);
             this.cboMachine.TabIndex = 15;
+            // 
+            // dgvItems
+            // 
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Location = new System.Drawing.Point(12, 312);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.RowTemplate.Height = 23;
+            this.dgvItems.Size = new System.Drawing.Size(673, 237);
+            this.dgvItems.TabIndex = 16;
             // 
             // frmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 586);
+            this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.cboMachine);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.cboPoint);
             this.Controls.Add(this.txtRemarks);
@@ -232,6 +189,7 @@
             this.Name = "frmAddItem";
             this.Text = "新建巡检项";
             this.Load += new System.EventHandler(this.frmAddItem_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,14 +208,8 @@
         private System.Windows.Forms.TextBox txtRemarks;
         private System.Windows.Forms.ComboBox cboPoint;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboMachine;
+        private System.Windows.Forms.DataGridView dgvItems;
     }
 }

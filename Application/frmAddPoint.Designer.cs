@@ -36,26 +36,26 @@
             this.txtRelation = new System.Windows.Forms.TextBox();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.dgvPoint = new System.Windows.Forms.DataGridView();
+            this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoint)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(135, 50);
+            this.lblName.Location = new System.Drawing.Point(74, 44);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(29, 12);
+            this.lblName.Size = new System.Drawing.Size(53, 12);
             this.lblName.TabIndex = 0;
-            this.lblName.Text = "名称";
+            this.lblName.Text = "巡检名称";
             // 
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(135, 93);
+            this.lblAlias.Location = new System.Drawing.Point(385, 44);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 1;
@@ -64,7 +64,7 @@
             // lblRelated
             // 
             this.lblRelated.AutoSize = true;
-            this.lblRelated.Location = new System.Drawing.Point(99, 135);
+            this.lblRelated.Location = new System.Drawing.Point(62, 90);
             this.lblRelated.Name = "lblRelated";
             this.lblRelated.Size = new System.Drawing.Size(65, 12);
             this.lblRelated.TabIndex = 2;
@@ -72,28 +72,28 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(198, 47);
+            this.txtName.Location = new System.Drawing.Point(137, 41);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(237, 21);
             this.txtName.TabIndex = 3;
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(198, 90);
+            this.txtAlias.Location = new System.Drawing.Point(420, 41);
             this.txtAlias.Name = "txtAlias";
-            this.txtAlias.Size = new System.Drawing.Size(237, 21);
+            this.txtAlias.Size = new System.Drawing.Size(262, 21);
             this.txtAlias.TabIndex = 4;
             // 
             // txtRelation
             // 
-            this.txtRelation.Location = new System.Drawing.Point(198, 126);
+            this.txtRelation.Location = new System.Drawing.Point(137, 81);
             this.txtRelation.Name = "txtRelation";
             this.txtRelation.Size = new System.Drawing.Size(237, 21);
             this.txtRelation.TabIndex = 5;
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(460, 126);
+            this.btnRead.Location = new System.Drawing.Point(420, 79);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 6;
@@ -103,7 +103,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(573, 126);
+            this.btnSave.Location = new System.Drawing.Point(420, 124);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -111,44 +111,54 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // listView1
+            // btnUpdate
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(72, 218);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(587, 163);
-            this.listView1.TabIndex = 8;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.btnUpdate.Location = new System.Drawing.Point(515, 124);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.Text = "修改";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
-            // columnHeader1
+            // btnDel
             // 
-            this.columnHeader1.Text = "巡检点编号";
-            this.columnHeader1.Width = 115;
+            this.btnDel.Location = new System.Drawing.Point(607, 124);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 10;
+            this.btnDel.Text = "删除";
+            this.btnDel.UseVisualStyleBackColor = true;
             // 
-            // columnHeader2
+            // dgvPoint
             // 
-            this.columnHeader2.Text = "名称";
+            this.dgvPoint.AllowUserToAddRows = false;
+            this.dgvPoint.AllowUserToDeleteRows = false;
+            this.dgvPoint.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPoint.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkColumn});
+            this.dgvPoint.Location = new System.Drawing.Point(27, 178);
+            this.dgvPoint.Name = "dgvPoint";
+            this.dgvPoint.ReadOnly = true;
+            this.dgvPoint.RowTemplate.Height = 23;
+            this.dgvPoint.Size = new System.Drawing.Size(687, 329);
+            this.dgvPoint.TabIndex = 11;
+            this.dgvPoint.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPoint_CellClick);
             // 
-            // columnHeader3
+            // chkColumn
             // 
-            this.columnHeader3.Text = "别名";
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "关联标签卡";
+            this.chkColumn.HeaderText = "选择";
+            this.chkColumn.Name = "chkColumn";
+            this.chkColumn.ReadOnly = true;
+            this.chkColumn.Width = 38;
             // 
             // frmAddPoint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 550);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.dgvPoint);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnRead);
             this.Controls.Add(this.txtRelation);
@@ -160,6 +170,7 @@
             this.Name = "frmAddPoint";
             this.Text = "新建巡检点";
             this.Load += new System.EventHandler(this.frmAddPoint_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPoint)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,10 +186,9 @@
         private System.Windows.Forms.TextBox txtRelation;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.DataGridView dgvPoint;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
     }
 }

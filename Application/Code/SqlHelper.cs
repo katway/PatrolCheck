@@ -14,7 +14,7 @@ namespace WorkStation
     /// </summary>
     public sealed class SqlHelper
     {
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;UserId=sa;Password=sa123";
+        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User Id=sa;Password=sa123";
         
         #region 私有构造函数和方法
         private SqlHelper() 
@@ -176,6 +176,16 @@ namespace WorkStation
         public static int ExecuteNonQuery(string commandText)
         {
             return ExecuteNonQuery(sqlConnectionStr,CommandType.Text,commandText);
+        }
+        /// <summary>
+        /// 执行但参数的sql数据
+        /// </summary>
+        /// <param name="commandText">sql语句</param>
+        /// <param name="commandParameters">参数</param>
+        /// <returns></returns>
+        public static int ExecuteNonQuery(string commandText, params SqlParameter[] commandParameters)
+        {
+            return ExecuteNonQuery(sqlConnectionStr, CommandType.Text, commandText,commandParameters);
         }
         /// <summary>
         /// 执行指定连接字符串,类型的SqlCommand.

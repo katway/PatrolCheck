@@ -69,11 +69,17 @@
     <Compile Include="frmAddRoute.Designer.cs">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddRoute1.cs">
+    <Compile Include="frmAddRoutName.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddRoute1.Designer.cs">
-      <DependentUpon>frmAddRoute1.cs</DependentUpon>
+    <Compile Include="frmAddRoutName.Designer.cs">
+      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddMachine.Designer.cs">
+      <DependentUpon>frmAddMachine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddTask.cs">
       <SubType>Form</SubType>
@@ -140,8 +146,11 @@
     <EmbeddedResource Include="frmAddRoute.resx">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddRoute1.resx">
-      <DependentUpon>frmAddRoute1.cs</DependentUpon>
+    <EmbeddedResource Include="frmAddRoutName.resx">
+      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddMachine.resx">
+      <DependentUpon>frmAddMachine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddTask.resx">
       <DependentUpon>frmAddTask.cs</DependentUpon>
