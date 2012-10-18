@@ -20,5 +20,10 @@ namespace WorkStation
         {
 
         }
+
+        private void frmAddPoint_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

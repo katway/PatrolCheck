@@ -37,12 +37,12 @@
             this.txtAlias = new System.Windows.Forms.TextBox();
             this.txtPoint = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.btnSave = new System.Windows.Forms.Button();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSave = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblName
@@ -118,21 +118,12 @@
             this.columnHeader4,
             this.columnHeader5});
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(106, 231);
+            this.listView1.Location = new System.Drawing.Point(106, 220);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(577, 180);
+            this.listView1.Size = new System.Drawing.Size(586, 198);
             this.listView1.TabIndex = 9;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(597, 169);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "保存";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // columnHeader1
             // 
@@ -158,11 +149,20 @@
             this.columnHeader5.Text = "包含的巡检点";
             this.columnHeader5.Width = 111;
             // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(597, 169);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "保存";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // frmAddRoute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 457);
+            this.ClientSize = new System.Drawing.Size(744, 470);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.txtPoint);
