@@ -25,8 +25,8 @@ namespace WorkStation
         public void Bind()
         {
             string sql2 = "select ID,Name,Alias,RFID,PurposeName from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.PurposeCode";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);               
-            dataGridView1.DataSource = ds.Tables[0];              
+            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
+            dataGridView1.DataSource = ds.Tables[0];
         }    
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -40,7 +40,7 @@ namespace WorkStation
             pars[0].Value =this.txtName.Text.Trim();
             pars[1].Value =this.txtAlias.Text.Trim();
             pars[2].Value =this.txtCard.Text.Trim();
-            pars[3].Value = this.comboBox1.SelectedValue;
+            pars[3].Value =this.comboBox1.SelectedValue;
             int n = SqlHelper.ExecuteNonQuery(sql, pars);
             if (n > 0)
             {
@@ -51,19 +51,31 @@ namespace WorkStation
                 MessageBox.Show("保存失败！");
             }              
             Bind();
-
         }
 
        
         private void frmAddCard_Load(object sender, EventArgs e)
+        {         
+           bwkLoadData.RunWorkerAsync();
+        }       
+        DataSet dsRfidPurpose = null;
+        DataSet dsRfid = null;
+        private void bwkLoadData_DoWork(object sender, DoWorkEventArgs e)
         {
             string sql2 = "select * from RfidPurpose ";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
-            comboBox1.DataSource = ds.Tables[0];
-            comboBox1.DisplayMember = "PurposeName";
-            comboBox1.ValueMember = "PurposeCode";      
-            Bind();
+            dsRfidPurpose = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
+            sql2 = "select ID,Name,Alias,RFID,PurposeName from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.PurposeCode";
+            dsRfid = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
         }
+
+        private void bwkLoadData_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            comboBox1.DataSource = dsRfidPurpose.Tables[0];
+            comboBox1.DisplayMember = "PurposeName";
+            comboBox1.ValueMember = "PurposeCode";
+            dataGridView1.DataSource = dsRfid.Tables[0]; 
+        }
+       
 
 
 

@@ -52,14 +52,14 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(177, 397);
+            this.comboBox1.Location = new System.Drawing.Point(151, 399);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(184, 20);
             this.comboBox1.TabIndex = 21;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(421, 391);
+            this.btnAdd.Location = new System.Drawing.Point(398, 399);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 20;
@@ -69,7 +69,7 @@
             // 
             // BtnRead
             // 
-            this.BtnRead.Location = new System.Drawing.Point(421, 279);
+            this.BtnRead.Location = new System.Drawing.Point(398, 283);
             this.BtnRead.Name = "BtnRead";
             this.BtnRead.Size = new System.Drawing.Size(75, 23);
             this.BtnRead.TabIndex = 19;
@@ -78,21 +78,21 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(177, 355);
+            this.txtAlias.Location = new System.Drawing.Point(151, 355);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(184, 21);
             this.txtAlias.TabIndex = 18;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(177, 318);
+            this.txtName.Location = new System.Drawing.Point(151, 318);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(184, 21);
             this.txtName.TabIndex = 17;
             // 
             // txtCard
             // 
-            this.txtCard.Location = new System.Drawing.Point(177, 279);
+            this.txtCard.Location = new System.Drawing.Point(151, 285);
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(184, 21);
             this.txtCard.TabIndex = 16;
@@ -100,7 +100,7 @@
             // lblUse
             // 
             this.lblUse.AutoSize = true;
-            this.lblUse.Location = new System.Drawing.Point(91, 405);
+            this.lblUse.Location = new System.Drawing.Point(79, 402);
             this.lblUse.Name = "lblUse";
             this.lblUse.Size = new System.Drawing.Size(29, 12);
             this.lblUse.TabIndex = 15;
@@ -109,7 +109,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(91, 364);
+            this.lblAlias.Location = new System.Drawing.Point(79, 364);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 14;
@@ -118,7 +118,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(91, 327);
+            this.lblName.Location = new System.Drawing.Point(79, 321);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 13;
@@ -127,7 +127,7 @@
             // lblCard
             // 
             this.lblCard.AutoSize = true;
-            this.lblCard.Location = new System.Drawing.Point(91, 288);
+            this.lblCard.Location = new System.Drawing.Point(79, 288);
             this.lblCard.Name = "lblCard";
             this.lblCard.Size = new System.Drawing.Size(29, 12);
             this.lblCard.TabIndex = 12;
@@ -135,7 +135,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(421, 211);
+            this.button1.Location = new System.Drawing.Point(476, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;
@@ -145,7 +145,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(543, 211);
+            this.button2.Location = new System.Drawing.Point(584, 211);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 23;
@@ -162,10 +162,10 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(35, 22);
+            this.dataGridView1.Location = new System.Drawing.Point(75, 22);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(633, 169);
+            this.dataGridView1.Size = new System.Drawing.Size(559, 169);
             this.dataGridView1.TabIndex = 24;
             // 
             // Column1

@@ -44,13 +44,14 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bwkLoadData = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCard
             // 
             this.lblCard.AutoSize = true;
-            this.lblCard.Location = new System.Drawing.Point(177, 39);
+            this.lblCard.Location = new System.Drawing.Point(96, 35);
             this.lblCard.Name = "lblCard";
             this.lblCard.Size = new System.Drawing.Size(29, 12);
             this.lblCard.TabIndex = 0;
@@ -59,7 +60,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(177, 78);
+            this.lblName.Location = new System.Drawing.Point(96, 75);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 1;
@@ -68,7 +69,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(177, 115);
+            this.lblAlias.Location = new System.Drawing.Point(96, 115);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 2;
@@ -77,7 +78,7 @@
             // lblUse
             // 
             this.lblUse.AutoSize = true;
-            this.lblUse.Location = new System.Drawing.Point(177, 156);
+            this.lblUse.Location = new System.Drawing.Point(96, 156);
             this.lblUse.Name = "lblUse";
             this.lblUse.Size = new System.Drawing.Size(29, 12);
             this.lblUse.TabIndex = 3;
@@ -85,28 +86,28 @@
             // 
             // txtCard
             // 
-            this.txtCard.Location = new System.Drawing.Point(263, 30);
+            this.txtCard.Location = new System.Drawing.Point(164, 30);
             this.txtCard.Name = "txtCard";
             this.txtCard.Size = new System.Drawing.Size(184, 21);
             this.txtCard.TabIndex = 4;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(263, 69);
+            this.txtName.Location = new System.Drawing.Point(164, 72);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(184, 21);
             this.txtName.TabIndex = 5;
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(263, 106);
+            this.txtAlias.Location = new System.Drawing.Point(164, 112);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(184, 21);
             this.txtAlias.TabIndex = 6;
             // 
             // BtnRead
             // 
-            this.BtnRead.Location = new System.Drawing.Point(507, 30);
+            this.BtnRead.Location = new System.Drawing.Point(467, 30);
             this.BtnRead.Name = "BtnRead";
             this.BtnRead.Size = new System.Drawing.Size(75, 23);
             this.BtnRead.TabIndex = 8;
@@ -115,7 +116,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(507, 142);
+            this.btnAdd.Location = new System.Drawing.Point(467, 145);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 9;
@@ -126,11 +127,10 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(263, 148);
+            this.comboBox1.Location = new System.Drawing.Point(164, 153);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(184, 20);
             this.comboBox1.TabIndex = 0;
-           
             // 
             // dataGridView1
             // 
@@ -141,10 +141,10 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(29, 199);
+            this.dataGridView1.Location = new System.Drawing.Point(56, 204);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(633, 169);
+            this.dataGridView1.Size = new System.Drawing.Size(537, 169);
             this.dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -177,11 +177,16 @@
             this.Column5.HeaderText = "标签卡唯一码";
             this.Column5.Name = "Column5";
             // 
+            // bwkLoadData
+            // 
+            this.bwkLoadData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkLoadData_DoWork);
+            this.bwkLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkLoadData_RunWorkerCompleted);
+            // 
             // frmAddCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(690, 437);
+            this.ClientSize = new System.Drawing.Size(690, 469);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAdd);
@@ -220,5 +225,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.ComponentModel.BackgroundWorker bwkLoadData;
     }
 }
