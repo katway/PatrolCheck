@@ -18,6 +18,8 @@ namespace WorkStation
         }
 
         Boolean isRoute = false;//是否选中了路线
+        List<TreeNode> listPhy = new List<TreeNode>();
+        List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
             tvRouteInit(tvRoute);
@@ -39,12 +41,69 @@ namespace WorkStation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            foreach (TreeNode node in listPhy)
+            {
+                if (node.Parent != null) //node有上级
+                {
+                    bool isExit = false;
+                    foreach (TreeNode no in tvLogicalPoint.Nodes)
+                    {
+                        if (no.Parent == null && no.Tag == node.Parent.Tag) //如果存在node的上级
+                        {
+                            bool isChild = false;
+                            foreach (TreeNode t in no.Nodes)
+                            {
+                                if (t.Tag == node.Tag && t.Text == node.Text)
+                                {
+                                    isChild = true; break;
+                                }
+                            }
+                            if (isChild == false)
+                            {
+                                no.Nodes.Add((TreeNode)node.Clone());
+                            }
+                            isExit = true;
+                            break;
+                        }
+                    }
+                    if (isExit == false)//不存在，则新建node的上级
+                    {
+                        TreeNode tn = new TreeNode();
+                        tn.Text = node.Parent.Text;
+                        tn.Tag = node.Parent.Tag;
+                        tn.Nodes.Add((TreeNode)node.Clone());
+                        tvLogicalPoint.Nodes.Add(tn);
+                    }
+                }
+                else //node没有上级
+                {
+                    bool isExitNode = false;
+                    foreach (TreeNode no in tvLogicalPoint.Nodes)
+                    {
+                        if (no.Parent == null && no.Tag == node.Tag)
+                        {
+                            isExitNode = true;
+                            break;
+                        }
+                    }
+                    if (isExitNode == false)
+                    {
+                        TreeNode tn = new TreeNode();
+                        tn.Text = node.Text;
+                        tn.Tag = node.Tag;
+                        tvLogicalPoint.Nodes.Add(tn);
+                    }
+                }
+            }
+            
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
-
+            foreach (TreeNode node in listLogical)
+            {
+                tvLogicalPoint.Nodes.Remove(node);
+            }
         }
 
         private void btnMoveUp_Click(object sender, EventArgs e)
@@ -206,5 +265,78 @@ namespace WorkStation
             return node;
         }
 
+        private void tvPhysicalPoint_BeforeSelect(object sender, TreeViewCancelEventArgs e)
+        {
+            if (ModifierKeys == Keys.Control)
+            {
+                if (listPhy.Contains(e.Node))
+                {
+                    listPhy.Remove(e.Node);
+                }
+                else
+                {
+                    listPhy.Add(e.Node);
+                }
+            }
+            else
+            {
+                listPhy.Clear();
+                listPhy.Add(e.Node);
+            }
+            PaintSelectedNode(tvPhysicalPoint, listPhy);
+            e.Cancel = true;
+        }
+
+        private void tvLogicalPoint_BeforeSelect(object sender, TreeViewCancelEventArgs e)
+        {
+            if (ModifierKeys == Keys.Control)
+            {
+                if (listLogical.Contains(e.Node))
+                {
+                    listLogical.Remove(e.Node);
+                }
+                else
+                {
+                    listLogical.Add(e.Node);
+                }
+            }
+            else
+            {
+                listLogical.Clear();
+                listLogical.Add(e.Node);
+            }
+            PaintSelectedNode(tvLogicalPoint, listLogical);
+            e.Cancel = true;
+        }
+
+        public void PaintSelectedNode(TreeView tv,List<TreeNode> listNodes)
+        {
+            foreach (TreeNode trNode in tv.Nodes)
+            {
+                trNode.BackColor = tv.BackColor;
+                trNode.ForeColor = tv.ForeColor;
+                ClearSelectedNode(tv,trNode);
+            }
+            foreach (TreeNode node in listNodes)
+            {
+                node.BackColor = SystemColors.Highlight;
+                node.ForeColor = SystemColors.HighlightText;
+            }
+        }
+
+        public void ClearSelectedNode(TreeView tv,TreeNode tr)
+        {
+            foreach (TreeNode node in tr.Nodes)
+            {
+                node.BackColor = tv.BackColor;
+                node.ForeColor = tv.ForeColor;
+                ClearSelectedNode(tv,node);
+            }
+        }
+
+        private void tvLogicalPoint_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }

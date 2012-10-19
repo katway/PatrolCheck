@@ -35,22 +35,20 @@
             this.chkRoute = new System.Windows.Forms.CheckBox();
             this.tvRoute = new System.Windows.Forms.TreeView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnAddTemplate = new System.Windows.Forms.Button();
+            this.chkPhysicalPoint = new System.Windows.Forms.CheckBox();
+            this.chkLogicalPoint = new System.Windows.Forms.CheckBox();
+            this.chkShowPyPoint = new System.Windows.Forms.CheckBox();
+            this.tvPhysicalPoint = new System.Windows.Forms.TreeView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbRoute = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tvLogicalPoint = new System.Windows.Forms.TreeView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnMoveDown = new System.Windows.Forms.Button();
             this.btnMoveUp = new System.Windows.Forms.Button();
-            this.btnDelAll = new System.Windows.Forms.Button();
-            this.btnAddAll = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.tvLogicalPoint = new System.Windows.Forms.TreeView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbRoute = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tvPhysicalPoint = new System.Windows.Forms.TreeView();
-            this.chkShowPyPoint = new System.Windows.Forms.CheckBox();
-            this.chkLogicalPoint = new System.Windows.Forms.CheckBox();
-            this.chkPhysicalPoint = new System.Windows.Forms.CheckBox();
-            this.btnAddTemplate = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -123,8 +121,6 @@
             this.groupBox2.Controls.Add(this.btnSave);
             this.groupBox2.Controls.Add(this.btnMoveDown);
             this.groupBox2.Controls.Add(this.btnMoveUp);
-            this.groupBox2.Controls.Add(this.btnDelAll);
-            this.groupBox2.Controls.Add(this.btnAddAll);
             this.groupBox2.Controls.Add(this.btnDel);
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Location = new System.Drawing.Point(254, 28);
@@ -133,6 +129,88 @@
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "路线巡检点设置";
+            // 
+            // btnAddTemplate
+            // 
+            this.btnAddTemplate.Location = new System.Drawing.Point(202, 82);
+            this.btnAddTemplate.Name = "btnAddTemplate";
+            this.btnAddTemplate.Size = new System.Drawing.Size(75, 23);
+            this.btnAddTemplate.TabIndex = 17;
+            this.btnAddTemplate.Text = "添加模板";
+            this.btnAddTemplate.UseVisualStyleBackColor = true;
+            // 
+            // chkPhysicalPoint
+            // 
+            this.chkPhysicalPoint.AutoSize = true;
+            this.chkPhysicalPoint.Location = new System.Drawing.Point(293, 458);
+            this.chkPhysicalPoint.Name = "chkPhysicalPoint";
+            this.chkPhysicalPoint.Size = new System.Drawing.Size(72, 16);
+            this.chkPhysicalPoint.TabIndex = 16;
+            this.chkPhysicalPoint.Text = "自动展开";
+            this.chkPhysicalPoint.UseVisualStyleBackColor = true;
+            // 
+            // chkLogicalPoint
+            // 
+            this.chkLogicalPoint.AutoSize = true;
+            this.chkLogicalPoint.Location = new System.Drawing.Point(50, 458);
+            this.chkLogicalPoint.Name = "chkLogicalPoint";
+            this.chkLogicalPoint.Size = new System.Drawing.Size(72, 16);
+            this.chkLogicalPoint.TabIndex = 15;
+            this.chkLogicalPoint.Text = "自动展开";
+            this.chkLogicalPoint.UseVisualStyleBackColor = true;
+            // 
+            // chkShowPyPoint
+            // 
+            this.chkShowPyPoint.AutoSize = true;
+            this.chkShowPyPoint.Location = new System.Drawing.Point(371, 458);
+            this.chkShowPyPoint.Name = "chkShowPyPoint";
+            this.chkShowPyPoint.Size = new System.Drawing.Size(108, 16);
+            this.chkShowPyPoint.TabIndex = 14;
+            this.chkShowPyPoint.Text = "显示所有巡检点";
+            this.chkShowPyPoint.UseVisualStyleBackColor = true;
+            // 
+            // tvPhysicalPoint
+            // 
+            this.tvPhysicalPoint.Location = new System.Drawing.Point(282, 56);
+            this.tvPhysicalPoint.Name = "tvPhysicalPoint";
+            this.tvPhysicalPoint.Size = new System.Drawing.Size(197, 396);
+            this.tvPhysicalPoint.TabIndex = 13;
+            this.tvPhysicalPoint.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvPhysicalPoint_BeforeSelect);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(323, 29);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 12);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "未选择的巡检点";
+            // 
+            // tbRoute
+            // 
+            this.tbRoute.Location = new System.Drawing.Point(75, 23);
+            this.tbRoute.Name = "tbRoute";
+            this.tbRoute.ReadOnly = true;
+            this.tbRoute.Size = new System.Drawing.Size(191, 21);
+            this.tbRoute.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "当前路线：";
+            // 
+            // tvLogicalPoint
+            // 
+            this.tvLogicalPoint.Location = new System.Drawing.Point(6, 56);
+            this.tvLogicalPoint.Name = "tvLogicalPoint";
+            this.tvLogicalPoint.Size = new System.Drawing.Size(189, 396);
+            this.tvLogicalPoint.TabIndex = 9;
+            this.tvLogicalPoint.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvLogicalPoint_BeforeSelect);
+            this.tvLogicalPoint.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvLogicalPoint_AfterSelect);
             // 
             // btnSave
             // 
@@ -146,7 +224,7 @@
             // 
             // btnMoveDown
             // 
-            this.btnMoveDown.Location = new System.Drawing.Point(201, 256);
+            this.btnMoveDown.Location = new System.Drawing.Point(201, 207);
             this.btnMoveDown.Name = "btnMoveDown";
             this.btnMoveDown.Size = new System.Drawing.Size(75, 23);
             this.btnMoveDown.TabIndex = 6;
@@ -156,7 +234,7 @@
             // 
             // btnMoveUp
             // 
-            this.btnMoveUp.Location = new System.Drawing.Point(201, 227);
+            this.btnMoveUp.Location = new System.Drawing.Point(201, 171);
             this.btnMoveUp.Name = "btnMoveUp";
             this.btnMoveUp.Size = new System.Drawing.Size(75, 23);
             this.btnMoveUp.TabIndex = 5;
@@ -164,27 +242,9 @@
             this.btnMoveUp.UseVisualStyleBackColor = true;
             this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
             // 
-            // btnDelAll
-            // 
-            this.btnDelAll.Location = new System.Drawing.Point(201, 198);
-            this.btnDelAll.Name = "btnDelAll";
-            this.btnDelAll.Size = new System.Drawing.Size(75, 23);
-            this.btnDelAll.TabIndex = 4;
-            this.btnDelAll.Text = ">>";
-            this.btnDelAll.UseVisualStyleBackColor = true;
-            // 
-            // btnAddAll
-            // 
-            this.btnAddAll.Location = new System.Drawing.Point(201, 140);
-            this.btnAddAll.Name = "btnAddAll";
-            this.btnAddAll.Size = new System.Drawing.Size(75, 23);
-            this.btnAddAll.TabIndex = 3;
-            this.btnAddAll.Text = "<<";
-            this.btnAddAll.UseVisualStyleBackColor = true;
-            // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(201, 169);
+            this.btnDel.Location = new System.Drawing.Point(201, 140);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 2;
@@ -201,85 +261,6 @@
             this.btnAdd.Text = "<";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // tvLogicalPoint
-            // 
-            this.tvLogicalPoint.Location = new System.Drawing.Point(6, 56);
-            this.tvLogicalPoint.Name = "tvLogicalPoint";
-            this.tvLogicalPoint.Size = new System.Drawing.Size(189, 396);
-            this.tvLogicalPoint.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "当前路线：";
-            // 
-            // tbRoute
-            // 
-            this.tbRoute.Location = new System.Drawing.Point(75, 23);
-            this.tbRoute.Name = "tbRoute";
-            this.tbRoute.ReadOnly = true;
-            this.tbRoute.Size = new System.Drawing.Size(191, 21);
-            this.tbRoute.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(323, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 12);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "未选择的巡检点";
-            // 
-            // tvPhysicalPoint
-            // 
-            this.tvPhysicalPoint.Location = new System.Drawing.Point(282, 56);
-            this.tvPhysicalPoint.Name = "tvPhysicalPoint";
-            this.tvPhysicalPoint.Size = new System.Drawing.Size(197, 396);
-            this.tvPhysicalPoint.TabIndex = 13;
-            // 
-            // chkShowPyPoint
-            // 
-            this.chkShowPyPoint.AutoSize = true;
-            this.chkShowPyPoint.Location = new System.Drawing.Point(371, 458);
-            this.chkShowPyPoint.Name = "chkShowPyPoint";
-            this.chkShowPyPoint.Size = new System.Drawing.Size(108, 16);
-            this.chkShowPyPoint.TabIndex = 14;
-            this.chkShowPyPoint.Text = "显示所有巡检点";
-            this.chkShowPyPoint.UseVisualStyleBackColor = true;
-            // 
-            // chkLogicalPoint
-            // 
-            this.chkLogicalPoint.AutoSize = true;
-            this.chkLogicalPoint.Location = new System.Drawing.Point(50, 458);
-            this.chkLogicalPoint.Name = "chkLogicalPoint";
-            this.chkLogicalPoint.Size = new System.Drawing.Size(72, 16);
-            this.chkLogicalPoint.TabIndex = 15;
-            this.chkLogicalPoint.Text = "自动展开";
-            this.chkLogicalPoint.UseVisualStyleBackColor = true;
-            // 
-            // chkPhysicalPoint
-            // 
-            this.chkPhysicalPoint.AutoSize = true;
-            this.chkPhysicalPoint.Location = new System.Drawing.Point(293, 458);
-            this.chkPhysicalPoint.Name = "chkPhysicalPoint";
-            this.chkPhysicalPoint.Size = new System.Drawing.Size(72, 16);
-            this.chkPhysicalPoint.TabIndex = 16;
-            this.chkPhysicalPoint.Text = "自动展开";
-            this.chkPhysicalPoint.UseVisualStyleBackColor = true;
-            // 
-            // btnAddTemplate
-            // 
-            this.btnAddTemplate.Location = new System.Drawing.Point(202, 82);
-            this.btnAddTemplate.Name = "btnAddTemplate";
-            this.btnAddTemplate.Size = new System.Drawing.Size(75, 23);
-            this.btnAddTemplate.TabIndex = 17;
-            this.btnAddTemplate.Text = "添加模板";
-            this.btnAddTemplate.UseVisualStyleBackColor = true;
             // 
             // frmAddRoute
             // 
@@ -315,8 +296,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnMoveDown;
         private System.Windows.Forms.Button btnMoveUp;
-        private System.Windows.Forms.Button btnDelAll;
-        private System.Windows.Forms.Button btnAddAll;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
