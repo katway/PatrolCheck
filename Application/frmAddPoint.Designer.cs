@@ -40,6 +40,7 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.dgvPoint = new System.Windows.Forms.DataGridView();
             this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.labID = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoint)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +89,7 @@
             // 
             this.txtRelation.Location = new System.Drawing.Point(137, 81);
             this.txtRelation.Name = "txtRelation";
+            this.txtRelation.ReadOnly = true;
             this.txtRelation.Size = new System.Drawing.Size(237, 21);
             this.txtRelation.TabIndex = 5;
             // 
@@ -119,6 +121,7 @@
             this.btnUpdate.TabIndex = 9;
             this.btnUpdate.Text = "修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDel
             // 
@@ -128,6 +131,7 @@
             this.btnDel.TabIndex = 10;
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // dgvPoint
             // 
@@ -151,11 +155,22 @@
             this.chkColumn.ReadOnly = true;
             this.chkColumn.Width = 38;
             // 
+            // labID
+            // 
+            this.labID.AutoSize = true;
+            this.labID.Location = new System.Drawing.Point(513, 84);
+            this.labID.Name = "labID";
+            this.labID.Size = new System.Drawing.Size(41, 12);
+            this.labID.TabIndex = 12;
+            this.labID.Text = "巡检ID";
+            this.labID.Visible = false;
+            // 
             // frmAddPoint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 550);
+            this.Controls.Add(this.labID);
             this.Controls.Add(this.dgvPoint);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnUpdate);
@@ -190,5 +205,6 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.DataGridView dgvPoint;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
+        private System.Windows.Forms.Label labID;
     }
 }

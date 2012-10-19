@@ -66,14 +66,25 @@ namespace WorkStation
         private void dgvMachine_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
-            if ((bool)dgvMachine.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
+            if (e.ColumnIndex == 0)
             {
-                dgvMachine.Rows[e.RowIndex].Cells[0].Value = true;
+                if ((bool)dgvMachine.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
+                {
+                    dgvMachine.Rows[e.RowIndex].Cells[0].Value = true;
+                }
+                else
+                {
+                    dgvMachine.Rows[e.RowIndex].Cells[0].Value = false;
+                }
             }
             else
             {
-                dgvMachine.Rows[e.RowIndex].Cells[0].Value = false;
+                labID.Text = dgvMachine.Rows[e.RowIndex].Cells[1].Value.ToString();
+                tbName.Text = dgvMachine.Rows[e.RowIndex].Cells[2].Value.ToString();
+                tbAlias.Text = dgvMachine.Rows[e.RowIndex].Cells[3].Value.ToString();
+                cboArea.Text = dgvMachine.Rows[e.RowIndex].Cells[4].Value.ToString();
             }
+            
         }
 
         private void btnDel_Click(object sender, EventArgs e)

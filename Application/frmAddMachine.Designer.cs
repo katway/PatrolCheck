@@ -116,7 +116,7 @@
             this.dgvMachine.RowTemplate.Height = 23;
             this.dgvMachine.Size = new System.Drawing.Size(604, 236);
             this.dgvMachine.TabIndex = 7;
-            this.dgvMachine.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMachine_CellClick);
+            this.dgvMachine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMachine_CellClick);
             // 
             // chkColumn
             // 

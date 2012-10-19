@@ -195,6 +195,12 @@ namespace WorkStation
             frmAddMachine fm = new frmAddMachine();
             fm.ShowDialog();
         }
+
+        private void tsmixunjianluxian_Click(object sender, EventArgs e)
+        {
+            frmAddRoute frm = new frmAddRoute();
+            frm.Show();
+        }
        
     }
 }

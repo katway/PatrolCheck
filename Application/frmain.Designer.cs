@@ -775,6 +775,7 @@
             this.tsmixunjianluxian.Name = "tsmixunjianluxian";
             this.tsmixunjianluxian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianluxian.Text = "巡检路线管理";
+            this.tsmixunjianluxian.Click += new System.EventHandler(this.tsmixunjianluxian_Click);
             // 
             // tsmixunjiandian
             // 
