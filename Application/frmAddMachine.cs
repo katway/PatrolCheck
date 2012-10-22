@@ -43,7 +43,7 @@ namespace WorkStation
 
         private void getArea()
         {
-            DataSet ds = SqlHelper.ExecuteDataset("select ID,Name From SiteArea");
+            DataSet ds = SqlHelper.ExecuteDataset("select ID,Name From Site");
             this.cboArea.DataSource = ds.Tables[0];
             this.cboArea.DisplayMember = "Name";
             this.cboArea.ValueMember = "ID";
@@ -57,7 +57,7 @@ namespace WorkStation
                                   m.name as 设备名称,
                                   m.alias as 别名,
                                   s.name as 厂区
-                                  from machine m,sitearea s 
+                                  from machine m,site s 
                                   where m.site_id=s.id";
             DataSet ds = SqlHelper.ExecuteDataset(str_select);
             this.dgvMachine.DataSource=ds.Tables[0];

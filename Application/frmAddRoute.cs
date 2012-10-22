@@ -16,6 +16,7 @@ namespace WorkStation
         {
             InitializeComponent();
         }
+        WorkStation.Properties.Settings wset = new Properties.Settings();
 
         Boolean isRoute = false;//是否选中了路线
         List<TreeNode> listPhy = new List<TreeNode>();
@@ -23,24 +24,45 @@ namespace WorkStation
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
             tvRouteInit(tvRoute);
-            tvRoute.ExpandAll();
+
             if (isRoute == true&&tbRoute.Text!="")
             {
                 getTvLogicalPoint(tbRoute.Text.Trim());
             }
             getTvPhysicalPoint();
+
+            //chkRoute.Checked = wset.tvRoute;
+            //chkLogicalPoint.Checked = wset.tvLogicalPoint;
+            //chkPhysicalPoint.Checked = wset.tvPhysicalPoint;
+
+            //if (wset.tvRoute) tvRoute.ExpandAll(); else tvRoute.CollapseAll();
+            //if (wset.tvPhysicalPoint) tvPhysicalPoint.ExpandAll(); else tvPhysicalPoint.CollapseAll();
+            //if (wset.tvLogicalPoint) tvLogicalPoint.ExpandAll(); else tvLogicalPoint.CollapseAll();
         }
 
         private void tvRoute_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            if (tvRoute.SelectedNode.Nodes.Count == 0&&tvRoute.SelectedNode.Level==2)
+            if (tvRoute.SelectedNode.Nodes.Count == 0 && tvRoute.SelectedNode.Level == 2)
             {
                 getTvLogicalPoint(tvRoute.SelectedNode.Tag.ToString());
+                tbRoute.Text = tvRoute.SelectedNode.Text;
+                labRouteID.Text = tvRoute.SelectedNode.Tag.ToString() ;
+            }
+            else
+            {
+                tbRoute.Text = "";
+                labRouteID.Text = "";
+                tvLogicalPoint.Nodes.Clear();
             }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (labRouteID.Text == "" && tbRoute.Text == "")
+            {
+                MessageBox.Show("请选择路线");
+                return;
+            }
             foreach (TreeNode node in listPhy)
             {
                 if (node.Parent != null) //node有上级
@@ -48,12 +70,12 @@ namespace WorkStation
                     bool isExit = false;
                     foreach (TreeNode no in tvLogicalPoint.Nodes)
                     {
-                        if (no.Parent == null && no.Tag == node.Parent.Tag) //如果存在node的上级
+                        if (no.Parent == null && no.Tag.ToString() == node.Parent.Tag.ToString()) //如果存在node的上级
                         {
                             bool isChild = false;
                             foreach (TreeNode t in no.Nodes)
                             {
-                                if (t.Tag == node.Tag && t.Text == node.Text)
+                                if (t.Tag.ToString() == node.Tag.ToString() && t.Text == node.Text)
                                 {
                                     isChild = true; break;
                                 }
@@ -80,7 +102,7 @@ namespace WorkStation
                     bool isExitNode = false;
                     foreach (TreeNode no in tvLogicalPoint.Nodes)
                     {
-                        if (no.Parent == null && no.Tag == node.Tag)
+                        if (no.Parent == null && no.Tag.ToString() == node.Tag.ToString())
                         {
                             isExitNode = true;
                             break;
@@ -102,13 +124,26 @@ namespace WorkStation
         {
             foreach (TreeNode node in listLogical)
             {
+                if (node.Parent == null)
+                {
+                     Object obj_ID= SqlHelper.ExecuteScalar("Select ID From LogicalCheckPoint Where Route_ID=" + labRouteID.Text + " and PhysicalPoint_ID=" + node.Tag);
+                     SqlHelper.ExecuteNonQuery("Delete From LogicalCheckPoint  where ID=" + obj_ID.ToString());
+                    if (node.Nodes.Count > 0)
+                    {
+                        foreach (TreeNode de in node.Nodes)
+                        {
+                            SqlHelper.ExecuteNonQuery("Delete From LogicalPoint_Item Where ID="+obj_ID.ToString());
+                        }
+                    }
+                }
                 tvLogicalPoint.Nodes.Remove(node);
             }
         }
 
         private void btnMoveUp_Click(object sender, EventArgs e)
         {
-            TreeNode selnode = tvLogicalPoint.SelectedNode;
+            TreeNode selnode = listLogical[0];
+            
             if (selnode.Parent != null)
             {
                 selnode = selnode.Parent;
@@ -130,60 +165,73 @@ namespace WorkStation
 
         private void btnMoveDown_Click(object sender, EventArgs e)
         {
-            TreeNode selnode = tvLogicalPoint.SelectedNode;
-            if (selnode.Parent != null)
-            {
-                selnode = selnode.Parent;
-            }
-            TreeNode nextnode = selnode.NextNode;
-            TreeNode newnode = selnode.Clone() as TreeNode;
-            if (nextnode != null)
-            {
-                tvLogicalPoint.Nodes.Insert(nextnode.Index, newnode);
-                selnode.Remove();
-                tvLogicalPoint.SelectedNode = newnode;
-            }
-            else
-            {
-                MessageBox.Show("已经到底"); return;
-            }
+                TreeNode selnode = listLogical[0];
+                if (selnode.Parent != null)
+                {
+                    selnode = selnode.Parent;
+                }
+                TreeNode nextnode = selnode.NextNode;
+                TreeNode newnode = selnode.Clone() as TreeNode;
+                if (nextnode != null)
+                {
+                    tvLogicalPoint.Nodes.Insert(nextnode.Index+1, newnode);
+                    selnode.Remove();
+                    tvLogicalPoint.SelectedNode = newnode;
+                }
+                else
+                {
+                    MessageBox.Show("已经到底"); return;
+                }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //string route_id="";
-            //if (tvRoute.SelectedNode.Level == 2 && tvRoute.SelectedNode.Nodes.Count == 0)
-            //{
-            //    route_id = tvRoute.SelectedNode.Tag.ToString();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("请选择要保存的路线");
-            //    return;
-            //}
-            //string[] strSqls=null;
-            //if (lstRoutePoint.Items.Count > 0)
-            //{
-            //    strSqls = new string[lstRoutePoint.Items.Count];
-            //}
-            //else
-            //{
-            //    MessageBox.Show("请往路线中添加巡检点");
-            //    return;
-            //}
-            //for (int i = 0; i < lstRoutePoint.Items.Count; i++)
-            //{
-            //    BoxItem obj = (BoxItem)lstRoutePoint.Items[i];
-            //    strSqls[i] = "Insert Into LogicalCheckPoint(Route_ID,PhysicalPoint_ID) values("+route_id+","+obj.Value+")";
-            //}
-            //try
-            //{
-            //    int _ret = SqlHelper.ExecuteSqls(strSqls);
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("保存失败，请稍后再试");
-            //}
+            foreach (TreeNode node in tvLogicalPoint.Nodes)
+            {
+                if (node.Level == 0 && node.Nodes.Count == 0)
+                {
+                    MessageBox.Show("请确保每个巡检点下有巡检项");
+                    return;
+                }
+            }
+            string route_id = "";
+            if (labRouteID.Text!="")
+            {
+                route_id = tvRoute.SelectedNode.Tag.ToString();
+            }
+            else
+            {
+                MessageBox.Show("请选择要保存的路线");
+                return;
+            }
+            string strs="";
+            for (int i = 0; i < tvLogicalPoint.Nodes.Count; i++)
+            {
+                if (tvLogicalPoint.Nodes[i].Level == 0)
+                {
+                    SqlParameter[] pars = new SqlParameter[] { 
+                    new SqlParameter("@Route_ID",SqlDbType.BigInt),
+                    new SqlParameter("@PhysicalPoint_ID",SqlDbType.BigInt),
+                    new SqlParameter("@Name",SqlDbType.VarChar),
+                    new SqlParameter("@Alias",SqlDbType.VarChar),
+                    new SqlParameter("@ItemsID",SqlDbType.VarChar)
+                          };
+                    pars[0].Value = labRouteID.Text;
+                    pars[1].Value = tvLogicalPoint.Nodes[i].Tag;
+                    pars[2].Value = tvLogicalPoint.Nodes[i].Text;
+                    pars[3].Value = "";
+
+                    string parValue = "";
+                    foreach (TreeNode node in tvLogicalPoint.Nodes[i].Nodes)
+                    {
+                        parValue += node.Tag + ",";
+                    }
+                    pars[4].Value = parValue;
+
+                    int _ret= SqlHelper.RunPredure("LogicalPointItemControl", pars);
+                }
+     
+            }
             
         }
 
@@ -197,14 +245,14 @@ namespace WorkStation
         private void getTvLogicalPoint(string route_id)
         {
             tvLogicalPoint.Nodes.Clear();
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From LogicalCheckPoint where route_ID=" + route_id);
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id);
             if (dr == null) return;
             while (dr.Read())
             {
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
-                tnode.Tag = dr["ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select l.ID,c.[Name] from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID="+dr["ID"].ToString().Trim());
+                tnode.Tag = dr["PhysicalPoint_ID"].ToString();
+                tnode = tvNodeAdd(tnode, "select l.ID as LIID,c.[Name],c.ID  from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID="+dr["ID"].ToString().Trim());
                 tvLogicalPoint.Nodes.Add(tnode);
             }
 
@@ -235,13 +283,14 @@ namespace WorkStation
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select ID,Name from SiteArea where Company_ID='" + dr["ID"].ToString() + "'");
+                tnode = tvNodeAdd(tnode, "select ID,Name from Site where Company_ID='" + dr["ID"].ToString() + "'");
                 for (int i = 0; i < tnode.Nodes.Count; i++)
                 {
                     (tnode.Nodes)[i] = tvNodeAdd((tnode.Nodes)[i], "Select ID,Name from CheckRoute Where site_id=" + (tnode.Nodes)[i].Tag);
                 }
                 tvRoute.Nodes.Add(tnode);
             }
+            tvRoute.ExpandAll();
             dr.Close();
 
         }
@@ -334,9 +383,66 @@ namespace WorkStation
             }
         }
 
-        private void tvLogicalPoint_AfterSelect(object sender, TreeViewEventArgs e)
+        private void tvLogicalPoint_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-
+            MessageBox.Show(e.Node.Text);
+            listLogical.Clear();
+            listLogical.Add(e.Node);
+            PaintSelectedNode(tvLogicalPoint, listLogical);
         }
+
+        private void tvPhysicalPoint_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            MessageBox.Show(e.Node.Text);
+            listPhy.Clear();
+            listPhy.Add(e.Node);
+            PaintSelectedNode(tvPhysicalPoint, listPhy);
+        }
+
+        private void 删除路线ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (tvRoute.SelectedNode.Level != 2)
+            {
+                MessageBox.Show("请选择具体路线");
+                return;
+            }
+            string strDel = "Delete From CheckRoute Where ID="+tvRoute.SelectedNode.Tag;
+            if (SqlHelper.ExecuteNonQuery(strDel) != 1)
+            {
+                MessageBox.Show("删除失败");
+                return;
+            }
+            else
+            {
+                tvRouteInit(tvRoute);
+            }
+        }
+
+        private void chkRoute_CheckedChanged(object sender, EventArgs e)
+        {
+            wset.tvRoute = wset.tvRoute == true ? false : true;
+            if (wset.tvRoute) tvRoute.ExpandAll(); else tvRoute.CollapseAll();
+            chkRoute.Checked = wset.tvRoute;
+        }
+
+        private void chkLogicalPoint_CheckedChanged(object sender, EventArgs e)
+        {
+            wset.tvLogicalPoint = wset.tvLogicalPoint == true ? false : true;
+            if (wset.tvLogicalPoint) tvLogicalPoint.ExpandAll(); else tvLogicalPoint.CollapseAll();
+            chkLogicalPoint.Checked = wset.tvLogicalPoint;
+        }
+
+        private void chkPhysicalPoint_CheckedChanged(object sender, EventArgs e)
+        {
+            //wset.tvPhysicalPoint = wset.tvPhysicalPoint == true ? false : true;
+            //if (wset.tvPhysicalPoint) tvPhysicalPoint.ExpandAll(); else tvPhysicalPoint.CollapseAll();
+            //chkPhysicalPoint.Checked = wset.tvPhysicalPoint;
+        }
+
+        private void frmAddRoute_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            wset.Save();
+        }
+
     }
 }

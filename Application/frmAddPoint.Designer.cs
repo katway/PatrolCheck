@@ -56,7 +56,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(385, 44);
+            this.lblAlias.Location = new System.Drawing.Point(379, 44);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 1;
@@ -80,7 +80,7 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(420, 41);
+            this.txtAlias.Location = new System.Drawing.Point(414, 41);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(262, 21);
             this.txtAlias.TabIndex = 4;
@@ -95,7 +95,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(420, 79);
+            this.btnRead.Location = new System.Drawing.Point(414, 79);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 6;
@@ -105,7 +105,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(420, 124);
+            this.btnSave.Location = new System.Drawing.Point(414, 124);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -115,7 +115,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(515, 124);
+            this.btnUpdate.Location = new System.Drawing.Point(509, 124);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 9;
@@ -125,7 +125,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(607, 124);
+            this.btnDel.Location = new System.Drawing.Point(616, 124);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 10;
@@ -158,7 +158,7 @@
             // labID
             // 
             this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(513, 84);
+            this.labID.Location = new System.Drawing.Point(507, 84);
             this.labID.Name = "labID";
             this.labID.Size = new System.Drawing.Size(41, 12);
             this.labID.TabIndex = 12;

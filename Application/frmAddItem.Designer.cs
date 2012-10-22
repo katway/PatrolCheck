@@ -215,6 +215,7 @@
             this.labID.Size = new System.Drawing.Size(53, 12);
             this.labID.TabIndex = 20;
             this.labID.Text = "巡检项ID";
+            this.labID.Visible = false;
             // 
             // frmAddItem
             // 

@@ -21,7 +21,7 @@ namespace WorkStation
 
         private void frmAddRoutName_Load(object sender, EventArgs e)
         {
-            DataSet ds = SqlHelper.ExecuteDataset("Select Id,Name From SiteArea");
+            DataSet ds = SqlHelper.ExecuteDataset("Select Id,Name From Site");
             cboSiteArea.DataSource=ds.Tables[0];
             cboSiteArea.DisplayMember = "Name";
             cboSiteArea.ValueMember = "ID";

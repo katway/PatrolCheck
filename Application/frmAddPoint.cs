@@ -19,12 +19,19 @@ namespace WorkStation
 
         private void frmAddPoint_Load(object sender, EventArgs e)
         {
+            this.labID.Text = "";
             this.btnSave.Enabled = false;
             getDgvPoint();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (SqlHelper.ExecuteNonQuery("Select Count(1) From PhysicalCheckPoint Where [Name]='" + this.txtName.Text.Trim() + "'") > 0)
+            {
+                MessageBox.Show("已存在巡检点名称，");
+                this.txtName.Focus();
+                return;
+            }
             SqlParameter[] pars = new SqlParameter[] { 
                     new SqlParameter("@name",SqlDbType.NVarChar),
                     new SqlParameter("@alias",SqlDbType.NVarChar),
@@ -78,11 +85,14 @@ namespace WorkStation
                 txtName.Text = dgvPoint.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtAlias.Text = dgvPoint.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtRelation.Text = dgvPoint.Rows[e.RowIndex].Cells[4].Value.ToString();
+
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (labID.Text == "")
+                return;
             SqlParameter[] pars = new SqlParameter[] { 
                     new SqlParameter("@name",SqlDbType.NVarChar),
                     new SqlParameter("@alias",SqlDbType.NVarChar),
@@ -108,7 +118,7 @@ namespace WorkStation
         private void btnDel_Click(object sender, EventArgs e)
         {
             string Del = "";
-            string strsql = "Delete From Machine Where ID in(";
+            string strsql = "Delete From PhysicalCheckPoint Where ID in(";
             for (int i = 0; i < dgvPoint.Rows.Count; i++)
             {
                 try
@@ -127,9 +137,13 @@ namespace WorkStation
             {
                 Del = Del.Substring(0, Del.Length - 1);
                 strsql += Del + ")";
+                SqlHelper.ExecuteNonQuery(strsql);
+                getDgvPoint();
             }
-            SqlHelper.ExecuteNonQuery(strsql);
-            getDgvPoint();
+            else
+            {
+                MessageBox.Show("请选择要删除的项。");
+            }            
         }
        
     }

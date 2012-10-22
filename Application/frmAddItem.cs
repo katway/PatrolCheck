@@ -19,6 +19,7 @@ namespace WorkStation
 
         private void frmAddItem_Load(object sender, EventArgs e)
         {
+            this.labID.Text = "";
             getMachine();
             getValueType();
             getPoint();
@@ -38,7 +39,7 @@ namespace WorkStation
                 MessageBox.Show("请选择所属地点");
                 return;
             }
-
+            //if(SqlHelper.ExecuteNonQuery("Select 1 From CheckItem Where "))
             string str_insert = "Insert into CheckItem([Name],Alias,Machine_ID,ValueType,Phy_ID,Comment) Values(@name,@alias,@machineid,@valuetype,@pointid,@comment)";
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
@@ -136,6 +137,10 @@ namespace WorkStation
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (labID.Text == "")
+            {
+                return;
+            }
             if (cboMachine.SelectedValue.ToString() == "")
             {
                 MessageBox.Show("请选择所属机器");
@@ -146,7 +151,7 @@ namespace WorkStation
                 MessageBox.Show("请选择所属地点");
                 return;
             }
-
+            
             string str_insert = "Update CheckItem set [Name]=@name,Alias=@alias,Machine_ID=@machineid,ValueType=@valuetype,Phy_ID=@phyid,Comment=@comment where ID=" + labID.Text.Trim();
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
@@ -170,9 +175,8 @@ namespace WorkStation
             }
             bindDgvItems();
         }
-
         private void btnDel_Click(object sender, EventArgs e)
-        {
+        {   
             string Del = "";
             string strsql = "Delete From CheckItem Where ID in(";
             for (int i = 0; i < dgvItems.Rows.Count; i++)
@@ -193,9 +197,13 @@ namespace WorkStation
             {
                 Del = Del.Substring(0, Del.Length - 1);
                 strsql += Del + ")";
+                SqlHelper.ExecuteNonQuery(strsql);
+                bindDgvItems();
             }
-            SqlHelper.ExecuteNonQuery(strsql);
-            bindDgvItems();
+            else
+            {
+                MessageBox.Show("请选择要删除的项");
+            }
         }
     }
 }

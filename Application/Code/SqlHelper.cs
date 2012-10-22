@@ -225,6 +225,10 @@ namespace WorkStation
             }
         }
 
+        public static int RunPredure(string spName, params object[] parameterValues)
+        {
+            return ExecuteNonQuery(sqlConnectionStr,spName,parameterValues);
+        }
         /// <summary>
         /// 执行指定连接字符串的存储过程,将对象数组的值赋给存储过程参数,
         /// 此方法需要在参数缓存方法中探索参数并生成参数.
