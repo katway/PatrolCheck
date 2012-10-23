@@ -175,7 +175,7 @@
             this.ColumnHeader8,
             this.ColumnHeader9});
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(8, 283);
+            this.listView1.Location = new System.Drawing.Point(8, 293);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(746, 219);
             this.listView1.TabIndex = 16;
@@ -227,7 +227,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(592, 235);
+            this.btnSave.Location = new System.Drawing.Point(590, 245);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 27);
             this.btnSave.TabIndex = 17;

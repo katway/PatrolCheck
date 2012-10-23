@@ -75,6 +75,11 @@ namespace WorkStation
             comboBox1.ValueMember = "PurposeCode";
             dataGridView1.DataSource = dsRfid.Tables[0]; 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
        
 
 
