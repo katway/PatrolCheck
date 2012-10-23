@@ -103,7 +103,7 @@
             this.btnTrue.Name = "btnTrue";
             this.btnTrue.Size = new System.Drawing.Size(75, 23);
             this.btnTrue.TabIndex = 7;
-            this.btnTrue.Text = "确定";
+            this.btnTrue.Text = "添加";
             this.btnTrue.UseVisualStyleBackColor = true;
             this.btnTrue.Click += new System.EventHandler(this.btnTrue_Click);
             // 
@@ -120,7 +120,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboSiteArea);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAddRoutName";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "路线详细信息";
             this.Load += new System.EventHandler(this.frmAddRoutName_Load);
             this.ResumeLayout(false);
@@ -130,12 +132,12 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox cboSiteArea;
+        public System.Windows.Forms.ComboBox cboSiteArea;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tbRouteName;
+        public System.Windows.Forms.TextBox tbRouteName;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tbRouteAlias;
+        public System.Windows.Forms.TextBox tbRouteAlias;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnTrue;
     }

@@ -49,6 +49,7 @@
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,6 +59,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.新建路线ToolStripMenuItem,
+            this.toolStripMenuItem1,
             this.删除路线ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -110,6 +112,7 @@
             this.tvRoute.Size = new System.Drawing.Size(211, 432);
             this.tvRoute.TabIndex = 0;
             this.tvRoute.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRoute_AfterSelect);
+            this.tvRoute.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvRoute_NodeMouseDoubleClick);
             // 
             // groupBox2
             // 
@@ -273,6 +276,13 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
+            this.toolStripMenuItem1.Text = "编辑路线";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
             // frmAddRoute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -320,6 +330,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TreeView tvLogicalPoint;
         private System.Windows.Forms.Label labRouteID;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
 
 
     }

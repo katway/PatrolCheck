@@ -109,9 +109,10 @@ namespace WorkStation
             {
                 Del = Del.Substring(0, Del.Length - 1);
                 strsql += Del + ")";
+                SqlHelper.ExecuteNonQuery(strsql);
+                bindDgvMachine();
             }
-            SqlHelper.ExecuteNonQuery(strsql);
-            bindDgvMachine();
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
