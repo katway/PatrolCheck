@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace WorkStation
 {
     partial class frmAddPoint
     {
@@ -157,6 +157,7 @@
             this.Controls.Add(this.lblName);
             this.Name = "frmAddPoint";
             this.Text = "新建巡检点";
+            this.Load += new System.EventHandler(this.frmAddPoint_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

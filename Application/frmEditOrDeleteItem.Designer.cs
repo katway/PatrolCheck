@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace WorkStation
 {
     partial class frmEditOrDeleteItem
     {
@@ -60,7 +60,7 @@
             this.columnHeader5,
             this.columnHeader6});
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(48, 23);
+            this.listView1.Location = new System.Drawing.Point(48, 27);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(587, 175);
             this.listView1.TabIndex = 13;
@@ -95,7 +95,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(445, 219);
+            this.btnEdit.Location = new System.Drawing.Point(450, 219);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 26);
             this.btnEdit.TabIndex = 14;
@@ -116,14 +116,14 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "所选巡检点"});
-            this.comboBox1.Location = new System.Drawing.Point(185, 409);
+            this.comboBox1.Location = new System.Drawing.Point(183, 401);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(171, 20);
             this.comboBox1.TabIndex = 25;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(185, 448);
+            this.txtRemarks.Location = new System.Drawing.Point(183, 435);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -151,7 +151,7 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(114, 485);
+            this.lblRemarks.Location = new System.Drawing.Point(114, 467);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(29, 12);
             this.lblRemarks.TabIndex = 21;
@@ -160,7 +160,7 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
-            this.lblPoints.Location = new System.Drawing.Point(78, 417);
+            this.lblPoints.Location = new System.Drawing.Point(78, 409);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(65, 12);
             this.lblPoints.TabIndex = 20;
@@ -213,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(767, 543);
+            this.ClientSize = new System.Drawing.Size(749, 532);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.txtRemarks);

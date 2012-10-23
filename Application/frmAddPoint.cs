@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Application
+namespace WorkStation
 {
     public partial class frmAddPoint : Form
     {
@@ -17,6 +17,11 @@ namespace Application
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmAddPoint_Load(object sender, EventArgs e)
         {
 
         }
