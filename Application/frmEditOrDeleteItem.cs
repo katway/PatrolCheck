@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Application
+namespace WorkStation
 {
     public partial class frmEditOrDeleteItem : Form
     {

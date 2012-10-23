@@ -1,4 +1,4 @@
-﻿namespace Application
+﻿namespace WorkStation
 {
     partial class frmIssueTask
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(711, 472);
+            this.ClientSize = new System.Drawing.Size(715, 438);
             this.Name = "frmIssueTask";
             this.Text = "frmIssueTask";
             this.ResumeLayout(false);
