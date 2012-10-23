@@ -36,10 +36,13 @@
             this.tbRouteAlias = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnTrue = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboInOrder = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // cboSiteArea
             // 
+            this.cboSiteArea.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSiteArea.FormattingEnabled = true;
             this.cboSiteArea.Location = new System.Drawing.Point(85, 21);
             this.cboSiteArea.Name = "cboSiteArea";
@@ -89,7 +92,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(182, 128);
+            this.btnClose.Location = new System.Drawing.Point(180, 155);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 6;
@@ -99,7 +102,7 @@
             // 
             // btnTrue
             // 
-            this.btnTrue.Location = new System.Drawing.Point(85, 128);
+            this.btnTrue.Location = new System.Drawing.Point(85, 155);
             this.btnTrue.Name = "btnTrue";
             this.btnTrue.Size = new System.Drawing.Size(75, 23);
             this.btnTrue.TabIndex = 7;
@@ -107,11 +110,31 @@
             this.btnTrue.UseVisualStyleBackColor = true;
             this.btnTrue.Click += new System.EventHandler(this.btnTrue_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(26, 118);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 12);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "顺序巡检";
+            // 
+            // cboInOrder
+            // 
+            this.cboInOrder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboInOrder.FormattingEnabled = true;
+            this.cboInOrder.Location = new System.Drawing.Point(85, 115);
+            this.cboInOrder.Name = "cboInOrder";
+            this.cboInOrder.Size = new System.Drawing.Size(183, 20);
+            this.cboInOrder.TabIndex = 9;
+            // 
             // frmAddRoutName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 186);
+            this.ClientSize = new System.Drawing.Size(313, 225);
+            this.Controls.Add(this.cboInOrder);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnTrue);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.tbRouteAlias);
@@ -140,5 +163,7 @@
         public System.Windows.Forms.TextBox tbRouteAlias;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnTrue;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox cboInOrder;
     }
 }

@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.新建路线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.删除路线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkRoute = new System.Windows.Forms.CheckBox();
@@ -49,7 +50,6 @@
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -73,6 +73,13 @@
             this.新建路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.新建路线ToolStripMenuItem.Text = "新建路线";
             this.新建路线ToolStripMenuItem.Click += new System.EventHandler(this.新建路线ToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
+            this.toolStripMenuItem1.Text = "编辑路线";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // 删除路线ToolStripMenuItem
             // 
@@ -116,6 +123,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Controls.Add(this.labRouteID);
             this.groupBox2.Controls.Add(this.btnAddTemplate);
             this.groupBox2.Controls.Add(this.chkPhysicalPoint);
@@ -202,11 +210,14 @@
             // 
             // tbRoute
             // 
+            this.tbRoute.BackColor = System.Drawing.SystemColors.Control;
+            this.tbRoute.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbRoute.Location = new System.Drawing.Point(75, 23);
             this.tbRoute.Name = "tbRoute";
             this.tbRoute.ReadOnly = true;
             this.tbRoute.Size = new System.Drawing.Size(191, 21);
             this.tbRoute.TabIndex = 11;
+            this.tbRoute.Text = "shenm ";
             // 
             // label1
             // 
@@ -275,13 +286,6 @@
             this.btnAdd.Text = "<";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
-            this.toolStripMenuItem1.Text = "编辑路线";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // frmAddRoute
             // 

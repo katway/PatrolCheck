@@ -34,7 +34,7 @@ namespace WorkStation
                 MessageBox.Show("请选择所属机器");
                 return;
             }
-            if (cboPoint.SelectedValue.ToString() == "")
+            if (cboPoint.SelectedValue==null)
             {
                 MessageBox.Show("请选择所属地点");
                 return;
@@ -90,7 +90,7 @@ namespace WorkStation
             this.cboPoint.DataSource=ds.Tables[0];
             this.cboPoint.DisplayMember = "Name";
             this.cboPoint.ValueMember = "ID";
-            this.cboPoint.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
+            this.cboPoint.SelectedIndex = cboPoint.Items.Count > 0 ? 0 : -1;
         }
 
         private void bindDgvItems()

@@ -18,17 +18,11 @@ namespace WorkStation
         }
         WorkStation.Properties.Settings wset = new Properties.Settings();
 
-        Boolean isRoute = false;//是否选中了路线
         List<TreeNode> listPhy = new List<TreeNode>();
         List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
-            tvRouteInit(tvRoute);
-
-            if (isRoute == true && tbRoute.Text != "")
-            {
-                getTvLogicalPoint(tbRoute.Text.Trim());
-            }
+            tvRouteInit(tvRoute);   
             getTvPhysicalPoint();
 
             chkRoute.Checked = wset.tvRoute;
@@ -45,6 +39,7 @@ namespace WorkStation
             if (tvRoute.SelectedNode.Nodes.Count == 0 && tvRoute.SelectedNode.Level == 2)
             {
                 getTvLogicalPoint(tvRoute.SelectedNode.Tag.ToString());
+                tbRoute.ForeColor = tvRoute.SelectedNode.ForeColor;
                 tbRoute.Text = tvRoute.SelectedNode.Text;
                 labRouteID.Text = tvRoute.SelectedNode.Tag.ToString();
             }
@@ -210,7 +205,6 @@ namespace WorkStation
                 MessageBox.Show("请选择要保存的路线");
                 return;
             }
-            string strs = "";
             for (int i = 0; i < tvLogicalPoint.Nodes.Count; i++)
             {
                 if (tvLogicalPoint.Nodes[i].Level == 0)
@@ -220,24 +214,30 @@ namespace WorkStation
                     new SqlParameter("@PhysicalPoint_ID",SqlDbType.BigInt),
                     new SqlParameter("@Name",SqlDbType.VarChar),
                     new SqlParameter("@Alias",SqlDbType.VarChar),
-                    new SqlParameter("@ItemsID",SqlDbType.VarChar)
+                    new SqlParameter("@ItemsID",SqlDbType.VarChar),
+                    new SqlParameter("@ItemsIndex",SqlDbType.VarChar),
+                    new SqlParameter("@CheckOrder",SqlDbType.Int)
                           };
                     pars[0].Value = labRouteID.Text;
                     pars[1].Value = tvLogicalPoint.Nodes[i].Tag;
                     pars[2].Value = tvLogicalPoint.Nodes[i].Text;
                     pars[3].Value = "";
 
-                    string parValue = "";
+                    string parValue = "",parIndex="";
                     foreach (TreeNode node in tvLogicalPoint.Nodes[i].Nodes)
                     {
                         parValue += node.Tag + ",";
+                        parIndex += node.Index + ",";
                     }
                     pars[4].Value = parValue;
+                    pars[5].Value = parIndex;
+                    pars[6].Value = tvLogicalPoint.Nodes[i].Index;
 
                     int _ret = SqlHelper.RunPredure("LogicalPointItemControl", pars);
                 }
 
             }
+            getTvLogicalPoint(labRouteID.Text.Trim());
 
         }
 
@@ -252,17 +252,18 @@ namespace WorkStation
         private void getTvLogicalPoint(string route_id)
         {
             tvLogicalPoint.Nodes.Clear();
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id);
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id +" order by checkorder");
             if (dr == null) return;
             while (dr.Read())
             {
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["PhysicalPoint_ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select l.ID as LIID,c.[Name],c.ID  from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID=" + dr["ID"].ToString().Trim());
+                tnode = tvNodeAdd(tnode, "select l.ID as LIID,c.[Name],c.ID ,'' as Code from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID=" + dr["ID"].ToString().Trim() + " order by l.inorder");
                 tvLogicalPoint.Nodes.Add(tnode);
             }
-
+            if (chkLogicalPoint.Checked)
+                tvLogicalPoint.ExpandAll();
         }
         //获取物理巡检点
         private void getTvPhysicalPoint()
@@ -274,7 +275,7 @@ namespace WorkStation
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["ID"].ToString();
-                tnode = tvNodeAdd(tnode, "Select ID,Name From CheckItem Where Phy_ID=" + dr["ID"].ToString().Trim());
+                tnode = tvNodeAdd(tnode, "Select ID,Name,'' AS Code From CheckItem Where Phy_ID=" + dr["ID"].ToString().Trim());
                 tvPhysicalPoint.Nodes.Add(tnode);
             }
             dr.Close();
@@ -284,16 +285,15 @@ namespace WorkStation
         {
             tvRoute.Nodes.Clear();
             SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From Company");
-            if (dr == null) { dr.Dispose(); return; }
             while (dr.Read())
             {
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select ID,Name from Site where Company_ID='" + dr["ID"].ToString() + "'");
+                tnode = tvNodeAdd(tnode, "select ID,Name,''AS Code from Site where Company_ID='" + dr["ID"].ToString() + "'");
                 for (int i = 0; i < tnode.Nodes.Count; i++)
                 {
-                    (tnode.Nodes)[i] = tvNodeAdd((tnode.Nodes)[i], "Select ID,Name from CheckRoute Where site_id=" + (tnode.Nodes)[i].Tag);
+                    (tnode.Nodes)[i] = tvNodeAdd((tnode.Nodes)[i], "Select ID,Name,Code from CheckRoute Where site_id=" + (tnode.Nodes)[i].Tag);
                 }
                 tvRoute.Nodes.Add(tnode);
             }
@@ -315,6 +315,10 @@ namespace WorkStation
                 TreeNode tn = new TreeNode();
                 tn.Text = dr["Name"].ToString();
                 tn.Tag = dr["ID"];
+                if (dr["Code"].ToString() == "1")
+                {
+                    tn.ForeColor = Color.Red;
+                }
                 node.Nodes.Add(tn);
             }
             dr.Close();
