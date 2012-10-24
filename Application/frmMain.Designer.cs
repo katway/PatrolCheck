@@ -523,7 +523,6 @@
             // 
             // toolStripTextBox1
             // 
-            this.toolStripTextBox1.Font = new System.Drawing.Font("宋体", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
@@ -776,24 +775,28 @@
             this.tsmixunjianluxian.Name = "tsmixunjianluxian";
             this.tsmixunjianluxian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianluxian.Text = "巡检路线管理";
+            this.tsmixunjianluxian.Click += new System.EventHandler(this.tsmixunjianluxian_Click);
             // 
             // tsmixunjiandian
             // 
             this.tsmixunjiandian.Name = "tsmixunjiandian";
             this.tsmixunjiandian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjiandian.Text = "巡检点管理";
+            this.tsmixunjiandian.Click += new System.EventHandler(this.tsmixunjiandian_Click);
             // 
             // tsmixunjianxiangs
             // 
             this.tsmixunjianxiangs.Name = "tsmixunjianxiangs";
             this.tsmixunjianxiangs.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianxiangs.Text = "巡检项管理";
+            this.tsmixunjianxiangs.Click += new System.EventHandler(this.tsmixunjianxiangs_Click);
             // 
             // tsmishebeixunjianxiang
             // 
             this.tsmishebeixunjianxiang.Name = "tsmishebeixunjianxiang";
             this.tsmishebeixunjianxiang.Size = new System.Drawing.Size(154, 22);
             this.tsmishebeixunjianxiang.Text = "设备巡检项管理";
+            this.tsmishebeixunjianxiang.Click += new System.EventHandler(this.tsmishebeixunjianxiang_Click);
             // 
             // tsmjichu
             // 

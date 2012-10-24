@@ -1,3 +1,254 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7E891505-264A-413F-B105-8AAE7A0E326A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WorkStation</RootNamespace>
+    <AssemblyName>WorkStation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Code\CommonClass.cs" />
+    <Compile Include="Code\SqlHelper.cs" />
+    <Compile Include="frmAddCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCard.Designer.cs">
+      <DependentUpon>frmAddCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPoint.Designer.cs">
+      <DependentUpon>frmAddPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddRoute.Designer.cs">
+      <DependentUpon>frmAddRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddTask.Designer.cs">
+      <DependentUpon>frmAddTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddItem.Designer.cs">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditAndDeleteCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditAndDeleteCard.Designer.cs">
+      <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditOrDeleteItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeleteItem.Designer.cs">
+      <DependentUpon>frmEditOrDeleteItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditOrDeletePoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeletePoint.Designer.cs">
+      <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditOrDeleteRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeleteRoute.Designer.cs">
+      <DependentUpon>frmEditOrDeleteRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditOrDeleteTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeleteTask.Designer.cs">
+      <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmIssueTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIssueTask.Designer.cs">
+      <DependentUpon>frmIssueTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteEditDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiteEditDelete.Designer.cs">
+      <DependentUpon>SiteEditDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SiteNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiteNew.Designer.cs">
+      <DependentUpon>SiteNew.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAddCard.resx">
+      <DependentUpon>frmAddCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPoint.resx">
+      <DependentUpon>frmAddPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddRoute.resx">
+      <DependentUpon>frmAddRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddTask.resx">
+      <DependentUpon>frmAddTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddItem.resx">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditAndDeleteCard.resx">
+      <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeleteItem.resx">
+      <DependentUpon>frmEditOrDeleteItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeletePoint.resx">
+      <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeleteRoute.resx">
+      <DependentUpon>frmEditOrDeleteRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeleteTask.resx">
+      <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmIssueTask.resx">
+      <DependentUpon>frmIssueTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SiteEditDelete.resx">
+      <DependentUpon>SiteEditDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiteNew.resx">
+      <DependentUpon>SiteNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="picture\001.bmp" />
+    <Content Include="picture\002.bmp" />
+    <Content Include="picture\003.bmp" />
+    <Content Include="picture\004.bmp" />
+    <Content Include="picture\01.gif" />
+    <Content Include="picture\094.GIF" />
+    <Content Include="picture\096.GIF" />
+    <Content Include="picture\130.GIF" />
+    <Content Include="picture\1381ContentsButton.ico" />
+    <Content Include="picture\27.gif" />
+    <Content Include="picture\34.gif" />
+    <Content Include="picture\b087.gif" />
+    <Content Include="picture\ContentsButton.ico" />
+    <Content Include="picture\icon17.gif" />
+    <Content Include="picture\ic_download.gif" />
+    <Content Include="picture\kksd1183_9_m.gif" />
+    <Content Include="picture\login.gif" />
+    <Content Include="picture\picture\003.bmp" />
+    <Content Include="picture\picture\004.bmp" />
+    <Content Include="picture\picture\icon17.gif" />
+    <Content Include="picture\picture\TabAdvertisement.bmp" />
+    <Content Include="picture\picture\TabAppendix.bmp" />
+    <Content Include="picture\picture\TabIndex.bmp" />
+    <Content Include="picture\picture\TabSentence.bmp" />
+    <Content Include="picture\TabAdvertisement.bmp" />
+    <Content Include="picture\TabAppendix.bmp" />
+    <Content Include="picture\TabIndex.bmp" />
+    <Content Include="picture\TabSentence.bmp" />
+    <Content Include="picture\TabWizard.bmp" />
+    <Content Include="picture\u=3720357200,1595926406&amp;fm=0&amp;gp=20.jpg" />
+    <Content Include="picture\WB02085_.GIF" />
+    <Content Include="picture\取消1.bmp" />
+    <Content Include="picture\取消2.bmp" />
+    <Content Include="picture\确定1.bmp" />
+    <Content Include="picture\确定2.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{274882FC-F42C-4969-9BA1-EE5CBF5C37A0}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+=======
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
@@ -49,12 +300,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Main.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Code\CommonClass.cs" />
+    <Compile Include="Code\SqlHelper.cs" />
     <Compile Include="frmAddCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +319,18 @@
     </Compile>
     <Compile Include="frmAddRoute.Designer.cs">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddRoutName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddRoutName.Designer.cs">
+      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddMachine.Designer.cs">
+      <DependentUpon>frmAddMachine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddTask.cs">
       <SubType>Form</SubType>
@@ -129,10 +388,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD:Application/WorkStation.csproj
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
-=======
     <EmbeddedResource Include="frmAddCard.resx">
       <DependentUpon>frmAddCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +396,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddRoute.resx">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddRoutName.resx">
+      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddMachine.resx">
+      <DependentUpon>frmAddMachine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddTask.resx">
       <DependentUpon>frmAddTask.cs</DependentUpon>
@@ -168,7 +429,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmIssueTask.resx">
       <DependentUpon>frmIssueTask.cs</DependentUpon>
->>>>>>> hefl:Application/Application.csproj
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -180,8 +440,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
@@ -228,6 +489,7 @@
     <Content Include="picture\确定2.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+>>>>>>> qicb/Develop
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

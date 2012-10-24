@@ -37,7 +37,6 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
@@ -70,17 +69,29 @@
     <Compile Include="frmAddRoute.Designer.cs">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddRoutName.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddRoutName.Designer.cs">
+      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddMachine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddMachine.Designer.cs">
+      <DependentUpon>frmAddMachine.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddTask.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddTask.Designer.cs">
       <DependentUpon>frmAddTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="frmain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <Compile Include="frmain.Designer.cs">
+      <DependentUpon>frmain.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddItem.cs">
       <SubType>Form</SubType>
@@ -126,18 +137,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiteEditDelete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SiteEditDelete.Designer.cs">
-      <DependentUpon>SiteEditDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SiteNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SiteNew.Designer.cs">
-      <DependentUpon>SiteNew.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="frmAddCard.resx">
       <DependentUpon>frmAddCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,11 +146,17 @@
     <EmbeddedResource Include="frmAddRoute.resx">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddRoutName.resx">
+      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddMachine.resx">
+      <DependentUpon>frmAddMachine.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddTask.resx">
       <DependentUpon>frmAddTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
-      <DependentUpon>frmMain.cs</DependentUpon>
+    <EmbeddedResource Include="frmain.resx">
+      <DependentUpon>frmain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddItem.resx">
       <DependentUpon>frmAddItem.cs</DependentUpon>
@@ -184,18 +189,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SiteEditDelete.resx">
-      <DependentUpon>SiteEditDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SiteNew.resx">
-      <DependentUpon>SiteNew.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -239,12 +236,6 @@
     <Content Include="picture\取消2.bmp" />
     <Content Include="picture\确定1.bmp" />
     <Content Include="picture\确定2.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Model\Model.csproj">
-      <Project>{274882FC-F42C-4969-9BA1-EE5CBF5C37A0}</Project>
-      <Name>Model</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
