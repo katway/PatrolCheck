@@ -12,7 +12,7 @@ namespace WorkStation
 {
     public partial class frmAddRoutName : Form
     {
-        public Boolean isEdit=false;
+        public Boolean isEdit = false;
         public object routeID;
         public string routeName, routeAlias, routeArea;
         public TreeView tView;
@@ -27,7 +27,7 @@ namespace WorkStation
             {
                 this.btnTrue.Text = "修改";
                 this.Text = "修改巡检路线";
-                SqlDataReader dr = SqlHelper.ExecuteReader("Select Site_ID,Name,Alias,Code From CheckRoute Where ID="+routeID.ToString());
+                SqlDataReader dr = SqlHelper.ExecuteReader("Select Site_ID,Name,Alias,Code From CheckRoute Where ID=" + routeID.ToString());
                 if (dr == null) return;
                 while (dr.Read())
                 {
@@ -43,8 +43,8 @@ namespace WorkStation
 
         private void btnTrue_Click(object sender, EventArgs e)
         {
-            int _ret=(int)SqlHelper.ExecuteScalar("Select Count(1) From CheckRoute Where Name='" + this.tbRouteName.Text.Trim() + "' and Site_ID=" + cboSiteArea.SelectedValue.ToString());
-            if ( _ret!= 0)
+            int _ret = (int)SqlHelper.ExecuteScalar("Select Count(1) From CheckRoute Where Name='" + this.tbRouteName.Text.Trim() + "' and Site_ID=" + cboSiteArea.SelectedValue.ToString());
+            if (_ret != 0)
             {
                 MessageBox.Show("请确保路线名称的唯一性");
                 return;
@@ -59,13 +59,13 @@ namespace WorkStation
             };
             if (isEdit)
             {
-                strsql = "Update CheckRoute Set Site_ID=@id,[Name]=@name,Alias=@alias,Code=@code Where ID=@routeid";                
+                strsql = "Update CheckRoute Set Site_ID=@id,[Name]=@name,Alias=@alias,Code=@code Where ID=@routeid";
             }
             else
-            {              
+            {
                 strsql = "Insert Into CheckRoute(Site_ID,[Name],Alias,Code) Values(@id,@name,@alias,@code)";
-                
-            }           
+
+            }
             pars[0].Value = cboSiteArea.SelectedValue.ToString();
             pars[3].Value = routeID;
             pars[4].Value = this.cboInOrder.SelectedValue;
@@ -81,7 +81,7 @@ namespace WorkStation
 
         private void cbo_init()
         {
-            DataSet ds = SqlHelper.ExecuteDataset("Select Code,Meaning From CheckInOrder");
+            DataSet ds = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes WHERE Purpose ='CheckSequence'");
             this.cboInOrder.DataSource = ds.Tables[0];
             this.cboInOrder.DisplayMember = "Meaning";
             this.cboInOrder.ValueMember = "Code";

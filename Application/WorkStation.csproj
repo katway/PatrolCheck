@@ -87,12 +87,6 @@
     <Compile Include="frmAddTask.Designer.cs">
       <DependentUpon>frmAddTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmain.Designer.cs">
-      <DependentUpon>frmain.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAddItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +129,12 @@
     <Compile Include="frmIssueTask.Designer.cs">
       <DependentUpon>frmIssueTask.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAddCard.resx">
@@ -154,9 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddTask.resx">
       <DependentUpon>frmAddTask.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmain.resx">
-      <DependentUpon>frmain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddItem.resx">
       <DependentUpon>frmAddItem.cs</DependentUpon>
@@ -178,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmIssueTask.resx">
       <DependentUpon>frmIssueTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

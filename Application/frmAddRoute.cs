@@ -22,7 +22,7 @@ namespace WorkStation
         List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
-            tvRouteInit(tvRoute);   
+            tvRouteInit(tvRoute);
             getTvPhysicalPoint();
 
             chkRoute.Checked = wset.tvRoute;
@@ -223,7 +223,7 @@ namespace WorkStation
                     pars[2].Value = tvLogicalPoint.Nodes[i].Text;
                     pars[3].Value = "";
 
-                    string parValue = "",parIndex="";
+                    string parValue = "", parIndex = "";
                     foreach (TreeNode node in tvLogicalPoint.Nodes[i].Nodes)
                     {
                         parValue += node.Tag + ",";
@@ -233,7 +233,7 @@ namespace WorkStation
                     pars[5].Value = parIndex;
                     pars[6].Value = tvLogicalPoint.Nodes[i].Index;
 
-                    int _ret = SqlHelper.RunPredure("LogicalPointItemControl", pars);
+                    int _ret = SqlHelper.ExecuteNonQuery("LogicalPointItemControl", pars);
                 }
 
             }
@@ -252,7 +252,7 @@ namespace WorkStation
         private void getTvLogicalPoint(string route_id)
         {
             tvLogicalPoint.Nodes.Clear();
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id +" order by checkorder");
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id + " order by checkorder");
             if (dr == null) return;
             while (dr.Read())
             {
