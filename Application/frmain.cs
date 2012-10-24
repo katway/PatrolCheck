@@ -175,6 +175,23 @@ namespace WorkStation
 
         }
 
+        private void tsmixinjian_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tsmichangquguanli_Click(object sender, EventArgs e)
+        {
+            SiteNew s1=new SiteNew();
+            s1.Show();
+        }
+
+        private void tsmixinjian1_Click(object sender, EventArgs e)
+        {
+            frmIssueTask task = new frmIssueTask();
+            task.Show();
+        }
+
       
 
        

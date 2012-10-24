@@ -658,8 +658,9 @@
             // tsmixinjian
             // 
             this.tsmixinjian.Name = "tsmixinjian";
-            this.tsmixinjian.Size = new System.Drawing.Size(94, 22);
+            this.tsmixinjian.Size = new System.Drawing.Size(152, 22);
             this.tsmixinjian.Text = "新建";
+            this.tsmixinjian.Click += new System.EventHandler(this.tsmixinjian_Click);
             // 
             // tsmibianji
             // 
@@ -690,8 +691,9 @@
             // tsmixinjian1
             // 
             this.tsmixinjian1.Name = "tsmixinjian1";
-            this.tsmixinjian1.Size = new System.Drawing.Size(94, 22);
+            this.tsmixinjian1.Size = new System.Drawing.Size(152, 22);
             this.tsmixinjian1.Text = "新建";
+            this.tsmixinjian1.Click += new System.EventHandler(this.tsmixinjian1_Click);
             // 
             // tsmibianji1
             // 
@@ -818,8 +820,9 @@
             // tsmichangquguanli
             // 
             this.tsmichangquguanli.Name = "tsmichangquguanli";
-            this.tsmichangquguanli.Size = new System.Drawing.Size(118, 22);
+            this.tsmichangquguanli.Size = new System.Drawing.Size(152, 22);
             this.tsmichangquguanli.Text = "厂区管理";
+            this.tsmichangquguanli.Click += new System.EventHandler(this.tsmichangquguanli_Click);
             // 
             // tsmichejian
             // 

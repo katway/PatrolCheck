@@ -94,6 +94,12 @@
     <Compile Include="frmEditAndDeleteCard.Designer.cs">
       <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditOrDeleteEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeleteEmployee.Designer.cs">
+      <DependentUpon>frmEditOrDeleteEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditOrDeleteItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,12 @@
     </Compile>
     <Compile Include="frmEditOrDeleteTask.Designer.cs">
       <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployee.Designer.cs">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIssueTask.cs">
       <SubType>Form</SubType>
@@ -159,6 +171,9 @@
     <EmbeddedResource Include="frmEditAndDeleteCard.resx">
       <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeleteEmployee.resx">
+      <DependentUpon>frmEditOrDeleteEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeleteItem.resx">
       <DependentUpon>frmEditOrDeleteItem.cs</DependentUpon>
     </EmbeddedResource>
@@ -170,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeleteTask.resx">
       <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIssueTask.resx">
       <DependentUpon>frmIssueTask.cs</DependentUpon>
