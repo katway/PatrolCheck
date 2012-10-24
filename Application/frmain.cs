@@ -199,7 +199,9 @@ namespace WorkStation
         private void tsmixunjianluxian_Click(object sender, EventArgs e)
         {
             frmAddRoute frm = new frmAddRoute();
-            frm.Show();
+            frm.Left = this.Left + (this.Width - frm.Width) / 2;
+            frm.Top = this.Top + (this.Height - frm.Height) / 2;
+            frm.Show() ;
         }
        
     }

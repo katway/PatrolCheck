@@ -119,16 +119,19 @@ namespace WorkStation
         private void btnDel_Click(object sender, EventArgs e)
         {
             foreach (TreeNode node in listLogical)
-            {
+            {            
                 if (node.Parent == null)
                 {
                     Object obj_ID = SqlHelper.ExecuteScalar("Select ID From LogicalCheckPoint Where Route_ID=" + labRouteID.Text + " and PhysicalPoint_ID=" + node.Tag);
-                    SqlHelper.ExecuteNonQuery("Delete From LogicalCheckPoint  where ID=" + obj_ID.ToString());
-                    if (node.Nodes.Count > 0)
+                    if (obj_ID != null)
                     {
-                        foreach (TreeNode de in node.Nodes)
+                        SqlHelper.ExecuteNonQuery("Delete From LogicalCheckPoint  where ID=" + obj_ID.ToString());
+                        if (node.Nodes.Count > 0)
                         {
-                            SqlHelper.ExecuteNonQuery("Delete From LogicalPoint_Item Where ID=" + obj_ID.ToString());
+                            foreach (TreeNode de in node.Nodes)
+                            {
+                                SqlHelper.ExecuteNonQuery("Delete From LogicalPoint_Item Where ID=" + obj_ID.ToString());
+                            }
                         }
                     }
                 }
@@ -244,6 +247,8 @@ namespace WorkStation
         private void 新建路线ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmAddRoutName rn = new frmAddRoutName();
+            rn.Left=this.Left+(this.Width-rn.Width)/2;
+            rn.Top=this.Top+(this.Height-rn.Height)/2;
             rn.tView = this.tvRoute;
             rn.Show();
         }
@@ -297,7 +302,6 @@ namespace WorkStation
                 }
                 tvRoute.Nodes.Add(tnode);
             }
-            //tvRoute.ExpandAll();
             dr.Close();
 
         }
@@ -412,20 +416,28 @@ namespace WorkStation
 
         private void 删除路线ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (tvRoute.SelectedNode.Level != 2)
+            if (labRouteID.Text=="")
             {
                 MessageBox.Show("请选择具体路线");
                 return;
             }
-            string strDel = "Delete From CheckRoute Where ID=" + tvRoute.SelectedNode.Tag;
-            if (SqlHelper.ExecuteNonQuery(strDel) != 1)
+            string[] strsDel=new string[3];
+            strsDel[0]="Delete From LogicalPoint_Item Where ID in (Select ID From LogicalCheckPoint Where Route_ID=" + labRouteID.Text + ")";
+            strsDel[1] = "Delete From LogicalCheckPoint Where Route_ID=" + labRouteID.Text;
+            strsDel[2] = "Delete From CheckRoute Where ID=" + labRouteID.Text;
+
+            try
             {
-                MessageBox.Show("删除失败");
-                return;
+                SqlHelper.ExecuteSqls(strsDel);
             }
-            else
+            catch
+            {
+                MessageBox.Show("删除失败。请稍后再试");
+            }
+            finally
             {
                 tvRouteInit(tvRoute);
+                if (chkRoute.Checked) tvRoute.ExpandAll();
             }
         }
 
@@ -463,6 +475,8 @@ namespace WorkStation
             if (e.Node.Level == 2)
             {
                 frmAddRoutName fn = new frmAddRoutName();
+                fn.Left=this.Left+(this.Width-fn.Width)/2;
+                fn.Top = this.Top + (this.Height - fn.Height) / 2;
                 fn.tView = tvRoute;
                 fn.isEdit = true;
                 fn.routeID = e.Node.Tag;
@@ -476,6 +490,8 @@ namespace WorkStation
             {
                 frmAddRoutName fn = new frmAddRoutName();
                 fn.tView = tvRoute;
+                fn.Left=this.Left+(this.Width-fn.Width)/2;
+                fn.Top = this.Top + (this.Height - fn.Height) / 2;
                 fn.isEdit = true;
                 fn.routeID = tvRoute.SelectedNode.Tag;
                 fn.Show();

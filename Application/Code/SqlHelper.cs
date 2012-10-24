@@ -420,6 +420,7 @@ namespace WorkStation
             SqlTransaction tran = conn.BeginTransaction();
             SqlCommand command = new SqlCommand();
             command.Connection = conn;
+            command.Transaction = tran;
             try
             {
                 foreach (string s in strs)

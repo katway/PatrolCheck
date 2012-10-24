@@ -291,12 +291,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(751, 526);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "frmAddRoute";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "新建巡检路线";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddRoute_FormClosing);
             this.Load += new System.EventHandler(this.frmAddRoute_Load);
