@@ -22,7 +22,7 @@ namespace WorkStation
         List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
-            tvRouteInit(tvRoute);
+            tvRouteInit(tvRoute);   
             getTvPhysicalPoint();
 
             chkRoute.Checked = wset.tvRoute;
@@ -223,7 +223,7 @@ namespace WorkStation
                     pars[2].Value = tvLogicalPoint.Nodes[i].Text;
                     pars[3].Value = "";
 
-                    string parValue = "", parIndex = "";
+                    string parValue = "",parIndex="";
                     foreach (TreeNode node in tvLogicalPoint.Nodes[i].Nodes)
                     {
                         parValue += node.Tag + ",";
@@ -233,7 +233,7 @@ namespace WorkStation
                     pars[5].Value = parIndex;
                     pars[6].Value = tvLogicalPoint.Nodes[i].Index;
 
-                    int _ret = SqlHelper.ExecuteNonQuery("LogicalPointItemControl", pars);
+                    int _ret = SqlHelper.ExecuteNonQuery("LogicalPointItemControl",CommandType.StoredProcedure,pars);
                 }
 
             }
@@ -252,14 +252,14 @@ namespace WorkStation
         private void getTvLogicalPoint(string route_id)
         {
             tvLogicalPoint.Nodes.Clear();
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id + " order by checkorder");
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id +" order by checkorder");
             if (dr == null) return;
             while (dr.Read())
             {
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["PhysicalPoint_ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select l.ID as LIID,c.[Name],c.ID ,'' as Code from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID=" + dr["ID"].ToString().Trim() + " order by l.inorder");
+                tnode = tvNodeAdd(tnode, "select l.ID as LIID,c.[Name],c.ID ,'' as Sequence from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID=" + dr["ID"].ToString().Trim() + " order by l.inorder");
                 tvLogicalPoint.Nodes.Add(tnode);
             }
             if (chkLogicalPoint.Checked)
@@ -275,7 +275,7 @@ namespace WorkStation
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["ID"].ToString();
-                tnode = tvNodeAdd(tnode, "Select ID,Name,'' AS Code From CheckItem Where Phy_ID=" + dr["ID"].ToString().Trim());
+                tnode = tvNodeAdd(tnode, "Select ID,Name,'' AS Sequence From CheckItem Where Phy_ID=" + dr["ID"].ToString().Trim());
                 tvPhysicalPoint.Nodes.Add(tnode);
             }
             dr.Close();
@@ -290,10 +290,10 @@ namespace WorkStation
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select ID,Name,''AS Code from Site where Company_ID='" + dr["ID"].ToString() + "'");
+                tnode = tvNodeAdd(tnode, "select ID,Name,''AS Sequence from Site where Company_ID='" + dr["ID"].ToString() + "'");
                 for (int i = 0; i < tnode.Nodes.Count; i++)
                 {
-                    (tnode.Nodes)[i] = tvNodeAdd((tnode.Nodes)[i], "Select ID,Name,Code from CheckRoute Where site_id=" + (tnode.Nodes)[i].Tag);
+                    (tnode.Nodes)[i] = tvNodeAdd((tnode.Nodes)[i], "Select ID,Name,Sequence as Sequence from CheckRoute Where site_id=" + (tnode.Nodes)[i].Tag);
                 }
                 tvRoute.Nodes.Add(tnode);
             }
@@ -315,7 +315,7 @@ namespace WorkStation
                 TreeNode tn = new TreeNode();
                 tn.Text = dr["Name"].ToString();
                 tn.Tag = dr["ID"];
-                if (dr["Code"].ToString() == "1")
+                if (dr["Sequence"].ToString() == "1")
                 {
                     tn.ForeColor = Color.Red;
                 }
