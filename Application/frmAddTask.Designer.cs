@@ -40,7 +40,6 @@
             this.txtAlias = new System.Windows.Forms.TextBox();
             this.txtgangwei = new System.Windows.Forms.TextBox();
             this.listView1 = new System.Windows.Forms.ListView();
-            this.btnSave = new System.Windows.Forms.Button();
             this.ColumnHeader = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,6 +49,7 @@
             this.ColumnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColumnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSave = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -164,21 +164,12 @@
             this.ColumnHeader8,
             this.ColumnHeader9});
             this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(2, 290);
+            this.listView1.Location = new System.Drawing.Point(8, 293);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(746, 219);
             this.listView1.TabIndex = 16;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(592, 235);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 27);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "保存";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // ColumnHeader
             // 
@@ -221,6 +212,15 @@
             // 
             this.ColumnHeader9.Text = "失效时间";
             this.ColumnHeader9.Width = 80;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(590, 245);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 27);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "保存";
+            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // comboBox1
             // 
@@ -279,7 +279,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 562);
+            this.ClientSize = new System.Drawing.Size(766, 562);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.listBox1);

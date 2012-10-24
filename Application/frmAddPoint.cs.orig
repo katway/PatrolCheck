@@ -16,10 +16,5 @@ namespace WorkStation
             InitializeComponent();
         }
 
-
-        private void frmAddPoint_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
