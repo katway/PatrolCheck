@@ -90,10 +90,10 @@
             this.tsmidelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmrenwu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixinjian1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmibianji1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmidelete1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmidelete1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmishenhe1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixiafa1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiexit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmtongjibaobiao = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmirenyuanchuqin = new System.Windows.Forms.ToolStripMenuItem();
@@ -676,10 +676,10 @@
             // 
             this.tsmrenwu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmixinjian1,
-            this.tsmibianji1,
             this.tsmidelete1,
             this.tsmishenhe1,
             this.tsmixiafa1,
+            this.toolStripMenuItem1,
             this.tsmiexit});
             this.tsmrenwu.Image = ((System.Drawing.Image)(resources.GetObject("tsmrenwu.Image")));
             this.tsmrenwu.Name = "tsmrenwu";
@@ -689,37 +689,36 @@
             // tsmixinjian1
             // 
             this.tsmixinjian1.Name = "tsmixinjian1";
-            this.tsmixinjian1.Size = new System.Drawing.Size(94, 22);
-            this.tsmixinjian1.Text = "新建";
-            // 
-            // tsmibianji1
-            // 
-            this.tsmibianji1.Name = "tsmibianji1";
-            this.tsmibianji1.Size = new System.Drawing.Size(94, 22);
-            this.tsmibianji1.Text = "编辑";
+            this.tsmixinjian1.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian1.Text = "任务管理";
+            this.tsmixinjian1.Click += new System.EventHandler(this.tsmixinjian1_Click);
             // 
             // tsmidelete1
             // 
             this.tsmidelete1.Name = "tsmidelete1";
-            this.tsmidelete1.Size = new System.Drawing.Size(94, 22);
-            this.tsmidelete1.Text = "删除";
+            this.tsmidelete1.Size = new System.Drawing.Size(149, 6);
             // 
             // tsmishenhe1
             // 
             this.tsmishenhe1.Name = "tsmishenhe1";
-            this.tsmishenhe1.Size = new System.Drawing.Size(94, 22);
+            this.tsmishenhe1.Size = new System.Drawing.Size(152, 22);
             this.tsmishenhe1.Text = "审核";
             // 
             // tsmixiafa1
             // 
             this.tsmixiafa1.Name = "tsmixiafa1";
-            this.tsmixiafa1.Size = new System.Drawing.Size(94, 22);
+            this.tsmixiafa1.Size = new System.Drawing.Size(152, 22);
             this.tsmixiafa1.Text = "下发";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // tsmiexit
             // 
             this.tsmiexit.Name = "tsmiexit";
-            this.tsmiexit.Size = new System.Drawing.Size(94, 22);
+            this.tsmiexit.Size = new System.Drawing.Size(152, 22);
             this.tsmiexit.Text = "退出";
             // 
             // tsmtongjibaobiao
@@ -968,8 +967,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmidelete;
         private System.Windows.Forms.ToolStripMenuItem tsmrenwu;
         private System.Windows.Forms.ToolStripMenuItem tsmixinjian1;
-        private System.Windows.Forms.ToolStripMenuItem tsmibianji1;
-        private System.Windows.Forms.ToolStripMenuItem tsmidelete1;
         private System.Windows.Forms.ToolStripMenuItem tsmishenhe1;
         private System.Windows.Forms.ToolStripMenuItem tsmixiafa1;
         private System.Windows.Forms.ToolStripMenuItem tsmiexit;
@@ -1038,5 +1035,7 @@
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnItem;
+        private System.Windows.Forms.ToolStripSeparator tsmidelete1;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }

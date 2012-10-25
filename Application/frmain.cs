@@ -203,6 +203,12 @@ namespace WorkStation
             frm.Top = this.Top + (this.Height - frm.Height) / 2;
             frm.Show() ;
         }
+
+        private void tsmixinjian1_Click(object sender, EventArgs e)
+        {
+            frmAddTask frm = new frmAddTask();
+            frm.ShowDialog();
+        }
        
     }
 }
