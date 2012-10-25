@@ -64,6 +64,12 @@
     <Compile Include="frmAddPoint.Designer.cs">
       <DependentUpon>frmAddPoint.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPost.Designer.cs">
+      <DependentUpon>frmAddPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddRoute.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,6 +118,12 @@
     <Compile Include="frmEditOrDeletePoint.Designer.cs">
       <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditOrDeletePost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeletePost.Designer.cs">
+      <DependentUpon>frmEditOrDeletePost.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditOrDeleteRoute.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +168,9 @@
     <EmbeddedResource Include="frmAddPoint.resx">
       <DependentUpon>frmAddPoint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPost.resx">
+      <DependentUpon>frmAddPost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddRoute.resx">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
     </EmbeddedResource>
@@ -179,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeletePoint.resx">
       <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeletePost.resx">
+      <DependentUpon>frmEditOrDeletePost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeleteRoute.resx">
       <DependentUpon>frmEditOrDeleteRoute.cs</DependentUpon>

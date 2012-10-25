@@ -106,7 +106,6 @@
             this.tsmixunjianxiangs = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmishebeixunjianxiang = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmjichu = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmigongshimingcheng = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmichangquguanli = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmichejian = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmigangwei = new System.Windows.Forms.ToolStripMenuItem();
@@ -658,7 +657,7 @@
             // tsmixinjian
             // 
             this.tsmixinjian.Name = "tsmixinjian";
-            this.tsmixinjian.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian.Size = new System.Drawing.Size(94, 22);
             this.tsmixinjian.Text = "新建";
             this.tsmixinjian.Click += new System.EventHandler(this.tsmixinjian_Click);
             // 
@@ -691,7 +690,7 @@
             // tsmixinjian1
             // 
             this.tsmixinjian1.Name = "tsmixinjian1";
-            this.tsmixinjian1.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian1.Size = new System.Drawing.Size(94, 22);
             this.tsmixinjian1.Text = "新建";
             this.tsmixinjian1.Click += new System.EventHandler(this.tsmixinjian1_Click);
             // 
@@ -800,7 +799,6 @@
             // tsmjichu
             // 
             this.tsmjichu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmigongshimingcheng,
             this.tsmichangquguanli,
             this.tsmichejian,
             this.tsmigangwei,
@@ -811,16 +809,10 @@
             this.tsmjichu.Size = new System.Drawing.Size(81, 20);
             this.tsmjichu.Text = "基础信息";
             // 
-            // tsmigongshimingcheng
-            // 
-            this.tsmigongshimingcheng.Name = "tsmigongshimingcheng";
-            this.tsmigongshimingcheng.Size = new System.Drawing.Size(118, 22);
-            this.tsmigongshimingcheng.Text = "公司名称";
-            // 
             // tsmichangquguanli
             // 
             this.tsmichangquguanli.Name = "tsmichangquguanli";
-            this.tsmichangquguanli.Size = new System.Drawing.Size(152, 22);
+            this.tsmichangquguanli.Size = new System.Drawing.Size(118, 22);
             this.tsmichangquguanli.Text = "厂区管理";
             this.tsmichangquguanli.Click += new System.EventHandler(this.tsmichangquguanli_Click);
             // 
@@ -984,7 +976,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmixunjianxiangs;
         private System.Windows.Forms.ToolStripMenuItem tsmishebeixunjianxiang;
         private System.Windows.Forms.ToolStripMenuItem tsmjichu;
-        private System.Windows.Forms.ToolStripMenuItem tsmigongshimingcheng;
         private System.Windows.Forms.ToolStripMenuItem tsmichangquguanli;
         private System.Windows.Forms.ToolStripMenuItem tsmichejian;
         private System.Windows.Forms.ToolStripMenuItem tsmigangwei;

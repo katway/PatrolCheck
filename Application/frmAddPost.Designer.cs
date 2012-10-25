@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmAddEmployee
+    partial class frmAddPost
     {
         /// <summary>
         /// Required designer variable.
@@ -31,26 +31,23 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
-            this.txtAlias = new System.Windows.Forms.TextBox();
-            this.cboCard = new System.Windows.Forms.ComboBox();
-            this.cboPost = new System.Windows.Forms.ComboBox();
+            this.txtalias = new System.Windows.Forms.TextBox();
+            this.cboSite = new System.Windows.Forms.ComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(124, 53);
+            this.label1.Location = new System.Drawing.Point(102, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 0;
@@ -59,7 +56,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(124, 93);
+            this.label2.Location = new System.Drawing.Point(102, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 1;
@@ -68,50 +65,53 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(100, 131);
+            this.label3.Location = new System.Drawing.Point(92, 125);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "所属卡片";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(100, 173);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 12);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "所属岗位";
+            this.label3.Text = "所属厂区";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(187, 50);
+            this.txtName.Location = new System.Drawing.Point(173, 30);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(210, 21);
+            this.txtName.Size = new System.Drawing.Size(215, 21);
             this.txtName.TabIndex = 4;
             // 
-            // txtAlias
+            // txtalias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(187, 90);
-            this.txtAlias.Name = "txtAlias";
-            this.txtAlias.Size = new System.Drawing.Size(210, 21);
-            this.txtAlias.TabIndex = 5;
+            this.txtalias.Location = new System.Drawing.Point(173, 75);
+            this.txtalias.Name = "txtalias";
+            this.txtalias.Size = new System.Drawing.Size(215, 21);
+            this.txtalias.TabIndex = 5;
             // 
-            // cboCard
+            // cboSite
             // 
-            this.cboCard.FormattingEnabled = true;
-            this.cboCard.Location = new System.Drawing.Point(187, 131);
-            this.cboCard.Name = "cboCard";
-            this.cboCard.Size = new System.Drawing.Size(154, 20);
-            this.cboCard.TabIndex = 6;
+            this.cboSite.FormattingEnabled = true;
+            this.cboSite.Location = new System.Drawing.Point(173, 123);
+            this.cboSite.Name = "cboSite";
+            this.cboSite.Size = new System.Drawing.Size(148, 20);
+            this.cboSite.TabIndex = 6;
             // 
-            // cboPost
+            // btnSave
             // 
-            this.cboPost.FormattingEnabled = true;
-            this.cboPost.Location = new System.Drawing.Point(187, 170);
-            this.cboPost.Name = "cboPost";
-            this.cboPost.Size = new System.Drawing.Size(154, 20);
-            this.cboPost.TabIndex = 7;
+            this.btnSave.Location = new System.Drawing.Point(459, 120);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "保存";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(459, 62);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 9;
+            this.btnCancel.Text = "取消";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // dataGridView1
             // 
@@ -120,83 +120,54 @@
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(63, 219);
+            this.Column4});
+            this.dataGridView1.Location = new System.Drawing.Point(31, 187);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(608, 150);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.Size = new System.Drawing.Size(579, 182);
+            this.dataGridView1.TabIndex = 10;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "人员编号";
+            this.Column1.HeaderText = "编号";
             this.Column1.Name = "Column1";
             // 
             // Column2
             // 
-            this.Column2.DataPropertyName = "emName";
+            this.Column2.DataPropertyName = "Name";
             this.Column2.HeaderText = "名称";
             this.Column2.Name = "Column2";
             // 
             // Column3
             // 
-            this.Column3.DataPropertyName = "alias";
+            this.Column3.DataPropertyName = "Alias";
             this.Column3.HeaderText = "别名";
             this.Column3.Name = "Column3";
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "Name";
-            this.Column4.HeaderText = "所属卡片";
+            this.Column4.DataPropertyName = "Name1";
+            this.Column4.HeaderText = "所属厂区";
             this.Column4.Name = "Column4";
             // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "postName";
-            this.Column5.HeaderText = "所属岗位";
-            this.Column5.Name = "Column5";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(488, 119);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "保存";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(488, 167);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "取消";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // frmAddEmployee
+            // frmAddPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 411);
+            this.ClientSize = new System.Drawing.Size(652, 401);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.cboPost);
-            this.Controls.Add(this.cboCard);
-            this.Controls.Add(this.txtAlias);
+            this.Controls.Add(this.cboSite);
+            this.Controls.Add(this.txtalias);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmAddEmployee";
-            this.Text = "frmEmployeAdde";
-            this.Load += new System.EventHandler(this.frmAddEmployee_Load);
+            this.Name = "frmAddPost";
+            this.Text = "frmAddPost";
+            this.Load += new System.EventHandler(this.frmAddPost_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,18 +179,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtAlias;
-        private System.Windows.Forms.ComboBox cboCard;
-        private System.Windows.Forms.ComboBox cboPost;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtalias;
+        private System.Windows.Forms.ComboBox cboSite;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
     }
 }
