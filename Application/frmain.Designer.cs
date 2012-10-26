@@ -93,8 +93,6 @@
             this.tsmidelete1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmishenhe1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixiafa1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsmiexit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmtongjibaobiao = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmirenyuanchuqin = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixunjianxiang = new System.Windows.Forms.ToolStripMenuItem();
@@ -678,9 +676,7 @@
             this.tsmixinjian1,
             this.tsmidelete1,
             this.tsmishenhe1,
-            this.tsmixiafa1,
-            this.toolStripMenuItem1,
-            this.tsmiexit});
+            this.tsmixiafa1});
             this.tsmrenwu.Image = ((System.Drawing.Image)(resources.GetObject("tsmrenwu.Image")));
             this.tsmrenwu.Name = "tsmrenwu";
             this.tsmrenwu.Size = new System.Drawing.Size(81, 20);
@@ -702,24 +698,15 @@
             // 
             this.tsmishenhe1.Name = "tsmishenhe1";
             this.tsmishenhe1.Size = new System.Drawing.Size(152, 22);
-            this.tsmishenhe1.Text = "审核";
+            this.tsmishenhe1.Text = "任务审核";
+            this.tsmishenhe1.Click += new System.EventHandler(this.tsmishenhe1_Click);
             // 
             // tsmixiafa1
             // 
             this.tsmixiafa1.Name = "tsmixiafa1";
             this.tsmixiafa1.Size = new System.Drawing.Size(152, 22);
-            this.tsmixiafa1.Text = "下发";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
-            // 
-            // tsmiexit
-            // 
-            this.tsmiexit.Name = "tsmiexit";
-            this.tsmiexit.Size = new System.Drawing.Size(152, 22);
-            this.tsmiexit.Text = "退出";
+            this.tsmixiafa1.Text = "任务下发";
+            this.tsmixiafa1.Click += new System.EventHandler(this.tsmixiafa1_Click);
             // 
             // tsmtongjibaobiao
             // 
@@ -969,7 +956,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmixinjian1;
         private System.Windows.Forms.ToolStripMenuItem tsmishenhe1;
         private System.Windows.Forms.ToolStripMenuItem tsmixiafa1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiexit;
         private System.Windows.Forms.ToolStripMenuItem tsmtongjibaobiao;
         private System.Windows.Forms.ToolStripMenuItem tsmirenyuanchuqin;
         private System.Windows.Forms.ToolStripMenuItem tsmixunjianxiang;
@@ -1036,6 +1022,5 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Button btnItem;
         private System.Windows.Forms.ToolStripSeparator tsmidelete1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }

@@ -57,6 +57,30 @@
     <Compile Include="frmAddCard.Designer.cs">
       <DependentUpon>frmAddCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPlan.Designer.cs">
+      <DependentUpon>frmAddPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPlanExamine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPlanExamine.Designer.cs">
+      <DependentUpon>frmAddPlanExamine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPlanToTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPlanToTask.Designer.cs">
+      <DependentUpon>frmAddPlanToTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPlan_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPlan_Add.Designer.cs">
+      <DependentUpon>frmAddPlan_Add.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddPoint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +163,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAddCard.resx">
       <DependentUpon>frmAddCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPlan.resx">
+      <DependentUpon>frmAddPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPlanExamine.resx">
+      <DependentUpon>frmAddPlanExamine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPlanToTask.resx">
+      <DependentUpon>frmAddPlanToTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPlan_Add.resx">
+      <DependentUpon>frmAddPlan_Add.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddPoint.resx">
       <DependentUpon>frmAddPoint.cs</DependentUpon>

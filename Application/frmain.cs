@@ -206,8 +206,20 @@ namespace WorkStation
 
         private void tsmixinjian1_Click(object sender, EventArgs e)
         {
-            frmAddTask frm = new frmAddTask();
+            frmAddPlan frm = new frmAddPlan();
             frm.ShowDialog();
+        }
+
+        private void tsmishenhe1_Click(object sender, EventArgs e)
+        {
+            frmAddPlanExamine frm = new frmAddPlanExamine();
+            frm.Show();
+        }
+
+        private void tsmixiafa1_Click(object sender, EventArgs e)
+        {
+            frmAddPlanToTask add = new frmAddPlanToTask();
+            add.ShowDialog();
         }
        
     }
