@@ -39,6 +39,10 @@ namespace WorkStation
                     }
                 case "0":
                     {
+                        this.btnNew.Enabled = true;
+                        this.btnEdit.Enabled = true;
+                        this.btnDel.Enabled = true;
+                        this.btnSubmit.Enabled = true;
                         this.btnUnSub.Enabled = false;
                         break;
                     }
@@ -80,8 +84,8 @@ namespace WorkStation
         private void btnNew_Click(object sender, EventArgs e)
         {
             frmAddPlan_Add add = new frmAddPlan_Add();
-            add.Left = this.Left - (this.Width - add.Width) / 2;
-            add.Top = this.Top - (this.Height - add.Height) / 2;
+            add.Left = this.Left + (this.Width - add.Width) / 2;
+            add.Top = this.Top +(this.Height - add.Height) / 2;
             add.dgv = this.dgvPlan;
             add.state = this.labState.Text;
             add.Show();
@@ -270,10 +274,13 @@ namespace WorkStation
         {
             if(e.RowIndex<0||btnEdit.Enabled==false) return;
             frmAddPlan_Add add = new frmAddPlan_Add();
-            add.Left = this.Left - (this.Width - add.Width) / 2;
-            add.Top = this.Top - (this.Height - add.Height) / 2;
+            add.Left = this.Left + (this.Width - add.Width) / 2;
+            add.Top = this.Top + (this.Height - add.Height) / 2;
 
             add.isEdit = true;
+            add.dgv = this.dgvPlan;
+            add.state = this.labState.Text;
+
             add.planID = dgvPlan.Rows[e.RowIndex].Cells[1].Value.ToString();
             add.planName = dgvPlan.Rows[e.RowIndex].Cells[2].Value.ToString();
             add.planAlias = dgvPlan.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -286,7 +293,7 @@ namespace WorkStation
             add.dtEffect = Convert.ToDateTime(dgvPlan.Rows[e.RowIndex].Cells[11].Value);
             add.dtIneffect = Convert.ToDateTime(dgvPlan.Rows[e.RowIndex].Cells[12].Value);           
 
-            add.Show();
+            add.ShowDialog();
         }
 
         private void dgvPlan_CellClick(object sender, DataGridViewCellEventArgs e)

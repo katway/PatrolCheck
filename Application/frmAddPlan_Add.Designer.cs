@@ -265,9 +265,10 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblRount);
             this.Controls.Add(this.lblName);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
             this.Name = "frmAddPlan_Add";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "新建计划";
             this.Load += new System.EventHandler(this.frmAddPlan_Add_Load);
             this.ResumeLayout(false);

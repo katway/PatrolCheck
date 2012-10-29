@@ -18,6 +18,8 @@ namespace WorkStation
 
         private void frmAddPlanExamine_Load(object sender, EventArgs e)
         {
+            cboInit();
+            this.labState.Text = (this.cboState.SelectedItem as BoxItem).Value.ToString() == "" ? "0,1,2,4" : (this.cboState.SelectedItem as BoxItem).Value.ToString();
             getDgvPlan();
         }
 
@@ -126,8 +128,40 @@ namespace WorkStation
                                                     (select meaning from codes where code= planstate and purpose='planstate') as 状态 
                                                      From Checkplan as  c left join CheckRoute  as r on c.route_id=r.id 
                                                               left join Post p on c.post=p.id 
-                                                              where c.PlanState in (" + 1 + ")");
+                                                              where c.PlanState in (" + this.labState.Text + ")");
             dgvPlan.DataSource = ds.Tables[0];
+        }
+
+        private void cboInit()
+        {
+            cboState.Items.Add(new BoxItem("全部", ""));
+            cboState.Items.Add(new BoxItem("已提交", "1"));
+            cboState.Items.Add(new BoxItem("已审核", "4"));
+            cboState.Items.Add(new BoxItem("未通过", "2"));
+            cboState.SelectedIndex = 0;
+        }
+
+        private void cboState_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.labState.Text = (this.cboState.SelectedItem as BoxItem).Value.ToString() == "" ? "0,1,2,4" : (this.cboState.SelectedItem as BoxItem).Value.ToString();
+            switch ((cboState.SelectedItem as BoxItem).Value.ToString())
+            {
+                case "":
+                case "2":
+                case "4":
+                    {
+                        this.btnPass.Enabled = false;
+                        this.btnUnpass.Enabled = false;
+                        break;
+                    }
+                case "1":
+                    {
+                        this.btnPass.Enabled = true;
+                        this.btnUnpass.Enabled = true;
+                        break;
+                    }
+            }
+            getDgvPlan();
         }
     }
 }

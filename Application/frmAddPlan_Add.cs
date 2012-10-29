@@ -49,13 +49,21 @@ namespace WorkStation
                 MessageBox.Show("请确保没有空值");
                 return;
             }
-            if (SqlHelper.ExecuteScalar("Select count(1) From CheckPlan Where Name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
+            if (isEdit==false&&SqlHelper.ExecuteScalar("Select count(1) From CheckPlan Where Name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
             {
                 MessageBox.Show("请确保计划名称的唯一性");
                 return;
             }
-            string strInsert = @"Insert into CheckPlan(Name,Alias,StartTime,Duration,EndTime,Post,Route_ID,Interval,IntervalUnit,EffectiveTime,IneffectiveTime,Planner,PlanState) values
+            string strInsert;
+            if (isEdit)
+            {
+                strInsert = @"Update CheckPlan set Name=@Name,Alias=@Alias,StartTime=@StartTime,Duration=@Duration,EndTime=@EndTime,Post=@Post,Route_ID=@Route_ID,Interval=@Interval,IntervalUnit=@IntervalUnit,EffectiveTime=@EffectiveTime,IneffectiveTime=@IneffectiveTime,Planner=@Planner,PlanState=@PlanState where id="+planID;
+            }
+            else
+            {
+                strInsert = @"Insert into CheckPlan(Name,Alias,StartTime,Duration,EndTime,Post,Route_ID,Interval,IntervalUnit,EffectiveTime,IneffectiveTime,Planner,PlanState) values
                                                       (@Name,@Alias,@StartTime,@Duration,@EndTime,@Post,@Route_ID,@Interval,@IntervalUnit,@EffectiveTime,@IneffectiveTime,@Planner,@PlanState)";
+            }
             SqlParameter[] pars = new SqlParameter[] { 
                 new SqlParameter("@Name",SqlDbType.VarChar),
                 new SqlParameter("@Alias",SqlDbType.VarChar),

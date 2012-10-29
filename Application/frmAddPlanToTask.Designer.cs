@@ -35,6 +35,7 @@
             this.cboState = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.labID = new System.Windows.Forms.Label();
+            this.labState = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             this.dgvPlan.AllowUserToAddRows = false;
             this.dgvPlan.AllowUserToDeleteRows = false;
+            this.dgvPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
@@ -75,6 +77,7 @@
             // 
             this.dgvTask.AllowUserToAddRows = false;
             this.dgvTask.AllowUserToDeleteRows = false;
+            this.dgvTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTask.Location = new System.Drawing.Point(12, 304);
             this.dgvTask.Name = "dgvTask";
@@ -90,6 +93,7 @@
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(121, 20);
             this.cboState.TabIndex = 37;
+            this.cboState.SelectedIndexChanged += new System.EventHandler(this.cboState_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -103,17 +107,27 @@
             // labID
             // 
             this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(327, 18);
+            this.labID.Location = new System.Drawing.Point(459, 18);
             this.labID.Name = "labID";
             this.labID.Size = new System.Drawing.Size(89, 12);
             this.labID.TabIndex = 39;
             this.labID.Text = "已下发任务的ID";
+            // 
+            // labState
+            // 
+            this.labState.AutoSize = true;
+            this.labState.Location = new System.Drawing.Point(388, 17);
+            this.labState.Name = "labState";
+            this.labState.Size = new System.Drawing.Size(53, 12);
+            this.labState.TabIndex = 40;
+            this.labState.Text = "所选状态";
             // 
             // frmAddPlanToTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 607);
+            this.Controls.Add(this.labState);
             this.Controls.Add(this.labID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboState);
@@ -139,5 +153,6 @@
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labID;
+        private System.Windows.Forms.Label labState;
     }
 }

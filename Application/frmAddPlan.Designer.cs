@@ -45,6 +45,9 @@
             // 
             this.dgvPlan.AllowUserToAddRows = false;
             this.dgvPlan.AllowUserToDeleteRows = false;
+            this.dgvPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
@@ -156,6 +159,7 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnNew);
             this.Name = "frmAddPlan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmAddPlan";
             this.Load += new System.EventHandler(this.frmAddPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();

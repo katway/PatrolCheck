@@ -32,12 +32,15 @@
             this.btnUnpass = new System.Windows.Forms.Button();
             this.dgvPlan = new System.Windows.Forms.DataGridView();
             this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cboState = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.labState = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPass
             // 
-            this.btnPass.Location = new System.Drawing.Point(54, 32);
+            this.btnPass.Location = new System.Drawing.Point(241, 35);
             this.btnPass.Name = "btnPass";
             this.btnPass.Size = new System.Drawing.Size(75, 23);
             this.btnPass.TabIndex = 1;
@@ -47,7 +50,7 @@
             // 
             // btnUnpass
             // 
-            this.btnUnpass.Location = new System.Drawing.Point(212, 32);
+            this.btnUnpass.Location = new System.Drawing.Point(333, 35);
             this.btnUnpass.Name = "btnUnpass";
             this.btnUnpass.Size = new System.Drawing.Size(75, 23);
             this.btnUnpass.TabIndex = 2;
@@ -80,11 +83,41 @@
             this.chkColumn.ReadOnly = true;
             this.chkColumn.Width = 38;
             // 
+            // cboState
+            // 
+            this.cboState.FormattingEnabled = true;
+            this.cboState.Location = new System.Drawing.Point(83, 37);
+            this.cboState.Name = "cboState";
+            this.cboState.Size = new System.Drawing.Size(133, 20);
+            this.cboState.TabIndex = 36;
+            this.cboState.SelectedIndexChanged += new System.EventHandler(this.cboState_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "显示";
+            // 
+            // labState
+            // 
+            this.labState.AutoSize = true;
+            this.labState.Location = new System.Drawing.Point(470, 40);
+            this.labState.Name = "labState";
+            this.labState.Size = new System.Drawing.Size(77, 12);
+            this.labState.TabIndex = 38;
+            this.labState.Text = "要显示的状态";
+            // 
             // frmAddPlanExamine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 552);
+            this.Controls.Add(this.labState);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboState);
             this.Controls.Add(this.btnUnpass);
             this.Controls.Add(this.dgvPlan);
             this.Controls.Add(this.btnPass);
@@ -93,6 +126,7 @@
             this.Load += new System.EventHandler(this.frmAddPlanExamine_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -102,6 +136,9 @@
         private System.Windows.Forms.Button btnUnpass;
         private System.Windows.Forms.DataGridView dgvPlan;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
+        private System.Windows.Forms.ComboBox cboState;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labState;
 
     }
 }
