@@ -708,37 +708,37 @@
             // tsmixinjian1
             // 
             this.tsmixinjian1.Name = "tsmixinjian1";
-            this.tsmixinjian1.Size = new System.Drawing.Size(94, 22);
+            this.tsmixinjian1.Size = new System.Drawing.Size(152, 22);
             this.tsmixinjian1.Text = "新建";
             // 
             // tsmibianji1
             // 
             this.tsmibianji1.Name = "tsmibianji1";
-            this.tsmibianji1.Size = new System.Drawing.Size(94, 22);
+            this.tsmibianji1.Size = new System.Drawing.Size(152, 22);
             this.tsmibianji1.Text = "编辑";
             // 
             // tsmidelete1
             // 
             this.tsmidelete1.Name = "tsmidelete1";
-            this.tsmidelete1.Size = new System.Drawing.Size(94, 22);
+            this.tsmidelete1.Size = new System.Drawing.Size(152, 22);
             this.tsmidelete1.Text = "删除";
             // 
             // tsmishenhe1
             // 
             this.tsmishenhe1.Name = "tsmishenhe1";
-            this.tsmishenhe1.Size = new System.Drawing.Size(94, 22);
+            this.tsmishenhe1.Size = new System.Drawing.Size(152, 22);
             this.tsmishenhe1.Text = "审核";
             // 
             // tsmixiafa1
             // 
             this.tsmixiafa1.Name = "tsmixiafa1";
-            this.tsmixiafa1.Size = new System.Drawing.Size(94, 22);
+            this.tsmixiafa1.Size = new System.Drawing.Size(152, 22);
             this.tsmixiafa1.Text = "下发";
             // 
             // tsmiexit
             // 
             this.tsmiexit.Name = "tsmiexit";
-            this.tsmiexit.Size = new System.Drawing.Size(94, 22);
+            this.tsmiexit.Size = new System.Drawing.Size(152, 22);
             this.tsmiexit.Text = "退出";
             // 
             // tsmtongjibaobiao
@@ -756,25 +756,25 @@
             // tsmirenyuanchuqin
             // 
             this.tsmirenyuanchuqin.Name = "tsmirenyuanchuqin";
-            this.tsmirenyuanchuqin.Size = new System.Drawing.Size(142, 22);
+            this.tsmirenyuanchuqin.Size = new System.Drawing.Size(152, 22);
             this.tsmirenyuanchuqin.Text = "人员出勤统计";
             // 
             // tsmixunjianxiang
             // 
             this.tsmixunjianxiang.Name = "tsmixunjianxiang";
-            this.tsmixunjianxiang.Size = new System.Drawing.Size(142, 22);
+            this.tsmixunjianxiang.Size = new System.Drawing.Size(152, 22);
             this.tsmixunjianxiang.Text = "巡检项统计";
             // 
             // tsmichuqinyichang
             // 
             this.tsmichuqinyichang.Name = "tsmichuqinyichang";
-            this.tsmichuqinyichang.Size = new System.Drawing.Size(142, 22);
+            this.tsmichuqinyichang.Size = new System.Drawing.Size(152, 22);
             this.tsmichuqinyichang.Text = "出勤异常统计";
             // 
             // tsmidianjianyichang
             // 
             this.tsmidianjianyichang.Name = "tsmidianjianyichang";
-            this.tsmidianjianyichang.Size = new System.Drawing.Size(142, 22);
+            this.tsmidianjianyichang.Size = new System.Drawing.Size(152, 22);
             this.tsmidianjianyichang.Text = "点检异常统计";
             // 
             // tsmxunjian
@@ -801,14 +801,12 @@
             this.tsmixunjiandian.Name = "tsmixunjiandian";
             this.tsmixunjiandian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjiandian.Text = "巡检点管理";
-            this.tsmixunjiandian.Click += new System.EventHandler(this.tsmixunjiandian_Click);
             // 
             // tsmixunjianxiangs
             // 
             this.tsmixunjianxiangs.Name = "tsmixunjianxiangs";
             this.tsmixunjianxiangs.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianxiangs.Text = "巡检项管理";
-            this.tsmixunjianxiangs.Click += new System.EventHandler(this.tsmixunjianxiangs_Click);
             // 
             // tsmishebeixunjianxiang
             // 
@@ -836,7 +834,7 @@
             this.tsmichangquEdit,
             this.tsmichangquDelete});
             this.tsmichangquguanli.Name = "tsmichangquguanli";
-            this.tsmichangquguanli.Size = new System.Drawing.Size(118, 22);
+            this.tsmichangquguanli.Size = new System.Drawing.Size(152, 22);
             this.tsmichangquguanli.Text = "厂区管理";
             // 
             // tsmichangquAdd
@@ -867,7 +865,7 @@
             this.tsmigangweiEdit,
             this.tsmigangweiDelete});
             this.tsmigangwei.Name = "tsmigangwei";
-            this.tsmigangwei.Size = new System.Drawing.Size(118, 22);
+            this.tsmigangwei.Size = new System.Drawing.Size(152, 22);
             this.tsmigangwei.Text = "岗位管理";
             // 
             // tsmigangweiAdd
@@ -898,7 +896,7 @@
             this.tsmirenyuanEdit,
             this.tsmirenyuanDelete});
             this.tsmirenyuan.Name = "tsmirenyuan";
-            this.tsmirenyuan.Size = new System.Drawing.Size(118, 22);
+            this.tsmirenyuan.Size = new System.Drawing.Size(152, 22);
             this.tsmirenyuan.Text = "人员管理";
             // 
             // tsmirenyuanAdd
@@ -929,27 +927,27 @@
             this.tsmiCompanyEdit,
             this.tsmiCompanyDel});
             this.tsmiCompany.Name = "tsmiCompany";
-            this.tsmiCompany.Size = new System.Drawing.Size(118, 22);
+            this.tsmiCompany.Size = new System.Drawing.Size(152, 22);
             this.tsmiCompany.Text = "公司管理";
             // 
             // tsmiCompanyAdd
             // 
             this.tsmiCompanyAdd.Name = "tsmiCompanyAdd";
-            this.tsmiCompanyAdd.Size = new System.Drawing.Size(94, 22);
+            this.tsmiCompanyAdd.Size = new System.Drawing.Size(152, 22);
             this.tsmiCompanyAdd.Text = "新建";
             this.tsmiCompanyAdd.Click += new System.EventHandler(this.tsmiCompanyAdd_Click);
             // 
             // tsmiCompanyEdit
             // 
             this.tsmiCompanyEdit.Name = "tsmiCompanyEdit";
-            this.tsmiCompanyEdit.Size = new System.Drawing.Size(94, 22);
+            this.tsmiCompanyEdit.Size = new System.Drawing.Size(152, 22);
             this.tsmiCompanyEdit.Text = "编辑";
             this.tsmiCompanyEdit.Click += new System.EventHandler(this.tsmiCompanyEdit_Click);
             // 
             // tsmiCompanyDel
             // 
             this.tsmiCompanyDel.Name = "tsmiCompanyDel";
-            this.tsmiCompanyDel.Size = new System.Drawing.Size(94, 22);
+            this.tsmiCompanyDel.Size = new System.Drawing.Size(152, 22);
             this.tsmiCompanyDel.Text = "删除";
             this.tsmiCompanyDel.Click += new System.EventHandler(this.tsmiCompanyDel_Click);
             // 
@@ -971,7 +969,7 @@
             this.tsmiCardEdit,
             this.tsmiCardDel});
             this.tsmiluruxinka.Name = "tsmiluruxinka";
-            this.tsmiluruxinka.Size = new System.Drawing.Size(118, 22);
+            this.tsmiluruxinka.Size = new System.Drawing.Size(152, 22);
             this.tsmiluruxinka.Text = "录入新卡";
             // 
             // tsmiCardAdd
@@ -998,13 +996,13 @@
             // tsmibianjiyongtu
             // 
             this.tsmibianjiyongtu.Name = "tsmibianjiyongtu";
-            this.tsmibianjiyongtu.Size = new System.Drawing.Size(118, 22);
+            this.tsmibianjiyongtu.Size = new System.Drawing.Size(152, 22);
             this.tsmibianjiyongtu.Text = "编辑用途";
             // 
             // tsmizhuxiaokapian
             // 
             this.tsmizhuxiaokapian.Name = "tsmizhuxiaokapian";
-            this.tsmizhuxiaokapian.Size = new System.Drawing.Size(118, 22);
+            this.tsmizhuxiaokapian.Size = new System.Drawing.Size(152, 22);
             this.tsmizhuxiaokapian.Text = "注销卡片";
             // 
             // tsmhelp
@@ -1033,7 +1031,7 @@
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // frmain
+            // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1042,7 +1040,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
-            this.Name = "frmain";
+            this.Name = "frmMain";
             this.Text = "frmain";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
