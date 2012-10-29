@@ -105,7 +105,7 @@
             this.dgvSite.Location = new System.Drawing.Point(61, 178);
             this.dgvSite.Name = "dgvSite";
             this.dgvSite.RowTemplate.Height = 23;
-            this.dgvSite.Size = new System.Drawing.Size(578, 157);
+            this.dgvSite.Size = new System.Drawing.Size(594, 157);
             this.dgvSite.TabIndex = 6;
             // 
             // Column1

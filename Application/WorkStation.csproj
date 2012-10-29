@@ -37,6 +37,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Windows.Forms" />
@@ -57,11 +58,23 @@
     <Compile Include="frmAddCard.Designer.cs">
       <DependentUpon>frmAddCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCompany.Designer.cs">
+      <DependentUpon>frmAddCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddPoint.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAddPoint.Designer.cs">
       <DependentUpon>frmAddPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddPost.Designer.cs">
+      <DependentUpon>frmAddPost.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddRoute.cs">
       <SubType>Form</SubType>
@@ -99,6 +112,18 @@
     <Compile Include="frmEditAndDeleteCard.Designer.cs">
       <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditOrDeleteCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeleteCompany.Designer.cs">
+      <DependentUpon>frmEditOrDeleteCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditOrDeleteEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeleteEmployee.Designer.cs">
+      <DependentUpon>frmEditOrDeleteEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditOrDeleteItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +136,12 @@
     <Compile Include="frmEditOrDeletePoint.Designer.cs">
       <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEditOrDeletePost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeletePost.Designer.cs">
+      <DependentUpon>frmEditOrDeletePost.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEditOrDeleteRoute.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +153,12 @@
     </Compile>
     <Compile Include="frmEditOrDeleteTask.Designer.cs">
       <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddEmployee.Designer.cs">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIssueTask.cs">
       <SubType>Form</SubType>
@@ -137,11 +174,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteEditDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiteEditDelete.Designer.cs">
+      <DependentUpon>SiteEditDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SiteNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SiteNew.Designer.cs">
+      <DependentUpon>SiteNew.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmAddCard.resx">
       <DependentUpon>frmAddCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCompany.resx">
+      <DependentUpon>frmAddCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddPoint.resx">
       <DependentUpon>frmAddPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddPost.resx">
+      <DependentUpon>frmAddPost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddRoute.resx">
       <DependentUpon>frmAddRoute.cs</DependentUpon>
@@ -161,17 +216,29 @@
     <EmbeddedResource Include="frmEditAndDeleteCard.resx">
       <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeleteCompany.resx">
+      <DependentUpon>frmEditOrDeleteCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeleteEmployee.resx">
+      <DependentUpon>frmEditOrDeleteEmployee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeleteItem.resx">
       <DependentUpon>frmEditOrDeleteItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeletePoint.resx">
       <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeletePost.resx">
+      <DependentUpon>frmEditOrDeletePost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeleteRoute.resx">
       <DependentUpon>frmEditOrDeleteRoute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeleteTask.resx">
       <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddEmployee.resx">
+      <DependentUpon>frmAddEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIssueTask.resx">
       <DependentUpon>frmIssueTask.cs</DependentUpon>
@@ -189,7 +256,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SiteEditDelete.resx">
+      <DependentUpon>SiteEditDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SiteNew.resx">
+      <DependentUpon>SiteNew.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
