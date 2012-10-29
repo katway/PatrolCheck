@@ -66,10 +66,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(60, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(41, 29);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(579, 182);
+            this.dataGridView1.Size = new System.Drawing.Size(625, 192);
             this.dataGridView1.TabIndex = 19;
             // 
             // Column2
@@ -86,7 +86,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(408, 336);
+            this.btnCancel.Location = new System.Drawing.Point(408, 347);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 18;
@@ -155,7 +155,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(452, 243);
+            this.btnEdit.Location = new System.Drawing.Point(490, 243);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 20;
@@ -165,9 +165,9 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(577, 243);
+            this.btnDelete.Location = new System.Drawing.Point(598, 243);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(68, 23);
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = true;

@@ -14,7 +14,7 @@ namespace WorkStation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmEditOrDeletePost());
+            Application.Run(new frmain());
         }
     }
 }

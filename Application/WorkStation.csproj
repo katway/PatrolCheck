@@ -58,6 +58,12 @@
     <Compile Include="frmAddCard.Designer.cs">
       <DependentUpon>frmAddCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAddCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddCompany.Designer.cs">
+      <DependentUpon>frmAddCompany.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAddPoint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="frmEditAndDeleteCard.Designer.cs">
       <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEditOrDeleteCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditOrDeleteCompany.Designer.cs">
+      <DependentUpon>frmEditOrDeleteCompany.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEditOrDeleteEmployee.cs">
       <SubType>Form</SubType>
@@ -165,6 +177,9 @@
     <EmbeddedResource Include="frmAddCard.resx">
       <DependentUpon>frmAddCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddCompany.resx">
+      <DependentUpon>frmAddCompany.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAddPoint.resx">
       <DependentUpon>frmAddPoint.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditAndDeleteCard.resx">
       <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditOrDeleteCompany.resx">
+      <DependentUpon>frmEditOrDeleteCompany.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEditOrDeleteEmployee.resx">
       <DependentUpon>frmEditOrDeleteEmployee.cs</DependentUpon>
@@ -228,6 +246,9 @@
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

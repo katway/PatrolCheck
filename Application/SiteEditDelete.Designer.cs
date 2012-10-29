@@ -57,7 +57,7 @@
             this.dgvSite.Location = new System.Drawing.Point(55, 21);
             this.dgvSite.Name = "dgvSite";
             this.dgvSite.RowTemplate.Height = 23;
-            this.dgvSite.Size = new System.Drawing.Size(560, 157);
+            this.dgvSite.Size = new System.Drawing.Size(616, 163);
             this.dgvSite.TabIndex = 7;
             // 
             // Column1
@@ -96,7 +96,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(501, 361);
+            this.btnSave.Location = new System.Drawing.Point(501, 358);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 16;
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(743, 445);
+            this.ClientSize = new System.Drawing.Size(734, 445);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);

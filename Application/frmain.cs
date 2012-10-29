@@ -175,23 +175,105 @@ namespace WorkStation
 
         }
 
-        private void tsmixinjian_Click(object sender, EventArgs e)
+        private void tsmigangweiAdd_Click(object sender, EventArgs e)
         {
+            frmAddPost post = new frmAddPost();
+            post.Show();
+        }
+
+        private void tsmichangquAdd_Click(object sender, EventArgs e)
+        {
+            SiteNew site = new SiteNew();
+            site.Show();
+        }
+
+        private void tsmichangquEdit_Click(object sender, EventArgs e)
+        {
+            SiteEditDelete sitedel = new SiteEditDelete();
+            sitedel.Show();
 
         }
 
-        private void tsmichangquguanli_Click(object sender, EventArgs e)
+        private void tsmichangquDelete_Click(object sender, EventArgs e)
         {
-            SiteNew s1=new SiteNew();
-            s1.Show();
+            SiteEditDelete sitedel = new SiteEditDelete();
+            sitedel.Show();
+
         }
 
-        private void tsmixinjian1_Click(object sender, EventArgs e)
+        private void tsmigangweiEdit_Click(object sender, EventArgs e)
         {
-            frmIssueTask task = new frmIssueTask();
-            task.Show();
+            frmEditOrDeletePost post = new frmEditOrDeletePost();
+            post.Show();
         }
 
+        private void tsmigangweiDelete_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeletePost post = new frmEditOrDeletePost();
+            post.Show();
+        }
+
+        private void tsmirenyuanAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEmployee employee = new frmAddEmployee();
+            employee.Show();
+        }
+
+        private void tsmirenyuanEdit_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteEmployee frmdel = new frmEditOrDeleteEmployee();
+            frmdel.Show();
+        }
+
+        private void tsmirenyuanDelete_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteEmployee frmdel = new frmEditOrDeleteEmployee();
+            frmdel.Show();
+        }
+
+        private void tsmiCardAdd_Click(object sender, EventArgs e)
+        {
+            frmAddCard card = new frmAddCard();
+            card.Show();
+        }
+
+        private void tsmiCardEdit_Click(object sender, EventArgs e)
+        {
+            frmEditAndDeleteCard card1 = new frmEditAndDeleteCard();
+            card1.Show();
+        }
+
+        private void tsmiCardDel_Click(object sender, EventArgs e)
+        {
+            frmEditAndDeleteCard card1 = new frmEditAndDeleteCard();
+            card1.Show();
+
+        }
+
+        private void tsmiCompanyAdd_Click(object sender, EventArgs e)
+        {
+            frmAddCompany com = new frmAddCompany();
+            com.Show();
+        }
+
+        private void tsmiCompanyEdit_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteCompany com2 = new frmEditOrDeleteCompany();
+            com2.Show();
+
+        }
+
+        private void tsmiCompanyDel_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteCompany com2 = new frmEditOrDeleteCompany();
+            com2.Show();
+        }
+
+       
+
+    
+      
+        
       
 
        
