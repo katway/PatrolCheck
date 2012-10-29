@@ -175,19 +175,105 @@ namespace WorkStation
 
         }
 
-        //新建巡检项
-        private void tsmixunjianxiangs_Click(object sender, EventArgs e)
+        private void tsmigangweiAdd_Click(object sender, EventArgs e)
         {
-            frmAddItem additem = new frmAddItem();
-            additem.ShowDialog();
+            frmAddPost post = new frmAddPost();
+            post.Show();
         }
 
-        //新建巡检点
-        private void tsmixunjiandian_Click(object sender, EventArgs e)
+        private void tsmichangquAdd_Click(object sender, EventArgs e)
         {
-            frmAddPoint addpoint = new frmAddPoint();
-            addpoint.ShowDialog();
+            SiteNew site = new SiteNew();
+            site.Show();
         }
+
+        private void tsmichangquEdit_Click(object sender, EventArgs e)
+        {
+            SiteEditDelete sitedel = new SiteEditDelete();
+            sitedel.Show();
+
+        }
+
+        private void tsmichangquDelete_Click(object sender, EventArgs e)
+        {
+            SiteEditDelete sitedel = new SiteEditDelete();
+            sitedel.Show();
+
+        }
+
+        private void tsmigangweiEdit_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeletePost post = new frmEditOrDeletePost();
+            post.Show();
+        }
+
+        private void tsmigangweiDelete_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeletePost post = new frmEditOrDeletePost();
+            post.Show();
+        }
+
+        private void tsmirenyuanAdd_Click(object sender, EventArgs e)
+        {
+            frmAddEmployee employee = new frmAddEmployee();
+            employee.Show();
+        }
+
+        private void tsmirenyuanEdit_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteEmployee frmdel = new frmEditOrDeleteEmployee();
+            frmdel.Show();
+        }
+
+        private void tsmirenyuanDelete_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteEmployee frmdel = new frmEditOrDeleteEmployee();
+            frmdel.Show();
+        }
+
+        private void tsmiCardAdd_Click(object sender, EventArgs e)
+        {
+            frmAddCard card = new frmAddCard();
+            card.Show();
+        }
+
+        private void tsmiCardEdit_Click(object sender, EventArgs e)
+        {
+            frmEditAndDeleteCard card1 = new frmEditAndDeleteCard();
+            card1.Show();
+        }
+
+        private void tsmiCardDel_Click(object sender, EventArgs e)
+        {
+            frmEditAndDeleteCard card1 = new frmEditAndDeleteCard();
+            card1.Show();
+
+        }
+
+        private void tsmiCompanyAdd_Click(object sender, EventArgs e)
+        {
+            frmAddCompany com = new frmAddCompany();
+            com.Show();
+        }
+
+        private void tsmiCompanyEdit_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteCompany com2 = new frmEditOrDeleteCompany();
+            com2.Show();
+
+        }
+
+        private void tsmiCompanyDel_Click(object sender, EventArgs e)
+        {
+            frmEditOrDeleteCompany com2 = new frmEditOrDeleteCompany();
+            com2.Show();
+        }
+
+       
+
+    
+      
+        
 
         //新建设备
         private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)

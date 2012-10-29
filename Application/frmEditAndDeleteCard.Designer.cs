@@ -136,7 +136,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(458, 211);
+            this.button1.Location = new System.Drawing.Point(486, 211);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 22;
@@ -146,9 +146,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(559, 211);
+            this.button2.Location = new System.Drawing.Point(590, 211);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(67, 23);
             this.button2.TabIndex = 23;
             this.button2.Text = "删除";
             this.button2.UseVisualStyleBackColor = true;
