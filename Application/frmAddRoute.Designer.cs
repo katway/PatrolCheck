@@ -28,153 +28,284 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblAlias = new System.Windows.Forms.Label();
-            this.lblGenus = new System.Windows.Forms.Label();
-            this.lblPoint = new System.Windows.Forms.Label();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.txtGenus = new System.Windows.Forms.TextBox();
-            this.txtAlias = new System.Windows.Forms.TextBox();
-            this.txtPoint = new System.Windows.Forms.TextBox();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.新建路线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.删除路线ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chkRoute = new System.Windows.Forms.CheckBox();
+            this.tvRoute = new System.Windows.Forms.TreeView();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labRouteID = new System.Windows.Forms.Label();
+            this.btnAddTemplate = new System.Windows.Forms.Button();
+            this.chkPhysicalPoint = new System.Windows.Forms.CheckBox();
+            this.chkLogicalPoint = new System.Windows.Forms.CheckBox();
+            this.tvPhysicalPoint = new System.Windows.Forms.TreeView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tbRoute = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tvLogicalPoint = new System.Windows.Forms.TreeView();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnMoveDown = new System.Windows.Forms.Button();
+            this.btnMoveUp = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.menuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblName
+            // menuStrip1
             // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(206, 59);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(29, 12);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "名称";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.新建路线ToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.删除路线ToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(751, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // lblAlias
+            // 新建路线ToolStripMenuItem
             // 
-            this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(206, 99);
-            this.lblAlias.Name = "lblAlias";
-            this.lblAlias.Size = new System.Drawing.Size(29, 12);
-            this.lblAlias.TabIndex = 1;
-            this.lblAlias.Text = "别名";
+            this.新建路线ToolStripMenuItem.Name = "新建路线ToolStripMenuItem";
+            this.新建路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.新建路线ToolStripMenuItem.Text = "新建路线";
+            this.新建路线ToolStripMenuItem.Click += new System.EventHandler(this.新建路线ToolStripMenuItem_Click);
             // 
-            // lblGenus
+            // toolStripMenuItem1
             // 
-            this.lblGenus.AutoSize = true;
-            this.lblGenus.Location = new System.Drawing.Point(182, 133);
-            this.lblGenus.Name = "lblGenus";
-            this.lblGenus.Size = new System.Drawing.Size(53, 12);
-            this.lblGenus.TabIndex = 2;
-            this.lblGenus.Text = "所属厂区";
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
+            this.toolStripMenuItem1.Text = "编辑路线";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
-            // lblPoint
+            // 删除路线ToolStripMenuItem
             // 
-            this.lblPoint.AutoSize = true;
-            this.lblPoint.Location = new System.Drawing.Point(158, 169);
-            this.lblPoint.Name = "lblPoint";
-            this.lblPoint.Size = new System.Drawing.Size(77, 12);
-            this.lblPoint.TabIndex = 3;
-            this.lblPoint.Text = "包含的巡检点";
+            this.删除路线ToolStripMenuItem.Name = "删除路线ToolStripMenuItem";
+            this.删除路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.删除路线ToolStripMenuItem.Text = "删除路线";
+            this.删除路线ToolStripMenuItem.Click += new System.EventHandler(this.删除路线ToolStripMenuItem_Click);
             // 
-            // txtName
+            // groupBox1
             // 
-            this.txtName.Location = new System.Drawing.Point(295, 56);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(224, 21);
-            this.txtName.TabIndex = 4;
+            this.groupBox1.Controls.Add(this.chkRoute);
+            this.groupBox1.Controls.Add(this.tvRoute);
+            this.groupBox1.Location = new System.Drawing.Point(13, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(223, 486);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "巡检路线";
             // 
-            // txtGenus
+            // chkRoute
             // 
-            this.txtGenus.Location = new System.Drawing.Point(295, 124);
-            this.txtGenus.Name = "txtGenus";
-            this.txtGenus.Size = new System.Drawing.Size(224, 21);
-            this.txtGenus.TabIndex = 5;
+            this.chkRoute.AutoSize = true;
+            this.chkRoute.Checked = true;
+            this.chkRoute.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkRoute.Location = new System.Drawing.Point(93, 458);
+            this.chkRoute.Name = "chkRoute";
+            this.chkRoute.Size = new System.Drawing.Size(72, 16);
+            this.chkRoute.TabIndex = 1;
+            this.chkRoute.Text = "自动展开";
+            this.chkRoute.UseVisualStyleBackColor = true;
+            this.chkRoute.CheckedChanged += new System.EventHandler(this.chkRoute_CheckedChanged);
             // 
-            // txtAlias
+            // tvRoute
             // 
-            this.txtAlias.Location = new System.Drawing.Point(295, 90);
-            this.txtAlias.Name = "txtAlias";
-            this.txtAlias.Size = new System.Drawing.Size(224, 21);
-            this.txtAlias.TabIndex = 6;
+            this.tvRoute.Location = new System.Drawing.Point(6, 20);
+            this.tvRoute.Name = "tvRoute";
+            this.tvRoute.Size = new System.Drawing.Size(211, 432);
+            this.tvRoute.TabIndex = 0;
+            this.tvRoute.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvRoute_AfterSelect);
+            this.tvRoute.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvRoute_NodeMouseDoubleClick);
             // 
-            // txtPoint
+            // groupBox2
             // 
-            this.txtPoint.Location = new System.Drawing.Point(295, 160);
-            this.txtPoint.Name = "txtPoint";
-            this.txtPoint.Size = new System.Drawing.Size(224, 21);
-            this.txtPoint.TabIndex = 8;
+            this.groupBox2.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox2.Controls.Add(this.labRouteID);
+            this.groupBox2.Controls.Add(this.btnAddTemplate);
+            this.groupBox2.Controls.Add(this.chkPhysicalPoint);
+            this.groupBox2.Controls.Add(this.chkLogicalPoint);
+            this.groupBox2.Controls.Add(this.tvPhysicalPoint);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.tbRoute);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.tvLogicalPoint);
+            this.groupBox2.Controls.Add(this.btnSave);
+            this.groupBox2.Controls.Add(this.btnMoveDown);
+            this.groupBox2.Controls.Add(this.btnMoveUp);
+            this.groupBox2.Controls.Add(this.btnDel);
+            this.groupBox2.Controls.Add(this.btnAdd);
+            this.groupBox2.Location = new System.Drawing.Point(254, 28);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(485, 486);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "路线巡检点设置";
             // 
-            // listView1
+            // labRouteID
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(106, 220);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(586, 198);
-            this.listView1.TabIndex = 9;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.labRouteID.AutoSize = true;
+            this.labRouteID.Location = new System.Drawing.Point(273, 31);
+            this.labRouteID.Name = "labRouteID";
+            this.labRouteID.Size = new System.Drawing.Size(41, 12);
+            this.labRouteID.TabIndex = 18;
+            this.labRouteID.Text = "路线ID";
+            this.labRouteID.Visible = false;
             // 
-            // columnHeader1
+            // btnAddTemplate
             // 
-            this.columnHeader1.Text = "巡检路线编号";
-            this.columnHeader1.Width = 116;
+            this.btnAddTemplate.Location = new System.Drawing.Point(202, 82);
+            this.btnAddTemplate.Name = "btnAddTemplate";
+            this.btnAddTemplate.Size = new System.Drawing.Size(75, 23);
+            this.btnAddTemplate.TabIndex = 17;
+            this.btnAddTemplate.Text = "添加模板";
+            this.btnAddTemplate.UseVisualStyleBackColor = true;
             // 
-            // columnHeader2
+            // chkPhysicalPoint
             // 
-            this.columnHeader2.Text = "名称";
-            this.columnHeader2.Width = 75;
+            this.chkPhysicalPoint.AutoSize = true;
+            this.chkPhysicalPoint.Checked = true;
+            this.chkPhysicalPoint.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkPhysicalPoint.Location = new System.Drawing.Point(338, 458);
+            this.chkPhysicalPoint.Name = "chkPhysicalPoint";
+            this.chkPhysicalPoint.Size = new System.Drawing.Size(72, 16);
+            this.chkPhysicalPoint.TabIndex = 16;
+            this.chkPhysicalPoint.Text = "自动展开";
+            this.chkPhysicalPoint.UseVisualStyleBackColor = true;
+            this.chkPhysicalPoint.CheckedChanged += new System.EventHandler(this.chkPhysicalPoint_CheckedChanged);
             // 
-            // columnHeader3
+            // chkLogicalPoint
             // 
-            this.columnHeader3.Text = "别名";
+            this.chkLogicalPoint.AutoSize = true;
+            this.chkLogicalPoint.Checked = true;
+            this.chkLogicalPoint.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkLogicalPoint.Location = new System.Drawing.Point(50, 458);
+            this.chkLogicalPoint.Name = "chkLogicalPoint";
+            this.chkLogicalPoint.Size = new System.Drawing.Size(72, 16);
+            this.chkLogicalPoint.TabIndex = 15;
+            this.chkLogicalPoint.Text = "自动展开";
+            this.chkLogicalPoint.UseVisualStyleBackColor = true;
+            this.chkLogicalPoint.CheckedChanged += new System.EventHandler(this.chkLogicalPoint_CheckedChanged);
             // 
-            // columnHeader4
+            // tvPhysicalPoint
             // 
-            this.columnHeader4.Text = "所属厂区";
-            this.columnHeader4.Width = 85;
+            this.tvPhysicalPoint.Location = new System.Drawing.Point(282, 56);
+            this.tvPhysicalPoint.Name = "tvPhysicalPoint";
+            this.tvPhysicalPoint.Size = new System.Drawing.Size(197, 396);
+            this.tvPhysicalPoint.TabIndex = 13;
+            this.tvPhysicalPoint.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvPhysicalPoint_BeforeSelect);
+            this.tvPhysicalPoint.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvPhysicalPoint_NodeMouseDoubleClick);
             // 
-            // columnHeader5
+            // label2
             // 
-            this.columnHeader5.Text = "包含的巡检点";
-            this.columnHeader5.Width = 111;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(336, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "巡检点";
+            // 
+            // tbRoute
+            // 
+            this.tbRoute.BackColor = System.Drawing.SystemColors.Control;
+            this.tbRoute.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.tbRoute.Location = new System.Drawing.Point(75, 23);
+            this.tbRoute.Name = "tbRoute";
+            this.tbRoute.ReadOnly = true;
+            this.tbRoute.Size = new System.Drawing.Size(191, 21);
+            this.tbRoute.TabIndex = 11;
+            this.tbRoute.Text = "shenm ";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(15, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "当前路线：";
+            // 
+            // tvLogicalPoint
+            // 
+            this.tvLogicalPoint.Location = new System.Drawing.Point(6, 56);
+            this.tvLogicalPoint.Name = "tvLogicalPoint";
+            this.tvLogicalPoint.Size = new System.Drawing.Size(189, 396);
+            this.tvLogicalPoint.TabIndex = 9;
+            this.tvLogicalPoint.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.tvLogicalPoint_BeforeSelect);
+            this.tvLogicalPoint.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvLogicalPoint_NodeMouseDoubleClick);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(597, 169);
+            this.btnSave.Location = new System.Drawing.Point(201, 375);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 10;
+            this.btnSave.TabIndex = 8;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnMoveDown
+            // 
+            this.btnMoveDown.Location = new System.Drawing.Point(201, 207);
+            this.btnMoveDown.Name = "btnMoveDown";
+            this.btnMoveDown.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveDown.TabIndex = 6;
+            this.btnMoveDown.Text = "下移";
+            this.btnMoveDown.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
+            // 
+            // btnMoveUp
+            // 
+            this.btnMoveUp.Location = new System.Drawing.Point(201, 171);
+            this.btnMoveUp.Name = "btnMoveUp";
+            this.btnMoveUp.Size = new System.Drawing.Size(75, 23);
+            this.btnMoveUp.TabIndex = 5;
+            this.btnMoveUp.Text = "上移";
+            this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(201, 140);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 2;
+            this.btnDel.Text = ">";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(201, 111);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "<";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // frmAddRoute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 470);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.txtPoint);
-            this.Controls.Add(this.txtAlias);
-            this.Controls.Add(this.txtGenus);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblPoint);
-            this.Controls.Add(this.lblGenus);
-            this.Controls.Add(this.lblAlias);
-            this.Controls.Add(this.lblName);
+            this.ClientSize = new System.Drawing.Size(751, 526);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmAddRoute";
             this.Text = "新建巡检路线";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddRoute_FormClosing);
+            this.Load += new System.EventHandler(this.frmAddRoute_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -182,20 +313,29 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label lblAlias;
-        private System.Windows.Forms.Label lblGenus;
-        private System.Windows.Forms.Label lblPoint;
-        private System.Windows.Forms.TextBox txtName;
-        private System.Windows.Forms.TextBox txtGenus;
-        private System.Windows.Forms.TextBox txtAlias;
-        private System.Windows.Forms.TextBox txtPoint;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem 新建路线ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 删除路线ToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chkRoute;
+        private System.Windows.Forms.TreeView tvRoute;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnMoveDown;
+        private System.Windows.Forms.Button btnMoveUp;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.Button btnAddTemplate;
+        private System.Windows.Forms.CheckBox chkPhysicalPoint;
+        private System.Windows.Forms.CheckBox chkLogicalPoint;
+        private System.Windows.Forms.TreeView tvPhysicalPoint;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tbRoute;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TreeView tvLogicalPoint;
+        private System.Windows.Forms.Label labRouteID;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+
+
     }
 }

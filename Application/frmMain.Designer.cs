@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmain
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -794,24 +794,28 @@
             this.tsmixunjianluxian.Name = "tsmixunjianluxian";
             this.tsmixunjianluxian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianluxian.Text = "巡检路线管理";
+            this.tsmixunjianluxian.Click += new System.EventHandler(this.tsmixunjianluxian_Click);
             // 
             // tsmixunjiandian
             // 
             this.tsmixunjiandian.Name = "tsmixunjiandian";
             this.tsmixunjiandian.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjiandian.Text = "巡检点管理";
+            this.tsmixunjiandian.Click += new System.EventHandler(this.tsmixunjiandian_Click);
             // 
             // tsmixunjianxiangs
             // 
             this.tsmixunjianxiangs.Name = "tsmixunjianxiangs";
             this.tsmixunjianxiangs.Size = new System.Drawing.Size(154, 22);
             this.tsmixunjianxiangs.Text = "巡检项管理";
+            this.tsmixunjianxiangs.Click += new System.EventHandler(this.tsmixunjianxiangs_Click);
             // 
             // tsmishebeixunjianxiang
             // 
             this.tsmishebeixunjianxiang.Name = "tsmishebeixunjianxiang";
             this.tsmishebeixunjianxiang.Size = new System.Drawing.Size(154, 22);
             this.tsmishebeixunjianxiang.Text = "设备巡检项管理";
+            this.tsmishebeixunjianxiang.Click += new System.EventHandler(this.tsmishebeixunjianxiang_Click);
             // 
             // tsmjichu
             // 

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Model;
 using WorkStation;
 using System.Configuration;
 namespace WorkStation

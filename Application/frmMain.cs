@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace WorkStation
 {
-    public partial class frmain : Form
+    public partial class frmMain : Form
     {
-        public frmain()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -274,8 +274,19 @@ namespace WorkStation
     
       
         
-      
 
+        //新建设备
+        private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
+        {
+            frmAddMachine fm = new frmAddMachine();
+            fm.ShowDialog();
+        }
+
+        private void tsmixunjianluxian_Click(object sender, EventArgs e)
+        {
+            frmAddRoute frm = new frmAddRoute();
+            frm.Show();
+        }
        
     }
 }

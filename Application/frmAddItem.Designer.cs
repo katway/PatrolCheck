@@ -37,21 +37,22 @@
             this.txtAlias = new System.Windows.Forms.TextBox();
             this.cboValue = new System.Windows.Forms.ComboBox();
             this.txtRemarks = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboPoint = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboMachine = new System.Windows.Forms.ComboBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.labID = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(161, 46);
+            this.lblName.Location = new System.Drawing.Point(30, 31);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 0;
@@ -59,15 +60,15 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(232, 37);
+            this.txtName.Location = new System.Drawing.Point(101, 24);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(173, 21);
+            this.txtName.Size = new System.Drawing.Size(171, 21);
             this.txtName.TabIndex = 1;
             // 
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(161, 78);
+            this.lblAlias.Location = new System.Drawing.Point(312, 31);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 2;
@@ -76,7 +77,7 @@
             // lblValue
             // 
             this.lblValue.AutoSize = true;
-            this.lblValue.Location = new System.Drawing.Point(149, 117);
+            this.lblValue.Location = new System.Drawing.Point(312, 79);
             this.lblValue.Name = "lblValue";
             this.lblValue.Size = new System.Drawing.Size(41, 12);
             this.lblValue.TabIndex = 3;
@@ -85,7 +86,7 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
-            this.lblPoints.Location = new System.Drawing.Point(125, 162);
+            this.lblPoints.Location = new System.Drawing.Point(12, 109);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(65, 12);
             this.lblPoints.TabIndex = 4;
@@ -94,7 +95,7 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(161, 230);
+            this.lblRemarks.Location = new System.Drawing.Point(30, 152);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(29, 12);
             this.lblRemarks.TabIndex = 5;
@@ -102,99 +103,133 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(232, 69);
+            this.txtAlias.Location = new System.Drawing.Point(383, 24);
             this.txtAlias.Name = "txtAlias";
-            this.txtAlias.Size = new System.Drawing.Size(173, 21);
+            this.txtAlias.Size = new System.Drawing.Size(171, 21);
             this.txtAlias.TabIndex = 6;
             // 
             // cboValue
             // 
+            this.cboValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboValue.FormattingEnabled = true;
-            this.cboValue.Items.AddRange(new object[] {
-            "正常/不正常",
-            "数值"});
-            this.cboValue.Location = new System.Drawing.Point(232, 109);
+            this.cboValue.Location = new System.Drawing.Point(383, 71);
             this.cboValue.Name = "cboValue";
             this.cboValue.Size = new System.Drawing.Size(171, 20);
             this.cboValue.TabIndex = 7;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(232, 193);
+            this.txtRemarks.Location = new System.Drawing.Point(101, 149);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtRemarks.Size = new System.Drawing.Size(173, 65);
+            this.txtRemarks.Size = new System.Drawing.Size(475, 65);
             this.txtRemarks.TabIndex = 9;
             // 
-            // comboBox1
+            // cboPoint
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboPoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPoint.FormattingEnabled = true;
+            this.cboPoint.Items.AddRange(new object[] {
             "所选巡检点"});
-            this.comboBox1.Location = new System.Drawing.Point(232, 154);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 20);
-            this.comboBox1.TabIndex = 10;
+            this.cboPoint.Location = new System.Drawing.Point(101, 109);
+            this.cboPoint.Name = "cboPoint";
+            this.cboPoint.Size = new System.Drawing.Size(171, 20);
+            this.cboPoint.TabIndex = 10;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(499, 235);
+            this.btnSave.Location = new System.Drawing.Point(278, 234);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // listView1
+            // label1
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5,
-            this.columnHeader6});
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(27, 322);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(587, 175);
-            this.listView1.TabIndex = 12;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "所属机器";
             // 
-            // columnHeader1
+            // cboMachine
             // 
-            this.columnHeader1.Text = "编号";
+            this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMachine.FormattingEnabled = true;
+            this.cboMachine.Location = new System.Drawing.Point(101, 68);
+            this.cboMachine.Name = "cboMachine";
+            this.cboMachine.Size = new System.Drawing.Size(171, 20);
+            this.cboMachine.TabIndex = 15;
             // 
-            // columnHeader2
+            // btnUpdate
             // 
-            this.columnHeader2.Text = "名称";
+            this.btnUpdate.Location = new System.Drawing.Point(383, 234);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.Text = "修改";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // columnHeader3
+            // btnDel
             // 
-            this.columnHeader3.Text = "别名";
+            this.btnDel.Location = new System.Drawing.Point(488, 234);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 23);
+            this.btnDel.TabIndex = 18;
+            this.btnDel.Text = "删除";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // columnHeader4
+            // dgvItems
             // 
-            this.columnHeader4.Text = "值类型";
+            this.dgvItems.AllowUserToAddRows = false;
+            this.dgvItems.AllowUserToDeleteRows = false;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.chkColumn});
+            this.dgvItems.Location = new System.Drawing.Point(14, 318);
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowTemplate.Height = 23;
+            this.dgvItems.Size = new System.Drawing.Size(659, 236);
+            this.dgvItems.TabIndex = 19;
+            this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
             // 
-            // columnHeader5
+            // chkColumn
             // 
-            this.columnHeader5.Text = "所属巡检点";
+            this.chkColumn.HeaderText = "选择";
+            this.chkColumn.Name = "chkColumn";
+            this.chkColumn.ReadOnly = true;
+            this.chkColumn.Width = 38;
             // 
-            // columnHeader6
+            // labID
             // 
-            this.columnHeader6.Text = "备注";
+            this.labID.AutoSize = true;
+            this.labID.Location = new System.Drawing.Point(383, 116);
+            this.labID.Name = "labID";
+            this.labID.Size = new System.Drawing.Size(53, 12);
+            this.labID.TabIndex = 20;
+            this.labID.Text = "巡检项ID";
+            this.labID.Visible = false;
             // 
-            // frmBuildItem
+            // frmAddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(716, 586);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.labID);
+            this.Controls.Add(this.dgvItems);
+            this.Controls.Add(this.btnDel);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.cboMachine);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboPoint);
             this.Controls.Add(this.txtRemarks);
             this.Controls.Add(this.cboValue);
             this.Controls.Add(this.txtAlias);
@@ -204,8 +239,10 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.Name = "frmBuildItem";
+            this.Name = "frmAddItem";
             this.Text = "新建巡检项";
+            this.Load += new System.EventHandler(this.frmAddItem_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,14 +259,14 @@
         private System.Windows.Forms.TextBox txtAlias;
         private System.Windows.Forms.ComboBox cboValue;
         private System.Windows.Forms.TextBox txtRemarks;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboPoint;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
-        private System.Windows.Forms.ColumnHeader columnHeader5;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboMachine;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDel;
+        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
+        private System.Windows.Forms.Label labID;
     }
 }

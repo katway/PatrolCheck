@@ -240,7 +240,6 @@
             this.lblshixiao.Size = new System.Drawing.Size(53, 12);
             this.lblshixiao.TabIndex = 29;
             this.lblshixiao.Text = "失效时间";
-            this.lblshixiao.Click += new System.EventHandler(this.lblshixiao_Click);
             // 
             // lblshengxiao
             // 
