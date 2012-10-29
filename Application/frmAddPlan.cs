@@ -30,11 +30,11 @@ namespace WorkStation
             {
                 case "":
                     {
-                        this.btnNew.Enabled = true;
-                        this.btnEdit.Enabled = true;
-                        this.btnDel.Enabled = true;
-                        this.btnSubmit.Enabled = true;
-                        this.btnUnSub.Enabled = true;
+                        this.btnNew.Enabled = false;
+                        this.btnEdit.Enabled = false;
+                        this.btnDel.Enabled = false;
+                        this.btnSubmit.Enabled = false;
+                        this.btnUnSub.Enabled = false;
                         break;
                     }
                 case "0":
@@ -114,9 +114,12 @@ namespace WorkStation
                 MessageBox.Show("请选择一个要编辑的计划"); return;                             
             }
             frmAddPlan_Add add = new frmAddPlan_Add();
-            add.Left = this.Left - (this.Width - add.Width) / 2;
-            add.Top = this.Top - (this.Height - add.Height) / 2;
+            add.Left = this.Left + (this.Width - add.Width) / 2;
+            add.Top = this.Top + (this.Height - add.Height) / 2;
             add.isEdit = true;
+            add.dgv = this.dgvPlan;
+            add.state = this.labState.Text;
+
             add.planID = dgvPlan.Rows[rowindex].Cells[1].Value.ToString();
             add.planName = dgvPlan.Rows[rowindex].Cells[2].Value.ToString();
             add.planAlias = dgvPlan.Rows[rowindex].Cells[3].Value.ToString();

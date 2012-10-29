@@ -19,7 +19,7 @@ namespace WorkStation
         private void frmAddPlanExamine_Load(object sender, EventArgs e)
         {
             cboInit();
-            this.labState.Text = (this.cboState.SelectedItem as BoxItem).Value.ToString() == "" ? "0,1,2,4" : (this.cboState.SelectedItem as BoxItem).Value.ToString();
+            this.labState.Text = (this.cboState.SelectedItem as BoxItem).Value.ToString() == "" ? "1,2,4" : (this.cboState.SelectedItem as BoxItem).Value.ToString();
             getDgvPlan();
         }
 

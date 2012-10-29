@@ -20,6 +20,7 @@ namespace WorkStation
 
         private void dgvPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0) return;
             getDgvTask(dgvPlan.Rows[e.RowIndex].Cells[1].Value.ToString());
             if (e.ColumnIndex == 0)
             {
@@ -125,6 +126,20 @@ namespace WorkStation
         private void cboState_SelectedIndexChanged(object sender, EventArgs e)
         {
             labState.Text = (cboState.SelectedItem as BoxItem).Value.ToString();
+            switch ((cboState.SelectedItem as BoxItem).Value.ToString())
+            {
+                case "4,8":
+                case "8":
+                    {
+                        this.btnDown.Enabled = false;
+                        break;
+                    }
+                case "4":
+                    {
+                        this.btnDown.Enabled = true;
+                        break;
+                    }
+            }
             getDgvPlan();
         }
     }

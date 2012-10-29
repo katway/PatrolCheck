@@ -53,14 +53,14 @@
             // 
             // dtpIneffect
             // 
-            this.dtpIneffect.Location = new System.Drawing.Point(96, 238);
+            this.dtpIneffect.Location = new System.Drawing.Point(124, 238);
             this.dtpIneffect.Name = "dtpIneffect";
             this.dtpIneffect.Size = new System.Drawing.Size(183, 21);
             this.dtpIneffect.TabIndex = 40;
             // 
             // dtpEffect
             // 
-            this.dtpEffect.Location = new System.Drawing.Point(96, 205);
+            this.dtpEffect.Location = new System.Drawing.Point(124, 205);
             this.dtpEffect.Name = "dtpEffect";
             this.dtpEffect.Size = new System.Drawing.Size(183, 21);
             this.dtpEffect.TabIndex = 39;
@@ -69,7 +69,7 @@
             // 
             this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' hh\':\'mm";
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(96, 141);
+            this.dtpStart.Location = new System.Drawing.Point(124, 141);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(183, 21);
             this.dtpStart.TabIndex = 38;
@@ -80,14 +80,14 @@
             this.cboRoute.FormattingEnabled = true;
             this.cboRoute.Items.AddRange(new object[] {
             "选择路线"});
-            this.cboRoute.Location = new System.Drawing.Point(96, 86);
+            this.cboRoute.Location = new System.Drawing.Point(124, 86);
             this.cboRoute.Name = "cboRoute";
             this.cboRoute.Size = new System.Drawing.Size(183, 20);
             this.cboRoute.TabIndex = 37;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(96, 23);
+            this.txtName.Location = new System.Drawing.Point(124, 23);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(183, 21);
             this.txtName.TabIndex = 35;
@@ -95,7 +95,7 @@
             // lblshixiao
             // 
             this.lblshixiao.AutoSize = true;
-            this.lblshixiao.Location = new System.Drawing.Point(12, 242);
+            this.lblshixiao.Location = new System.Drawing.Point(41, 242);
             this.lblshixiao.Name = "lblshixiao";
             this.lblshixiao.Size = new System.Drawing.Size(77, 12);
             this.lblshixiao.TabIndex = 34;
@@ -104,7 +104,7 @@
             // lblshengxiao
             // 
             this.lblshengxiao.AutoSize = true;
-            this.lblshengxiao.Location = new System.Drawing.Point(13, 209);
+            this.lblshengxiao.Location = new System.Drawing.Point(41, 209);
             this.lblshengxiao.Name = "lblshengxiao";
             this.lblshengxiao.Size = new System.Drawing.Size(77, 12);
             this.lblshengxiao.TabIndex = 33;
@@ -113,16 +113,16 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(13, 145);
+            this.lblTime.Location = new System.Drawing.Point(5, 145);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(77, 12);
+            this.lblTime.Size = new System.Drawing.Size(113, 12);
             this.lblTime.TabIndex = 32;
-            this.lblTime.Text = "执行开始时间";
+            this.lblTime.Text = "第一次执行开始时间";
             // 
             // lblRount
             // 
             this.lblRount.AutoSize = true;
-            this.lblRount.Location = new System.Drawing.Point(36, 89);
+            this.lblRount.Location = new System.Drawing.Point(58, 89);
             this.lblRount.Name = "lblRount";
             this.lblRount.Size = new System.Drawing.Size(53, 12);
             this.lblRount.TabIndex = 30;
@@ -131,7 +131,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(37, 27);
+            this.lblName.Location = new System.Drawing.Point(59, 27);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(53, 12);
             this.lblName.TabIndex = 28;
@@ -139,7 +139,7 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(96, 54);
+            this.txtAlias.Location = new System.Drawing.Point(124, 54);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(183, 21);
             this.txtAlias.TabIndex = 45;
@@ -147,7 +147,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(36, 57);
+            this.lblAlias.Location = new System.Drawing.Point(58, 57);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(53, 12);
             this.lblAlias.TabIndex = 44;
@@ -156,17 +156,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 178);
+            this.label1.Location = new System.Drawing.Point(5, 180);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
+            this.label1.Size = new System.Drawing.Size(113, 12);
             this.label1.TabIndex = 47;
-            this.label1.Text = "执行结束时间";
+            this.label1.Text = "第一次执行结束时间";
             // 
             // dtpEnd
             // 
             this.dtpEnd.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' hh\':\'mm";
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(96, 174);
+            this.dtpEnd.Location = new System.Drawing.Point(124, 174);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(183, 21);
             this.dtpEnd.TabIndex = 46;
@@ -177,7 +177,7 @@
             this.cboPost.FormattingEnabled = true;
             this.cboPost.Items.AddRange(new object[] {
             "选择路线"});
-            this.cboPost.Location = new System.Drawing.Point(96, 112);
+            this.cboPost.Location = new System.Drawing.Point(124, 112);
             this.cboPost.Name = "cboPost";
             this.cboPost.Size = new System.Drawing.Size(183, 20);
             this.cboPost.TabIndex = 49;
@@ -185,7 +185,7 @@
             // lblPost
             // 
             this.lblPost.AutoSize = true;
-            this.lblPost.Location = new System.Drawing.Point(36, 115);
+            this.lblPost.Location = new System.Drawing.Point(58, 115);
             this.lblPost.Name = "lblPost";
             this.lblPost.Size = new System.Drawing.Size(53, 12);
             this.lblPost.TabIndex = 48;
@@ -193,7 +193,7 @@
             // 
             // txtInterval
             // 
-            this.txtInterval.Location = new System.Drawing.Point(95, 272);
+            this.txtInterval.Location = new System.Drawing.Point(143, 272);
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(46, 21);
             this.txtInterval.TabIndex = 52;
@@ -204,7 +204,7 @@
             this.cboUnit.FormattingEnabled = true;
             this.cboUnit.Items.AddRange(new object[] {
             "选择路线"});
-            this.cboUnit.Location = new System.Drawing.Point(147, 273);
+            this.cboUnit.Location = new System.Drawing.Point(195, 273);
             this.cboUnit.Name = "cboUnit";
             this.cboUnit.Size = new System.Drawing.Size(59, 20);
             this.cboUnit.TabIndex = 51;
@@ -212,7 +212,7 @@
             // lblCycle
             // 
             this.lblCycle.AutoSize = true;
-            this.lblCycle.Location = new System.Drawing.Point(36, 276);
+            this.lblCycle.Location = new System.Drawing.Point(58, 276);
             this.lblCycle.Name = "lblCycle";
             this.lblCycle.Size = new System.Drawing.Size(53, 12);
             this.lblCycle.TabIndex = 50;

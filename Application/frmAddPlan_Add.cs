@@ -82,7 +82,7 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
             pars[2].Value = this.dtpStart.Value;
-            pars[3].Value = this.dtpStart.Value;
+            pars[3].Value = null;
             pars[4].Value = this.dtpEnd.Value;
             pars[5].Value = this.cboPost.SelectedValue;
             pars[6].Value = this.cboRoute.SelectedValue;
