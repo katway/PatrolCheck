@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace WorkStation
 {
-    public partial class frmain : Form
+    public partial class frmMain : Form
     {
-        public frmain()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -52,8 +52,8 @@ namespace WorkStation
             root1.Nodes.Add(type_Edit);
 
             TreeNode type_Delete = new TreeNode("删除");
-            root1.Nodes.Add(type_Delete);   
-            root1.Toggle();           
+            root1.Nodes.Add(type_Delete);
+            root1.Toggle();
         }
 
         private void btnTask_Click(object sender, EventArgs e)
@@ -73,14 +73,14 @@ namespace WorkStation
             TreeNode type_Delete = new TreeNode("删除");
             root1.Nodes.Add(type_Delete);
 
-            TreeNode type_shenhe1= new TreeNode("审核");
+            TreeNode type_shenhe1 = new TreeNode("审核");
             root1.Nodes.Add(type_shenhe1);
 
-            TreeNode type_xiafa= new TreeNode("下发");
+            TreeNode type_xiafa = new TreeNode("下发");
             root1.Nodes.Add(type_xiafa);
 
             TreeNode type_Exits = new TreeNode("退出");
-            root1.Nodes.Add(type_Exits);                    
+            root1.Nodes.Add(type_Exits);
 
         }
 
@@ -102,7 +102,7 @@ namespace WorkStation
             root1.Nodes.Add(type_chuqin);
 
             TreeNode type_dianjian = new TreeNode("点检异常统计");
-            root1.Nodes.Add(type_dianjian); 
+            root1.Nodes.Add(type_dianjian);
 
         }
 
@@ -171,7 +171,7 @@ namespace WorkStation
             root1.Nodes.Add(type_yongtu);
 
             TreeNode type_zhuxiaokapian = new TreeNode("注销卡片");
-            root1.Nodes.Add(type_zhuxiaokapian);           
+            root1.Nodes.Add(type_zhuxiaokapian);
 
         }
 
@@ -182,7 +182,7 @@ namespace WorkStation
 
         private void tsmichangquguanli_Click(object sender, EventArgs e)
         {
-            SiteNew s1=new SiteNew();
+            SiteNew s1 = new SiteNew();
             s1.Show();
         }
 
@@ -192,8 +192,8 @@ namespace WorkStation
             task.Show();
         }
 
-      
 
-       
+
+
     }
 }
