@@ -169,6 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(751, 550);
             this.Controls.Add(this.labID);
             this.Controls.Add(this.dgvPoint);
@@ -182,7 +183,9 @@
             this.Controls.Add(this.lblRelated);
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.lblName);
+            this.MaximizeBox = false;
             this.Name = "frmAddPoint";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建巡检点";
             this.Load += new System.EventHandler(this.frmAddPoint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoint)).EndInit();

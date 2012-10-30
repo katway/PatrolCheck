@@ -175,6 +175,53 @@ namespace WorkStation
 
         }
 
+        //新建巡检项
+        private void tsmixunjianxiangs_Click(object sender, EventArgs e)
+        {
+            frmAddItem additem = new frmAddItem();
+            additem.ShowDialog();
+        }
+
+        //新建巡检点
+        private void tsmixunjiandian_Click(object sender, EventArgs e)
+        {
+            frmAddPoint addpoint = new frmAddPoint();
+            addpoint.ShowDialog();
+        }
+
+        ////新建设备
+        //private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
+        //{
+        //    frmAddMachine fm = new frmAddMachine();
+        //    fm.ShowDialog();
+        //}
+
+        //private void tsmixunjianluxian_Click(object sender, EventArgs e)
+        //{
+        //    frmAddRoute frm = new frmAddRoute();
+        //    frm.Left = this.Left + (this.Width - frm.Width) / 2;
+        //    frm.Top = this.Top + (this.Height - frm.Height) / 2;
+        //    frm.Show();
+        //}
+
+        private void tsmixinjian1_Click(object sender, EventArgs e)
+        {
+            frmAddPlan frm = new frmAddPlan();
+            frm.ShowDialog();
+        }
+
+        private void tsmishenhe1_Click(object sender, EventArgs e)
+        {
+            frmAddPlanExamine frm = new frmAddPlanExamine();
+            frm.Show();
+        }
+
+        private void tsmixiafa1_Click(object sender, EventArgs e)
+        {
+            frmAddPlanToTask add = new frmAddPlanToTask();
+            add.ShowDialog();
+        }
+
         private void tsmigangweiAdd_Click(object sender, EventArgs e)
         {
             frmAddPost post = new frmAddPost();
@@ -267,13 +314,13 @@ namespace WorkStation
             com2.Show();
         }
 
-       
 
 
 
 
 
 
+        //巡检路线
 
 
         private void tsmiAddRount_Click(object sender, EventArgs e)
@@ -346,6 +393,20 @@ namespace WorkStation
         {
             frmAddMachine machine = new frmAddMachine();
             machine.Show();
+        }
+
+        // 巡检点
+        private void tsmixunjiandian_Click_1(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        //巡检项
+        private void tsmixunjianxiangs_Click_1(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
         }
       
     }

@@ -132,6 +132,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(313, 225);
             this.Controls.Add(this.cboInOrder);
             this.Controls.Add(this.label4);
@@ -145,7 +146,7 @@
             this.Controls.Add(this.cboSiteArea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAddRoutName";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "路线详细信息";
             this.Load += new System.EventHandler(this.frmAddRoutName_Load);
             this.ResumeLayout(false);
