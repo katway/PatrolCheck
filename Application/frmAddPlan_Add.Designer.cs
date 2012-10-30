@@ -53,6 +53,8 @@
             // 
             // dtpIneffect
             // 
+            this.dtpIneffect.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
+            this.dtpIneffect.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpIneffect.Location = new System.Drawing.Point(124, 238);
             this.dtpIneffect.Name = "dtpIneffect";
             this.dtpIneffect.Size = new System.Drawing.Size(183, 21);
@@ -60,6 +62,8 @@
             // 
             // dtpEffect
             // 
+            this.dtpEffect.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
+            this.dtpEffect.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEffect.Location = new System.Drawing.Point(124, 205);
             this.dtpEffect.Name = "dtpEffect";
             this.dtpEffect.Size = new System.Drawing.Size(183, 21);
@@ -67,7 +71,7 @@
             // 
             // dtpStart
             // 
-            this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' hh\':\'mm";
+            this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStart.Location = new System.Drawing.Point(124, 141);
             this.dtpStart.Name = "dtpStart";
@@ -164,7 +168,7 @@
             // 
             // dtpEnd
             // 
-            this.dtpEnd.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' hh\':\'mm";
+            this.dtpEnd.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpEnd.Location = new System.Drawing.Point(124, 174);
             this.dtpEnd.Name = "dtpEnd";

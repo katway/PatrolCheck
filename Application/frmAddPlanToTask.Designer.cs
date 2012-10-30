@@ -64,7 +64,7 @@
             this.dgvPlan.RowTemplate.Height = 23;
             this.dgvPlan.Size = new System.Drawing.Size(785, 245);
             this.dgvPlan.TabIndex = 35;
-            this.dgvPlan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlan_CellContentClick);
+            this.dgvPlan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlan_CellClick);
             // 
             // chkColumn
             // 

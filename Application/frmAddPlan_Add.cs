@@ -49,6 +49,11 @@ namespace WorkStation
                 MessageBox.Show("请确保没有空值");
                 return;
             }
+            if (dtpStart.Value <= dtpEffect.Value || dtpStart.Value >= dtpIneffect.Value || dtpEnd.Value <= dtpEffect.Value || dtpEnd.Value >= dtpIneffect.Value || dtpStart.Value >= dtpEnd.Value || dtpEffect.Value >= dtpIneffect.Value)
+            {
+                MessageBox.Show("请确保第一次开始结束时间在事物生效时间之内。");
+                return;
+            }
             if (isEdit==false&&SqlHelper.ExecuteScalar("Select count(1) From CheckPlan Where Name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
             {
                 MessageBox.Show("请确保计划名称的唯一性");

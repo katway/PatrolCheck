@@ -17,24 +17,6 @@ namespace WorkStation
             InitializeComponent();
         }
 
-
-        private void dgvPlan_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-            getDgvTask(dgvPlan.Rows[e.RowIndex].Cells[1].Value.ToString());
-            if (e.ColumnIndex == 0)
-            {
-                if ((bool)dgvPlan.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
-                {
-                    dgvPlan.Rows[e.RowIndex].Cells[0].Value = true;
-                }
-                else
-                {
-                    dgvPlan.Rows[e.RowIndex].Cells[0].Value = false;
-                }
-            }
-        }
-
         private void btnDown_Click(object sender, EventArgs e)
         {
             string strIDs = "";
@@ -141,6 +123,23 @@ namespace WorkStation
                     }
             }
             getDgvPlan();
+        }
+
+        private void dgvPlan_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            getDgvTask(dgvPlan.Rows[e.RowIndex].Cells[1].Value.ToString());
+            if (e.ColumnIndex == 0)
+            {
+                if ((bool)dgvPlan.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
+                {
+                    dgvPlan.Rows[e.RowIndex].Cells[0].Value = true;
+                }
+                else
+                {
+                    dgvPlan.Rows[e.RowIndex].Cells[0].Value = false;
+                }
+            }
         }
     }
 }
