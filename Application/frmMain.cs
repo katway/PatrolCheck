@@ -347,6 +347,6 @@ namespace WorkStation
             frmAddMachine machine = new frmAddMachine();
             machine.Show();
         }
-       
+      
     }
 }

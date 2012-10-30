@@ -52,8 +52,8 @@ namespace WorkStation
             root1.Nodes.Add(type_Edit);
 
             TreeNode type_Delete = new TreeNode("删除");
-            root1.Nodes.Add(type_Delete);   
-            root1.Toggle();           
+            root1.Nodes.Add(type_Delete);
+            root1.Toggle();
         }
 
         private void btnTask_Click(object sender, EventArgs e)
@@ -73,14 +73,14 @@ namespace WorkStation
             TreeNode type_Delete = new TreeNode("删除");
             root1.Nodes.Add(type_Delete);
 
-            TreeNode type_shenhe1= new TreeNode("审核");
+            TreeNode type_shenhe1 = new TreeNode("审核");
             root1.Nodes.Add(type_shenhe1);
 
-            TreeNode type_xiafa= new TreeNode("下发");
+            TreeNode type_xiafa = new TreeNode("下发");
             root1.Nodes.Add(type_xiafa);
 
             TreeNode type_Exits = new TreeNode("退出");
-            root1.Nodes.Add(type_Exits);                    
+            root1.Nodes.Add(type_Exits);
 
         }
 
@@ -102,7 +102,7 @@ namespace WorkStation
             root1.Nodes.Add(type_chuqin);
 
             TreeNode type_dianjian = new TreeNode("点检异常统计");
-            root1.Nodes.Add(type_dianjian); 
+            root1.Nodes.Add(type_dianjian);
 
         }
 
@@ -171,23 +171,20 @@ namespace WorkStation
             root1.Nodes.Add(type_yongtu);
 
             TreeNode type_zhuxiaokapian = new TreeNode("注销卡片");
-            root1.Nodes.Add(type_zhuxiaokapian);           
+            root1.Nodes.Add(type_zhuxiaokapian);
 
         }
 
-<<<<<<< HEAD:Application/frmain.cs
         private void tsmigangweiAdd_Click(object sender, EventArgs e)
         {
             frmAddPost post = new frmAddPost();
             post.Show();
         }
-
         private void tsmichangquAdd_Click(object sender, EventArgs e)
         {
             SiteNew site = new SiteNew();
             site.Show();
         }
-
         private void tsmichangquEdit_Click(object sender, EventArgs e)
         {
             SiteEditDelete sitedel = new SiteEditDelete();
@@ -272,38 +269,93 @@ namespace WorkStation
 
        
 
-    
-      
-        
-      
+
+
+<<<<<<< HEAD
+
+
+
+
+
 =======
-        //新建巡检项
-        private void tsmixunjianxiangs_Click(object sender, EventArgs e)
-        {
-            frmAddItem additem = new frmAddItem();
-            additem.ShowDialog();
-        }
-
-        //新建巡检点
-        private void tsmixunjiandian_Click(object sender, EventArgs e)
-        {
-            frmAddPoint addpoint = new frmAddPoint();
-            addpoint.ShowDialog();
-        }
->>>>>>> weiyunbing/Develop:Application/frmMain.cs
-
-        //新建设备
-        private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
-        {
-            frmAddMachine fm = new frmAddMachine();
-            fm.ShowDialog();
-        }
-
         private void tsmixunjianluxian_Click(object sender, EventArgs e)
         {
             frmAddRoute frm = new frmAddRoute();
             frm.Show();
         }
+
+        private void tsmiAddRount_Click(object sender, EventArgs e)
+        {
+            frmAddRoute rount = new frmAddRoute();
+            rount.Show();
+        }
+
+        private void tsmiEditRount_Click(object sender, EventArgs e)
+        {
+            frmAddRoute rount = new frmAddRoute();
+            rount.Show();
+        }
+
+        private void tsmiDelRount_Click(object sender, EventArgs e)
+        {
+            frmAddRoute rount = new frmAddRoute();
+            rount.Show();
+        }
+
+        private void tsmiAddPoint_Click(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        private void tsmiEditPoint_Click(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        private void tsmiDelPoint_Click(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        private void tsmiAddItem_Click(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
+
+        private void tsmiEditItem_Click(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
+
+        private void tsmiDelItem_Click(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
+
+        private void tsmiAddMachine_Click(object sender, EventArgs e)
+        {
+            frmAddMachine machine = new frmAddMachine();
+            machine.Show();
+        }
+
+        private void tsmiEditMachine_Click(object sender, EventArgs e)
+        {
+            frmAddMachine machine = new frmAddMachine();
+            machine.Show();
+        }
+
+        private void tsmiDelMachine_Click(object sender, EventArgs e)
+        {
+            frmAddMachine machine = new frmAddMachine();
+            machine.Show();
+        }
        
+>>>>>>> hefangli/master
     }
 }
