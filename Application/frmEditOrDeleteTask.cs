@@ -16,9 +16,5 @@ namespace WorkStation
             InitializeComponent();
         }
 
-        private void lblshixiao_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

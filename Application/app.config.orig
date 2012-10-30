@@ -1,0 +1,35 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+    </configSections>
+    <connectionStrings>
+        <add name="WorkStation.Properties.Settings.ConnectionString" connectionString="Data Source=192.168.1.221;Initial Catalog=Patrol;UserId=sa;Password=sa123" />
+    </connectionStrings>
+=======
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="WorkStation.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <connectionStrings>
+        <add name="WorkStation.Properties.Settings.ConnectionString"
+            connectionString="Data Source=192.168.1.221;Initial Catalog=Patrol;UserId=sa;Password=sa123" />
+    </connectionStrings>
+    <userSettings>
+        <WorkStation.Properties.Settings>
+            <setting name="tvRoute" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="tvLogicalPoint" serializeAs="String">
+                <value>True</value>
+            </setting>
+            <setting name="tvPhysicalPoint" serializeAs="String">
+                <value>True</value>
+            </setting>
+        </WorkStation.Properties.Settings>
+    </userSettings>
+>>>>>>> qicb/Develop
+</configuration>

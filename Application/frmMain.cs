@@ -315,5 +315,95 @@ namespace WorkStation
         }
 
 
+
+    
+      
+        
+
+        //新建设备
+        private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
+        {
+            frmAddMachine fm = new frmAddMachine();
+            fm.ShowDialog();
+        }
+
+        private void tsmixunjianluxian_Click(object sender, EventArgs e)
+        {
+            frmAddRoute frm = new frmAddRoute();
+            frm.Show();
+        }
+
+        private void tsmiAddRount_Click(object sender, EventArgs e)
+        {
+            frmAddRoute rount = new frmAddRoute();
+            rount.Show();
+        }
+
+        private void tsmiEditRount_Click(object sender, EventArgs e)
+        {
+            frmAddRoute rount = new frmAddRoute();
+            rount.Show();
+        }
+
+        private void tsmiDelRount_Click(object sender, EventArgs e)
+        {
+            frmAddRoute rount = new frmAddRoute();
+            rount.Show();
+        }
+
+        private void tsmiAddPoint_Click(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        private void tsmiEditPoint_Click(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        private void tsmiDelPoint_Click(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        private void tsmiAddItem_Click(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
+
+        private void tsmiEditItem_Click(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
+
+        private void tsmiDelItem_Click(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
+
+        private void tsmiAddMachine_Click(object sender, EventArgs e)
+        {
+            frmAddMachine machine = new frmAddMachine();
+            machine.Show();
+        }
+
+        private void tsmiEditMachine_Click(object sender, EventArgs e)
+        {
+            frmAddMachine machine = new frmAddMachine();
+            machine.Show();
+        }
+
+        private void tsmiDelMachine_Click(object sender, EventArgs e)
+        {
+            frmAddMachine machine = new frmAddMachine();
+            machine.Show();
+        }
+       
     }
 }

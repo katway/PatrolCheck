@@ -37,24 +37,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rfid.cs" />
+    <Compile Include="RfidPurpose.cs" />
     <Compile Include="test.cs" />
-    <Compile Include="卡片.cs" />
-    <Compile Include="厂区.cs" />
-    <Compile Include="员工.cs" />
-    <Compile Include="岗位.cs" />
-    <Compile Include="岗位员工.cs" />
-    <Compile Include="巡检点纪录.cs" />
-    <Compile Include="巡检计划.cs" />
-    <Compile Include="巡检路线.cs" />
-    <Compile Include="巡检路线纪录.cs" />
-    <Compile Include="巡检项目.cs" />
-    <Compile Include="巡检项纪录.cs" />
-    <Compile Include="总公司.cs" />
-    <Compile Include="物理巡检点.cs" />
-    <Compile Include="装置.cs" />
-    <Compile Include="角色.cs" />
-    <Compile Include="详细巡检任务.cs" />
-    <Compile Include="逻辑巡检点.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -240,7 +240,6 @@
             this.lblshixiao.Size = new System.Drawing.Size(53, 12);
             this.lblshixiao.TabIndex = 29;
             this.lblshixiao.Text = "失效时间";
-            this.lblshixiao.Click += new System.EventHandler(this.lblshixiao_Click);
             // 
             // lblshengxiao
             // 
@@ -271,7 +270,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(477, 492);
+            this.btnSave.Location = new System.Drawing.Point(489, 489);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 27);
             this.btnSave.TabIndex = 35;
