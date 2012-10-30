@@ -176,12 +176,15 @@ namespace WorkStation
         }
 
         private void tsmigangweiAdd_Click(object sender, EventArgs e)
+        {
             frmAddPost post = new frmAddPost();
             post.Show();
+        }
         private void tsmichangquAdd_Click(object sender, EventArgs e)
+        {
             SiteNew site = new SiteNew();
             site.Show();
-
+        }
         private void tsmichangquEdit_Click(object sender, EventArgs e)
         {
             SiteEditDelete sitedel = new SiteEditDelete();
@@ -266,8 +269,10 @@ namespace WorkStation
 
        
 
-    
-      
+
+
+
+
 
 
 
