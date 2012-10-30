@@ -23,7 +23,7 @@ namespace WorkStation
         /// </summary>
         public void Bind()
         {
-            string sql2 = "select ID,Name,Alias,RFID,PurposeName from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.PurposeCode";
+            string sql2 = "select ID,Name,Alias,RFID,Meaning from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
             DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
             dataGridView1.DataSource = ds.Tables[0];
         }    
@@ -63,15 +63,15 @@ namespace WorkStation
         {
             string sql2 = "select * from RfidPurpose ";
             dsRfidPurpose = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
-            sql2 = "select ID,Name,Alias,RFID,PurposeName from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.PurposeCode";
+            sql2 = "select ID,Name,Alias,RFID,Meaning from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
             dsRfid = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
         }
 
         private void bwkLoadData_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             comboBox1.DataSource = dsRfidPurpose.Tables[0];
-            comboBox1.DisplayMember = "PurposeName";
-            comboBox1.ValueMember = "PurposeCode";
+            comboBox1.DisplayMember ="Meaning";
+            comboBox1.ValueMember = "Code";
             dataGridView1.DataSource = dsRfid.Tables[0]; 
         }
 

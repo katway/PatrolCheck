@@ -52,8 +52,8 @@ namespace WorkStation
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
-        {        
-            string sql4 = "select Name,Alias,RFID,PurposeName from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.PurposeCode and ID=@id";
+        {
+            string sql4 = "select Name,Alias,RFID,Meaning from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code and ID=@id";
             SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dataGridView1.SelectedCells[0].Value) };
             SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text, sql4, par);
             while(dr.Read())
@@ -68,7 +68,7 @@ namespace WorkStation
         }    
         private void Bind()
         {
-            string sql2 = "select ID,Name,Alias,RFID,PurposeName from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.PurposeCode";
+            string sql2 = "select ID,Name,Alias,RFID,Meaning from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
             DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
             dataGridView1.DataSource = ds.Tables[0];
         }
@@ -101,8 +101,8 @@ namespace WorkStation
             string sql2 = "select * from RfidPurpose ";
             DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
             comboBox1.DataSource = ds.Tables[0];
-            comboBox1.DisplayMember = "PurposeName";
-            comboBox1.ValueMember = "PurposeCode";   
+            comboBox1.DisplayMember = "Meaning";
+            comboBox1.ValueMember = "Code";   
             Bind();
         }
 

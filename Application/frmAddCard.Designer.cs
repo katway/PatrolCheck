@@ -142,10 +142,10 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(33, 222);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 222);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(625, 162);
+            this.dataGridView1.Size = new System.Drawing.Size(636, 162);
             this.dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -168,7 +168,7 @@
             // 
             // Column4
             // 
-            this.Column4.DataPropertyName = "PurposeName";
+            this.Column4.DataPropertyName = "Meaning";
             this.Column4.HeaderText = "用途";
             this.Column4.Name = "Column4";
             // 
@@ -197,7 +197,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 450);
+            this.ClientSize = new System.Drawing.Size(709, 419);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.comboBox1);
@@ -232,12 +232,12 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.ComponentModel.BackgroundWorker bwkLoadData;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.ComponentModel.BackgroundWorker bwkLoadData;
-        private System.Windows.Forms.Button button1;
     }
 }

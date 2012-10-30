@@ -102,10 +102,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvSite.Location = new System.Drawing.Point(61, 178);
+            this.dgvSite.Location = new System.Drawing.Point(46, 181);
             this.dgvSite.Name = "dgvSite";
             this.dgvSite.RowTemplate.Height = 23;
-            this.dgvSite.Size = new System.Drawing.Size(594, 157);
+            this.dgvSite.Size = new System.Drawing.Size(621, 170);
             this.dgvSite.TabIndex = 6;
             // 
             // Column1
@@ -134,7 +134,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(497, 33);
+            this.btnSave.Location = new System.Drawing.Point(497, 38);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -144,7 +144,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(497, 77);
+            this.btnCancel.Location = new System.Drawing.Point(497, 110);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 8;
@@ -172,7 +172,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Name = "SiteNew";
-            this.Text = "SiteNew";
+            this.Text = "新建厂区";
             this.Load += new System.EventHandler(this.SiteNew_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSite)).EndInit();
             this.ResumeLayout(false);

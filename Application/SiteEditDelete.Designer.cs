@@ -54,10 +54,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvSite.Location = new System.Drawing.Point(55, 21);
+            this.dgvSite.Location = new System.Drawing.Point(49, 21);
             this.dgvSite.Name = "dgvSite";
             this.dgvSite.RowTemplate.Height = 23;
-            this.dgvSite.Size = new System.Drawing.Size(616, 163);
+            this.dgvSite.Size = new System.Drawing.Size(630, 163);
             this.dgvSite.TabIndex = 7;
             // 
             // Column1
@@ -86,7 +86,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(501, 283);
+            this.btnCancel.Location = new System.Drawing.Point(501, 290);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 17;
@@ -123,7 +123,7 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(136, 313);
+            this.txtAlias.Location = new System.Drawing.Point(136, 307);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(264, 21);
             this.txtAlias.TabIndex = 12;
@@ -155,7 +155,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.Location = new System.Drawing.Point(442, 200);
+            this.btnEdit.Location = new System.Drawing.Point(501, 200);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
             this.btnEdit.TabIndex = 18;
@@ -165,7 +165,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(558, 200);
+            this.btnDelete.Location = new System.Drawing.Point(604, 200);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 19;
@@ -177,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 445);
+            this.ClientSize = new System.Drawing.Size(734, 429);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
@@ -190,7 +190,7 @@
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.dgvSite);
             this.Name = "SiteEditDelete";
-            this.Text = "SiteEditDelete";
+            this.Text = "编辑及删除厂区";
             this.Load += new System.EventHandler(this.SiteEditDelete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSite)).EndInit();
             this.ResumeLayout(false);
