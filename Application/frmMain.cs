@@ -73,14 +73,14 @@ namespace WorkStation
             TreeNode type_Delete = new TreeNode("删除");
             root1.Nodes.Add(type_Delete);
 
-            TreeNode type_shenhe1= new TreeNode("审核");
+            TreeNode type_shenhe1 = new TreeNode("审核");
             root1.Nodes.Add(type_shenhe1);
 
-            TreeNode type_xiafa= new TreeNode("下发");
+            TreeNode type_xiafa = new TreeNode("下发");
             root1.Nodes.Add(type_xiafa);
 
             TreeNode type_Exits = new TreeNode("退出");
-            root1.Nodes.Add(type_Exits);                    
+            root1.Nodes.Add(type_Exits);
 
         }
 
@@ -102,7 +102,7 @@ namespace WorkStation
             root1.Nodes.Add(type_chuqin);
 
             TreeNode type_dianjian = new TreeNode("点检异常统计");
-            root1.Nodes.Add(type_dianjian); 
+            root1.Nodes.Add(type_dianjian);
 
         }
 
@@ -201,7 +201,7 @@ namespace WorkStation
             frmAddRoute frm = new frmAddRoute();
             frm.Left = this.Left + (this.Width - frm.Width) / 2;
             frm.Top = this.Top + (this.Height - frm.Height) / 2;
-            frm.Show() ;
+            frm.Show();
         }
 
         private void tsmixinjian1_Click(object sender, EventArgs e)
@@ -222,13 +222,16 @@ namespace WorkStation
             add.ShowDialog();
         }
 
-  private void tsmigangweiAdd_Click(object sender, EventArgs e)
+        private void tsmigangweiAdd_Click(object sender, EventArgs e)
+        {
             frmAddPost post = new frmAddPost();
             post.Show();
+        }
         private void tsmichangquAdd_Click(object sender, EventArgs e)
+        {
             SiteNew site = new SiteNew();
             site.Show();
-
+        }
         private void tsmichangquEdit_Click(object sender, EventArgs e)
         {
             SiteEditDelete sitedel = new SiteEditDelete();

@@ -90,7 +90,7 @@
             this.tsmidelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmrenwu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixinjian1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmidelete1 = new System.Windows.Forms.ToolStripSeparator();
+            //this.tsmidelete1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmishenhe1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixiafa1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmtongjibaobiao = new System.Windows.Forms.ToolStripMenuItem();
@@ -693,7 +693,7 @@
             // 
             this.tsmrenwu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmixinjian1,
-            this.tsmidelete1,
+            //this.tsmidelete1,
             this.tsmishenhe1,
             this.tsmixiafa1});
             this.tsmrenwu.Image = ((System.Drawing.Image)(resources.GetObject("tsmrenwu.Image")));
@@ -710,9 +710,9 @@
             // 
             // tsmidelete1
             // 
-            this.tsmidelete1.Name = "tsmidelete1";
-            this.tsmidelete1.Size = new System.Drawing.Size(152, 22);
-            this.tsmidelete1.Text = "删除";
+            //this.tsmidelete1.Name = "tsmidelete1";
+            //this.tsmidelete1.Size = new System.Drawing.Size(152, 22);
+            //this.tsmidelete1.Text = "删除";
             // 
             // tsmishenhe1
             // 
