@@ -326,7 +326,7 @@ namespace WorkStation
             frmAddMachine fm = new frmAddMachine();
             fm.ShowDialog();
         }
-
+        //巡检路线
         private void tsmixunjianluxian_Click(object sender, EventArgs e)
         {
             frmAddRoute frm = new frmAddRoute();
@@ -403,6 +403,20 @@ namespace WorkStation
         {
             frmAddMachine machine = new frmAddMachine();
             machine.Show();
+        }
+
+        // 巡检点
+        private void tsmixunjiandian_Click_1(object sender, EventArgs e)
+        {
+            frmAddPoint point = new frmAddPoint();
+            point.Show();
+        }
+
+        //巡检项
+        private void tsmixunjianxiangs_Click_1(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
         }
        
     }
