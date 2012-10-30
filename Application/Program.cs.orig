@@ -14,11 +14,7 @@ namespace WorkStation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
             Application.Run(new frmMain());
-=======
-            Application.Run(new frmEditOrDeleteEmployee());
->>>>>>> hefangli/master
         }
     }
 }

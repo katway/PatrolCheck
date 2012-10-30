@@ -119,7 +119,6 @@ namespace WorkStation
             cboCard.DataSource = dsd.Tables[0];
             cboCard.DisplayMember = "Name";
             cboCard.ValueMember = "ID";
-
             BindEmployee();
         }
         /// <summary>
