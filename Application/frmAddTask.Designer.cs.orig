@@ -660,7 +660,7 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
->>>>>>> katway/Develop
+>>>>>>> hefangli/master
         }
 
         #endregion
