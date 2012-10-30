@@ -66,10 +66,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(41, 29);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 29);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(625, 192);
+            this.dataGridView1.Size = new System.Drawing.Size(651, 192);
             this.dataGridView1.TabIndex = 19;
             // 
             // Column2
@@ -86,7 +86,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(408, 347);
+            this.btnCancel.Location = new System.Drawing.Point(408, 337);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 18;
@@ -104,7 +104,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(408, 393);
+            this.btnSave.Location = new System.Drawing.Point(408, 388);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 17;
@@ -165,7 +165,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(598, 243);
+            this.btnDelete.Location = new System.Drawing.Point(610, 243);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(68, 23);
             this.btnDelete.TabIndex = 21;
@@ -190,7 +190,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmEditOrDeletePost";
-            this.Text = "frmEditOrDeletePost";
+            this.Text = "编辑及删除岗位";
             this.Load += new System.EventHandler(this.frmEditOrDeletePost_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

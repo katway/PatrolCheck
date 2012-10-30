@@ -121,10 +121,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(31, 187);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 187);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(579, 182);
+            this.dataGridView1.Size = new System.Drawing.Size(601, 182);
             this.dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -166,7 +166,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddPost";
-            this.Text = "frmAddPost";
+            this.Text = "新建岗位";
             this.Load += new System.EventHandler(this.frmAddPost_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -140,10 +140,10 @@
             this.Column3,
             this.Column4,
             this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(87, 235);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 216);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(666, 177);
             this.dataGridView1.TabIndex = 10;
             // 
             // Column1
@@ -180,7 +180,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 486);
+            this.ClientSize = new System.Drawing.Size(771, 452);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
@@ -193,7 +193,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddCompany";
-            this.Text = "frmAddCompany";
+            this.Text = "新建公司";
             this.Load += new System.EventHandler(this.frmAddCompany_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
