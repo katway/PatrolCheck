@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace WorkStation
 {
-    public partial class frMain : Form
+    public partial class frmMain : Form
     {
-        public frMain()
+        public frmMain()
         {
             InitializeComponent();
         }
