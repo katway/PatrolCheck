@@ -39,7 +39,11 @@ namespace WorkStation
                 MessageBox.Show("请选择所属地点");
                 return;
             }
-            //if(SqlHelper.ExecuteNonQuery("Select 1 From CheckItem Where "))
+            if (SqlHelper.ExecuteScalar("Select count(1) From CheckItem Where Name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
+            {
+                MessageBox.Show("请确保名称的唯一性");
+                return;
+            }
             string str_insert = "Insert into CheckItem([Name],Alias,Machine_ID,ValueType,Phy_ID,Comment) Values(@name,@alias,@machineid,@valuetype,@pointid,@comment)";
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
@@ -52,7 +56,7 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
             pars[2].Value = this.cboMachine.SelectedValue;
-            pars[3].Value = ((BoxItem)this.cboValue.SelectedItem).Value;
+            pars[3].Value = this.cboValue.SelectedValue;
             pars[4].Value = this.cboPoint.SelectedValue;
             pars[5].Value = this.txtRemarks.Text;
 
@@ -74,14 +78,10 @@ namespace WorkStation
         }
         private void getValueType()
         {
-            BoxItem bi1 = new BoxItem();
-            bi1.Text = "正常/不正常";
-            bi1.Value = "0";
-            this.cboValue.Items.Add(bi1);
-            BoxItem bi2 = new BoxItem();
-            bi2.Text = "数值";
-            bi2.Value = "1";
-            this.cboValue.Items.Add(bi2);
+            DataSet ds = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where Purpose='ValueType'");
+            this.cboValue.DataSource = ds.Tables[0];
+            this.cboValue.DisplayMember = "Meaning";
+            this.cboValue.ValueMember = "Code";
             this.cboValue.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
         }
         private void getPoint()
@@ -99,7 +99,7 @@ namespace WorkStation
                         c.ID as 编号,
                         c.name as 名称,
                         c.alias as 别名,
-                        (case c.ValueType when  0 then '正常/不正常' when 1 then '数值' end) as 值类型,
+                        (select meaning from codes where code=c.valuetype and purpose='valuetype') as 值类型,
                         m.name as 所属机器,
                         p.name as 所属巡检点,
                         c.comment as 备注 
@@ -151,7 +151,11 @@ namespace WorkStation
                 MessageBox.Show("请选择所属地点");
                 return;
             }
-            
+            if (SqlHelper.ExecuteScalar("Select count(1) From CheckItem Where id!=" + labID.Text.Trim() + " and name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
+            {
+                MessageBox.Show("请确保名称的唯一性" );
+                return;
+            }
             string str_insert = "Update CheckItem set [Name]=@name,Alias=@alias,Machine_ID=@machineid,ValueType=@valuetype,Phy_ID=@phyid,Comment=@comment where ID=" + labID.Text.Trim();
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
@@ -164,7 +168,7 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
             pars[2].Value = this.cboMachine.SelectedValue;
-            pars[3].Value = ((BoxItem)this.cboValue.SelectedItem).Value;
+            pars[3].Value = this.cboValue.SelectedValue ;
             pars[4].Value = this.cboPoint.SelectedValue;
             pars[5].Value = this.txtRemarks.Text;
 
