@@ -107,6 +107,7 @@
             // 
             this.dgvMachine.AllowUserToAddRows = false;
             this.dgvMachine.AllowUserToDeleteRows = false;
+            this.dgvMachine.AllowUserToResizeRows = false;
             this.dgvMachine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMachine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
@@ -114,6 +115,7 @@
             this.dgvMachine.Name = "dgvMachine";
             this.dgvMachine.ReadOnly = true;
             this.dgvMachine.RowTemplate.Height = 23;
+            this.dgvMachine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMachine.Size = new System.Drawing.Size(604, 236);
             this.dgvMachine.TabIndex = 7;
             this.dgvMachine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMachine_CellClick);

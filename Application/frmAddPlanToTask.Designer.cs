@@ -54,6 +54,7 @@
             // 
             this.dgvPlan.AllowUserToAddRows = false;
             this.dgvPlan.AllowUserToDeleteRows = false;
+            this.dgvPlan.AllowUserToResizeRows = false;
             this.dgvPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvPlan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -62,6 +63,7 @@
             this.dgvPlan.Name = "dgvPlan";
             this.dgvPlan.ReadOnly = true;
             this.dgvPlan.RowTemplate.Height = 23;
+            this.dgvPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlan.Size = new System.Drawing.Size(785, 245);
             this.dgvPlan.TabIndex = 35;
             this.dgvPlan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlan_CellClick);
@@ -77,12 +79,14 @@
             // 
             this.dgvTask.AllowUserToAddRows = false;
             this.dgvTask.AllowUserToDeleteRows = false;
+            this.dgvTask.AllowUserToResizeRows = false;
             this.dgvTask.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTask.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTask.Location = new System.Drawing.Point(12, 304);
             this.dgvTask.Name = "dgvTask";
             this.dgvTask.ReadOnly = true;
             this.dgvTask.RowTemplate.Height = 23;
+            this.dgvTask.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTask.Size = new System.Drawing.Size(785, 277);
             this.dgvTask.TabIndex = 36;
             // 

@@ -32,7 +32,7 @@ namespace WorkStation
             par[1].Value = this.txtName.Text;
             par[2].Value = this.txtAlias.Text;
             par[3].Value = this.txtContact.Text;
-            par[4].Value = this.txtAddress.Text;
+            par[4].Value = this.txtAddress.Text;            
             int i = SqlHelper.ExecuteNonQuery(updateCom, par);
             if(i>0)
             {

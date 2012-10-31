@@ -77,6 +77,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(183, 21);
             this.dtpStart.TabIndex = 38;
+            this.dtpStart.Value = new System.DateTime(2012, 10, 31, 0, 0, 0, 0);
             // 
             // cboRoute
             // 
