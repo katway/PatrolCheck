@@ -418,6 +418,19 @@ namespace WorkStation
             frmAddItem item = new frmAddItem();
             item.Show();
         }
+
+        private void tsmibianjiyongtu_Click(object sender, EventArgs e)
+        {
+            frmEditAndDeleteCard card = new frmEditAndDeleteCard();
+            card.Show();
+
+        }
+
+        private void tsmizhuxiaokapian_Click(object sender, EventArgs e)
+        {
+            frmEditAndDeleteCard card = new frmEditAndDeleteCard();
+            card.Show();
+        }
        
     }
 }

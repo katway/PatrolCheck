@@ -90,8 +90,6 @@
             this.tsmidelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmrenwu = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixinjian1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmibianji1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmidelete1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmishenhe1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmixiafa1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmtongjibaobiao = new System.Windows.Forms.ToolStripMenuItem();
@@ -130,6 +128,8 @@
             this.tsmizhuxiaokapian = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmhelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmihelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmibianji1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmidelete1 = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -704,21 +704,21 @@
             // tsmixinjian1
             // 
             this.tsmixinjian1.Name = "tsmixinjian1";
-            this.tsmixinjian1.Size = new System.Drawing.Size(118, 22);
+            this.tsmixinjian1.Size = new System.Drawing.Size(152, 22);
             this.tsmixinjian1.Text = "任务管理";
             this.tsmixinjian1.Click += new System.EventHandler(this.tsmixinjian1_Click);
             // 
             // tsmishenhe1
             // 
             this.tsmishenhe1.Name = "tsmishenhe1";
-            this.tsmishenhe1.Size = new System.Drawing.Size(118, 22);
+            this.tsmishenhe1.Size = new System.Drawing.Size(152, 22);
             this.tsmishenhe1.Text = "任务审核";
             this.tsmishenhe1.Click += new System.EventHandler(this.tsmishenhe1_Click);
             // 
             // tsmixiafa1
             // 
             this.tsmixiafa1.Name = "tsmixiafa1";
-            this.tsmixiafa1.Size = new System.Drawing.Size(118, 22);
+            this.tsmixiafa1.Size = new System.Drawing.Size(152, 22);
             this.tsmixiafa1.Text = "任务下发";
             this.tsmixiafa1.Click += new System.EventHandler(this.tsmixiafa1_Click);
             // 
@@ -979,14 +979,16 @@
             // tsmibianjiyongtu
             // 
             this.tsmibianjiyongtu.Name = "tsmibianjiyongtu";
-            this.tsmibianjiyongtu.Size = new System.Drawing.Size(118, 22);
+            this.tsmibianjiyongtu.Size = new System.Drawing.Size(152, 22);
             this.tsmibianjiyongtu.Text = "编辑用途";
+            this.tsmibianjiyongtu.Click += new System.EventHandler(this.tsmibianjiyongtu_Click);
             // 
             // tsmizhuxiaokapian
             // 
             this.tsmizhuxiaokapian.Name = "tsmizhuxiaokapian";
-            this.tsmizhuxiaokapian.Size = new System.Drawing.Size(118, 22);
+            this.tsmizhuxiaokapian.Size = new System.Drawing.Size(152, 22);
             this.tsmizhuxiaokapian.Text = "注销卡片";
+            this.tsmizhuxiaokapian.Click += new System.EventHandler(this.tsmizhuxiaokapian_Click);
             // 
             // tsmhelp
             // 
@@ -1002,6 +1004,16 @@
             this.tsmihelp.Name = "tsmihelp";
             this.tsmihelp.Size = new System.Drawing.Size(94, 22);
             this.tsmihelp.Text = "帮助";
+            // 
+            // tsmibianji1
+            // 
+            this.tsmibianji1.Name = "tsmibianji1";
+            this.tsmibianji1.Size = new System.Drawing.Size(32, 19);
+            // 
+            // tsmidelete1
+            // 
+            this.tsmidelete1.Name = "tsmidelete1";
+            this.tsmidelete1.Size = new System.Drawing.Size(32, 19);
             // 
             // statusStrip1
             // 

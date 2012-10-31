@@ -23,15 +23,16 @@ namespace WorkStation
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string updateCom = "update Company set Name=@name,Alias=@alias,Contact=@contact,Address=@address";
-            SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@name",SqlDbType.NVarChar),
-                                                   new SqlParameter("@alias",SqlDbType.NVarChar),
-                                                   new SqlParameter("@contact",SqlDbType.NVarChar),
-                                                   new SqlParameter("@address",SqlDbType.NVarChar)};
-            par[0].Value = this.txtName.Text;
-            par[1].Value = this.txtAlias.Text;
-            par[2].Value = this.txtContact.Text;
-            par[3].Value = this.txtAddress.Text;
+            string updateCom = "update Company set Name=@name,Alias=@alias,Contact=@contact,Address=@address where ID=@id";
+            SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@id",this.dataGridView1.SelectedCells[0].Value),
+                                                     new SqlParameter("@name",SqlDbType.NVarChar),
+                                                     new SqlParameter("@alias",SqlDbType.NVarChar),
+                                                     new SqlParameter("@contact",SqlDbType.NVarChar),
+                                                     new SqlParameter("@address",SqlDbType.NVarChar)};
+            par[1].Value = this.txtName.Text;
+            par[2].Value = this.txtAlias.Text;
+            par[3].Value = this.txtContact.Text;
+            par[4].Value = this.txtAddress.Text;
             int i = SqlHelper.ExecuteNonQuery(updateCom, par);
             if(i>0)
             {

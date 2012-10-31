@@ -29,9 +29,9 @@ namespace WorkStation
             while(dr.Read())
             {
                 this.txtName.Text = dr[0].ToString();
-                this.txtAlias.Text = dr[1].ToString();
-                this.cboPost.Text = dr[2].ToString();
-                this.cboCard.Text = dr[3].ToString();
+                this.txtAlias.Text = dr[1].ToString();               
+                this.cboCard.Text = dr[2].ToString();
+                this.cboPost.Text = dr[3].ToString();
             }
         }
         /// <summary>
