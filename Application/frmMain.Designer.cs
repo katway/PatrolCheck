@@ -1252,5 +1252,17 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCompanyAdd;
         private System.Windows.Forms.ToolStripMenuItem tsmiCompanyEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiCompanyDel;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddRount;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditRount;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelRount;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddPoint;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditPoint;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelPoint;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddMachine;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditMachine;
+        private System.Windows.Forms.ToolStripMenuItem tsmiDelMachine;
     }
 }
