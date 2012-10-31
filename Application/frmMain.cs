@@ -269,12 +269,6 @@ namespace WorkStation
             com2.Show();
         }
 
-       
-
-    
-      
-        
-
         //新建设备
         private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
         {

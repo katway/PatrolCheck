@@ -61,7 +61,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(78, 24);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(562, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(626, 150);
             this.dataGridView1.TabIndex = 11;
             // 
             // Column1
@@ -174,7 +174,7 @@
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 20;
-            this.btnAdd.Text = "新建";
+            this.btnAdd.Text = "保存";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
@@ -190,7 +190,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(622, 200);
+            this.btnDel.Location = new System.Drawing.Point(629, 200);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 23;

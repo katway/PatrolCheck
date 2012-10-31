@@ -54,10 +54,10 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvSite.Location = new System.Drawing.Point(49, 21);
+            this.dgvSite.Location = new System.Drawing.Point(26, 22);
             this.dgvSite.Name = "dgvSite";
             this.dgvSite.RowTemplate.Height = 23;
-            this.dgvSite.Size = new System.Drawing.Size(630, 163);
+            this.dgvSite.Size = new System.Drawing.Size(653, 163);
             this.dgvSite.TabIndex = 7;
             // 
             // Column1
