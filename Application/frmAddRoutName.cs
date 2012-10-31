@@ -23,6 +23,7 @@ namespace WorkStation
 
         private void frmAddRoutName_Load(object sender, EventArgs e)
         {
+            this.cbo_init();
             if (isEdit)
             {
                 this.btnTrue.Text = "修改";
@@ -38,7 +39,7 @@ namespace WorkStation
                 }
                 dr.Dispose();
             }
-            this.cbo_init();
+           
         }
 
         private void btnTrue_Click(object sender, EventArgs e)

@@ -221,6 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(716, 586);
             this.Controls.Add(this.labID);
             this.Controls.Add(this.dgvItems);
@@ -239,7 +240,9 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
+            this.MaximizeBox = false;
             this.Name = "frmAddItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建巡检项";
             this.Load += new System.EventHandler(this.frmAddItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
