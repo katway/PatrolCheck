@@ -541,6 +541,7 @@
             // 
             // toolStripTextBox1
             // 
+            this.toolStripTextBox1.Font = new System.Drawing.Font("宋体", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(100, 25);
             // 
@@ -704,21 +705,21 @@
             // tsmixinjian1
             // 
             this.tsmixinjian1.Name = "tsmixinjian1";
-            this.tsmixinjian1.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian1.Size = new System.Drawing.Size(118, 22);
             this.tsmixinjian1.Text = "任务管理";
             this.tsmixinjian1.Click += new System.EventHandler(this.tsmixinjian1_Click);
             // 
             // tsmishenhe1
             // 
             this.tsmishenhe1.Name = "tsmishenhe1";
-            this.tsmishenhe1.Size = new System.Drawing.Size(152, 22);
+            this.tsmishenhe1.Size = new System.Drawing.Size(118, 22);
             this.tsmishenhe1.Text = "任务审核";
             this.tsmishenhe1.Click += new System.EventHandler(this.tsmishenhe1_Click);
             // 
             // tsmixiafa1
             // 
             this.tsmixiafa1.Name = "tsmixiafa1";
-            this.tsmixiafa1.Size = new System.Drawing.Size(152, 22);
+            this.tsmixiafa1.Size = new System.Drawing.Size(118, 22);
             this.tsmixiafa1.Text = "任务下发";
             this.tsmixiafa1.Click += new System.EventHandler(this.tsmixiafa1_Click);
             // 
@@ -979,14 +980,14 @@
             // tsmibianjiyongtu
             // 
             this.tsmibianjiyongtu.Name = "tsmibianjiyongtu";
-            this.tsmibianjiyongtu.Size = new System.Drawing.Size(152, 22);
+            this.tsmibianjiyongtu.Size = new System.Drawing.Size(118, 22);
             this.tsmibianjiyongtu.Text = "编辑用途";
             this.tsmibianjiyongtu.Click += new System.EventHandler(this.tsmibianjiyongtu_Click);
             // 
             // tsmizhuxiaokapian
             // 
             this.tsmizhuxiaokapian.Name = "tsmizhuxiaokapian";
-            this.tsmizhuxiaokapian.Size = new System.Drawing.Size(152, 22);
+            this.tsmizhuxiaokapian.Size = new System.Drawing.Size(118, 22);
             this.tsmizhuxiaokapian.Text = "注销卡片";
             this.tsmizhuxiaokapian.Click += new System.EventHandler(this.tsmizhuxiaokapian_Click);
             // 
@@ -1035,6 +1036,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.statusStrip1);
+            this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.Text = "frmain";
             this.splitContainer1.Panel1.ResumeLayout(false);

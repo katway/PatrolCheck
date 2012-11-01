@@ -80,7 +80,6 @@ namespace WorkStation
         private void frmEditOrDeleteCompany_Load(object sender, EventArgs e)
         {
             BindCompany();
-
         }
         public void BindCompany()
         {   string SelectCompany = "select * from Company";
