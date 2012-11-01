@@ -18,6 +18,11 @@ namespace WorkStation
         private void Application_Load(object sender, EventArgs e)
         {
       
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+                        
         }         
 
      

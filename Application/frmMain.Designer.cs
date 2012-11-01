@@ -102,7 +102,7 @@
             // 
             // splitContainer1.Panel2
             // 
-           // this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(860, 496);
             this.splitContainer1.SplitterDistance = 230;
             this.splitContainer1.SplitterWidth = 3;
@@ -219,19 +219,19 @@
             // tsmixinjian
             // 
             this.tsmixinjian.Name = "tsmixinjian";
-            this.tsmixinjian.Size = new System.Drawing.Size(152, 22);
+            this.tsmixinjian.Size = new System.Drawing.Size(94, 22);
             this.tsmixinjian.Text = "新建";
             // 
             // tsmibianji
             // 
             this.tsmibianji.Name = "tsmibianji";
-            this.tsmibianji.Size = new System.Drawing.Size(152, 22);
+            this.tsmibianji.Size = new System.Drawing.Size(94, 22);
             this.tsmibianji.Text = "编辑";
             // 
             // tsmidelete
             // 
             this.tsmidelete.Name = "tsmidelete";
-            this.tsmidelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmidelete.Size = new System.Drawing.Size(94, 22);
             this.tsmidelete.Text = "删除";
             // 
             // tsmrenwu
@@ -278,25 +278,25 @@
             // tsmirenyuanchuqin
             // 
             this.tsmirenyuanchuqin.Name = "tsmirenyuanchuqin";
-            this.tsmirenyuanchuqin.Size = new System.Drawing.Size(152, 22);
+            this.tsmirenyuanchuqin.Size = new System.Drawing.Size(142, 22);
             this.tsmirenyuanchuqin.Text = "人员出勤统计";
             // 
             // tsmixunjianxiang
             // 
             this.tsmixunjianxiang.Name = "tsmixunjianxiang";
-            this.tsmixunjianxiang.Size = new System.Drawing.Size(152, 22);
+            this.tsmixunjianxiang.Size = new System.Drawing.Size(142, 22);
             this.tsmixunjianxiang.Text = "巡检项统计";
             // 
             // tsmichuqinyichang
             // 
             this.tsmichuqinyichang.Name = "tsmichuqinyichang";
-            this.tsmichuqinyichang.Size = new System.Drawing.Size(152, 22);
+            this.tsmichuqinyichang.Size = new System.Drawing.Size(142, 22);
             this.tsmichuqinyichang.Text = "出勤异常统计";
             // 
             // tsmidianjianyichang
             // 
             this.tsmidianjianyichang.Name = "tsmidianjianyichang";
-            this.tsmidianjianyichang.Size = new System.Drawing.Size(152, 22);
+            this.tsmidianjianyichang.Size = new System.Drawing.Size(142, 22);
             this.tsmidianjianyichang.Text = "点检异常统计";
             // 
             // tsmxunjian
@@ -354,25 +354,25 @@
             this.tsmiSiteEditDelete,
             this.tsmiSiteEditDelete1});
             this.tsmichangquguanli.Name = "tsmichangquguanli";
-            this.tsmichangquguanli.Size = new System.Drawing.Size(152, 22);
+            this.tsmichangquguanli.Size = new System.Drawing.Size(118, 22);
             this.tsmichangquguanli.Text = "厂区管理";
             // 
             // tsmiSiteNew
             // 
             this.tsmiSiteNew.Name = "tsmiSiteNew";
-            this.tsmiSiteNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSiteNew.Size = new System.Drawing.Size(94, 22);
             this.tsmiSiteNew.Text = "新建";
             // 
             // tsmiSiteEditDelete
             // 
             this.tsmiSiteEditDelete.Name = "tsmiSiteEditDelete";
-            this.tsmiSiteEditDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSiteEditDelete.Size = new System.Drawing.Size(94, 22);
             this.tsmiSiteEditDelete.Text = "编辑";
             // 
             // tsmiSiteEditDelete1
             // 
             this.tsmiSiteEditDelete1.Name = "tsmiSiteEditDelete1";
-            this.tsmiSiteEditDelete1.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSiteEditDelete1.Size = new System.Drawing.Size(94, 22);
             this.tsmiSiteEditDelete1.Text = "删除";
             // 
             // tsmigangwei
@@ -382,25 +382,25 @@
             this.tsmiEditOrDeletePost1,
             this.tsmiEditOrDeletePost});
             this.tsmigangwei.Name = "tsmigangwei";
-            this.tsmigangwei.Size = new System.Drawing.Size(152, 22);
+            this.tsmigangwei.Size = new System.Drawing.Size(118, 22);
             this.tsmigangwei.Text = "岗位管理";
             // 
             // tsmiAddPost
             // 
             this.tsmiAddPost.Name = "tsmiAddPost";
-            this.tsmiAddPost.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddPost.Size = new System.Drawing.Size(94, 22);
             this.tsmiAddPost.Text = "新建";
             // 
             // tsmiEditOrDeletePost1
             // 
             this.tsmiEditOrDeletePost1.Name = "tsmiEditOrDeletePost1";
-            this.tsmiEditOrDeletePost1.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditOrDeletePost1.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditOrDeletePost1.Text = "编辑";
             // 
             // tsmiEditOrDeletePost
             // 
             this.tsmiEditOrDeletePost.Name = "tsmiEditOrDeletePost";
-            this.tsmiEditOrDeletePost.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditOrDeletePost.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditOrDeletePost.Text = "删除";
             // 
             // tsmirenyuan
@@ -410,25 +410,25 @@
             this.tsmiEditOrDeleteEmployee,
             this.tsmiEditOrDeleteEmployee1});
             this.tsmirenyuan.Name = "tsmirenyuan";
-            this.tsmirenyuan.Size = new System.Drawing.Size(152, 22);
+            this.tsmirenyuan.Size = new System.Drawing.Size(118, 22);
             this.tsmirenyuan.Text = "人员管理";
             // 
             // tsmiAddEmployee
             // 
             this.tsmiAddEmployee.Name = "tsmiAddEmployee";
-            this.tsmiAddEmployee.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddEmployee.Size = new System.Drawing.Size(94, 22);
             this.tsmiAddEmployee.Text = "新建";
             // 
             // tsmiEditOrDeleteEmployee
             // 
             this.tsmiEditOrDeleteEmployee.Name = "tsmiEditOrDeleteEmployee";
-            this.tsmiEditOrDeleteEmployee.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditOrDeleteEmployee.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditOrDeleteEmployee.Text = "编辑";
             // 
             // tsmiEditOrDeleteEmployee1
             // 
             this.tsmiEditOrDeleteEmployee1.Name = "tsmiEditOrDeleteEmployee1";
-            this.tsmiEditOrDeleteEmployee1.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditOrDeleteEmployee1.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditOrDeleteEmployee1.Text = "删除";
             // 
             // tsmiCompany
@@ -438,25 +438,25 @@
             this.tsmiEditOrDeleteCompany,
             this.tsmiEditOrDeleteCompany1});
             this.tsmiCompany.Name = "tsmiCompany";
-            this.tsmiCompany.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCompany.Size = new System.Drawing.Size(118, 22);
             this.tsmiCompany.Text = "公司管理";
             // 
             // tsmiAddCompany
             // 
             this.tsmiAddCompany.Name = "tsmiAddCompany";
-            this.tsmiAddCompany.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddCompany.Size = new System.Drawing.Size(94, 22);
             this.tsmiAddCompany.Text = "新建";
             // 
             // tsmiEditOrDeleteCompany
             // 
             this.tsmiEditOrDeleteCompany.Name = "tsmiEditOrDeleteCompany";
-            this.tsmiEditOrDeleteCompany.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditOrDeleteCompany.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditOrDeleteCompany.Text = "编辑";
             // 
             // tsmiEditOrDeleteCompany1
             // 
             this.tsmiEditOrDeleteCompany1.Name = "tsmiEditOrDeleteCompany1";
-            this.tsmiEditOrDeleteCompany1.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditOrDeleteCompany1.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditOrDeleteCompany1.Text = "删除";
             // 
             // tsmkapiam
@@ -483,19 +483,19 @@
             // tsmiAddCard
             // 
             this.tsmiAddCard.Name = "tsmiAddCard";
-            this.tsmiAddCard.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddCard.Size = new System.Drawing.Size(94, 22);
             this.tsmiAddCard.Text = "新建";
             // 
             // tsmiEditAndDeleteCard
             // 
             this.tsmiEditAndDeleteCard.Name = "tsmiEditAndDeleteCard";
-            this.tsmiEditAndDeleteCard.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditAndDeleteCard.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditAndDeleteCard.Text = "编辑";
             // 
             // tsmiEditAndDeleteCard1
             // 
             this.tsmiEditAndDeleteCard1.Name = "tsmiEditAndDeleteCard1";
-            this.tsmiEditAndDeleteCard1.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditAndDeleteCard1.Size = new System.Drawing.Size(94, 22);
             this.tsmiEditAndDeleteCard1.Text = "删除";
             // 
             // tsmiEditAndDeleteCard2
