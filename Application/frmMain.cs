@@ -9,6 +9,7 @@ using System.Windows.Forms;
 
 namespace WorkStation
 {
+ 
     public partial class frmMain : Form
     {
         public frmMain()
@@ -189,21 +190,6 @@ namespace WorkStation
             addpoint.ShowDialog();
         }
 
-        ////新建设备
-        //private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
-        //{
-        //    frmAddMachine fm = new frmAddMachine();
-        //    fm.ShowDialog();
-        //}
-
-        //private void tsmixunjianluxian_Click(object sender, EventArgs e)
-        //{
-        //    frmAddRoute frm = new frmAddRoute();
-        //    frm.Left = this.Left + (this.Width - frm.Width) / 2;
-        //    frm.Top = this.Top + (this.Height - frm.Height) / 2;
-        //    frm.Show();
-        //}
-
         private void tsmixinjian1_Click(object sender, EventArgs e)
         {
             frmAddPlan frm = new frmAddPlan();
@@ -324,12 +310,16 @@ namespace WorkStation
         private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
         {
             frmAddMachine fm = new frmAddMachine();
+            fm.Left = this.Left + (this.Width - fm.Width) / 2;
+            fm.Top = this.Top + (this.Height - fm.Height) / 2;
             fm.ShowDialog();
         }
         //巡检路线
         private void tsmixunjianluxian_Click(object sender, EventArgs e)
         {
             frmAddRoute frm = new frmAddRoute();
+            frm.Top=this.Top+(this.Height-frm.Height)/2;
+            frm.Left=this.Left+(this.Width-frm.Width)/2;
             frm.Show();
         }
 

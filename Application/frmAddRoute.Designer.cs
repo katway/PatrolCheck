@@ -50,6 +50,7 @@
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.bkwInit = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -287,6 +288,11 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // bkwInit
+            // 
+            this.bkwInit.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkwInit_DoWork);
+            this.bkwInit.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkwInit_RunWorkerCompleted);
+            // 
             // frmAddRoute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -339,6 +345,7 @@
         private System.Windows.Forms.TreeView tvLogicalPoint;
         private System.Windows.Forms.Label labRouteID;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.ComponentModel.BackgroundWorker bkwInit;
 
 
     }

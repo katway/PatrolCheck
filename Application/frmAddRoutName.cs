@@ -23,7 +23,7 @@ namespace WorkStation
 
         private void frmAddRoutName_Load(object sender, EventArgs e)
         {
-            this.cbo_init();
+            backgroundWorker1.RunWorkerAsync();
             if (isEdit)
             {
                 this.btnTrue.Text = "修改";
@@ -80,21 +80,26 @@ namespace WorkStation
             this.Close();
         }
 
-        private void cbo_init()
+        DataSet dsCboinorder, dsCboSitearea;
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            DataSet ds = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where purpose='CheckSequence' ");
-            this.cboInOrder.DataSource = ds.Tables[0];
+            dsCboinorder = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where purpose='CheckSequence' ");
+            dsCboSitearea = SqlHelper.ExecuteDataset("Select Id,Name From Site");
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.cboInOrder.DataSource = dsCboinorder.Tables[0];
             this.cboInOrder.DisplayMember = "Meaning";
             this.cboInOrder.ValueMember = "Code";
             this.cboInOrder.SelectedIndex = this.cboInOrder.Items.Count > 0 ? 0 : -1;
-            ds.Dispose();
+            dsCboinorder.Dispose();
 
-            ds = SqlHelper.ExecuteDataset("Select Id,Name From Site");
-            cboSiteArea.DataSource = ds.Tables[0];
+            cboSiteArea.DataSource = dsCboSitearea.Tables[0];
             cboSiteArea.DisplayMember = "Name";
             cboSiteArea.ValueMember = "ID";
             this.cboSiteArea.SelectedIndex = this.cboSiteArea.Items.Count > 0 ? 0 : -1;
-            ds.Dispose();
+            dsCboSitearea.Dispose();
         }
     }
 }

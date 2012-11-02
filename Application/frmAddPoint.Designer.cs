@@ -92,6 +92,7 @@
             this.txtRelation.ReadOnly = true;
             this.txtRelation.Size = new System.Drawing.Size(237, 21);
             this.txtRelation.TabIndex = 5;
+            this.txtRelation.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtRelation_MouseDoubleClick);
             // 
             // btnRead
             // 
@@ -158,7 +159,7 @@
             // labID
             // 
             this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(507, 84);
+            this.labID.Location = new System.Drawing.Point(635, 84);
             this.labID.Name = "labID";
             this.labID.Size = new System.Drawing.Size(41, 12);
             this.labID.TabIndex = 12;

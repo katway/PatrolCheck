@@ -20,7 +20,6 @@ namespace WorkStation
         private void frmAddPoint_Load(object sender, EventArgs e)
         {
             this.labID.Text = "";
-            this.btnSave.Enabled = false;
             getDgvPoint();
         }
 
@@ -40,8 +39,8 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
 
-            string str_select = "Select ID From Rrid Where Name='"+this.txtRelation.Text.Trim()+"'";
-            string str_rfid = (SqlHelper.ExecuteScalar("connectionstring",CommandType.Text,str_select)).ToString();
+            string str_select = "Select ID From Rfid Where Name='"+this.txtRelation.Text.Trim()+"'";
+            string str_rfid = SqlHelper.ExecuteScalar(str_select).ToString();
             pars[2].Value = str_rfid;
 
             string str_insert = "Insert Into PhysicalCheckPoint([Name],Alias,Rfid_Id) values(@name,@alias,@rfid)";
@@ -57,6 +56,7 @@ namespace WorkStation
         private void btnRead_Click(object sender, EventArgs e)
         {
             this.btnSave.Enabled = true;
+            this.txtRelation.ReadOnly = false;
         }
 
         private void getDgvPoint()
@@ -68,6 +68,11 @@ namespace WorkStation
         private void dgvPoint_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
+
+            labID.Text = dgvPoint.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtName.Text = dgvPoint.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtAlias.Text = dgvPoint.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtRelation.Text = dgvPoint.Rows[e.RowIndex].Cells[4].Value.ToString();
             if (e.ColumnIndex == 0)
             {
                 if ((bool)dgvPoint.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
@@ -78,15 +83,7 @@ namespace WorkStation
                 {
                     dgvPoint.Rows[e.RowIndex].Cells[0].Value = false;
                 }
-            }
-            else
-            {
-                labID.Text = dgvPoint.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtName.Text = dgvPoint.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtAlias.Text = dgvPoint.Rows[e.RowIndex].Cells[3].Value.ToString();
-                txtRelation.Text = dgvPoint.Rows[e.RowIndex].Cells[4].Value.ToString();
-
-            }
+            }            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -145,6 +142,12 @@ namespace WorkStation
                 MessageBox.Show("请选择要删除的项。");
             }            
         }
+
+        private void txtRelation_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.txtRelation.ReadOnly = false;
+        }
+     
        
     }
 }

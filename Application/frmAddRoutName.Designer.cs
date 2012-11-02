@@ -38,6 +38,7 @@
             this.btnTrue = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cboInOrder = new System.Windows.Forms.ComboBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
             // cboSiteArea
@@ -128,6 +129,11 @@
             this.cboInOrder.Size = new System.Drawing.Size(183, 20);
             this.cboInOrder.TabIndex = 9;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // frmAddRoutName
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -166,5 +172,6 @@
         private System.Windows.Forms.Button btnTrue;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox cboInOrder;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

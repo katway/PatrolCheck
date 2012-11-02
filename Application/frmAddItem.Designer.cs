@@ -46,6 +46,7 @@
             this.dgvItems = new System.Windows.Forms.DataGridView();
             this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.labID = new System.Windows.Forms.Label();
+            this.bkwItem = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,11 +193,11 @@
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
-            this.dgvItems.Location = new System.Drawing.Point(14, 318);
+            this.dgvItems.Location = new System.Drawing.Point(14, 291);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowTemplate.Height = 23;
-            this.dgvItems.Size = new System.Drawing.Size(659, 236);
+            this.dgvItems.Size = new System.Drawing.Size(659, 263);
             this.dgvItems.TabIndex = 19;
             this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
             // 
@@ -216,6 +217,11 @@
             this.labID.TabIndex = 20;
             this.labID.Text = "巡检项ID";
             this.labID.Visible = false;
+            // 
+            // bkwItem
+            // 
+            this.bkwItem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkwItem_DoWork);
+            this.bkwItem.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkwItem_RunWorkerCompleted);
             // 
             // frmAddItem
             // 
@@ -271,5 +277,6 @@
         private System.Windows.Forms.DataGridView dgvItems;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
         private System.Windows.Forms.Label labID;
+        private System.ComponentModel.BackgroundWorker bkwItem;
     }
 }

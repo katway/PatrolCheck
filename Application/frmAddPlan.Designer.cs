@@ -160,7 +160,7 @@
             this.Controls.Add(this.btnNew);
             this.Name = "frmAddPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmAddPlan";
+            this.Text = "新建计划";
             this.Load += new System.EventHandler(this.frmAddPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
             this.ResumeLayout(false);

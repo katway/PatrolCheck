@@ -268,11 +268,6 @@ namespace WorkStation
             cboShow.SelectedIndex = cboShow.Items.Count > 0 ? 0 : -1;
         }
 
-        private void btnControl()
-        {
- 
-        }
-
         private void dgvPlan_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if(e.RowIndex<0||btnEdit.Enabled==false) return;

@@ -20,9 +20,7 @@ namespace WorkStation
         private void frmAddItem_Load(object sender, EventArgs e)
         {
             this.labID.Text = "";
-            getMachine();
-            getValueType();
-            getPoint();
+            bkwItem.RunWorkerAsync();
             bindDgvItems();
         }
 
@@ -66,32 +64,7 @@ namespace WorkStation
                 MessageBox.Show("保存成功");
             }
             bindDgvItems();
-        }
-        
-        private void getMachine()
-        {
-            DataSet ds= SqlHelper.ExecuteDataset("select ID,Name From Machine");
-            this.cboMachine.DataSource=ds.Tables[0];
-            this.cboMachine.DisplayMember = "Name";
-            this.cboMachine.ValueMember = "ID";
-            this.cboMachine.SelectedIndex = cboMachine.Items.Count>0?0:-1;
-        }
-        private void getValueType()
-        {
-            DataSet ds = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where Purpose='ValueType'");
-            this.cboValue.DataSource = ds.Tables[0];
-            this.cboValue.DisplayMember = "Meaning";
-            this.cboValue.ValueMember = "Code";
-            this.cboValue.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
-        }
-        private void getPoint()
-        {
-            DataSet ds = SqlHelper.ExecuteDataset("select ID,Name From PhysicalCheckPoint");
-            this.cboPoint.DataSource=ds.Tables[0];
-            this.cboPoint.DisplayMember = "Name";
-            this.cboPoint.ValueMember = "ID";
-            this.cboPoint.SelectedIndex = cboPoint.Items.Count > 0 ? 0 : -1;
-        }
+        }   
 
         private void bindDgvItems()
         {
@@ -112,6 +85,15 @@ namespace WorkStation
         private void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
+
+            labID.Text = dgvItems.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtName.Text = dgvItems.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtAlias.Text = dgvItems.Rows[e.RowIndex].Cells[3].Value.ToString();
+            cboValue.Text = dgvItems.Rows[e.RowIndex].Cells[4].Value.ToString();
+            cboMachine.Text = dgvItems.Rows[e.RowIndex].Cells[5].Value.ToString();
+            cboPoint.Text = dgvItems.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtRemarks.Text = dgvItems.Rows[e.RowIndex].Cells[7].Value.ToString();
+
             if (e.ColumnIndex == 0)
             {
                 if ((bool)dgvItems.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
@@ -122,16 +104,6 @@ namespace WorkStation
                 {
                     dgvItems.Rows[e.RowIndex].Cells[0].Value = false;
                 }
-            }
-            else
-            {
-                labID.Text = dgvItems.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtName.Text = dgvItems.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtAlias.Text = dgvItems.Rows[e.RowIndex].Cells[3].Value.ToString();
-                cboValue.Text = dgvItems.Rows[e.RowIndex].Cells[4].Value.ToString();
-                cboMachine.Text = dgvItems.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cboPoint.Text = dgvItems.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txtRemarks.Text = dgvItems.Rows[e.RowIndex].Cells[7].Value.ToString();
             }
         }
 
@@ -208,6 +180,35 @@ namespace WorkStation
             {
                 MessageBox.Show("请选择要删除的项");
             }
+        }
+
+        DataSet dsMachine, dsValueType, dsPoint;
+        private void bkwItem_DoWork(object sender, DoWorkEventArgs e)
+        {
+            dsMachine = SqlHelper.ExecuteDataset("select ID,Name From Machine");
+            dsValueType = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where Purpose='ValueType'");
+            dsPoint = SqlHelper.ExecuteDataset("select ID,Name From PhysicalCheckPoint");
+        }
+
+        private void bkwItem_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.cboMachine.DataSource = dsMachine.Tables[0];
+            this.cboMachine.DisplayMember = "Name";
+            this.cboMachine.ValueMember = "ID";
+            this.cboMachine.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
+            dsMachine.Dispose();
+
+            this.cboPoint.DataSource = dsPoint.Tables[0];
+            this.cboPoint.DisplayMember = "Name";
+            this.cboPoint.ValueMember = "ID";
+            this.cboPoint.SelectedIndex = cboPoint.Items.Count > 0 ? 0 : -1;
+            dsPoint.Dispose();
+
+            this.cboValue.DataSource = dsValueType.Tables[0];
+            this.cboValue.DisplayMember = "Meaning";
+            this.cboValue.ValueMember = "Code";
+            this.cboValue.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
+            dsValueType.Dispose();
         }
     }
 }
