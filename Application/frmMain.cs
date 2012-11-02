@@ -24,7 +24,7 @@ namespace WorkStation
         {
             for (int i = 0; i < this.tableLayoutPanel1.RowStyles.Count; i++)
             {
-                if (i == CurrentRow)
+                if (i == CurrentRow) 
                 {
                     this.tableLayoutPanel1.RowStyles[i].SizeType = SizeType.Percent;
                     this.tableLayoutPanel1.RowStyles[i].Height = 1;
@@ -195,17 +195,22 @@ namespace WorkStation
             frmAddPlan frm = new frmAddPlan();
             frm.ShowDialog();
         }
-
+        //任务审核
         private void tsmishenhe1_Click(object sender, EventArgs e)
         {
             frmAddPlanExamine frm = new frmAddPlanExamine();
+            frm.Top = this.Top + (this.Height - frm.Height) / 2;
+            frm.Left = this.Left + (this.Width - frm.Width) / 2;
             frm.Show();
         }
 
+        //任务下发
         private void tsmixiafa1_Click(object sender, EventArgs e)
         {
-            frmAddPlanToTask add = new frmAddPlanToTask();
-            add.ShowDialog();
+            frmAddPlanToTask frm = new frmAddPlanToTask();
+            frm.Top = this.Top + (this.Height - frm.Height) / 2;
+            frm.Left = this.Left + (this.Width - frm.Width) / 2;
+            frm.ShowDialog();
         }
 
         private void tsmigangweiAdd_Click(object sender, EventArgs e)
@@ -399,6 +404,8 @@ namespace WorkStation
         private void tsmixunjiandian_Click_1(object sender, EventArgs e)
         {
             frmAddPoint point = new frmAddPoint();
+            point.Top = this.Top + (this.Height - point.Height) / 2;
+            point.Left = this.Left + (this.Width - point.Width) / 2;
             point.Show();
         }
 
@@ -406,6 +413,8 @@ namespace WorkStation
         private void tsmixunjianxiangs_Click_1(object sender, EventArgs e)
         {
             frmAddItem item = new frmAddItem();
+            item.Top = this.Top + (this.Height - item.Height) / 2;
+            item.Left = this.Left + (this.Width - item.Width) / 2;
             item.Show();
         }
        

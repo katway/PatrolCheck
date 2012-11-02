@@ -11,7 +11,6 @@ using System.Threading;
 
 namespace WorkStation
 {
-    public delegate void gg();
     public partial class frmAddRoute : Form
     {
         public frmAddRoute()
@@ -24,12 +23,21 @@ namespace WorkStation
         List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
-            tvRouteInit(tvRoute);   
-
+            //tvRouteInit(this.tvRoute);
+            Thread th1 = new Thread(tvRouteInit);
+            th1.Start(this.tvRoute);
             Thread th2 = new Thread(new ThreadStart(getTvPhysicalPoint));
             th2.Start();
-            Thread th3 = new Thread(FM_Init);
-            th3.Start();          
+            //Thread th3 = new Thread(FM_Init);
+            //th3.Start();  
+
+            //chkRoute.Checked = wset.tvRoute;
+            //chkLogicalPoint.Checked = wset.tvLogicalPoint;
+            //chkPhysicalPoint.Checked = wset.tvPhysicalPoint;
+
+            //if (wset.tvRoute) tvRoute.ExpandAll(); else tvRoute.CollapseAll();
+            //if (wset.tvPhysicalPoint) tvPhysicalPoint.ExpandAll(); else tvPhysicalPoint.CollapseAll();
+            //if (wset.tvLogicalPoint) tvLogicalPoint.ExpandAll(); else tvLogicalPoint.CollapseAll();
                   
         }
 
@@ -306,7 +314,7 @@ namespace WorkStation
 
         //获取路线
         public static void tvRouteInit(Object tvRoute)
-        {           
+        {
             ((TreeView)tvRoute).Nodes.Clear();
             SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From Company");
             while (dr.Read())
@@ -319,7 +327,11 @@ namespace WorkStation
                 {
                     (tnode.Nodes)[i] = tvNodeAdd((tnode.Nodes)[i], "Select ID,Name,Sequence as Sequence from CheckRoute Where site_id=" + (tnode.Nodes)[i].Tag);
                 }
-                ((TreeView)tvRoute).Nodes.Add(tnode);
+                ((TreeView)tvRoute).BeginInvoke((Action)delegate 
+                {
+                    ((TreeView)tvRoute).Nodes.Add(tnode);
+                });
+                
             }
             dr.Close();
 
@@ -515,16 +527,6 @@ namespace WorkStation
                 fn.routeID = tvRoute.SelectedNode.Tag;
                 fn.Show();
             }
-        }
-
-        private void bkwInit_DoWork(object sender, DoWorkEventArgs e)
-        {
-
-        }
-
-        private void bkwInit_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-
         }
 
     }

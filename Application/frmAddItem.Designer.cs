@@ -248,7 +248,7 @@
             this.Controls.Add(this.lblName);
             this.MaximizeBox = false;
             this.Name = "frmAddItem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "新建巡检项";
             this.Load += new System.EventHandler(this.frmAddItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();

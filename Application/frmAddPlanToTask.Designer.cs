@@ -135,6 +135,7 @@
             this.Controls.Add(this.dgvPlan);
             this.Controls.Add(this.btnDown);
             this.Name = "frmAddPlanToTask";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "任务下发";
             this.Load += new System.EventHandler(this.frmAddPlanToTask_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();

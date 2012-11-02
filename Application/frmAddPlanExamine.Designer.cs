@@ -122,6 +122,7 @@
             this.Controls.Add(this.dgvPlan);
             this.Controls.Add(this.btnPass);
             this.Name = "frmAddPlanExamine";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "计划审核";
             this.Load += new System.EventHandler(this.frmAddPlanExamine_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();

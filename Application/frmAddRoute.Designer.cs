@@ -50,7 +50,6 @@
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.bkwInit = new System.ComponentModel.BackgroundWorker();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -103,8 +102,6 @@
             // chkRoute
             // 
             this.chkRoute.AutoSize = true;
-            this.chkRoute.Checked = true;
-            this.chkRoute.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkRoute.Location = new System.Drawing.Point(93, 458);
             this.chkRoute.Name = "chkRoute";
             this.chkRoute.Size = new System.Drawing.Size(72, 16);
@@ -168,8 +165,6 @@
             // chkPhysicalPoint
             // 
             this.chkPhysicalPoint.AutoSize = true;
-            this.chkPhysicalPoint.Checked = true;
-            this.chkPhysicalPoint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkPhysicalPoint.Location = new System.Drawing.Point(338, 458);
             this.chkPhysicalPoint.Name = "chkPhysicalPoint";
             this.chkPhysicalPoint.Size = new System.Drawing.Size(72, 16);
@@ -181,8 +176,6 @@
             // chkLogicalPoint
             // 
             this.chkLogicalPoint.AutoSize = true;
-            this.chkLogicalPoint.Checked = true;
-            this.chkLogicalPoint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLogicalPoint.Location = new System.Drawing.Point(50, 458);
             this.chkLogicalPoint.Name = "chkLogicalPoint";
             this.chkLogicalPoint.Size = new System.Drawing.Size(72, 16);
@@ -288,11 +281,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // bkwInit
-            // 
-            this.bkwInit.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkwInit_DoWork);
-            this.bkwInit.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkwInit_RunWorkerCompleted);
-            // 
             // frmAddRoute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -345,7 +333,6 @@
         private System.Windows.Forms.TreeView tvLogicalPoint;
         private System.Windows.Forms.Label labRouteID;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.ComponentModel.BackgroundWorker bkwInit;
 
 
     }

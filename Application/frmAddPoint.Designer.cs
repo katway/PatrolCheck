@@ -186,7 +186,7 @@
             this.Controls.Add(this.lblName);
             this.MaximizeBox = false;
             this.Name = "frmAddPoint";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "新建巡检点";
             this.Load += new System.EventHandler(this.frmAddPoint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoint)).EndInit();
