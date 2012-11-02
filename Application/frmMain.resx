@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>555, 17</value>
+    <value>689, -3</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="打开OToolStripButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -228,9 +228,9 @@
 </value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>665, 17</value>
+    <value>785, -3</value>
   </metadata>
-  <data name="tsmMoban.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmiItemTemplet.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk32BgAAAAAAADYAAAAoAAAAGAAAABgAAAABABgAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA/vv49Oni
         4ca52LSk2LSk2LSk2LSj2LSj2LOj2LOi2LOi2LOh17Kh2LKg17Kg2LKf17Ge17Ge17Gd4L+r8tnF++fS
@@ -264,7 +264,7 @@
         /fXs/fTq/fLo/PHl/PDj/e/h+ezhzsLrXzrOVirInYXL++fS++XQ++TO
 </value>
   </data>
-  <data name="tsmrenwu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmiTask.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk32BgAAAAAAADYAAAAoAAAAGAAAABgAAAABABgAAAAAAAAAAADEDgAAxA4AAAAAAAAAAAAA////////
         ////////////////qJBoVGRwVGRwpIRc////////////////////////////////////////////////
@@ -298,7 +298,7 @@
         3JRk3IRU3JRk9LR0+MSM////////////////////////////////////
 </value>
   </data>
-  <data name="tsmtongjibaobiao.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmiReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         R0lGODlhEAAQAIMAAMDcwP/78D4+Pv///9Tj/8DAwICAgKCgpFAZAKqqqv/w1AAAAAAAAAAAAAAAAAAA
         ACH/C05FVFNDQVBFMi4wAwEBAAAh+QQAAAAAACwAAAAAEAAQAAAIogABCBxIsKAAAAMCKARQoKFAAgUA
@@ -307,7 +307,7 @@
         sSoAvHkVkr0pUS5HqYMPCljMuLHjgAA7
 </value>
   </data>
-  <data name="tsmxunjian.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmiPatrolCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2eEwAAAAAAADYAAAAoAAAAJAAAAC4AAAABABgAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA99nC99nB
         +NzD8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j
@@ -395,7 +395,7 @@
         8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j
 </value>
   </data>
-  <data name="tsmjichu.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmiBaseInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2eEwAAAAAAADYAAAAoAAAAJAAAAC4AAAABABgAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA9tvE9tvE
         993F8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j
@@ -483,7 +483,7 @@
         8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j
 </value>
   </data>
-  <data name="tsmkapiam.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="tsmiRfi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2eEwAAAAAAADYAAAAoAAAAJAAAAC4AAAABABgAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA99nB99nB
         +NzD8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j
@@ -593,4 +593,7 @@
         u9OkB7Fo0rFlS6KDGbdsgm3W3V79u2AbCZNzFxfIWHnxgAA7
 </value>
   </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>

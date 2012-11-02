@@ -16,43 +16,47 @@ namespace WorkStation
         {
             InitializeComponent();
         }
-        private void Application_Load(object sender, EventArgs e)
-        {
-
-      
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-
-
-                        
-        }         
-
-     
         private Dictionary<string, Form> FormMap = new Dictionary<string, Form>();
+        private Form CreteFormFormName(string formName)
+        {
+            Assembly assem = Assembly.GetExecutingAssembly();
+            System.Type t = assem.GetType("WorkStation." + formName);
+            object obj = null;
+            if (t != null)
+                obj = Activator.CreateInstance(t);
+            if (obj != null)
+            {
+                (obj as Form).MdiParent = this;
+                return (obj as Form);
+            }
+            else
+            {
+                return null;
+            }
+        }
         private void ShowForm(object sender, EventArgs e)
         {
-
             string className = (sender as ToolStripMenuItem).Name.Replace("tsmi", "frm");
-            MessageBox.Show(className);
-            if (!FormMap.Keys.Contains(className))
+            if (FormMap.Keys.Contains(className))
             {
-                Assembly assem = Assembly.GetExecutingAssembly();
-                System.Type t = assem.GetType("WorkStation." + className);
-                object obj = null;
-                if (t != null)
-                    obj = Activator.CreateInstance(t);
-                if (obj != null)
+                if (FormMap[className] != null)
                 {
-                    (obj as Form).MdiParent = this;
-                    FormMap.Add(className, obj as Form);
+                    if (FormMap[className].IsDisposed)
+                    {
+                        FormMap[className] = this.CreteFormFormName(className);
+                        FormMap[className].Show();
+                    }
+                }
+                else
+                {
+                    //窗体类名已经出现在列表，但窗体为NULL，说明无法根据窗体类名创建对象。
                 }
             }
-            if (FormMap.Keys.Contains(className))
-                FormMap[className].Show();
+            else
+            {
+                FormMap.Add(className, this.CreteFormFormName(className));
+                if (FormMap[className] != null) FormMap[className].Show();
+            }
         }
-
     }
 }
