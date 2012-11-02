@@ -137,6 +137,7 @@
             // 
             this.dgvPoint.AllowUserToAddRows = false;
             this.dgvPoint.AllowUserToDeleteRows = false;
+            this.dgvPoint.AllowUserToResizeRows = false;
             this.dgvPoint.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPoint.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
@@ -144,6 +145,7 @@
             this.dgvPoint.Name = "dgvPoint";
             this.dgvPoint.ReadOnly = true;
             this.dgvPoint.RowTemplate.Height = 23;
+            this.dgvPoint.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPoint.Size = new System.Drawing.Size(687, 329);
             this.dgvPoint.TabIndex = 11;
             this.dgvPoint.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPoint_CellClick);

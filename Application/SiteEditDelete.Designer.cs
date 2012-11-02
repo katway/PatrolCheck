@@ -48,16 +48,19 @@
             // 
             // dgvSite
             // 
+            this.dgvSite.AllowUserToAddRows = false;
+            this.dgvSite.AllowUserToResizeRows = false;
             this.dgvSite.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSite.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvSite.Location = new System.Drawing.Point(49, 21);
+            this.dgvSite.Location = new System.Drawing.Point(26, 22);
             this.dgvSite.Name = "dgvSite";
             this.dgvSite.RowTemplate.Height = 23;
-            this.dgvSite.Size = new System.Drawing.Size(630, 163);
+            this.dgvSite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSite.Size = new System.Drawing.Size(653, 163);
             this.dgvSite.TabIndex = 7;
             // 
             // Column1
@@ -86,7 +89,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(501, 290);
+            this.btnCancel.Location = new System.Drawing.Point(501, 305);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 17;

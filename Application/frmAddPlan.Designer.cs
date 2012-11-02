@@ -45,6 +45,7 @@
             // 
             this.dgvPlan.AllowUserToAddRows = false;
             this.dgvPlan.AllowUserToDeleteRows = false;
+            this.dgvPlan.AllowUserToResizeRows = false;
             this.dgvPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
@@ -55,6 +56,7 @@
             this.dgvPlan.Name = "dgvPlan";
             this.dgvPlan.ReadOnly = true;
             this.dgvPlan.RowTemplate.Height = 23;
+            this.dgvPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPlan.Size = new System.Drawing.Size(686, 460);
             this.dgvPlan.TabIndex = 34;
             this.dgvPlan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlan_CellClick);

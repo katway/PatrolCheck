@@ -88,5 +88,10 @@ namespace WorkStation
             BindEmployee();
 
         }
+
+        private void txtAlias_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
