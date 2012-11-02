@@ -14,11 +14,7 @@ namespace WorkStation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-<<<<<<< HEAD
-            Application.Run(new frmain());
-=======
             Application.Run(new frmMain());
->>>>>>> weiyunbing/Develop
         }
     }
 }

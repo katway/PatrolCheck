@@ -104,7 +104,7 @@ namespace WorkStation
             {
                 if (dgv != null)
                 {
-                    frmAddPlan.getDgvPlan(dgv,state);
+                    frmPlan.getDgvPlan(dgv,state);
                 }
             }
         }

@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace WorkStation
 {
@@ -17,6 +18,7 @@ namespace WorkStation
         }
         private void Application_Load(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             btnItem_Click(sender, e);
         }
         private void ShowProject(int CurrentRow)
@@ -317,23 +319,11 @@ namespace WorkStation
 
 
 
-    
-      
-        
 
- //qichuanbo/Develop
-        //新建设备
-        private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
-        {
-            frmAddMachine fm = new frmAddMachine();
-            fm.ShowDialog();
-        }
+
+
         //巡检路线
-        private void tsmixunjianluxian_Click(object sender, EventArgs e)
-        {
-            frmAddRoute frm = new frmAddRoute();
-            frm.Show();
-        }
+
 
         private void tsmiAddRount_Click(object sender, EventArgs e)
         {
@@ -369,20 +359,17 @@ namespace WorkStation
         {
             frmAddPoint point = new frmAddPoint();
             point.Show();
+=======
+      
+>>>>>>> hefangli/master
         }
 
-        private void tsmiAddItem_Click(object sender, EventArgs e)
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
         {
-            frmAddItem item = new frmAddItem();
-            item.Show();
-        }
+                        
+        }         
 
-        private void tsmiEditItem_Click(object sender, EventArgs e)
-        {
-            frmAddItem item = new frmAddItem();
-            item.Show();
-        }
-
+<<<<<<< HEAD
         private void tsmiDelItem_Click(object sender, EventArgs e)
         {
             frmAddItem item = new frmAddItem();
@@ -420,19 +407,32 @@ namespace WorkStation
             frmAddItem item = new frmAddItem();
             item.Show();
         }
-        //编辑用途
-        private void tsmibianjiyongtu_Click(object sender, EventArgs e)
+        private Dictionary<string, Form> FormMap = new Dictionary<string, Form>();
+        private void ShowForm(object sender, EventArgs e)
         {
-            frmEditAndDeleteCard card = new frmEditAndDeleteCard();
-            card.Show();
 
+            string className = (sender as ToolStripMenuItem).Name.Replace("tsmi", "frm");
+            MessageBox.Show(className);
+            if (!FormMap.Keys.Contains(className))
+            {
+                Assembly assem = Assembly.GetExecutingAssembly();
+                System.Type t = assem.GetType("WorkStation." + className);
+                object obj = null;
+                if (t != null)
+                    obj = Activator.CreateInstance(t);
+                if (obj != null)
+                {
+                    (obj as Form).MdiParent = this;
+                    FormMap.Add(className, obj as Form);
+                }
+            }
+            if (FormMap.Keys.Contains(className))
+                FormMap[className].Show();
         }
-        //注销卡片
-        private void tsmizhuxiaokapian_Click(object sender, EventArgs e)
-        {
-            frmEditAndDeleteCard card = new frmEditAndDeleteCard();
-            card.Show();
-        }
+
+=======
+     
        
+>>>>>>> hefangli/master
     }
 }
