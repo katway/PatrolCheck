@@ -17,6 +17,7 @@ namespace WorkStation
         }
         private void Application_Load(object sender, EventArgs e)
         {
+
       
         }
 

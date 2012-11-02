@@ -95,7 +95,6 @@ namespace WorkStation
             }
             dr.Dispose();
             cboShow.SelectedIndex = cboShow.Items.Count > 0 ? 0 : -1;
-
         }
 
         private void getDgvPlan()

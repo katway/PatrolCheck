@@ -64,7 +64,7 @@ namespace WorkStation
         private void btnDel_Click(object sender, EventArgs e)
         {
             string deleteCompany = "delete from Company where ID=@id";
-            SqlParameter[] par = new SqlParameter[] {new SqlParameter("@id",this.dataGridView1.SelectedCells[0].Value)};
+            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id",this.dataGridView1.SelectedCells[0].Value)};
             int i = SqlHelper.ExecuteNonQuery(deleteCompany,par);
             if(i>0)
             {

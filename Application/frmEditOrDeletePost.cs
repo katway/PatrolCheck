@@ -64,7 +64,7 @@ namespace WorkStation
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string deletePost = "delete from Post where ID=@id";
-            SqlParameter[] par = new SqlParameter[] {new SqlParameter("@id",dataGridView1.SelectedCells[0].Value) };
+            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id",dataGridView1.SelectedCells[0].Value) };
             int i = SqlHelper.ExecuteNonQuery(deletePost,par);
             if(i>0)
             {

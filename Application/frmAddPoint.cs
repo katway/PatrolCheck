@@ -40,7 +40,7 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
 
-            string str_select = "Select ID From Rrid Where Name='"+this.txtRelation.Text.Trim()+"'";
+            string str_select = "Select ID From Rfid Where Name='"+this.txtRelation.Text.Trim()+"'";
             string str_rfid = (SqlHelper.ExecuteScalar("connectionstring",CommandType.Text,str_select)).ToString();
             pars[2].Value = str_rfid;
 
@@ -101,7 +101,7 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
 
-            string str_select = "Select ID From Rrid Where Name='" + this.txtRelation.Text.Trim() + "'";
+            string str_select = "Select ID From Rfid Where Name='" + this.txtRelation.Text.Trim() + "'";
             string str_rfid = (SqlHelper.ExecuteScalar("connectionstring", CommandType.Text, str_select)).ToString();
             pars[2].Value = str_rfid;
 

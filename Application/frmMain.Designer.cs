@@ -75,12 +75,9 @@
             this.tsmiEditOrDeleteCompany = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditOrDeleteCompany1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmkapiam = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiluruxinka = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAddCard = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditAndDeleteCard = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEditAndDeleteCard1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEditAndDeleteCard2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEditAndDeleteCard3 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmhelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmihelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmibianji1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -248,19 +245,19 @@
             // tsmiAddPlan
             // 
             this.tsmiAddPlan.Name = "tsmiAddPlan";
-            this.tsmiAddPlan.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddPlan.Size = new System.Drawing.Size(118, 22);
             this.tsmiAddPlan.Text = "任务管理";
             // 
             // tsmiAddPlanExamine
             // 
             this.tsmiAddPlanExamine.Name = "tsmiAddPlanExamine";
-            this.tsmiAddPlanExamine.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddPlanExamine.Size = new System.Drawing.Size(118, 22);
             this.tsmiAddPlanExamine.Text = "任务审核";
             // 
             // tsmiAddPlanToTask
             // 
             this.tsmiAddPlanToTask.Name = "tsmiAddPlanToTask";
-            this.tsmiAddPlanToTask.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddPlanToTask.Size = new System.Drawing.Size(118, 22);
             this.tsmiAddPlanToTask.Text = "任务下发";
             // 
             // tsmtongjibaobiao
@@ -354,7 +351,7 @@
             this.tsmiSiteEditDelete,
             this.tsmiSiteEditDelete1});
             this.tsmichangquguanli.Name = "tsmichangquguanli";
-            this.tsmichangquguanli.Size = new System.Drawing.Size(118, 22);
+            this.tsmichangquguanli.Size = new System.Drawing.Size(152, 22);
             this.tsmichangquguanli.Text = "厂区管理";
             // 
             // tsmiSiteNew
@@ -382,7 +379,7 @@
             this.tsmiEditOrDeletePost1,
             this.tsmiEditOrDeletePost});
             this.tsmigangwei.Name = "tsmigangwei";
-            this.tsmigangwei.Size = new System.Drawing.Size(118, 22);
+            this.tsmigangwei.Size = new System.Drawing.Size(152, 22);
             this.tsmigangwei.Text = "岗位管理";
             // 
             // tsmiAddPost
@@ -410,7 +407,7 @@
             this.tsmiEditOrDeleteEmployee,
             this.tsmiEditOrDeleteEmployee1});
             this.tsmirenyuan.Name = "tsmirenyuan";
-            this.tsmirenyuan.Size = new System.Drawing.Size(118, 22);
+            this.tsmirenyuan.Size = new System.Drawing.Size(152, 22);
             this.tsmirenyuan.Text = "人员管理";
             // 
             // tsmiAddEmployee
@@ -438,7 +435,7 @@
             this.tsmiEditOrDeleteCompany,
             this.tsmiEditOrDeleteCompany1});
             this.tsmiCompany.Name = "tsmiCompany";
-            this.tsmiCompany.Size = new System.Drawing.Size(118, 22);
+            this.tsmiCompany.Size = new System.Drawing.Size(152, 22);
             this.tsmiCompany.Text = "公司管理";
             // 
             // tsmiAddCompany
@@ -462,53 +459,31 @@
             // tsmkapiam
             // 
             this.tsmkapiam.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiluruxinka,
-            this.tsmiEditAndDeleteCard2,
-            this.tsmiEditAndDeleteCard3});
+            this.tsmiAddCard,
+            this.tsmiEditAndDeleteCard,
+            this.tsmiEditAndDeleteCard2});
             this.tsmkapiam.Image = ((System.Drawing.Image)(resources.GetObject("tsmkapiam.Image")));
             this.tsmkapiam.Name = "tsmkapiam";
             this.tsmkapiam.Size = new System.Drawing.Size(81, 20);
             this.tsmkapiam.Text = "卡片管理";
             // 
-            // tsmiluruxinka
-            // 
-            this.tsmiluruxinka.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiAddCard,
-            this.tsmiEditAndDeleteCard,
-            this.tsmiEditAndDeleteCard1});
-            this.tsmiluruxinka.Name = "tsmiluruxinka";
-            this.tsmiluruxinka.Size = new System.Drawing.Size(152, 22);
-            this.tsmiluruxinka.Text = "录入新卡";
-            // 
             // tsmiAddCard
             // 
             this.tsmiAddCard.Name = "tsmiAddCard";
-            this.tsmiAddCard.Size = new System.Drawing.Size(94, 22);
-            this.tsmiAddCard.Text = "新建";
+            this.tsmiAddCard.Size = new System.Drawing.Size(152, 22);
+            this.tsmiAddCard.Text = "录入新卡";
             // 
             // tsmiEditAndDeleteCard
             // 
             this.tsmiEditAndDeleteCard.Name = "tsmiEditAndDeleteCard";
-            this.tsmiEditAndDeleteCard.Size = new System.Drawing.Size(94, 22);
-            this.tsmiEditAndDeleteCard.Text = "编辑";
-            // 
-            // tsmiEditAndDeleteCard1
-            // 
-            this.tsmiEditAndDeleteCard1.Name = "tsmiEditAndDeleteCard1";
-            this.tsmiEditAndDeleteCard1.Size = new System.Drawing.Size(94, 22);
-            this.tsmiEditAndDeleteCard1.Text = "删除";
+            this.tsmiEditAndDeleteCard.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEditAndDeleteCard.Text = "编辑用途";
             // 
             // tsmiEditAndDeleteCard2
             // 
             this.tsmiEditAndDeleteCard2.Name = "tsmiEditAndDeleteCard2";
             this.tsmiEditAndDeleteCard2.Size = new System.Drawing.Size(152, 22);
-            this.tsmiEditAndDeleteCard2.Text = "编辑用途";
-            // 
-            // tsmiEditAndDeleteCard3
-            // 
-            this.tsmiEditAndDeleteCard3.Name = "tsmiEditAndDeleteCard3";
-            this.tsmiEditAndDeleteCard3.Size = new System.Drawing.Size(152, 22);
-            this.tsmiEditAndDeleteCard3.Text = "注销卡片";
+            this.tsmiEditAndDeleteCard2.Text = "注销卡片";
             // 
             // tsmhelp
             // 
@@ -588,9 +563,9 @@
         private System.Windows.Forms.ToolStripMenuItem tsmigangwei;
         private System.Windows.Forms.ToolStripMenuItem tsmirenyuan;
         private System.Windows.Forms.ToolStripMenuItem tsmkapiam;
-        private System.Windows.Forms.ToolStripMenuItem tsmiluruxinka;
+        private System.Windows.Forms.ToolStripMenuItem tsmiAddCard;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEditAndDeleteCard;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditAndDeleteCard2;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEditAndDeleteCard3;
         private System.Windows.Forms.ToolStripMenuItem tsmhelp;
         private System.Windows.Forms.ToolStripMenuItem tsmihelp;
         private System.Windows.Forms.ToolStripButton 打开OToolStripButton;
@@ -609,9 +584,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAddEmployee;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditOrDeleteEmployee;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditOrDeleteEmployee1;
-        private System.Windows.Forms.ToolStripMenuItem tsmiAddCard;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEditAndDeleteCard;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEditAndDeleteCard1;
         private System.Windows.Forms.ToolStripMenuItem tsmiCompany;
         private System.Windows.Forms.ToolStripMenuItem tsmiAddCompany;
         private System.Windows.Forms.ToolStripMenuItem tsmiEditOrDeleteCompany;
