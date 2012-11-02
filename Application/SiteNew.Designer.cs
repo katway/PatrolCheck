@@ -104,11 +104,11 @@
             this.Column2,
             this.Column3,
             this.Column4});
-            this.dgvSite.Location = new System.Drawing.Point(30, 185);
+            this.dgvSite.Location = new System.Drawing.Point(22, 180);
             this.dgvSite.Name = "dgvSite";
             this.dgvSite.RowTemplate.Height = 23;
             this.dgvSite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSite.Size = new System.Drawing.Size(633, 170);
+            this.dgvSite.Size = new System.Drawing.Size(641, 170);
             this.dgvSite.TabIndex = 6;
             // 
             // Column1
