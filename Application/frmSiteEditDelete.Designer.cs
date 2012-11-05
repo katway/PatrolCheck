@@ -43,6 +43,8 @@
             this.lblName = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSite)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,67 +60,73 @@
             this.Column4});
             this.dgvSite.Location = new System.Drawing.Point(26, 22);
             this.dgvSite.Name = "dgvSite";
+            this.dgvSite.ReadOnly = true;
             this.dgvSite.RowTemplate.Height = 23;
             this.dgvSite.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSite.Size = new System.Drawing.Size(653, 163);
-            this.dgvSite.TabIndex = 7;
+            this.dgvSite.TabIndex = 0;
             // 
             // Column1
             // 
             this.Column1.DataPropertyName = "ID";
             this.Column1.HeaderText = "编号";
             this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.DataPropertyName = "Name";
             this.Column2.HeaderText = "名称";
             this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "Alias";
             this.Column3.HeaderText = "别名";
             this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.DataPropertyName = "Name1";
             this.Column4.HeaderText = "所属公司";
             this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(501, 305);
+            this.btnCancel.Location = new System.Drawing.Point(485, 377);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 17;
+            this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "取消";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(501, 358);
+            this.btnSave.Location = new System.Drawing.Point(485, 339);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 16;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // cboCompany
             // 
+            this.cboCompany.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCompany.FormattingEnabled = true;
-            this.cboCompany.Location = new System.Drawing.Point(136, 358);
+            this.cboCompany.Location = new System.Drawing.Point(136, 380);
             this.cboCompany.Name = "cboCompany";
             this.cboCompany.Size = new System.Drawing.Size(134, 20);
-            this.cboCompany.TabIndex = 14;
+            this.cboCompany.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 366);
+            this.label1.Location = new System.Drawing.Point(54, 388);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 13;
@@ -126,15 +134,15 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(136, 307);
+            this.txtAlias.Location = new System.Drawing.Point(136, 339);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(264, 21);
-            this.txtAlias.TabIndex = 12;
+            this.txtAlias.TabIndex = 4;
             // 
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(78, 316);
+            this.lblAlias.Location = new System.Drawing.Point(78, 339);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 11;
@@ -142,15 +150,15 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(136, 264);
+            this.txtName.Location = new System.Drawing.Point(136, 292);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(264, 21);
-            this.txtName.TabIndex = 10;
+            this.txtName.TabIndex = 3;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(78, 269);
+            this.lblName.Location = new System.Drawing.Point(78, 295);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 9;
@@ -161,7 +169,7 @@
             this.btnEdit.Location = new System.Drawing.Point(501, 200);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 18;
+            this.btnEdit.TabIndex = 1;
             this.btnEdit.Text = "编辑";
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -171,16 +179,35 @@
             this.btnDelete.Location = new System.Drawing.Point(604, 200);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 19;
+            this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // SiteEditDelete
+            // label2
+            // 
+            this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label2.Location = new System.Drawing.Point(14, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(705, 1);
+            this.label2.TabIndex = 14;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 250);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 12);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "编辑及删除厂区";
+            // 
+            // frmSiteEditDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 429);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCancel);
@@ -192,7 +219,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.dgvSite);
-            this.Name = "SiteEditDelete";
+            this.Name = "frmSiteEditDelete";
             this.Text = "编辑及删除厂区";
             this.Load += new System.EventHandler(this.SiteEditDelete_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSite)).EndInit();
@@ -218,5 +245,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

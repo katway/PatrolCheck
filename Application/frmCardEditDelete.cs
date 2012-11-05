@@ -23,26 +23,49 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string sql5 = "update Rfid set Name=@name,Alias=@alias,RFID=@rfid,Purpose=@purpose where ID=@id";       
-            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dataGridView1.SelectedCells[0].Value),
+            if (this.txtName.Text == "")
+            {
+                MessageBox.Show("卡片名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtName.Focus();
+            }
+            else if (txtAlias.Text == "")
+            {
+                MessageBox.Show("卡片别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtAlias.Focus();
+            }
+            else if (txtCard.Text == "")
+            {
+                MessageBox.Show("标签卡唯一码不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtCard.Focus();
+            }
+            else if (this.comboBox1.SelectedValue.ToString() == "")
+            {
+                MessageBox.Show("用途不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.comboBox1.Focus();
+            }
+            else
+            {
+                string sql5 = "update Rfid set Name=@name,Alias=@alias,RFID=@rfid,Purpose=@purpose where ID=@id";
+                SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dataGridView1.SelectedCells[0].Value),
                                                       new SqlParameter("@name", SqlDbType.NVarChar),
                                                       new SqlParameter("@alias", SqlDbType.NVarChar),
                                                       new SqlParameter("@rfid", SqlDbType.NVarChar),
                                                       new SqlParameter("@purpose", SqlDbType.Int) };
 
 
-            par[1].Value = this.txtName.Text.Trim();
-            par[2].Value = this.txtAlias.Text.Trim();
-            par[3].Value = this.txtCard.Text.Trim();
-            par[4].Value = this.comboBox1.SelectedValue;
-            int n = SqlHelper.ExecuteNonQuery(sql5, par);
-            if (n > 0)
-            {
-                MessageBox.Show("更新成功！");
-            }
-            else
-            {
-                MessageBox.Show("更新失败！");
+                par[1].Value = this.txtName.Text.Trim();
+                par[2].Value = this.txtAlias.Text.Trim();
+                par[3].Value = this.txtCard.Text.Trim();
+                par[4].Value = this.comboBox1.SelectedValue;
+                int n = SqlHelper.ExecuteNonQuery(sql5, par);
+                if (n > 0)
+                {
+                    MessageBox.Show("更新成功！");
+                }
+                else
+                {
+                    MessageBox.Show("更新失败！");
+                }
             }
             Bind();
         }

@@ -18,23 +18,46 @@ namespace WorkStation
         private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";         
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string insertCompany = "insert into Company(Name,Alias,Contact,Address)values(@name,@alias,@contact,@address)";
-            SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@name",SqlDbType.NVarChar),
+            if (this.txtName.Text == "")
+            {
+                MessageBox.Show("公司名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtName.Focus();
+            }
+            else if (txtAlias.Text == "")
+            {
+                MessageBox.Show("公司别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtAlias.Focus();
+            }
+            else if (txtContact.Text == "")
+            {
+                MessageBox.Show("联系方式不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtContact.Focus();
+            }
+            else if (this.txtAddress.Text == "")
+            {
+                MessageBox.Show("地址不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtAddress.Focus();
+            }
+            else
+            {
+                string insertCompany = "insert into Company(Name,Alias,Contact,Address)values(@name,@alias,@contact,@address)";
+                SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@name",SqlDbType.NVarChar),
                                                      new SqlParameter("@alias",SqlDbType.NVarChar),
                                                      new SqlParameter("@contact",SqlDbType.NVarChar),
                                                      new SqlParameter("@address",SqlDbType.NVarChar)  };
-            par[0].Value = this.txtName.Text.Trim();
-            par[1].Value = this.txtAlias.Text.Trim();
-            par[2].Value = this.txtContact.Text.Trim();
-            par[3].Value = this.txtAddress.Text.Trim();
-            int i = SqlHelper.ExecuteNonQuery(insertCompany, par);
-            if(i>0)
-            {
-                MessageBox.Show("保存成功！");
-            }
-            else 
-            {
-                MessageBox.Show("保存失败！");
+                par[0].Value = this.txtName.Text.Trim();
+                par[1].Value = this.txtAlias.Text.Trim();
+                par[2].Value = this.txtContact.Text.Trim();
+                par[3].Value = this.txtAddress.Text.Trim();
+                int i = SqlHelper.ExecuteNonQuery(insertCompany, par);
+                if (i > 0)
+                {
+                    MessageBox.Show("保存成功！");
+                }
+                else
+                {
+                    MessageBox.Show("保存失败！");
+                }
             }
             BindCompany();
                

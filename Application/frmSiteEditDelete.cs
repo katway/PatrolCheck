@@ -23,23 +23,41 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string b = "update Site set Site.Name=@name,Site.Alias=@alias,Site.Company_ID=@comid where Site.ID=@id";
-            SqlParameter[] par = new SqlParameter[] { new  SqlParameter("@id",dgvSite.SelectedCells[0].Value),
+             if (this.txtName.Text == "")
+             {
+                 MessageBox.Show("厂区名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                 this.txtName.Focus();
+             }
+             else if (txtAlias.Text == "")
+             {
+                MessageBox.Show("厂区别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtAlias.Focus();
+             }
+              else if (this.cboCompany.SelectedValue.ToString() == "")
+              {
+                  MessageBox.Show("所属公司不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                  this.cboCompany.Focus();
+              }
+              else
+              {
+                  string b = "update Site set Site.Name=@name,Site.Alias=@alias,Site.Company_ID=@comid where Site.ID=@id";
+                  SqlParameter[] par = new SqlParameter[] { new  SqlParameter("@id",dgvSite.SelectedCells[0].Value),
                                                       new  SqlParameter("@name",SqlDbType.NVarChar),
                                                       new  SqlParameter("@alias",SqlDbType.NVarChar),
                                                       new  SqlParameter("@comid",SqlDbType.Int) };
-            par[1].Value = this.txtName.Text.Trim();
-            par[2].Value = this.txtAlias.Text.Trim();
-            par[3].Value = this.cboCompany.SelectedValue;
-            int i = SqlHelper.ExecuteNonQuery(sqlConnectionStr,CommandType.Text,b,par);
-            if(i>0)
-            {
-                MessageBox.Show("更新成功！");
-            }
-            else 
-            {
-                MessageBox.Show("更新失败！");
-            }
+                  par[1].Value = this.txtName.Text.Trim();
+                  par[2].Value = this.txtAlias.Text.Trim();
+                  par[3].Value = this.cboCompany.SelectedValue;
+                  int i = SqlHelper.ExecuteNonQuery(sqlConnectionStr, CommandType.Text, b, par);
+                  if (i > 0)
+                  {
+                      MessageBox.Show("更新成功！");
+                  }
+                  else
+                  {
+                      MessageBox.Show("更新失败！");
+                  }
+              }
             SelectSiteBind();
 
         }
