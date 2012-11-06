@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\CommonClass.cs" />
+    <Compile Include="Code\GlobalConfig.cs" />
     <Compile Include="Code\SqlHelper.cs" />
     <Compile Include="frmCardNew.cs">
       <SubType>Form</SubType>

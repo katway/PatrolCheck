@@ -187,7 +187,16 @@ namespace WorkStation
 
         private void getCboSite()
         {
-            DataSet dsSite = SqlHelper.ExecuteDataset("select ID,Name From Site");
+            DataSet dsSite;
+            if ((int)SqlHelper.ExecuteScalar("select count(1) From company") == 1)
+            {
+                string companyid = SqlHelper.ExecuteScalar("Select ID from company").ToString();
+                dsSite=SqlHelper.ExecuteDataset("select ID,Name From Site Where Company_ID="+companyid);
+            }
+            else
+            {
+                dsSite = SqlHelper.ExecuteDataset("select ID,Name From Site");
+            }
             cboSite.DataSource=dsSite.Tables[0];
             cboSite.DisplayMember = "Name";
             cboSite.ValueMember = "ID";

@@ -66,7 +66,7 @@ namespace WorkStation
                 tbRoute.Text = tvRoute.SelectedNode.Text;
                 labRouteID.Text = tvRoute.SelectedNode.Tag.ToString();
             }
-            else if (tvRoute.SelectedNode.Nodes.Count != 0 && tvRoute.SelectedNode.Level == 1)
+            else if (tvRoute.SelectedNode.Level == 1)
             {
                 getTvPhysicalPoint(tvRoute.SelectedNode.Tag.ToString());
             }
