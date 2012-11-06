@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmRoutNameAdd
+    partial class frmRoutAdd
     {
         /// <summary>
         /// Required designer variable.

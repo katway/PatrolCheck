@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmAddPlanToTask
+    partial class frmPlanToTask
     {
         /// <summary>
         /// Required designer variable.

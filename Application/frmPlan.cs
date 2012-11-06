@@ -83,7 +83,7 @@ namespace WorkStation
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            frmAddPlan_Add add = new frmAddPlan_Add();
+            frmPlanAdd add = new frmPlanAdd();
             add.Left = this.Left + (this.Width - add.Width) / 2;
             add.Top = this.Top +(this.Height - add.Height) / 2;
             add.dgv = this.dgvPlan;
@@ -113,7 +113,7 @@ namespace WorkStation
             {
                 MessageBox.Show("请选择一个要编辑的计划"); return;                             
             }
-            frmAddPlan_Add add = new frmAddPlan_Add();
+            frmPlanAdd add = new frmPlanAdd();
             add.Left = this.Left + (this.Width - add.Width) / 2;
             add.Top = this.Top + (this.Height - add.Height) / 2;
             add.isEdit = true;
@@ -271,7 +271,7 @@ namespace WorkStation
         private void dgvPlan_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if(e.RowIndex<0||btnEdit.Enabled==false) return;
-            frmAddPlan_Add add = new frmAddPlan_Add();
+            frmPlanAdd add = new frmPlanAdd();
             add.Left = this.Left + (this.Width - add.Width) / 2;
             add.Top = this.Top + (this.Height - add.Height) / 2;
 

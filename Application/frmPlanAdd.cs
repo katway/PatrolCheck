@@ -10,9 +10,9 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmAddPlan_Add : Form
+    public partial class frmPlanAdd : Form
     {
-        public frmAddPlan_Add()
+        public frmPlanAdd()
         {
             InitializeComponent();
         }
