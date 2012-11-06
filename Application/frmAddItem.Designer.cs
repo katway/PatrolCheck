@@ -53,7 +53,7 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(30, 31);
+            this.lblName.Location = new System.Drawing.Point(48, 31);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 0;
@@ -69,7 +69,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(312, 31);
+            this.lblAlias.Location = new System.Drawing.Point(324, 31);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 2;
@@ -87,7 +87,7 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
-            this.lblPoints.Location = new System.Drawing.Point(12, 109);
+            this.lblPoints.Location = new System.Drawing.Point(18, 109);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(65, 12);
             this.lblPoints.TabIndex = 4;

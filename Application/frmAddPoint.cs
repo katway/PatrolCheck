@@ -39,10 +39,17 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
 
-            string str_select = "Select ID From Rfid Where Name='"+this.txtRelation.Text.Trim()+"'";
-            string str_rfid = SqlHelper.ExecuteScalar(str_select).ToString();
-            pars[2].Value = str_rfid;
-
+            if (SqlHelper.ExecuteNonQuery("Select * From Rfid Where Name='" + this.txtRelation.Text.Trim() + "'") == 1)
+            {
+                string str_select = "Select ID From Rfid Where Name='" + this.txtRelation.Text.Trim() + "'";
+                string str_rfid = SqlHelper.ExecuteScalar(str_select).ToString();
+                pars[2].Value = str_rfid;
+            }
+            else
+            {
+                MessageBox.Show("请确保有此标签卡");
+                return;
+            }
             string str_insert = "Insert Into PhysicalCheckPoint([Name],Alias,Rfid_Id) values(@name,@alias,@rfid)";
 
             Object obj_ret = SqlHelper.ExecuteNonQuery(str_insert,pars);

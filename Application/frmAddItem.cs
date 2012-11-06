@@ -26,15 +26,9 @@ namespace WorkStation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            if (cboMachine.SelectedValue.ToString() == "")
+            if (txtName.Text == "" || txtRemarks.Text == "" || cboMachine.SelectedIndex < 0 || cboPoint.SelectedIndex < 0 || cboValue.SelectedIndex < 0)
             {
-                MessageBox.Show("请选择所属机器");
-                return;
-            }
-            if (cboPoint.SelectedValue==null)
-            {
-                MessageBox.Show("请选择所属地点");
+                MessageBox.Show("请确保没有空值");
                 return;
             }
             if (SqlHelper.ExecuteScalar("Select count(1) From CheckItem Where Name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
@@ -113,14 +107,9 @@ namespace WorkStation
             {
                 return;
             }
-            if (cboMachine.SelectedValue.ToString() == "")
+            if (txtName.Text == "" || txtRemarks.Text == "" || cboMachine.SelectedIndex < 0 || cboPoint.SelectedIndex < 0 || cboValue.SelectedIndex < 0)
             {
-                MessageBox.Show("请选择所属机器");
-                return;
-            }
-            if (cboPoint.SelectedValue.ToString() == "")
-            {
-                MessageBox.Show("请选择所属地点");
+                MessageBox.Show("请确保没有空值");
                 return;
             }
             if (SqlHelper.ExecuteScalar("Select count(1) From CheckItem Where id!=" + labID.Text.Trim() + " and name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
