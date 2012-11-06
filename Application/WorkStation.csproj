@@ -52,29 +52,29 @@
   <ItemGroup>
     <Compile Include="Code\CommonClass.cs" />
     <Compile Include="Code\SqlHelper.cs" />
-    <Compile Include="frmAddCard.cs">
+    <Compile Include="frmCardNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddCard.Designer.cs">
-      <DependentUpon>frmAddCard.cs</DependentUpon>
+    <Compile Include="frmCardNew.Designer.cs">
+      <DependentUpon>frmCardNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddCompany.cs">
+    <Compile Include="frmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddCompany.Designer.cs">
-      <DependentUpon>frmAddCompany.cs</DependentUpon>
+    <Compile Include="frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPlan.cs">
+    <Compile Include="frmPlan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPlan.Designer.cs">
-      <DependentUpon>frmAddPlan.cs</DependentUpon>
+    <Compile Include="frmPlan.Designer.cs">
+      <DependentUpon>frmPlan.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPlanExamine.cs">
+    <Compile Include="frmPlanExamine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPlanExamine.Designer.cs">
-      <DependentUpon>frmAddPlanExamine.cs</DependentUpon>
+    <Compile Include="frmPlanExamine.Designer.cs">
+      <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAddPlanToTask.cs">
       <SubType>Form</SubType>
@@ -88,41 +88,41 @@
     <Compile Include="frmAddPlan_Add.Designer.cs">
       <DependentUpon>frmAddPlan_Add.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPoint.cs">
+    <Compile Include="frmPointNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPoint.Designer.cs">
-      <DependentUpon>frmAddPoint.cs</DependentUpon>
+    <Compile Include="frmPointNew.Designer.cs">
+      <DependentUpon>frmPointNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPost.cs">
+    <Compile Include="frmPostNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPost.Designer.cs">
-      <DependentUpon>frmAddPost.cs</DependentUpon>
+    <Compile Include="frmPostNew.Designer.cs">
+      <DependentUpon>frmPostNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddRoute.cs">
+    <Compile Include="frmRouteNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddRoute.Designer.cs">
-      <DependentUpon>frmAddRoute.cs</DependentUpon>
+    <Compile Include="frmRouteNew.Designer.cs">
+      <DependentUpon>frmRouteNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddRoutName.cs">
+    <Compile Include="frmRoutNameAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddRoutName.Designer.cs">
-      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    <Compile Include="frmRoutNameAdd.Designer.cs">
+      <DependentUpon>frmRoutNameAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddMachine.cs">
+    <Compile Include="frmMachineNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddMachine.Designer.cs">
-      <DependentUpon>frmAddMachine.cs</DependentUpon>
+    <Compile Include="frmMachineNew.Designer.cs">
+      <DependentUpon>frmMachineNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddTask.cs">
+    <Compile Include="frmTaskNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddTask.Designer.cs">
-      <DependentUpon>frmAddTask.cs</DependentUpon>
+    <Compile Include="frmTaskNew.Designer.cs">
+      <DependentUpon>frmTaskNew.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -130,97 +130,91 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddItem.cs">
+    <Compile Include="frmItemAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddItem.Designer.cs">
-      <DependentUpon>frmAddItem.cs</DependentUpon>
+    <Compile Include="frmItemAdd.Designer.cs">
+      <DependentUpon>frmItemAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditAndDeleteCard.cs">
+    <Compile Include="frmCardEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditAndDeleteCard.Designer.cs">
-      <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
+    <Compile Include="frmCardEditDelete.Designer.cs">
+      <DependentUpon>frmCardEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditOrDeleteCompany.cs">
+    <Compile Include="frmEmployeeEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditOrDeleteCompany.Designer.cs">
-      <DependentUpon>frmEditOrDeleteCompany.cs</DependentUpon>
+    <Compile Include="frmEmployeeEditDelete.Designer.cs">
+      <DependentUpon>frmEmployeeEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditOrDeleteEmployee.cs">
+    <Compile Include="frmItemEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditOrDeleteEmployee.Designer.cs">
-      <DependentUpon>frmEditOrDeleteEmployee.cs</DependentUpon>
+    <Compile Include="frmItemEditDelete.Designer.cs">
+      <DependentUpon>frmItemEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditOrDeleteItem.cs">
+    <Compile Include="frmPointEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditOrDeleteItem.Designer.cs">
-      <DependentUpon>frmEditOrDeleteItem.cs</DependentUpon>
+    <Compile Include="frmPointEditDelete.Designer.cs">
+      <DependentUpon>frmPointEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditOrDeletePoint.cs">
+    <Compile Include="frmPostEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditOrDeletePoint.Designer.cs">
-      <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
+    <Compile Include="frmPostEditDelete.Designer.cs">
+      <DependentUpon>frmPostEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditOrDeletePost.cs">
+    <Compile Include="frmRouteEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditOrDeletePost.Designer.cs">
-      <DependentUpon>frmEditOrDeletePost.cs</DependentUpon>
+    <Compile Include="frmRouteEditDelete.Designer.cs">
+      <DependentUpon>frmRouteEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditOrDeleteRoute.cs">
+    <Compile Include="frmTaskEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditOrDeleteRoute.Designer.cs">
-      <DependentUpon>frmEditOrDeleteRoute.cs</DependentUpon>
+    <Compile Include="frmTaskEditDelete.Designer.cs">
+      <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEditOrDeleteTask.cs">
+    <Compile Include="frmEmployeeAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEditOrDeleteTask.Designer.cs">
-      <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    <Compile Include="frmEmployeeAdd.Designer.cs">
+      <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddEmployee.cs">
+    <Compile Include="frmTaskIssue.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddEmployee.Designer.cs">
-      <DependentUpon>frmAddEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmIssueTask.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmIssueTask.Designer.cs">
-      <DependentUpon>frmIssueTask.cs</DependentUpon>
+    <Compile Include="frmTaskIssue.Designer.cs">
+      <DependentUpon>frmTaskIssue.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SiteEditDelete.cs">
+    <Compile Include="frmSiteEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SiteEditDelete.Designer.cs">
-      <DependentUpon>SiteEditDelete.cs</DependentUpon>
+    <Compile Include="frmSiteEditDelete.Designer.cs">
+      <DependentUpon>frmSiteEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="SiteNew.cs">
+    <Compile Include="frmSiteNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SiteNew.Designer.cs">
-      <DependentUpon>SiteNew.cs</DependentUpon>
+    <Compile Include="frmSiteNew.Designer.cs">
+      <DependentUpon>frmSiteNew.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmAddCard.resx">
-      <DependentUpon>frmAddCard.cs</DependentUpon>
+    <EmbeddedResource Include="frmCardNew.resx">
+      <DependentUpon>frmCardNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddCompany.resx">
-      <DependentUpon>frmAddCompany.cs</DependentUpon>
+    <EmbeddedResource Include="frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPlan.resx">
-      <DependentUpon>frmAddPlan.cs</DependentUpon>
+    <EmbeddedResource Include="frmPlan.resx">
+      <DependentUpon>frmPlan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPlanExamine.resx">
-      <DependentUpon>frmAddPlanExamine.cs</DependentUpon>
+    <EmbeddedResource Include="frmPlanExamine.resx">
+      <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAddPlanToTask.resx">
       <DependentUpon>frmAddPlanToTask.cs</DependentUpon>
@@ -228,59 +222,56 @@
     <EmbeddedResource Include="frmAddPlan_Add.resx">
       <DependentUpon>frmAddPlan_Add.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPoint.resx">
-      <DependentUpon>frmAddPoint.cs</DependentUpon>
+    <EmbeddedResource Include="frmPointNew.resx">
+      <DependentUpon>frmPointNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPost.resx">
-      <DependentUpon>frmAddPost.cs</DependentUpon>
+    <EmbeddedResource Include="frmPostNew.resx">
+      <DependentUpon>frmPostNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddRoute.resx">
-      <DependentUpon>frmAddRoute.cs</DependentUpon>
+    <EmbeddedResource Include="frmRouteNew.resx">
+      <DependentUpon>frmRouteNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddRoutName.resx">
-      <DependentUpon>frmAddRoutName.cs</DependentUpon>
+    <EmbeddedResource Include="frmRoutNameAdd.resx">
+      <DependentUpon>frmRoutNameAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddMachine.resx">
-      <DependentUpon>frmAddMachine.cs</DependentUpon>
+    <EmbeddedResource Include="frmMachineNew.resx">
+      <DependentUpon>frmMachineNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddTask.resx">
-      <DependentUpon>frmAddTask.cs</DependentUpon>
+    <EmbeddedResource Include="frmTaskNew.resx">
+      <DependentUpon>frmTaskNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddItem.resx">
-      <DependentUpon>frmAddItem.cs</DependentUpon>
+    <EmbeddedResource Include="frmItemAdd.resx">
+      <DependentUpon>frmItemAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditAndDeleteCard.resx">
-      <DependentUpon>frmEditAndDeleteCard.cs</DependentUpon>
+    <EmbeddedResource Include="frmCardEditDelete.resx">
+      <DependentUpon>frmCardEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditOrDeleteCompany.resx">
-      <DependentUpon>frmEditOrDeleteCompany.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeEditDelete.resx">
+      <DependentUpon>frmEmployeeEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditOrDeleteEmployee.resx">
-      <DependentUpon>frmEditOrDeleteEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="frmItemEditDelete.resx">
+      <DependentUpon>frmItemEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditOrDeleteItem.resx">
-      <DependentUpon>frmEditOrDeleteItem.cs</DependentUpon>
+    <EmbeddedResource Include="frmPointEditDelete.resx">
+      <DependentUpon>frmPointEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditOrDeletePoint.resx">
-      <DependentUpon>frmEditOrDeletePoint.cs</DependentUpon>
+    <EmbeddedResource Include="frmPostEditDelete.resx">
+      <DependentUpon>frmPostEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditOrDeletePost.resx">
-      <DependentUpon>frmEditOrDeletePost.cs</DependentUpon>
+    <EmbeddedResource Include="frmRouteEditDelete.resx">
+      <DependentUpon>frmRouteEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditOrDeleteRoute.resx">
-      <DependentUpon>frmEditOrDeleteRoute.cs</DependentUpon>
+    <EmbeddedResource Include="frmTaskEditDelete.resx">
+      <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEditOrDeleteTask.resx">
-      <DependentUpon>frmEditOrDeleteTask.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeAdd.resx">
+      <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddEmployee.resx">
-      <DependentUpon>frmAddEmployee.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmIssueTask.resx">
-      <DependentUpon>frmIssueTask.cs</DependentUpon>
+    <EmbeddedResource Include="frmTaskIssue.resx">
+      <DependentUpon>frmTaskIssue.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -292,11 +283,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SiteEditDelete.resx">
-      <DependentUpon>SiteEditDelete.cs</DependentUpon>
+    <EmbeddedResource Include="frmSiteEditDelete.resx">
+      <DependentUpon>frmSiteEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SiteNew.resx">
-      <DependentUpon>SiteNew.cs</DependentUpon>
+    <EmbeddedResource Include="frmSiteNew.resx">
+      <DependentUpon>frmSiteNew.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>

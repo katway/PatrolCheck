@@ -36,7 +36,6 @@ namespace WorkStation
                 this.dtpEnd.Value = dtEnd;
                 this.dtpEffect.Value = dtEffect;
                 this.dtpIneffect.Value = dtIneffect;
-
                 this.Text = "修改计划";
                 this.btnSave.Text = "修改";
             }
@@ -105,7 +104,7 @@ namespace WorkStation
             {
                 if (dgv != null)
                 {
-                    frmAddPlan.getDgvPlan(dgv,state);
+                    frmPlan.getDgvPlan(dgv,state);
                 }
             }
         }
