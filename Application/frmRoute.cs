@@ -133,10 +133,10 @@ namespace WorkStation
                     }
                     if (isExitNode == false)
                     {
-                        TreeNode tn = new TreeNode();
-                        tn.Text = node.Text;
-                        tn.Tag = node.Tag;
-                        tvLogicalPoint.Nodes.Add(tn);
+                        //TreeNode tn = new TreeNode();
+                        //tn.Text = node.Text;
+                        //tn.Tag = node.Tag;
+                        tvLogicalPoint.Nodes.Add((TreeNode)(node.Clone()));
                     }
                 }
             }

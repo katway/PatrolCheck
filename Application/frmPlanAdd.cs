@@ -48,6 +48,7 @@ namespace WorkStation
                 MessageBox.Show("请确保没有空值");
                 return;
             }
+            
             if (dtpStart.Value <= dtpEffect.Value || dtpStart.Value >= dtpIneffect.Value || dtpEnd.Value <= dtpEffect.Value || dtpEnd.Value >= dtpIneffect.Value || dtpStart.Value >= dtpEnd.Value || dtpEffect.Value >= dtpIneffect.Value)
             {
                 MessageBox.Show("请确保第一次开始结束时间在事物生效时间之内。");

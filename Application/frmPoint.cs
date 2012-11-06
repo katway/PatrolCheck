@@ -70,6 +70,8 @@ namespace WorkStation
 
         private void btnRead_Click(object sender, EventArgs e)
         {
+            frmChoseRfid f = new frmChoseRfid();
+            f.ShowDialog();
             this.btnSave.Enabled = true;
             this.txtRelation.ReadOnly = false;
         }

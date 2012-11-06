@@ -173,7 +173,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(412, 86);
+            this.label1.Location = new System.Drawing.Point(412, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 13;
@@ -183,7 +183,7 @@
             // 
             this.cboSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSite.FormattingEnabled = true;
-            this.cboSite.Location = new System.Drawing.Point(447, 83);
+            this.cboSite.Location = new System.Drawing.Point(448, 80);
             this.cboSite.Name = "cboSite";
             this.cboSite.Size = new System.Drawing.Size(229, 20);
             this.cboSite.TabIndex = 14;

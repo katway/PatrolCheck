@@ -131,8 +131,6 @@
             // 
             this.cboPoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPoint.FormattingEnabled = true;
-            this.cboPoint.Items.AddRange(new object[] {
-            "所选巡检点"});
             this.cboPoint.Location = new System.Drawing.Point(101, 109);
             this.cboPoint.Name = "cboPoint";
             this.cboPoint.Size = new System.Drawing.Size(171, 20);

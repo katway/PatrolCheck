@@ -47,9 +47,9 @@ namespace WorkStation
             };
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
-            pars[2].Value = this.cboMachine.SelectedValue;
-            pars[3].Value = this.cboValue.SelectedValue;
-            pars[4].Value = this.cboPoint.SelectedValue;
+            pars[2].Value = (this.cboMachine.SelectedItem as BoxItem).Value;
+            pars[3].Value = (this.cboValue.SelectedValue as BoxItem).Value;
+            pars[4].Value = (this.cboPoint.SelectedValue as BoxItem).Value;
             pars[5].Value = this.txtRemarks.Text;
 
             int _ret = SqlHelper.ExecuteNonQuery(str_insert,pars);
@@ -128,9 +128,9 @@ namespace WorkStation
             };
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
-            pars[2].Value = this.cboMachine.SelectedValue;
-            pars[3].Value = this.cboValue.SelectedValue ;
-            pars[4].Value = this.cboPoint.SelectedValue;
+            pars[2].Value = (this.cboMachine.SelectedItem as BoxItem).Value;
+            pars[3].Value = (this.cboValue.SelectedItem as BoxItem).Value;
+            pars[4].Value = (this.cboPoint.SelectedItem as BoxItem).Value;
             pars[5].Value = this.txtRemarks.Text;
 
             int _ret = SqlHelper.ExecuteNonQuery(str_insert, pars);
@@ -171,33 +171,47 @@ namespace WorkStation
             }
         }
 
-        DataSet dsMachine, dsValueType, dsPoint;
+        SqlDataReader drMachine, drValueType, drPoint;
         private void bkwItem_DoWork(object sender, DoWorkEventArgs e)
         {
-            dsMachine = SqlHelper.ExecuteDataset("select ID,Name From Machine");
-            dsValueType = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where Purpose='ValueType'");
-            dsPoint = SqlHelper.ExecuteDataset("select ID,Name From PhysicalCheckPoint");
+            drMachine = SqlHelper.ExecuteReader("select ID,Name From Machine");
+            drValueType = SqlHelper.ExecuteReader("Select Code,Meaning From Codes where Purpose='ValueType'");
+            drPoint = SqlHelper.ExecuteReader("select ID,Name From PhysicalCheckPoint");
         }
 
         private void bkwItem_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            this.cboMachine.DataSource = dsMachine.Tables[0];
-            this.cboMachine.DisplayMember = "Name";
-            this.cboMachine.ValueMember = "ID";
-            this.cboMachine.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
-            dsMachine.Dispose();
+            BoxItem item_add = new BoxItem("不选择","");
+            BoxItem item = null;
+            cboMachine.Items.Add(item_add);
+            cboPoint.Items.Add(item_add);
+            cboValue.Items.Add(item_add);
 
-            this.cboPoint.DataSource = dsPoint.Tables[0];
-            this.cboPoint.DisplayMember = "Name";
-            this.cboPoint.ValueMember = "ID";
+            while (drMachine.Read())
+            {
+                item = new BoxItem(drMachine["Name"].ToString(),drMachine["ID"].ToString());
+                cboMachine.Items.Add(item);
+            }
+            cboMachine.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
+            drMachine.Dispose();
+
+
+            while (drPoint.Read())
+            {
+                item = new BoxItem(drPoint["Name"].ToString(), drPoint["ID"].ToString());
+                cboPoint.Items.Add(item);
+            }
             this.cboPoint.SelectedIndex = cboPoint.Items.Count > 0 ? 0 : -1;
-            dsPoint.Dispose();
+            drPoint.Dispose();
 
-            this.cboValue.DataSource = dsValueType.Tables[0];
-            this.cboValue.DisplayMember = "Meaning";
-            this.cboValue.ValueMember = "Code";
+            
+            while (drValueType.Read())
+            {
+                item = new BoxItem(drValueType["Meaning"].ToString(),drValueType["Code"].ToString());
+                cboValue.Items.Add(item);
+            }
             this.cboValue.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
-            dsValueType.Dispose();
+            drValueType.Dispose();
         }
     }
 }
