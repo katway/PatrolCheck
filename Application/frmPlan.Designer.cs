@@ -121,6 +121,7 @@
             // 
             // cboShow
             // 
+            this.cboShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboShow.FormattingEnabled = true;
             this.cboShow.Location = new System.Drawing.Point(51, 34);
             this.cboShow.Name = "cboShow";
@@ -146,7 +147,7 @@
             this.labState.TabIndex = 44;
             this.labState.Text = "状态";
             // 
-            // frmAddPlan
+            // frmPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,7 +161,7 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnNew);
-            this.Name = "frmAddPlan";
+            this.Name = "frmPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建计划";
             this.Load += new System.EventHandler(this.frmAddPlan_Load);

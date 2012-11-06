@@ -41,13 +41,15 @@
             this.dgvPoint = new System.Windows.Forms.DataGridView();
             this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.labID = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboSite = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPoint)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(74, 44);
+            this.lblName.Location = new System.Drawing.Point(37, 44);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(53, 12);
             this.lblName.TabIndex = 0;
@@ -56,7 +58,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(379, 44);
+            this.lblAlias.Location = new System.Drawing.Point(412, 44);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 1;
@@ -65,7 +67,7 @@
             // lblRelated
             // 
             this.lblRelated.AutoSize = true;
-            this.lblRelated.Location = new System.Drawing.Point(62, 90);
+            this.lblRelated.Location = new System.Drawing.Point(25, 92);
             this.lblRelated.Name = "lblRelated";
             this.lblRelated.Size = new System.Drawing.Size(65, 12);
             this.lblRelated.TabIndex = 2;
@@ -73,30 +75,30 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(137, 41);
+            this.txtName.Location = new System.Drawing.Point(96, 41);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(237, 21);
+            this.txtName.Size = new System.Drawing.Size(286, 21);
             this.txtName.TabIndex = 3;
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(414, 41);
+            this.txtAlias.Location = new System.Drawing.Point(447, 41);
             this.txtAlias.Name = "txtAlias";
-            this.txtAlias.Size = new System.Drawing.Size(262, 21);
+            this.txtAlias.Size = new System.Drawing.Size(229, 21);
             this.txtAlias.TabIndex = 4;
             // 
             // txtRelation
             // 
-            this.txtRelation.Location = new System.Drawing.Point(137, 81);
+            this.txtRelation.Location = new System.Drawing.Point(96, 83);
             this.txtRelation.Name = "txtRelation";
             this.txtRelation.ReadOnly = true;
-            this.txtRelation.Size = new System.Drawing.Size(237, 21);
+            this.txtRelation.Size = new System.Drawing.Size(205, 21);
             this.txtRelation.TabIndex = 5;
             this.txtRelation.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.txtRelation_MouseDoubleClick);
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(414, 79);
+            this.btnRead.Location = new System.Drawing.Point(307, 80);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 6;
@@ -110,7 +112,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "新建";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -119,7 +121,7 @@
             this.btnUpdate.Location = new System.Drawing.Point(518, 124);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 9;
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -129,7 +131,7 @@
             this.btnDel.Location = new System.Drawing.Point(616, 124);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 10;
+            this.btnDel.TabIndex = 9;
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -148,7 +150,7 @@
             this.dgvPoint.RowTemplate.Height = 23;
             this.dgvPoint.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPoint.Size = new System.Drawing.Size(687, 329);
-            this.dgvPoint.TabIndex = 11;
+            this.dgvPoint.TabIndex = 10;
             this.dgvPoint.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPoint_CellClick);
             // 
             // chkColumn
@@ -161,19 +163,39 @@
             // labID
             // 
             this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(635, 84);
+            this.labID.Location = new System.Drawing.Point(682, 44);
             this.labID.Name = "labID";
             this.labID.Size = new System.Drawing.Size(41, 12);
             this.labID.TabIndex = 12;
             this.labID.Text = "巡检ID";
             this.labID.Visible = false;
             // 
-            // frmAddPoint
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(412, 86);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "厂区";
+            // 
+            // cboSite
+            // 
+            this.cboSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSite.FormattingEnabled = true;
+            this.cboSite.Location = new System.Drawing.Point(447, 83);
+            this.cboSite.Name = "cboSite";
+            this.cboSite.Size = new System.Drawing.Size(229, 20);
+            this.cboSite.TabIndex = 14;
+            // 
+            // frmPoint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(751, 550);
+            this.Controls.Add(this.cboSite);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labID);
             this.Controls.Add(this.dgvPoint);
             this.Controls.Add(this.btnDel);
@@ -187,7 +209,7 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.lblName);
             this.MaximizeBox = false;
-            this.Name = "frmAddPoint";
+            this.Name = "frmPoint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "新建巡检点";
             this.Load += new System.EventHandler(this.frmAddPoint_Load);
@@ -212,5 +234,7 @@
         private System.Windows.Forms.DataGridView dgvPoint;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
         private System.Windows.Forms.Label labID;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboSite;
     }
 }

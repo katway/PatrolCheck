@@ -126,7 +126,7 @@
             this.labState.TabIndex = 40;
             this.labState.Text = "所选状态";
             // 
-            // frmAddPlanToTask
+            // frmPlanToTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -138,8 +138,8 @@
             this.Controls.Add(this.dgvTask);
             this.Controls.Add(this.dgvPlan);
             this.Controls.Add(this.btnDown);
-            this.Name = "frmAddPlanToTask";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Name = "frmPlanToTask";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "任务下发";
             this.Load += new System.EventHandler(this.frmAddPlanToTask_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();

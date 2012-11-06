@@ -99,7 +99,7 @@
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(61, 23);
             this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "保存";
+            this.btnSave.Text = "新建";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -108,15 +108,18 @@
             this.dgvMachine.AllowUserToAddRows = false;
             this.dgvMachine.AllowUserToDeleteRows = false;
             this.dgvMachine.AllowUserToResizeRows = false;
+            this.dgvMachine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMachine.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMachine.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
-            this.dgvMachine.Location = new System.Drawing.Point(26, 161);
+            this.dgvMachine.Location = new System.Drawing.Point(26, 150);
             this.dgvMachine.Name = "dgvMachine";
             this.dgvMachine.ReadOnly = true;
             this.dgvMachine.RowTemplate.Height = 23;
             this.dgvMachine.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMachine.Size = new System.Drawing.Size(604, 236);
+            this.dgvMachine.Size = new System.Drawing.Size(620, 298);
             this.dgvMachine.TabIndex = 7;
             this.dgvMachine.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMachine_CellClick);
             // 
@@ -157,7 +160,7 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // frmAddMachine
+            // frmMachine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +176,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "frmAddMachine";
+            this.Name = "frmMachine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "添加设备";
             this.Load += new System.EventHandler(this.frmAddSiteArea_Load);

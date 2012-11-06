@@ -107,7 +107,7 @@
             this.txtAlias.Location = new System.Drawing.Point(383, 24);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(171, 21);
-            this.txtAlias.TabIndex = 6;
+            this.txtAlias.TabIndex = 2;
             // 
             // cboValue
             // 
@@ -116,7 +116,7 @@
             this.cboValue.Location = new System.Drawing.Point(383, 71);
             this.cboValue.Name = "cboValue";
             this.cboValue.Size = new System.Drawing.Size(171, 20);
-            this.cboValue.TabIndex = 7;
+            this.cboValue.TabIndex = 4;
             // 
             // txtRemarks
             // 
@@ -125,7 +125,7 @@
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtRemarks.Size = new System.Drawing.Size(475, 65);
-            this.txtRemarks.TabIndex = 9;
+            this.txtRemarks.TabIndex = 6;
             // 
             // cboPoint
             // 
@@ -136,15 +136,15 @@
             this.cboPoint.Location = new System.Drawing.Point(101, 109);
             this.cboPoint.Name = "cboPoint";
             this.cboPoint.Size = new System.Drawing.Size(171, 20);
-            this.cboPoint.TabIndex = 10;
+            this.cboPoint.TabIndex = 5;
             // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(278, 234);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 11;
-            this.btnSave.Text = "保存";
+            this.btnSave.TabIndex = 7;
+            this.btnSave.Text = "新建";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -164,14 +164,14 @@
             this.cboMachine.Location = new System.Drawing.Point(101, 68);
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Size = new System.Drawing.Size(171, 20);
-            this.cboMachine.TabIndex = 15;
+            this.cboMachine.TabIndex = 3;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(383, 234);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 17;
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -181,7 +181,7 @@
             this.btnDel.Location = new System.Drawing.Point(488, 234);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 18;
+            this.btnDel.TabIndex = 9;
             this.btnDel.Text = "删除";
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
@@ -191,6 +191,9 @@
             this.dgvItems.AllowUserToAddRows = false;
             this.dgvItems.AllowUserToDeleteRows = false;
             this.dgvItems.AllowUserToResizeRows = false;
+            this.dgvItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
@@ -200,7 +203,7 @@
             this.dgvItems.RowTemplate.Height = 23;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(659, 236);
-            this.dgvItems.TabIndex = 19;
+            this.dgvItems.TabIndex = 10;
             this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
             // 
             // chkColumn
@@ -225,7 +228,7 @@
             this.bkwItem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkwItem_DoWork);
             this.bkwItem.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkwItem_RunWorkerCompleted);
             // 
-            // frmAddItem
+            // frmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -248,9 +251,8 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
-            this.MaximizeBox = false;
-            this.Name = "frmAddItem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Name = "frmItem";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建巡检项";
             this.Load += new System.EventHandler(this.frmAddItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();

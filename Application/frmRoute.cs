@@ -26,8 +26,8 @@ namespace WorkStation
             //tvRouteInit(this.tvRoute);
             Thread th1 = new Thread(tvRouteInit);
             th1.Start(this.tvRoute);
-            Thread th2 = new Thread(new ThreadStart(getTvPhysicalPoint));
-            th2.Start();
+            //Thread th2 = new Thread(new ThreadStart(getTvPhysicalPoint));
+            //th2.Start();
             //Thread th3 = new Thread(FM_Init);
             //th3.Start();  
 
@@ -61,9 +61,14 @@ namespace WorkStation
             if (tvRoute.SelectedNode.Nodes.Count == 0 && tvRoute.SelectedNode.Level == 2)
             {
                 getTvLogicalPoint(tvRoute.SelectedNode.Tag.ToString());
+                getTvPhysicalPoint(tvRoute.SelectedNode.Parent.Tag.ToString());
                 tbRoute.ForeColor = tvRoute.SelectedNode.ForeColor;
                 tbRoute.Text = tvRoute.SelectedNode.Text;
                 labRouteID.Text = tvRoute.SelectedNode.Tag.ToString();
+            }
+            else if (tvRoute.SelectedNode.Nodes.Count != 0 && tvRoute.SelectedNode.Level == 1)
+            {
+                getTvPhysicalPoint(tvRoute.SelectedNode.Tag.ToString());
             }
             else
             {
@@ -293,9 +298,10 @@ namespace WorkStation
                 tvLogicalPoint.ExpandAll();
         }
         //获取物理巡检点
-        private void getTvPhysicalPoint()
+        private void getTvPhysicalPoint(string siteID)
         {
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From PhysicalCheckPoint");
+            tvPhysicalPoint.Nodes.Clear(); 
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From PhysicalCheckPoint Where Site_ID="+siteID);
             if (dr == null) { dr.Dispose(); return; }
             while (dr.Read())
             {

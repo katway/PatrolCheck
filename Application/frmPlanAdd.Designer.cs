@@ -30,7 +30,6 @@
         {
             this.dtpIneffect = new System.Windows.Forms.DateTimePicker();
             this.dtpEffect = new System.Windows.Forms.DateTimePicker();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.cboRoute = new System.Windows.Forms.ComboBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblshixiao = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@
             this.lblCycle = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // dtpIneffect
@@ -68,16 +68,6 @@
             this.dtpEffect.Name = "dtpEffect";
             this.dtpEffect.Size = new System.Drawing.Size(183, 21);
             this.dtpEffect.TabIndex = 39;
-            // 
-            // dtpStart
-            // 
-            this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
-            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(124, 141);
-            this.dtpStart.Name = "dtpStart";
-            this.dtpStart.Size = new System.Drawing.Size(183, 21);
-            this.dtpStart.TabIndex = 38;
-            this.dtpStart.Value = new System.DateTime(2012, 10, 31, 0, 0, 0, 0);
             // 
             // cboRoute
             // 
@@ -243,12 +233,22 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // frmAddPlan_Add
+            // dtpStart
+            // 
+            this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStart.Location = new System.Drawing.Point(124, 142);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(183, 21);
+            this.dtpStart.TabIndex = 55;
+            // 
+            // frmPlanAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(336, 387);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.txtInterval);
@@ -262,7 +262,6 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.dtpIneffect);
             this.Controls.Add(this.dtpEffect);
-            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.cboRoute);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblshixiao);
@@ -272,8 +271,8 @@
             this.Controls.Add(this.lblName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
-            this.Name = "frmAddPlan_Add";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.Name = "frmPlanAdd";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建计划";
             this.Load += new System.EventHandler(this.frmAddPlan_Add_Load);
             this.ResumeLayout(false);
@@ -285,7 +284,6 @@
 
         private System.Windows.Forms.DateTimePicker dtpIneffect;
         private System.Windows.Forms.DateTimePicker dtpEffect;
-        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.ComboBox cboRoute;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblshixiao;
@@ -304,5 +302,6 @@
         private System.Windows.Forms.Label lblCycle;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.DateTimePicker dtpStart;
     }
 }
