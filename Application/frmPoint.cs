@@ -72,6 +72,7 @@ namespace WorkStation
         {
             frmChoseRfid f = new frmChoseRfid();
             f.ShowDialog();
+            this.txtRelation.Text = f.RFID_Rfid;
             this.btnSave.Enabled = true;
             this.txtRelation.ReadOnly = false;
         }

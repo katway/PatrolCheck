@@ -43,6 +43,7 @@
             this.cboItem.Name = "cboItem";
             this.cboItem.Size = new System.Drawing.Size(152, 20);
             this.cboItem.TabIndex = 0;
+            this.cboItem.SelectedIndexChanged += new System.EventHandler(this.cboItem_SelectedIndexChanged);
             // 
             // btnChose
             // 
@@ -98,7 +99,7 @@
             this.Controls.Add(this.btnChose);
             this.Controls.Add(this.cboItem);
             this.Name = "frmChoseRfid";
-            this.Text = "才选择标签卡";
+            this.Text = "选择标签卡";
             this.Load += new System.EventHandler(this.frmChoseRfid_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRfid)).EndInit();
             this.ResumeLayout(false);

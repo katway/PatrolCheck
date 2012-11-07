@@ -48,8 +48,8 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
             pars[2].Value = (this.cboMachine.SelectedItem as BoxItem).Value;
-            pars[3].Value = (this.cboValue.SelectedValue as BoxItem).Value;
-            pars[4].Value = (this.cboPoint.SelectedValue as BoxItem).Value;
+            pars[3].Value = (this.cboValue.SelectedItem as BoxItem).Value;
+            pars[4].Value = (this.cboPoint.SelectedItem as BoxItem).Value;
             pars[5].Value = this.txtRemarks.Text;
 
             int _ret = SqlHelper.ExecuteNonQuery(str_insert,pars);
