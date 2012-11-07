@@ -174,6 +174,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "frmAddMachine";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "添加设备";
             this.Load += new System.EventHandler(this.frmAddSiteArea_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMachine)).EndInit();

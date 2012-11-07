@@ -10,33 +10,60 @@ using System.Reflection;
 
 namespace WorkStation
 {
+ 
     public partial class frmMain : Form
     {
         public frmMain()
         {
             InitializeComponent();
         }
-        private void Application_Load(object sender, EventArgs e)
+        private Dictionary<string, Form> FormMap = new Dictionary<string, Form>();
+        private Form CreteFormFormName(string formName)
         {
-<<<<<<< HEAD
-            btnItem_Click(sender, e);
-        }
-        private void ShowProject(int CurrentRow)
-        {
-            for (int i = 0; i < this.tableLayoutPanel1.RowStyles.Count; i++)
+            Assembly assem = Assembly.GetExecutingAssembly();
+            System.Type t = assem.GetType("WorkStation." + formName);
+            object obj = null;
+            if (t != null)
+                obj = Activator.CreateInstance(t);
+            if (obj != null)
             {
-                if (i == CurrentRow)
+                (obj as Form).MdiParent = this;
+                return (obj as Form);
+            }
+            else
+            {
+                return null;
+            }
+        }
+        private void ShowForm(object sender, EventArgs e)
+        {
+            string className = (sender as ToolStripMenuItem).Name.Replace("tsmi", "frm");
+            if (FormMap.Keys.Contains(className))
+            {
+<<<<<<< HEAD
+                if (i == CurrentRow) 
+=======
+                if (FormMap[className] != null)
+>>>>>>> katway/Mdi
                 {
-                    this.tableLayoutPanel1.RowStyles[i].SizeType = SizeType.Percent;
-                    this.tableLayoutPanel1.RowStyles[i].Height = 1;
+                    if (FormMap[className].IsDisposed)
+                    {
+                        FormMap[className] = this.CreteFormFormName(className);
+                        FormMap[className].Show();
+                    }
                 }
                 else
                 {
-                    this.tableLayoutPanel1.RowStyles[i].SizeType = SizeType.Absolute;
-                    this.tableLayoutPanel1.RowStyles[i].Height = 25;
+                    //窗体类名已经出现在列表，但窗体为NULL，说明无法根据窗体类名创建对象。
                 }
             }
+            else
+            {
+                FormMap.Add(className, this.CreteFormFormName(className));
+                if (FormMap[className] != null) FormMap[className].Show();
+            }
         }
+<<<<<<< HEAD
 
         private void btnItem_Click(object sender, EventArgs e)
         {
@@ -191,37 +218,27 @@ namespace WorkStation
             addpoint.ShowDialog();
         }
 
-        ////新建设备
-        //private void tsmishebeixunjianxiang_Click(object sender, EventArgs e)
-        //{
-        //    frmAddMachine fm = new frmAddMachine();
-        //    fm.ShowDialog();
-        //}
-
-        //private void tsmixunjianluxian_Click(object sender, EventArgs e)
-        //{
-        //    frmAddRoute frm = new frmAddRoute();
-        //    frm.Left = this.Left + (this.Width - frm.Width) / 2;
-        //    frm.Top = this.Top + (this.Height - frm.Height) / 2;
-        //    frm.Show();
-        //}
-
         private void tsmixinjian1_Click(object sender, EventArgs e)
         {
             frmAddPlan frm = new frmAddPlan();
             frm.ShowDialog();
         }
-
+        //任务审核
         private void tsmishenhe1_Click(object sender, EventArgs e)
         {
             frmAddPlanExamine frm = new frmAddPlanExamine();
+            frm.Top = this.Top + (this.Height - frm.Height) / 2;
+            frm.Left = this.Left + (this.Width - frm.Width) / 2;
             frm.Show();
         }
 
+        //任务下发
         private void tsmixiafa1_Click(object sender, EventArgs e)
         {
-            frmAddPlanToTask add = new frmAddPlanToTask();
-            add.ShowDialog();
+            frmAddPlanToTask frm = new frmAddPlanToTask();
+            frm.Top = this.Top + (this.Height - frm.Height) / 2;
+            frm.Left = this.Left + (this.Width - frm.Width) / 2;
+            frm.ShowDialog();
         }
 
         private void tsmigangweiAdd_Click(object sender, EventArgs e)
@@ -322,8 +339,12 @@ namespace WorkStation
 
 
 
+            fm.Left = this.Left + (this.Width - fm.Width) / 2;
+            fm.Top = this.Top + (this.Height - fm.Height) / 2;
         //巡检路线
 
+            frm.Top=this.Top+(this.Height-frm.Height)/2;
+            frm.Left=this.Left+(this.Width-frm.Width)/2;
 
         private void tsmiAddRount_Click(object sender, EventArgs e)
         {
@@ -359,17 +380,20 @@ namespace WorkStation
         {
             frmAddPoint point = new frmAddPoint();
             point.Show();
-=======
-      
->>>>>>> hefangli/master
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        private void tsmiAddItem_Click(object sender, EventArgs e)
         {
-                        
-        }         
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
 
-<<<<<<< HEAD
+        private void tsmiEditItem_Click(object sender, EventArgs e)
+        {
+            frmAddItem item = new frmAddItem();
+            item.Show();
+        }
+
         private void tsmiDelItem_Click(object sender, EventArgs e)
         {
             frmAddItem item = new frmAddItem();
@@ -398,6 +422,8 @@ namespace WorkStation
         private void tsmixunjiandian_Click_1(object sender, EventArgs e)
         {
             frmAddPoint point = new frmAddPoint();
+            point.Top = this.Top + (this.Height - point.Height) / 2;
+            point.Left = this.Left + (this.Width - point.Width) / 2;
             point.Show();
         }
 
@@ -405,34 +431,12 @@ namespace WorkStation
         private void tsmixunjianxiangs_Click_1(object sender, EventArgs e)
         {
             frmAddItem item = new frmAddItem();
+            item.Top = this.Top + (this.Height - item.Height) / 2;
+            item.Left = this.Left + (this.Width - item.Width) / 2;
             item.Show();
         }
-        private Dictionary<string, Form> FormMap = new Dictionary<string, Form>();
-        private void ShowForm(object sender, EventArgs e)
-        {
-
-            string className = (sender as ToolStripMenuItem).Name.Replace("tsmi", "frm");
-            MessageBox.Show(className);
-            if (!FormMap.Keys.Contains(className))
-            {
-                Assembly assem = Assembly.GetExecutingAssembly();
-                System.Type t = assem.GetType("WorkStation." + className);
-                object obj = null;
-                if (t != null)
-                    obj = Activator.CreateInstance(t);
-                if (obj != null)
-                {
-                    (obj as Form).MdiParent = this;
-                    FormMap.Add(className, obj as Form);
-                }
-            }
-            if (FormMap.Keys.Contains(className))
-                FormMap[className].Show();
-        }
-
+      
 =======
-     
-       
->>>>>>> hefangli/master
+>>>>>>> katway/Mdi
     }
 }

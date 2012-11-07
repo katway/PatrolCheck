@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace WorkStation
 {
@@ -22,16 +23,37 @@ namespace WorkStation
         List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
-            tvRouteInit(tvRoute);   
-            getTvPhysicalPoint();
+            //tvRouteInit(this.tvRoute);
+            Thread th1 = new Thread(tvRouteInit);
+            th1.Start(this.tvRoute);
+            Thread th2 = new Thread(new ThreadStart(getTvPhysicalPoint));
+            th2.Start();
+            //Thread th3 = new Thread(FM_Init);
+            //th3.Start();  
 
-            chkRoute.Checked = wset.tvRoute;
-            chkLogicalPoint.Checked = wset.tvLogicalPoint;
-            chkPhysicalPoint.Checked = wset.tvPhysicalPoint;
+            //chkRoute.Checked = wset.tvRoute;
+            //chkLogicalPoint.Checked = wset.tvLogicalPoint;
+            //chkPhysicalPoint.Checked = wset.tvPhysicalPoint;
 
-            if (wset.tvRoute) tvRoute.ExpandAll(); else tvRoute.CollapseAll();
-            if (wset.tvPhysicalPoint) tvPhysicalPoint.ExpandAll(); else tvPhysicalPoint.CollapseAll();
-            if (wset.tvLogicalPoint) tvLogicalPoint.ExpandAll(); else tvLogicalPoint.CollapseAll();
+            //if (wset.tvRoute) tvRoute.ExpandAll(); else tvRoute.CollapseAll();
+            //if (wset.tvPhysicalPoint) tvPhysicalPoint.ExpandAll(); else tvPhysicalPoint.CollapseAll();
+            //if (wset.tvLogicalPoint) tvLogicalPoint.ExpandAll(); else tvLogicalPoint.CollapseAll();
+                  
+        }
+
+        private void FM_Init()
+        {
+            this.BeginInvoke((Action)delegate 
+            {
+                chkRoute.Checked = wset.tvRoute;
+                chkLogicalPoint.Checked = wset.tvLogicalPoint;
+                chkPhysicalPoint.Checked = wset.tvPhysicalPoint;
+
+                if (wset.tvRoute) tvRoute.ExpandAll(); else tvRoute.CollapseAll();
+                if (wset.tvPhysicalPoint) tvPhysicalPoint.ExpandAll(); else tvPhysicalPoint.CollapseAll();
+                if (wset.tvLogicalPoint) tvLogicalPoint.ExpandAll(); else tvLogicalPoint.CollapseAll();
+            });
+           
         }
 
         private void tvRoute_AfterSelect(object sender, TreeViewEventArgs e)
@@ -281,14 +303,19 @@ namespace WorkStation
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["ID"].ToString();
                 tnode = tvNodeAdd(tnode, "Select ID,Name,'' AS Sequence From CheckItem Where Phy_ID=" + dr["ID"].ToString().Trim());
-                tvPhysicalPoint.Nodes.Add(tnode);
+                this.BeginInvoke((Action)delegate
+                {
+                   tvPhysicalPoint.Nodes.Add(tnode);
+                });
+                
             }
             dr.Close();
         }
 
-        public static void tvRouteInit(TreeView tvRoute)
+        //获取路线
+        public static void tvRouteInit(Object tvRoute)
         {
-            tvRoute.Nodes.Clear();
+            ((TreeView)tvRoute).Nodes.Clear();
             SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From Company");
             while (dr.Read())
             {
@@ -300,7 +327,11 @@ namespace WorkStation
                 {
                     (tnode.Nodes)[i] = tvNodeAdd((tnode.Nodes)[i], "Select ID,Name,Sequence as Sequence from CheckRoute Where site_id=" + (tnode.Nodes)[i].Tag);
                 }
-                tvRoute.Nodes.Add(tnode);
+                ((TreeView)tvRoute).BeginInvoke((Action)delegate 
+                {
+                    ((TreeView)tvRoute).Nodes.Add(tnode);
+                });
+                
             }
             dr.Close();
 

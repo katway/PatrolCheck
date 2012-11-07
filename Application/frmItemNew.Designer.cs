@@ -46,13 +46,14 @@
             this.dgvItems = new System.Windows.Forms.DataGridView();
             this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.labID = new System.Windows.Forms.Label();
+            this.bkwItem = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(30, 31);
+            this.lblName.Location = new System.Drawing.Point(48, 31);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 0;
@@ -68,7 +69,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(312, 31);
+            this.lblAlias.Location = new System.Drawing.Point(324, 31);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 2;
@@ -86,7 +87,7 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
-            this.lblPoints.Location = new System.Drawing.Point(12, 109);
+            this.lblPoints.Location = new System.Drawing.Point(18, 109);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(65, 12);
             this.lblPoints.TabIndex = 4;
@@ -193,7 +194,7 @@
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.chkColumn});
-            this.dgvItems.Location = new System.Drawing.Point(14, 318);
+            this.dgvItems.Location = new System.Drawing.Point(14, 291);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowTemplate.Height = 23;
@@ -218,6 +219,11 @@
             this.labID.TabIndex = 20;
             this.labID.Text = "巡检项ID";
             this.labID.Visible = false;
+            // 
+            // bkwItem
+            // 
+            this.bkwItem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkwItem_DoWork);
+            this.bkwItem.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkwItem_RunWorkerCompleted);
             // 
             // frmAddItem
             // 
@@ -244,7 +250,7 @@
             this.Controls.Add(this.lblName);
             this.MaximizeBox = false;
             this.Name = "frmAddItem";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "新建巡检项";
             this.Load += new System.EventHandler(this.frmAddItem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
@@ -273,5 +279,6 @@
         private System.Windows.Forms.DataGridView dgvItems;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
         private System.Windows.Forms.Label labID;
+        private System.ComponentModel.BackgroundWorker bkwItem;
     }
 }

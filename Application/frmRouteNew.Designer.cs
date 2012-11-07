@@ -102,8 +102,6 @@
             // chkRoute
             // 
             this.chkRoute.AutoSize = true;
-            this.chkRoute.Checked = true;
-            this.chkRoute.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkRoute.Location = new System.Drawing.Point(93, 458);
             this.chkRoute.Name = "chkRoute";
             this.chkRoute.Size = new System.Drawing.Size(72, 16);
@@ -167,8 +165,6 @@
             // chkPhysicalPoint
             // 
             this.chkPhysicalPoint.AutoSize = true;
-            this.chkPhysicalPoint.Checked = true;
-            this.chkPhysicalPoint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkPhysicalPoint.Location = new System.Drawing.Point(338, 458);
             this.chkPhysicalPoint.Name = "chkPhysicalPoint";
             this.chkPhysicalPoint.Size = new System.Drawing.Size(72, 16);
@@ -180,8 +176,6 @@
             // chkLogicalPoint
             // 
             this.chkLogicalPoint.AutoSize = true;
-            this.chkLogicalPoint.Checked = true;
-            this.chkLogicalPoint.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkLogicalPoint.Location = new System.Drawing.Point(50, 458);
             this.chkLogicalPoint.Name = "chkLogicalPoint";
             this.chkLogicalPoint.Size = new System.Drawing.Size(72, 16);

@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
+    public delegate void ParameterizedThreadStart(Object obj);
     public partial class frmMachineNew : Form
     {
         public frmMachineNew()

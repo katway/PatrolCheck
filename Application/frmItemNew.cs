@@ -20,26 +20,22 @@ namespace WorkStation
         private void frmAddItem_Load(object sender, EventArgs e)
         {
             this.labID.Text = "";
-            getMachine();
-            getValueType();
-            getPoint();
+            bkwItem.RunWorkerAsync();
             bindDgvItems();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            if (cboMachine.SelectedValue.ToString() == "")
+            if (txtName.Text == "" || txtRemarks.Text == "" || cboMachine.SelectedIndex < 0 || cboPoint.SelectedIndex < 0 || cboValue.SelectedIndex < 0)
             {
-                MessageBox.Show("请选择所属机器");
+                MessageBox.Show("请确保没有空值");
                 return;
             }
-            if (cboPoint.SelectedValue==null)
+            if (SqlHelper.ExecuteScalar("Select count(1) From CheckItem Where Name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
             {
-                MessageBox.Show("请选择所属地点");
+                MessageBox.Show("请确保名称的唯一性");
                 return;
             }
-            //if(SqlHelper.ExecuteNonQuery("Select 1 From CheckItem Where "))
             string str_insert = "Insert into CheckItem([Name],Alias,Machine_ID,ValueType,Phy_ID,Comment) Values(@name,@alias,@machineid,@valuetype,@pointid,@comment)";
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
@@ -52,7 +48,7 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
             pars[2].Value = this.cboMachine.SelectedValue;
-            pars[3].Value = ((BoxItem)this.cboValue.SelectedItem).Value;
+            pars[3].Value = this.cboValue.SelectedValue;
             pars[4].Value = this.cboPoint.SelectedValue;
             pars[5].Value = this.txtRemarks.Text;
 
@@ -62,36 +58,7 @@ namespace WorkStation
                 MessageBox.Show("保存成功");
             }
             bindDgvItems();
-        }
-        
-        private void getMachine()
-        {
-            DataSet ds= SqlHelper.ExecuteDataset("select ID,Name From Machine");
-            this.cboMachine.DataSource=ds.Tables[0];
-            this.cboMachine.DisplayMember = "Name";
-            this.cboMachine.ValueMember = "ID";
-            this.cboMachine.SelectedIndex = cboMachine.Items.Count>0?0:-1;
-        }
-        private void getValueType()
-        {
-            BoxItem bi1 = new BoxItem();
-            bi1.Text = "正常/不正常";
-            bi1.Value = "0";
-            this.cboValue.Items.Add(bi1);
-            BoxItem bi2 = new BoxItem();
-            bi2.Text = "数值";
-            bi2.Value = "1";
-            this.cboValue.Items.Add(bi2);
-            this.cboValue.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
-        }
-        private void getPoint()
-        {
-            DataSet ds = SqlHelper.ExecuteDataset("select ID,Name From PhysicalCheckPoint");
-            this.cboPoint.DataSource=ds.Tables[0];
-            this.cboPoint.DisplayMember = "Name";
-            this.cboPoint.ValueMember = "ID";
-            this.cboPoint.SelectedIndex = cboPoint.Items.Count > 0 ? 0 : -1;
-        }
+        }   
 
         private void bindDgvItems()
         {
@@ -99,7 +66,7 @@ namespace WorkStation
                         c.ID as 编号,
                         c.name as 名称,
                         c.alias as 别名,
-                        (case c.ValueType when  0 then '正常/不正常' when 1 then '数值' end) as 值类型,
+                        (select meaning from codes where code=c.valuetype and purpose='valuetype') as 值类型,
                         m.name as 所属机器,
                         p.name as 所属巡检点,
                         c.comment as 备注 
@@ -112,6 +79,15 @@ namespace WorkStation
         private void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex == -1) return;
+
+            labID.Text = dgvItems.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtName.Text = dgvItems.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtAlias.Text = dgvItems.Rows[e.RowIndex].Cells[3].Value.ToString();
+            cboValue.Text = dgvItems.Rows[e.RowIndex].Cells[4].Value.ToString();
+            cboMachine.Text = dgvItems.Rows[e.RowIndex].Cells[5].Value.ToString();
+            cboPoint.Text = dgvItems.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtRemarks.Text = dgvItems.Rows[e.RowIndex].Cells[7].Value.ToString();
+
             if (e.ColumnIndex == 0)
             {
                 if ((bool)dgvItems.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
@@ -123,16 +99,6 @@ namespace WorkStation
                     dgvItems.Rows[e.RowIndex].Cells[0].Value = false;
                 }
             }
-            else
-            {
-                labID.Text = dgvItems.Rows[e.RowIndex].Cells[1].Value.ToString();
-                txtName.Text = dgvItems.Rows[e.RowIndex].Cells[2].Value.ToString();
-                txtAlias.Text = dgvItems.Rows[e.RowIndex].Cells[3].Value.ToString();
-                cboValue.Text = dgvItems.Rows[e.RowIndex].Cells[4].Value.ToString();
-                cboMachine.Text = dgvItems.Rows[e.RowIndex].Cells[5].Value.ToString();
-                cboPoint.Text = dgvItems.Rows[e.RowIndex].Cells[6].Value.ToString();
-                txtRemarks.Text = dgvItems.Rows[e.RowIndex].Cells[7].Value.ToString();
-            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -141,17 +107,16 @@ namespace WorkStation
             {
                 return;
             }
-            if (cboMachine.SelectedValue.ToString() == "")
+            if (txtName.Text == "" || txtRemarks.Text == "" || cboMachine.SelectedIndex < 0 || cboPoint.SelectedIndex < 0 || cboValue.SelectedIndex < 0)
             {
-                MessageBox.Show("请选择所属机器");
+                MessageBox.Show("请确保没有空值");
                 return;
             }
-            if (cboPoint.SelectedValue.ToString() == "")
+            if (SqlHelper.ExecuteScalar("Select count(1) From CheckItem Where id!=" + labID.Text.Trim() + " and name='" + this.txtName.Text.Trim() + "'").ToString() != "0")
             {
-                MessageBox.Show("请选择所属地点");
+                MessageBox.Show("请确保名称的唯一性" );
                 return;
             }
-            
             string str_insert = "Update CheckItem set [Name]=@name,Alias=@alias,Machine_ID=@machineid,ValueType=@valuetype,Phy_ID=@phyid,Comment=@comment where ID=" + labID.Text.Trim();
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
@@ -164,7 +129,7 @@ namespace WorkStation
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
             pars[2].Value = this.cboMachine.SelectedValue;
-            pars[3].Value = ((BoxItem)this.cboValue.SelectedItem).Value;
+            pars[3].Value = this.cboValue.SelectedValue ;
             pars[4].Value = this.cboPoint.SelectedValue;
             pars[5].Value = this.txtRemarks.Text;
 
@@ -204,6 +169,35 @@ namespace WorkStation
             {
                 MessageBox.Show("请选择要删除的项");
             }
+        }
+
+        DataSet dsMachine, dsValueType, dsPoint;
+        private void bkwItem_DoWork(object sender, DoWorkEventArgs e)
+        {
+            dsMachine = SqlHelper.ExecuteDataset("select ID,Name From Machine");
+            dsValueType = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where Purpose='ValueType'");
+            dsPoint = SqlHelper.ExecuteDataset("select ID,Name From PhysicalCheckPoint");
+        }
+
+        private void bkwItem_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            this.cboMachine.DataSource = dsMachine.Tables[0];
+            this.cboMachine.DisplayMember = "Name";
+            this.cboMachine.ValueMember = "ID";
+            this.cboMachine.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
+            dsMachine.Dispose();
+
+            this.cboPoint.DataSource = dsPoint.Tables[0];
+            this.cboPoint.DisplayMember = "Name";
+            this.cboPoint.ValueMember = "ID";
+            this.cboPoint.SelectedIndex = cboPoint.Items.Count > 0 ? 0 : -1;
+            dsPoint.Dispose();
+
+            this.cboValue.DataSource = dsValueType.Tables[0];
+            this.cboValue.DisplayMember = "Meaning";
+            this.cboValue.ValueMember = "Code";
+            this.cboValue.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
+            dsValueType.Dispose();
         }
     }
 }

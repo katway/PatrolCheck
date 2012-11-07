@@ -21,9 +21,26 @@ namespace WorkStation
             InitializeComponent();
         }
 
+        private void cboinit()
+        {
+            DataSet dsCboinorder = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where purpose='CheckSequence' ");           
+            this.cboInOrder.DataSource = dsCboinorder.Tables[0];
+            this.cboInOrder.DisplayMember = "Meaning";
+            this.cboInOrder.ValueMember = "Code";
+            this.cboInOrder.SelectedIndex = this.cboInOrder.Items.Count > 0 ? 0 : -1;
+            dsCboinorder.Dispose();
+
+            DataSet dsCboSitearea = SqlHelper.ExecuteDataset("Select Id,Name From Site");
+            cboSiteArea.DataSource = dsCboSitearea.Tables[0];
+            cboSiteArea.DisplayMember = "Name";
+            cboSiteArea.ValueMember = "ID";
+            this.cboSiteArea.SelectedIndex = this.cboSiteArea.Items.Count > 0 ? 0 : -1;
+            dsCboSitearea.Dispose();
+        }
+
         private void frmAddRoutName_Load(object sender, EventArgs e)
         {
-            this.cbo_init();
+            cboinit();
             if (isEdit)
             {
                 this.btnTrue.Text = "修改";
@@ -80,21 +97,15 @@ namespace WorkStation
             this.Close();
         }
 
-        private void cbo_init()
+        DataSet dsCboinorder, dsCboSitearea;
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
-            DataSet ds = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes where purpose='CheckSequence' ");
-            this.cboInOrder.DataSource = ds.Tables[0];
-            this.cboInOrder.DisplayMember = "Meaning";
-            this.cboInOrder.ValueMember = "Code";
-            this.cboInOrder.SelectedIndex = this.cboInOrder.Items.Count > 0 ? 0 : -1;
-            ds.Dispose();
+            
+        }
 
-            ds = SqlHelper.ExecuteDataset("Select Id,Name From Site");
-            cboSiteArea.DataSource = ds.Tables[0];
-            cboSiteArea.DisplayMember = "Name";
-            cboSiteArea.ValueMember = "ID";
-            this.cboSiteArea.SelectedIndex = this.cboSiteArea.Items.Count > 0 ? 0 : -1;
-            ds.Dispose();
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+           
         }
     }
 }
