@@ -79,9 +79,5 @@ namespace WorkStation
         {
             this.Close();
         }
-       
-
-
-
     }
 }

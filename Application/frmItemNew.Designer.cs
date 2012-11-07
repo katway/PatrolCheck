@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmItemAdd
+    partial class frmItemNew
     {
         /// <summary>
         /// Required designer variable.

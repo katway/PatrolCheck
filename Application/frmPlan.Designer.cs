@@ -146,7 +146,7 @@
             this.labState.TabIndex = 44;
             this.labState.Text = "状态";
             // 
-            // frmAddPlan
+            // frmPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -160,9 +160,9 @@
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnNew);
-            this.Name = "frmAddPlan";
+            this.Name = "frmPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmAddPlan";
+            this.Text = "巡检计划管理";
             this.Load += new System.EventHandler(this.frmAddPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
             this.ResumeLayout(false);
