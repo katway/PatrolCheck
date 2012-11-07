@@ -85,7 +85,6 @@ namespace WorkStation
                 this.txtAlias.Text = dr[1].ToString();
                 this.txtCard.Text = dr[2].ToString();
                 this.comboBox1.Text = dr[3].ToString();
-
             }
 
         }    
@@ -94,6 +93,7 @@ namespace WorkStation
             string sql2 = "select ID,Name,Alias,RFID,Meaning from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
             DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
             dataGridView1.DataSource = ds.Tables[0];
+
         }
         /// <summary>
         /// 删除操作

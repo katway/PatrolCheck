@@ -163,6 +163,7 @@
             this.btnAddTemplate.TabIndex = 17;
             this.btnAddTemplate.Text = "添加模板";
             this.btnAddTemplate.UseVisualStyleBackColor = true;
+            this.btnAddTemplate.Click += new System.EventHandler(this.btnAddTemplate_Click);
             // 
             // chkPhysicalPoint
             // 
@@ -287,7 +288,7 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // frmAddRoute
+            // frmRouteNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -299,7 +300,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
-            this.Name = "frmAddRoute";
+            this.Name = "frmRouteNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "新建巡检路线";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAddRoute_FormClosing);

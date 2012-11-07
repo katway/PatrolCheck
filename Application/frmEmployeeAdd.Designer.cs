@@ -136,7 +136,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(673, 163);
+            this.dataGridView1.Size = new System.Drawing.Size(687, 163);
             this.dataGridView1.TabIndex = 10;
             // 
             // Column1

@@ -41,10 +41,9 @@ namespace WorkStation
              else
              {
                  string insertSite = "insert into Site(Name,Alias,Company_ID) values(@name,@alias,@com_id)";
-                 SqlParameter[] par = new SqlParameter[] {new SqlParameter("@name",SqlDbType.NVarChar),
-                                                     new SqlParameter("@alias",SqlDbType.NVarChar),
-                                                     new SqlParameter("@com_id",SqlDbType.Int)};
-
+                 SqlParameter[] par = new SqlParameter[] { new SqlParameter("@name",SqlDbType.NVarChar),
+                                                           new SqlParameter("@alias",SqlDbType.NVarChar),
+                                                           new SqlParameter("@com_id",SqlDbType.Int)};
                  par[0].Value = this.txtName.Text;
                  par[1].Value = this.txtAlias.Text;
                  par[2].Value = this.cboCompany.SelectedValue;

@@ -42,9 +42,9 @@ namespace WorkStation
             {
                 string insertCompany = "insert into Company(Name,Alias,Contact,Address)values(@name,@alias,@contact,@address)";
                 SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@name",SqlDbType.NVarChar),
-                                                     new SqlParameter("@alias",SqlDbType.NVarChar),
-                                                     new SqlParameter("@contact",SqlDbType.NVarChar),
-                                                     new SqlParameter("@address",SqlDbType.NVarChar)  };
+                                                         new SqlParameter("@alias",SqlDbType.NVarChar),
+                                                         new SqlParameter("@contact",SqlDbType.NVarChar),
+                                                         new SqlParameter("@address",SqlDbType.NVarChar)};
                 par[0].Value = this.txtName.Text.Trim();
                 par[1].Value = this.txtAlias.Text.Trim();
                 par[2].Value = this.txtContact.Text.Trim();
@@ -58,8 +58,7 @@ namespace WorkStation
                 {
                     MessageBox.Show("保存失败！");
                 }
-            }
-            BindCompany();
+            }         
                
         }
 
@@ -67,17 +66,11 @@ namespace WorkStation
         {
             this.Close();
 
-        }
-        public void BindCompany()
-        {
-            string SelectCompany = "select * from Company";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, SelectCompany);
-            this.dataGridView1.DataSource = ds.Tables[0];
-        }
-
+        }     
         private void frmAddCompany_Load(object sender, EventArgs e)
         {
-            BindCompany();
-        }
+           
+        }       
+       
     }
 }

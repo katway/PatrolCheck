@@ -219,12 +219,12 @@
             this.labID.Text = "巡检项ID";
             this.labID.Visible = false;
             // 
-            // frmAddItem
+            // frmItemAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(716, 586);
+            this.ClientSize = new System.Drawing.Size(725, 586);
             this.Controls.Add(this.labID);
             this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.btnDel);
@@ -243,7 +243,7 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lblName);
             this.MaximizeBox = false;
-            this.Name = "frmAddItem";
+            this.Name = "frmItemAdd";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建巡检项";
             this.Load += new System.EventHandler(this.frmAddItem_Load);

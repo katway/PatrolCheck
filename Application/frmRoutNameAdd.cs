@@ -45,7 +45,7 @@ namespace WorkStation
         private void btnTrue_Click(object sender, EventArgs e)
         {
             int _ret=(int)SqlHelper.ExecuteScalar("Select Count(1) From CheckRoute Where Name='" + this.tbRouteName.Text.Trim() + "' and Site_ID=" + cboSiteArea.SelectedValue.ToString());
-            if ( isEdit==false&&_ret!= 0)
+            if (isEdit==false&&_ret!= 0)
             {
                 MessageBox.Show("请确保路线名称的唯一性");
                 return;
@@ -56,8 +56,7 @@ namespace WorkStation
                new SqlParameter("@name",this.tbRouteName.Text.Trim().ToString()),
                new SqlParameter("@alias",this.tbRouteAlias.Text.Trim().ToString()),
                new SqlParameter("@routeid",SqlDbType.BigInt),
-               new SqlParameter("@sequence",SqlDbType.Int)
-            };
+               new SqlParameter("@sequence",SqlDbType.Int)};         
             if (isEdit)
             {
                 strsql = "Update CheckRoute Set Site_ID=@id,[Name]=@name,Alias=@alias,Sequence=@sequence Where ID=@routeid";                

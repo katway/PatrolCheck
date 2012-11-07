@@ -223,7 +223,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(280, 209);
+            this.btnSave.Location = new System.Drawing.Point(283, 209);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 29;
@@ -339,7 +339,7 @@
             this.labState.TabIndex = 39;
             this.labState.Text = "状态";
             // 
-            // frmAddTask
+            // frmTaskNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -375,7 +375,7 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.lblName);
             this.MaximizeBox = false;
-            this.Name = "frmAddTask";
+            this.Name = "frmTaskNew";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "计划管理";
             this.Load += new System.EventHandler(this.frmAddTask_Load);

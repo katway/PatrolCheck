@@ -235,7 +235,6 @@ namespace WorkStation
                     pars[4].Value = parValue;
                     pars[5].Value = parIndex;
                     pars[6].Value = tvLogicalPoint.Nodes[i].Index;
-
                     int _ret = SqlHelper.ExecuteNonQuery("LogicalPointItemControl",CommandType.StoredProcedure,pars);
                 }
 
@@ -496,6 +495,11 @@ namespace WorkStation
                 fn.routeID = tvRoute.SelectedNode.Tag;
                 fn.Show();
             }
+        }
+
+        private void btnAddTemplate_Click(object sender, EventArgs e)
+        {
+
         }
 
     }
