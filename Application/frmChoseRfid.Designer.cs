@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.cboItem = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnChose = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.dgvRfid = new System.Windows.Forms.DataGridView();
             this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRfid)).BeginInit();
@@ -44,23 +44,25 @@
             this.cboItem.Size = new System.Drawing.Size(152, 20);
             this.cboItem.TabIndex = 0;
             // 
-            // button1
+            // btnChose
             // 
-            this.button1.Location = new System.Drawing.Point(220, 20);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "选择";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnChose.Location = new System.Drawing.Point(220, 20);
+            this.btnChose.Name = "btnChose";
+            this.btnChose.Size = new System.Drawing.Size(75, 23);
+            this.btnChose.TabIndex = 1;
+            this.btnChose.Text = "选择";
+            this.btnChose.UseVisualStyleBackColor = true;
+            this.btnChose.Click += new System.EventHandler(this.btnChose_Click);
             // 
-            // button2
+            // btnClose
             // 
-            this.button2.Location = new System.Drawing.Point(335, 19);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "关闭";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnClose.Location = new System.Drawing.Point(335, 19);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.TabIndex = 2;
+            this.btnClose.Text = "关闭";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // dgvRfid
             // 
@@ -77,6 +79,7 @@
             this.dgvRfid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRfid.Size = new System.Drawing.Size(512, 342);
             this.dgvRfid.TabIndex = 11;
+            this.dgvRfid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRfid_CellClick);
             // 
             // chkColumn
             // 
@@ -91,8 +94,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 429);
             this.Controls.Add(this.dgvRfid);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.btnChose);
             this.Controls.Add(this.cboItem);
             this.Name = "frmChoseRfid";
             this.Text = "才选择标签卡";
@@ -105,8 +108,8 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cboItem;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnChose;
+        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.DataGridView dgvRfid;
         private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
     }
