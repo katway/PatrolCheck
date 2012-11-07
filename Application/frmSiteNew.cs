@@ -23,23 +23,41 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string insertSite = "insert into Site(Name,Alias,Company_ID) values(@name,@alias,@com_id)";
-            SqlParameter[] par = new SqlParameter[] {new SqlParameter("@name",SqlDbType.NVarChar),
+             if (this.txtName.Text == "")
+            {
+                MessageBox.Show("厂区名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtName.Focus();
+            }
+             else if (txtAlias.Text == "")
+            {
+                MessageBox.Show("厂区别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtAlias.Focus();
+            }
+             else if (this.cboCompany.SelectedValue.ToString() == "")
+             {
+                 MessageBox.Show("所属公司不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                 this.cboCompany.Focus();
+             }
+             else
+             {
+                 string insertSite = "insert into Site(Name,Alias,Company_ID) values(@name,@alias,@com_id)";
+                 SqlParameter[] par = new SqlParameter[] {new SqlParameter("@name",SqlDbType.NVarChar),
                                                      new SqlParameter("@alias",SqlDbType.NVarChar),
                                                      new SqlParameter("@com_id",SqlDbType.Int)};
-            
-            par[0].Value = this.txtName.Text;
-            par[1].Value = this.txtAlias.Text;
-            par[2].Value = this.cboCompany.SelectedValue;
-            int i = SqlHelper.ExecuteNonQuery(insertSite,par);
-            if(i>0)
-            {
-                MessageBox.Show("保存成功！");
-            }
-            else
-            {
-                MessageBox.Show("保存失败!");
-            }
+
+                 par[0].Value = this.txtName.Text;
+                 par[1].Value = this.txtAlias.Text;
+                 par[2].Value = this.cboCompany.SelectedValue;
+                 int i = SqlHelper.ExecuteNonQuery(insertSite, par);
+                 if (i > 0)
+                 {
+                     MessageBox.Show("保存成功！");
+                 }
+                 else
+                 {
+                     MessageBox.Show("保存失败!");
+                 }
+             }
             SelectSiteBind();
 
         }

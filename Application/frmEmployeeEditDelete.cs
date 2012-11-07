@@ -61,35 +61,57 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string UpdateEmployee = "update Employee set Employee.Name=@name,Employee.Alias=@alias,Rfid_ID=@rfid_id where Employee.ID=@id;select  @@identity";
-            SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@id",dataGridView1.SelectedCells[0].Value),
+             if (this.txtName.Text == "")
+            {
+                MessageBox.Show("人员名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtName.Focus();
+            }
+            else if (txtAlias.Text == "")
+            {
+                MessageBox.Show("人员别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtAlias.Focus();
+            }
+            else if (this.cboCard.SelectedValue.ToString() == "")
+            {
+                MessageBox.Show("所属卡片不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.cboCard.Focus();
+            }
+             else if (this.cboPost.SelectedValue.ToString() == "")
+             {
+                 MessageBox.Show("所属岗位不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                 this.cboPost.Focus();
+             }
+
+             else
+             {
+                 string UpdateEmployee = "update Employee set Employee.Name=@name,Employee.Alias=@alias,Rfid_ID=@rfid_id where Employee.ID=@id;select  @@identity";
+                 SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@id",dataGridView1.SelectedCells[0].Value),
                                                      new SqlParameter("@name",SqlDbType.NVarChar),
                                                      new SqlParameter("@alias",SqlDbType.NVarChar),
-                                                     new SqlParameter("@rfid_id",SqlDbType.Int)
-
-
-            };
-            par[1].Value = this.txtName.Text;
-            par[2].Value = this.txtAlias.Text;
-            par[3].Value = this.cboCard.SelectedValue;
-            string a = SqlHelper.ExecuteScalar(sqlConnectionStr,CommandType.Text, UpdateEmployee,par).ToString();
-            if(a!=null)
-            {
-                MessageBox.Show("更新成功！");
-            }
-            else 
-            {
-                MessageBox.Show("更新失败！");
-            }
-            string UpdateEmPost = "update Post_Employee set ID=@id where Employee_ID=@emID";
-            SqlParameter[] par2 = new SqlParameter[]
-            {
-                new SqlParameter("@emID",SqlDbType.Int),
-                new SqlParameter("@id",SqlDbType.Int)
-            };
-            par2[0].Value = dataGridView1.SelectedCells[0].Value;
-            par2[1].Value = cboPost.SelectedValue.ToString() ;
-            int i = SqlHelper.ExecuteNonQuery(UpdateEmPost,par2);
+                                                     new SqlParameter("@rfid_id",SqlDbType.Int) };
+                
+                 par[1].Value = this.txtName.Text;
+                 par[2].Value = this.txtAlias.Text;
+                 par[3].Value = this.cboCard.SelectedValue;
+                 string a = SqlHelper.ExecuteScalar(sqlConnectionStr, CommandType.Text, UpdateEmployee, par).ToString();
+                 if (a != null)
+                 {
+                     MessageBox.Show("更新成功！");
+                 }
+                 else
+                 {
+                     MessageBox.Show("更新失败！");
+                 }
+                 string UpdateEmPost = "update Post_Employee set ID=@id where Employee_ID=@emID";
+                 SqlParameter[] par2 = new SqlParameter[]
+                {
+                   new SqlParameter("@emID",SqlDbType.Int),
+                   new SqlParameter("@id",SqlDbType.Int)
+                };
+                 par2[0].Value = dataGridView1.SelectedCells[0].Value;
+                 par2[1].Value = cboPost.SelectedValue.ToString();
+                 int i = SqlHelper.ExecuteNonQuery(UpdateEmPost, par2);
+             }
             BindEmployee();
         }
         /// <summary>

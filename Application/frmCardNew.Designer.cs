@@ -38,14 +38,16 @@
             this.BtnRead = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bwkLoadData = new System.ComponentModel.BackgroundWorker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bwkLoadData = new System.ComponentModel.BackgroundWorker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,7 +119,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(465, 156);
+            this.btnAdd.Location = new System.Drawing.Point(465, 152);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 9;
@@ -127,16 +129,44 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(90, 155);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(184, 20);
-            this.comboBox1.TabIndex = 0;
+            this.comboBox1.TabIndex = 7;
+            // 
+            // bwkLoadData
+            // 
+            this.bwkLoadData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkLoadData_DoWork);
+            this.bwkLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkLoadData_RunWorkerCompleted);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(465, 117);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "取消";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Location = new System.Drawing.Point(9, 191);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(559, 1);
+            this.label1.TabIndex = 15;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -152,7 +182,7 @@
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(584, 162);
-            this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.TabIndex = 16;
             // 
             // Column1
             // 
@@ -189,28 +219,26 @@
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
-            // bwkLoadData
+            // label2
             // 
-            this.bwkLoadData.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bwkLoadData_DoWork);
-            this.bwkLoadData.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bwkLoadData_RunWorkerCompleted);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(465, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "取消";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 196);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 12);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "录入新标签卡";
             // 
             // frmCardNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 419);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.BtnRead);
@@ -242,13 +270,15 @@
         private System.Windows.Forms.Button BtnRead;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.ComponentModel.BackgroundWorker bwkLoadData;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.Label label2;
     }
 }

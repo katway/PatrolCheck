@@ -29,26 +29,49 @@ namespace WorkStation
         }    
         private void btnAdd_Click(object sender, EventArgs e)
         {
-             string sql = "insert into Rfid([Name],Alias,RFID,Purpose) values(@name,@alias,@rFID,@RfidPurpose)";         
-                   SqlParameter[] pars = new SqlParameter[] { 
-                   new SqlParameter("@name", SqlDbType.NVarChar),
-                   new SqlParameter("@alias", SqlDbType.NVarChar),
-                   new SqlParameter("@rFID", SqlDbType.NVarChar),  
-                   new SqlParameter("@RfidPurpose", SqlDbType.Int)
-            };     
-            pars[0].Value =this.txtName.Text.Trim();
-            pars[1].Value =this.txtAlias.Text.Trim();
-            pars[2].Value =this.txtCard.Text.Trim();
-            pars[3].Value =this.comboBox1.SelectedValue;
-            int n = SqlHelper.ExecuteNonQuery(sql, pars);
-            if (n > 0)
+
+            if (this.txtName.Text == "")
             {
-                MessageBox.Show("保存成功！");
+                MessageBox.Show("卡片名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtName.Focus();
+            }
+            else if (txtAlias.Text == "")
+            {
+                MessageBox.Show("卡片别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtAlias.Focus();
+            }
+            else if (txtCard.Text == "")
+            {
+                MessageBox.Show("标签卡唯一码不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtCard.Focus();
+            }
+            else if (this.comboBox1.SelectedValue.ToString()=="")
+            {
+                MessageBox.Show("用途不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.comboBox1.Focus();
             }
             else
             {
-                MessageBox.Show("保存失败！");
-            }              
+                string sql = "insert into Rfid([Name],Alias,RFID,Purpose) values(@name,@alias,@rFID,@RfidPurpose)";
+                SqlParameter[] pars = new SqlParameter[] { 
+                new SqlParameter("@name", SqlDbType.NVarChar),
+                new SqlParameter("@alias", SqlDbType.NVarChar),
+                new SqlParameter("@rFID", SqlDbType.NVarChar),  
+                new SqlParameter("@RfidPurpose", SqlDbType.Int) };
+                pars[0].Value = this.txtName.Text.Trim();
+                pars[1].Value = this.txtAlias.Text.Trim();
+                pars[2].Value = this.txtCard.Text.Trim();
+                pars[3].Value = this.comboBox1.SelectedValue;
+                int n = SqlHelper.ExecuteNonQuery(sql, pars);
+                if (n > 0)
+                {
+                    MessageBox.Show("保存成功！");
+                }
+                else
+                {
+                    MessageBox.Show("保存失败！");
+                }
+            }          
             Bind();
         }
 
