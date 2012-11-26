@@ -21,7 +21,7 @@ namespace WorkStation
             if (this.txtName.Text == "")
             {
                 MessageBox.Show("岗位名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                this.txtName.Focus();
+                this.txtName.Focus();                
             }
             else if (txtalias.Text == "")
             {
@@ -40,7 +40,7 @@ namespace WorkStation
                              new SqlParameter("@id",dataGridView1.SelectedCells[0].Value),
                              new SqlParameter("@name",SqlDbType.NVarChar),
                              new SqlParameter("@alias",SqlDbType.NVarChar),
-                             new SqlParameter("@siteid",SqlDbType.Int)  };          
+                             new SqlParameter("@siteid",SqlDbType.Int)};          
                 par[1].Value = this.txtName.Text;
                 par[2].Value = this.txtalias.Text;
                 par[3].Value = this.cboSite.SelectedValue;
@@ -65,9 +65,7 @@ namespace WorkStation
         private void btnEdit_Click(object sender, EventArgs e)
         {
             string sql = "select Post.Name,Post.Alias,Site.Name from Post,Site where Post.Site_ID=Site.ID and Post.ID=@id";
-            SqlParameter[] par = new SqlParameter[]{
-                new SqlParameter("@id",dataGridView1.SelectedCells[0].Value)
-            };
+            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dataGridView1.SelectedCells[0].Value) }; 
             SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text,sql,par);
             while(dr.Read())
             {

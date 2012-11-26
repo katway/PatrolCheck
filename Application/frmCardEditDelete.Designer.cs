@@ -79,6 +79,7 @@
             this.BtnRead.TabIndex = 4;
             this.BtnRead.Text = "读取";
             this.BtnRead.UseVisualStyleBackColor = true;
+            this.BtnRead.Click += new System.EventHandler(this.BtnRead_Click);
             // 
             // txtAlias
             // 

@@ -39,13 +39,10 @@ namespace WorkStation
             };
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
-
             string str_select = "Select ID From Rfid Where Name='"+this.txtRelation.Text.Trim()+"'";
             string str_rfid = (SqlHelper.ExecuteScalar("connectionstring",CommandType.Text,str_select)).ToString();
             pars[2].Value = str_rfid;
-
             string str_insert = "Insert Into PhysicalCheckPoint([Name],Alias,Rfid_Id) values(@name,@alias,@rfid)";
-
             Object obj_ret = SqlHelper.ExecuteNonQuery(str_insert,pars);
             if (obj_ret.ToString() == "1")
             {
@@ -85,7 +82,6 @@ namespace WorkStation
                 txtName.Text = dgvPoint.Rows[e.RowIndex].Cells[2].Value.ToString();
                 txtAlias.Text = dgvPoint.Rows[e.RowIndex].Cells[3].Value.ToString();
                 txtRelation.Text = dgvPoint.Rows[e.RowIndex].Cells[4].Value.ToString();
-
             }
         }
 
@@ -100,13 +96,10 @@ namespace WorkStation
             };
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
-
             string str_select = "Select ID From Rfid Where Name='" + this.txtRelation.Text.Trim() + "'";
             string str_rfid = (SqlHelper.ExecuteScalar("connectionstring", CommandType.Text, str_select)).ToString();
             pars[2].Value = str_rfid;
-
             string str_insert = "Update PhysicalCheckPoint set [Name]=@name,Alias=@alias,Rfid_Id=@rfid where ID="+labID.Text.Trim();
-
             Object obj_ret = SqlHelper.ExecuteNonQuery(str_insert,pars);
             if (obj_ret.ToString() == "1")
             {

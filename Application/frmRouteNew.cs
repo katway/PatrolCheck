@@ -15,16 +15,14 @@ namespace WorkStation
         public frmRouteNew()
         {
             InitializeComponent();
-        }
+        }       
         WorkStation.Properties.Settings wset = new Properties.Settings();
-
         List<TreeNode> listPhy = new List<TreeNode>();
         List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
             tvRouteInit(tvRoute);   
             getTvPhysicalPoint();
-
             chkRoute.Checked = wset.tvRoute;
             chkLogicalPoint.Checked = wset.tvLogicalPoint;
             chkPhysicalPoint.Checked = wset.tvPhysicalPoint;
@@ -73,7 +71,8 @@ namespace WorkStation
                             {
                                 if (t.Tag.ToString() == node.Tag.ToString() && t.Text == node.Text)
                                 {
-                                    isChild = true; break;
+                                    isChild = true;
+                                    break;
                                 }
                             }
                             if (isChild == false)
@@ -109,7 +108,7 @@ namespace WorkStation
                         TreeNode tn = new TreeNode();
                         tn.Text = node.Text;
                         tn.Tag = node.Tag;
-                        tvLogicalPoint.Nodes.Add(tn);
+                        tvLogicalPoint.Nodes.Add(tn);                        
                     }
                 }
             }
@@ -194,7 +193,7 @@ namespace WorkStation
             {
                 if (node.Level == 0 && node.Nodes.Count == 0)
                 {
-                    MessageBox.Show("请确保每个巡检点下有巡检项");
+                    MessageBox.Show("请确保每个巡检点下有巡检项");                   
                     return;
                 }
             }
@@ -219,13 +218,11 @@ namespace WorkStation
                     new SqlParameter("@Alias",SqlDbType.VarChar),
                     new SqlParameter("@ItemsID",SqlDbType.VarChar),
                     new SqlParameter("@ItemsIndex",SqlDbType.VarChar),
-                    new SqlParameter("@CheckOrder",SqlDbType.Int)
-                          };
+                    new SqlParameter("@CheckOrder",SqlDbType.Int)};                          
                     pars[0].Value = labRouteID.Text;
                     pars[1].Value = tvLogicalPoint.Nodes[i].Tag;
                     pars[2].Value = tvLogicalPoint.Nodes[i].Text;
                     pars[3].Value = "";
-
                     string parValue = "",parIndex="";
                     foreach (TreeNode node in tvLogicalPoint.Nodes[i].Nodes)
                     {
@@ -269,6 +266,7 @@ namespace WorkStation
             if (chkLogicalPoint.Checked)
                 tvLogicalPoint.ExpandAll();
         }
+
         //获取物理巡检点
         private void getTvPhysicalPoint()
         {
@@ -421,10 +419,9 @@ namespace WorkStation
                 return;
             }
             string[] strsDel=new string[3];
-            strsDel[0]="Delete From LogicalPoint_Item Where ID in (Select ID From LogicalCheckPoint Where Route_ID=" + labRouteID.Text + ")";
+            strsDel[0] = "Delete From LogicalPoint_Item Where ID in (Select ID From LogicalCheckPoint Where Route_ID=" + labRouteID.Text + ")";
             strsDel[1] = "Delete From LogicalCheckPoint Where Route_ID=" + labRouteID.Text;
             strsDel[2] = "Delete From CheckRoute Where ID=" + labRouteID.Text;
-
             try
             {
                 SqlHelper.ExecuteSqls(strsDel);

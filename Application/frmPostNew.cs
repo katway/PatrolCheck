@@ -38,7 +38,7 @@ namespace WorkStation
                 string selectPost = "insert into Post(Name,Alias,Site_ID) values(@name,@alias,@site_id)";
                 SqlParameter[] par = new SqlParameter[]{  new SqlParameter("@name",SqlDbType.Text),
                                                           new SqlParameter("@alias",SqlDbType.Text),
-                                                          new SqlParameter("@site_id",SqlDbType.Int)  };
+                                                          new SqlParameter("@site_id",SqlDbType.Int)};
                 par[0].Value = this.txtName.Text;
                 par[1].Value = this.txtalias.Text;
                 par[2].Value = this.cboSite.SelectedValue;
@@ -57,7 +57,6 @@ namespace WorkStation
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
             this.Close();
         }
 

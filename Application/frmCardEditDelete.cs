@@ -47,12 +47,10 @@ namespace WorkStation
             {
                 string sql5 = "update Rfid set Name=@name,Alias=@alias,RFID=@rfid,Purpose=@purpose where ID=@id";
                 SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dataGridView1.SelectedCells[0].Value),
-                                                      new SqlParameter("@name", SqlDbType.NVarChar),
-                                                      new SqlParameter("@alias", SqlDbType.NVarChar),
-                                                      new SqlParameter("@rfid", SqlDbType.NVarChar),
-                                                      new SqlParameter("@purpose", SqlDbType.Int) };
-
-
+                                                          new SqlParameter("@name", SqlDbType.NVarChar),
+                                                          new SqlParameter("@alias", SqlDbType.NVarChar),
+                                                          new SqlParameter("@rfid", SqlDbType.NVarChar),
+                                                          new SqlParameter("@purpose", SqlDbType.Int) };
                 par[1].Value = this.txtName.Text.Trim();
                 par[2].Value = this.txtAlias.Text.Trim();
                 par[3].Value = this.txtCard.Text.Trim();
@@ -93,7 +91,6 @@ namespace WorkStation
             string sql2 = "select ID,Name,Alias,RFID,Meaning from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
             DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, sql2);
             dataGridView1.DataSource = ds.Tables[0];
-
         }
         /// <summary>
         /// 删除操作
@@ -116,7 +113,6 @@ namespace WorkStation
                     MessageBox.Show("删除失败！");
                 }
                 Bind();
-
             }
         }       
         private void frmEditAndDeleteCard_Load(object sender, EventArgs e)
@@ -132,6 +128,11 @@ namespace WorkStation
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void BtnRead_Click(object sender, EventArgs e)
+        {
+
         }         
     }
 }

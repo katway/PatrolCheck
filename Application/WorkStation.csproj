@@ -94,6 +94,12 @@
     <Compile Include="frmPointNew.Designer.cs">
       <DependentUpon>frmPointNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPointStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPointStatistics.Designer.cs">
+      <DependentUpon>frmPointStatistics.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPostNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +231,9 @@
     <EmbeddedResource Include="frmPointNew.resx">
       <DependentUpon>frmPointNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPointStatistics.resx">
+      <DependentUpon>frmPointStatistics.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPostNew.resx">
       <DependentUpon>frmPostNew.cs</DependentUpon>
     </EmbeddedResource>
@@ -294,6 +303,7 @@
     </None>
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
+    <None Include="ClassDiagram4.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

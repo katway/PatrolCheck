@@ -9,16 +9,12 @@ using System.Windows.Forms;
 
 namespace WorkStation
 {
-    public partial class frmPointEditDelete : Form
+    public partial class frmPointStatistics : Form
     {
-        public frmPointEditDelete()
+        public frmPointStatistics()
         {
             InitializeComponent();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

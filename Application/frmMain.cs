@@ -58,5 +58,10 @@ namespace WorkStation
                 if (FormMap[className] != null) FormMap[className].Show();
             }
         }
+
+        private void tsmirenyuanchuqin_Click(object sender, EventArgs e)
+        {
+
+        }        
     }
 }

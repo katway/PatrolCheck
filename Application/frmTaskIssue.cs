@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data;
+using System.Web;
+using System.Media;
 namespace WorkStation
 {
     public partial class frmTaskIssue : Form
@@ -14,11 +17,20 @@ namespace WorkStation
         public frmTaskIssue()
         {
             InitializeComponent();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
+        } 
+        private void btnLogin_Click(object sender, EventArgs e)
         {
           
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmTaskIssue_Load(object sender, EventArgs e)
+        {           
+            
         }
     }
 }

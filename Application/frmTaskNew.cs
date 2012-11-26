@@ -21,8 +21,7 @@ namespace WorkStation
         {
             this.labPlanID.Text = "";
             this.labState.Text = "";
-            cboinit();
-            
+            cboinit();            
             this.labState.Text = (this.cboShow.SelectedItem as BoxItem).Value.ToString() == "" ? "0,1,2,4,6,8,16" : (this.cboShow.SelectedItem as BoxItem).Value.ToString();
             getDgvPlan();
         }
@@ -54,7 +53,6 @@ namespace WorkStation
                 cboUnit.SelectedText = dgvPlan.Rows[e.RowIndex].Cells[10].Value.ToString();
                 dtpEffect.Value = Convert.ToDateTime(dgvPlan.Rows[e.RowIndex].Cells[11].Value.ToString());
                 dtpIneffect.Value = Convert.ToDateTime(dgvPlan.Rows[e.RowIndex].Cells[12].Value.ToString());
-
             }
         }
 
@@ -81,7 +79,6 @@ namespace WorkStation
             cboRoute.SelectedIndex = cboRoute.Items.Count > 0 ? 0 : -1;
 
             ds.Dispose();
-
             SqlDataReader dr = SqlHelper.ExecuteReader("Select Code,Meaning From Codes Where Purpose='PlanState'");
             BoxItem item = null;
             item = new BoxItem("全部","");
@@ -272,7 +269,7 @@ namespace WorkStation
                     }
                 }
                 catch
-                {
+                {                   
                     continue;
                 }
             }

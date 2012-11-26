@@ -52,11 +52,11 @@ namespace WorkStation
             }
             string strsql = "";
             SqlParameter[] pars = new SqlParameter[] { 
-               new SqlParameter("@id",SqlDbType.BigInt),
-               new SqlParameter("@name",this.tbRouteName.Text.Trim().ToString()),
-               new SqlParameter("@alias",this.tbRouteAlias.Text.Trim().ToString()),
-               new SqlParameter("@routeid",SqlDbType.BigInt),
-               new SqlParameter("@sequence",SqlDbType.Int)};         
+            new SqlParameter("@id",SqlDbType.BigInt),
+            new SqlParameter("@name",this.tbRouteName.Text.Trim().ToString()),
+            new SqlParameter("@alias",this.tbRouteAlias.Text.Trim().ToString()),
+            new SqlParameter("@routeid",SqlDbType.BigInt),
+            new SqlParameter("@sequence",SqlDbType.Int)};         
             if (isEdit)
             {
                 strsql = "Update CheckRoute Set Site_ID=@id,[Name]=@name,Alias=@alias,Sequence=@sequence Where ID=@routeid";                

@@ -42,7 +42,7 @@ namespace WorkStation
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
+        {                           
             if (txtName.Text.Trim() == "" || txtInterval.Text.Trim() == "")
             {
                 MessageBox.Show("请确保没有空值");
@@ -68,7 +68,7 @@ namespace WorkStation
                 strInsert = @"Insert into CheckPlan(Name,Alias,StartTime,Duration,EndTime,Post,Route_ID,Interval,IntervalUnit,EffectiveTime,IneffectiveTime,Planner,PlanState) values
                                                       (@Name,@Alias,@StartTime,@Duration,@EndTime,@Post,@Route_ID,@Interval,@IntervalUnit,@EffectiveTime,@IneffectiveTime,@Planner,@PlanState)";
             }
-            SqlParameter[] pars = new SqlParameter[] { 
+             SqlParameter[] pars = new SqlParameter[] { 
                 new SqlParameter("@Name",SqlDbType.VarChar),
                 new SqlParameter("@Alias",SqlDbType.VarChar),
                 new SqlParameter("@StartTime",SqlDbType.DateTime),
@@ -135,7 +135,6 @@ namespace WorkStation
             cboRoute.DisplayMember = "Name";
             cboRoute.ValueMember = "ID";
             cboRoute.SelectedIndex = cboRoute.Items.Count > 0 ? 0 : -1;
-
             ds.Dispose();
         }
     }

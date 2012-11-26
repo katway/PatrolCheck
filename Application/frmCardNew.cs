@@ -29,7 +29,6 @@ namespace WorkStation
         }    
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             if (this.txtName.Text == "")
             {
                 MessageBox.Show("卡片名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
@@ -57,7 +56,7 @@ namespace WorkStation
                 new SqlParameter("@name", SqlDbType.NVarChar),
                 new SqlParameter("@alias", SqlDbType.NVarChar),
                 new SqlParameter("@rFID", SqlDbType.NVarChar),  
-                new SqlParameter("@RfidPurpose", SqlDbType.Int) };
+                new SqlParameter("@RfidPurpose", SqlDbType.Int)};
                 pars[0].Value = this.txtName.Text.Trim();
                 pars[1].Value = this.txtAlias.Text.Trim();
                 pars[2].Value = this.txtCard.Text.Trim();
@@ -79,7 +78,8 @@ namespace WorkStation
         private void frmAddCard_Load(object sender, EventArgs e)
         {         
            bwkLoadData.RunWorkerAsync();
-        }       
+        }   
+    
         DataSet dsRfidPurpose = null;
         DataSet dsRfid = null;
         private void bwkLoadData_DoWork(object sender, DoWorkEventArgs e)

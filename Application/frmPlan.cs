@@ -64,10 +64,10 @@ namespace WorkStation
                         this.btnUnSub.Enabled = false;
                         break;
                     }
-                case"4":
-                case"8":
+                case"4" :
+                case"8" :
                 case"16":
-                case "32":
+                case"32":
                     {
                         this.btnNew.Enabled = false;
                         this.btnEdit.Enabled = false;
@@ -83,7 +83,7 @@ namespace WorkStation
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            frmAddPlan_Add add = new frmAddPlan_Add();
+            frmAddPlan_Add add = new frmAddPlan_Add(); 
             add.Left = this.Left + (this.Width - add.Width) / 2;
             add.Top = this.Top +(this.Height - add.Height) / 2;
             add.dgv = this.dgvPlan;
@@ -119,7 +119,6 @@ namespace WorkStation
             add.isEdit = true;
             add.dgv = this.dgvPlan;
             add.state = this.labState.Text;
-
             add.planID = dgvPlan.Rows[rowindex].Cells[1].Value.ToString();
             add.planName = dgvPlan.Rows[rowindex].Cells[2].Value.ToString();
             add.planAlias = dgvPlan.Rows[rowindex].Cells[3].Value.ToString();
@@ -130,8 +129,7 @@ namespace WorkStation
             add.planInterval = dgvPlan.Rows[rowindex].Cells[9].Value.ToString();
             add.planUnit = dgvPlan.Rows[rowindex].Cells[10].Value.ToString();
             add.dtEffect = Convert.ToDateTime(dgvPlan.Rows[rowindex].Cells[11].Value);
-            add.dtIneffect = Convert.ToDateTime(dgvPlan.Rows[rowindex].Cells[12].Value);      
-
+            add.dtIneffect = Convert.ToDateTime(dgvPlan.Rows[rowindex].Cells[12].Value);
             add.Show();
         }
 
@@ -149,7 +147,7 @@ namespace WorkStation
                     }
                 }
                 catch
-                {
+                {                
                     continue;
                 }
             }
@@ -161,7 +159,7 @@ namespace WorkStation
                 getDgvPlan(dgvPlan,this.labState.Text);
             }
             else
-            {
+            { 
                 MessageBox.Show("请选择要删除的项。");
             }            
         }
@@ -272,18 +270,15 @@ namespace WorkStation
         {
  
         }
-
         private void dgvPlan_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             if(e.RowIndex<0||btnEdit.Enabled==false) return;
             frmAddPlan_Add add = new frmAddPlan_Add();
             add.Left = this.Left + (this.Width - add.Width) / 2;
             add.Top = this.Top + (this.Height - add.Height) / 2;
-
             add.isEdit = true;
             add.dgv = this.dgvPlan;
             add.state = this.labState.Text;
-
             add.planID = dgvPlan.Rows[e.RowIndex].Cells[1].Value.ToString();
             add.planName = dgvPlan.Rows[e.RowIndex].Cells[2].Value.ToString();
             add.planAlias = dgvPlan.Rows[e.RowIndex].Cells[3].Value.ToString();
@@ -294,8 +289,7 @@ namespace WorkStation
             add.planInterval = dgvPlan.Rows[e.RowIndex].Cells[9].Value.ToString();
             add.planUnit = dgvPlan.Rows[e.RowIndex].Cells[10].Value.ToString();
             add.dtEffect = Convert.ToDateTime(dgvPlan.Rows[e.RowIndex].Cells[11].Value);
-            add.dtIneffect = Convert.ToDateTime(dgvPlan.Rows[e.RowIndex].Cells[12].Value);           
-
+            add.dtIneffect = Convert.ToDateTime(dgvPlan.Rows[e.RowIndex].Cells[12].Value);   
             add.ShowDialog();
         }
 

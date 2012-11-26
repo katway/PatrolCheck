@@ -127,8 +127,8 @@ namespace WorkStation
                                                     c.Planner as 计划制定人,
                                                     (select meaning from codes where code= planstate and purpose='planstate') as 状态 
                                                      From Checkplan as  c left join CheckRoute  as r on c.route_id=r.id 
-                                                              left join Post p on c.post=p.id 
-                                                              where c.PlanState in (" + this.labState.Text + ")");
+                                                     left join Post p on c.post=p.id 
+                                                     where c.PlanState in (" + this.labState.Text + ")");
             dgvPlan.DataSource = ds.Tables[0];
         }
 

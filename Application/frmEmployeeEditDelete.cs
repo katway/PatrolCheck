@@ -61,7 +61,7 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-             if (this.txtName.Text == "")
+            if (this.txtName.Text == "")
             {
                 MessageBox.Show("人员名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 this.txtName.Focus();
@@ -86,10 +86,9 @@ namespace WorkStation
              {
                  string UpdateEmployee = "update Employee set Employee.Name=@name,Employee.Alias=@alias,Rfid_ID=@rfid_id where Employee.ID=@id;select  @@identity";
                  SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@id",dataGridView1.SelectedCells[0].Value),
-                                                     new SqlParameter("@name",SqlDbType.NVarChar),
-                                                     new SqlParameter("@alias",SqlDbType.NVarChar),
-                                                     new SqlParameter("@rfid_id",SqlDbType.Int) };
-                
+                                                          new SqlParameter("@name",SqlDbType.NVarChar),
+                                                          new SqlParameter("@alias",SqlDbType.NVarChar),
+                                                          new SqlParameter("@rfid_id",SqlDbType.Int) };                
                  par[1].Value = this.txtName.Text;
                  par[2].Value = this.txtAlias.Text;
                  par[3].Value = this.cboCard.SelectedValue;
@@ -104,10 +103,10 @@ namespace WorkStation
                  }
                  string UpdateEmPost = "update Post_Employee set ID=@id where Employee_ID=@emID";
                  SqlParameter[] par2 = new SqlParameter[]
-                {
+                 {
                    new SqlParameter("@emID",SqlDbType.Int),
                    new SqlParameter("@id",SqlDbType.Int)
-                };
+                  };
                  par2[0].Value = dataGridView1.SelectedCells[0].Value;
                  par2[1].Value = cboPost.SelectedValue.ToString();
                  int i = SqlHelper.ExecuteNonQuery(UpdateEmPost, par2);

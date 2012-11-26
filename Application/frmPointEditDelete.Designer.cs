@@ -161,8 +161,9 @@
             this.btnDelete.TabIndex = 19;
             this.btnDelete.Text = "删除";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // frmEditOrDeletePoint
+            // frmPointEditDelete
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -178,7 +179,7 @@
             this.Controls.Add(this.lblAlias);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.listView1);
-            this.Name = "frmEditOrDeletePoint";
+            this.Name = "frmPointEditDelete";
             this.Text = "编辑及删除巡检点";
             this.ResumeLayout(false);
             this.PerformLayout();

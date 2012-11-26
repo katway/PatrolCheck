@@ -65,7 +65,6 @@ namespace WorkStation
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }     
         private void frmAddCompany_Load(object sender, EventArgs e)
         {

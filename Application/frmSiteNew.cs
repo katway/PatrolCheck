@@ -23,7 +23,7 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-             if (this.txtName.Text == "")
+            if (this.txtName.Text == "")
             {
                 MessageBox.Show("厂区名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 this.txtName.Focus();
