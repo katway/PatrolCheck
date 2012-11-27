@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -52,6 +56,12 @@
   <ItemGroup>
     <Compile Include="Code\CommonClass.cs" />
     <Compile Include="Code\SqlHelper.cs" />
+    <Compile Include="frmReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReport.Designer.cs">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCardNew.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,17 +110,17 @@
     <Compile Include="frmPostNew.Designer.cs">
       <DependentUpon>frmPostNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRoute.Designer.cs">
+      <DependentUpon>frmRoute.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRouteNew.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmRouteNew.Designer.cs">
       <DependentUpon>frmRouteNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRoutNameAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRoutNameAdd.Designer.cs">
-      <DependentUpon>frmRoutNameAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMachineNew.cs">
       <SubType>Form</SubType>
@@ -178,11 +188,11 @@
     <Compile Include="frmTaskEditDelete.Designer.cs">
       <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployeeAdd.cs">
+    <Compile Include="frmEmployeeNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmployeeAdd.Designer.cs">
-      <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
+    <Compile Include="frmEmployeeNew.Designer.cs">
+      <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTaskIssue.cs">
       <SubType>Form</SubType>
@@ -204,6 +214,9 @@
     <Compile Include="frmSiteNew.Designer.cs">
       <DependentUpon>frmSiteNew.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmReport.resx">
+      <DependentUpon>frmReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCardNew.resx">
       <DependentUpon>frmCardNew.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,11 +241,11 @@
     <EmbeddedResource Include="frmPostNew.resx">
       <DependentUpon>frmPostNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRoute.resx">
+      <DependentUpon>frmRoute.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRouteNew.resx">
       <DependentUpon>frmRouteNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRoutNameAdd.resx">
-      <DependentUpon>frmRoutNameAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMachineNew.resx">
       <DependentUpon>frmMachineNew.cs</DependentUpon>
@@ -267,8 +280,8 @@
     <EmbeddedResource Include="frmTaskEditDelete.resx">
       <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployeeAdd.resx">
-      <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeNew.resx">
+      <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaskIssue.resx">
       <DependentUpon>frmTaskIssue.cs</DependentUpon>
@@ -292,7 +305,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

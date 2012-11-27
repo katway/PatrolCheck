@@ -112,7 +112,7 @@
             this.labState.TabIndex = 38;
             this.labState.Text = "要显示的状态";
             // 
-            // frmAddPlanExamine
+            // frmPlanExamine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -123,7 +123,7 @@
             this.Controls.Add(this.btnUnpass);
             this.Controls.Add(this.dgvPlan);
             this.Controls.Add(this.btnPass);
-            this.Name = "frmAddPlanExamine";
+            this.Name = "frmPlanExamine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "计划审核";
             this.Load += new System.EventHandler(this.frmAddPlanExamine_Load);
