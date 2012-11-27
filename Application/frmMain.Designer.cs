@@ -47,23 +47,10 @@
             this.tsmiPlanExamine = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPlanToTask = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReport = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmirenyuanchuqin = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmixunjianxiang = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmichuqinyichang = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmidianjianyichang = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPatrolCheck = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiRoute = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRouteNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRouteEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiRouteDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPoint = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPointNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPointEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiPointDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiItemNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiItemEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiItemDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMachine = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMachineNew = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiMachineEdit = new System.Windows.Forms.ToolStripMenuItem();
@@ -203,21 +190,21 @@
             // tsmiItemTempletAdd
             // 
             this.tsmiItemTempletAdd.Name = "tsmiItemTempletAdd";
-            this.tsmiItemTempletAdd.Size = new System.Drawing.Size(94, 22);
+            this.tsmiItemTempletAdd.Size = new System.Drawing.Size(152, 22);
             this.tsmiItemTempletAdd.Text = "新建";
             this.tsmiItemTempletAdd.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiItemTempletEdit
             // 
             this.tsmiItemTempletEdit.Name = "tsmiItemTempletEdit";
-            this.tsmiItemTempletEdit.Size = new System.Drawing.Size(94, 22);
+            this.tsmiItemTempletEdit.Size = new System.Drawing.Size(152, 22);
             this.tsmiItemTempletEdit.Text = "编辑";
             this.tsmiItemTempletEdit.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiItemTempletDelete
             // 
             this.tsmiItemTempletDelete.Name = "tsmiItemTempletDelete";
-            this.tsmiItemTempletDelete.Size = new System.Drawing.Size(94, 22);
+            this.tsmiItemTempletDelete.Size = new System.Drawing.Size(152, 22);
             this.tsmiItemTempletDelete.Text = "删除";
             this.tsmiItemTempletDelete.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -235,7 +222,7 @@
             // tsmiPlan
             // 
             this.tsmiPlan.Name = "tsmiPlan";
-            this.tsmiPlan.Size = new System.Drawing.Size(152, 22); 
+            this.tsmiPlan.Size = new System.Drawing.Size(152, 22);
             this.tsmiPlan.Text = "任务管理";
             this.tsmiPlan.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -243,7 +230,6 @@
             // 
             this.tsmiPlanExamine.Name = "tsmiPlanExamine";
             this.tsmiPlanExamine.Size = new System.Drawing.Size(152, 22);
-
             this.tsmiPlanExamine.Text = "任务审核";
             this.tsmiPlanExamine.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -256,40 +242,10 @@
             // 
             // tsmiReport
             // 
-            this.tsmiReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmirenyuanchuqin,
-            this.tsmixunjianxiang,
-            this.tsmichuqinyichang,
-            this.tsmidianjianyichang});
             this.tsmiReport.Image = ((System.Drawing.Image)(resources.GetObject("tsmiReport.Image")));
             this.tsmiReport.Name = "tsmiReport";
             this.tsmiReport.Size = new System.Drawing.Size(81, 20);
             this.tsmiReport.Text = "统计报表";
-            this.tsmiReport.Visible = false;
-            // 
-            // tsmirenyuanchuqin
-            // 
-            this.tsmirenyuanchuqin.Name = "tsmirenyuanchuqin";
-            this.tsmirenyuanchuqin.Size = new System.Drawing.Size(142, 22);
-            this.tsmirenyuanchuqin.Text = "人员出勤统计";
-            // 
-            // tsmixunjianxiang
-            // 
-            this.tsmixunjianxiang.Name = "tsmixunjianxiang";
-            this.tsmixunjianxiang.Size = new System.Drawing.Size(142, 22);
-            this.tsmixunjianxiang.Text = "巡检项统计";
-            // 
-            // tsmichuqinyichang
-            // 
-            this.tsmichuqinyichang.Name = "tsmichuqinyichang";
-            this.tsmichuqinyichang.Size = new System.Drawing.Size(142, 22);
-            this.tsmichuqinyichang.Text = "出勤异常统计";
-            // 
-            // tsmidianjianyichang
-            // 
-            this.tsmidianjianyichang.Name = "tsmidianjianyichang";
-            this.tsmidianjianyichang.Size = new System.Drawing.Size(142, 22);
-            this.tsmidianjianyichang.Text = "点检异常统计";
             // 
             // tsmiPatrolCheck
             // 
@@ -305,96 +261,24 @@
             // 
             // tsmiRoute
             // 
-            this.tsmiRoute.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiRouteNew,
-            this.tsmiRouteEdit,
-            this.tsmiRouteDelete});
             this.tsmiRoute.Name = "tsmiRoute";
             this.tsmiRoute.Size = new System.Drawing.Size(154, 22);
             this.tsmiRoute.Text = "巡检路线管理";
-            // 
-            // tsmiRouteNew
-            // 
-            this.tsmiRouteNew.Name = "tsmiRouteNew";
-            this.tsmiRouteNew.Size = new System.Drawing.Size(100, 22);
-            this.tsmiRouteNew.Text = "新建";
-            this.tsmiRouteNew.Click += new System.EventHandler(this.ShowForm);
-            // 
-            // tsmiRouteEdit
-            // 
-            this.tsmiRouteEdit.Name = "tsmiRouteEdit";
-            this.tsmiRouteEdit.Size = new System.Drawing.Size(100, 22);
-            this.tsmiRouteEdit.Text = "编辑";
-            this.tsmiRouteEdit.Click += new System.EventHandler(this.ShowForm);
-            // 
-            // tsmiRouteDelete
-            // 
-            this.tsmiRouteDelete.Name = "tsmiRouteDelete";
-            this.tsmiRouteDelete.Size = new System.Drawing.Size(100, 22);
-            this.tsmiRouteDelete.Text = "删除";
-            this.tsmiRouteDelete.Click += new System.EventHandler(this.ShowForm);
+            this.tsmiRoute.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiPoint
             // 
-            this.tsmiPoint.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiPointNew,
-            this.tsmiPointEdit,
-            this.tsmiPointDelete});
             this.tsmiPoint.Name = "tsmiPoint";
             this.tsmiPoint.Size = new System.Drawing.Size(154, 22);
             this.tsmiPoint.Text = "巡检点管理";
-            // 
-            // tsmiPointNew
-            // 
-            this.tsmiPointNew.Name = "tsmiPointNew";
-            this.tsmiPointNew.Size = new System.Drawing.Size(100, 22);
-            this.tsmiPointNew.Text = "新建";
-            this.tsmiPointNew.Click += new System.EventHandler(this.ShowForm);
-            // 
-            // tsmiPointEdit
-            // 
-            this.tsmiPointEdit.Name = "tsmiPointEdit";
-            this.tsmiPointEdit.Size = new System.Drawing.Size(100, 22);
-            this.tsmiPointEdit.Text = "编辑";
-            this.tsmiPointEdit.Click += new System.EventHandler(this.ShowForm);
-            // 
-            // tsmiPointDelete
-            // 
-            this.tsmiPointDelete.Name = "tsmiPointDelete";
-            this.tsmiPointDelete.Size = new System.Drawing.Size(100, 22);
-            this.tsmiPointDelete.Text = "删除";
-            this.tsmiPointDelete.Click += new System.EventHandler(this.ShowForm);
+            this.tsmiPoint.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiItem
             // 
-            this.tsmiItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiItemNew,
-            this.tsmiItemEdit,
-            this.tsmiItemDelete});
             this.tsmiItem.Name = "tsmiItem";
             this.tsmiItem.Size = new System.Drawing.Size(154, 22);
             this.tsmiItem.Text = "巡检项管理";
-            // 
-            // tsmiItemNew
-            // 
-            this.tsmiItemNew.Name = "tsmiItemNew";
-            this.tsmiItemNew.Size = new System.Drawing.Size(100, 22);
-            this.tsmiItemNew.Text = "新建";
-            this.tsmiItemNew.Click += new System.EventHandler(this.ShowForm);
-            // 
-            // tsmiItemEdit
-            // 
-            this.tsmiItemEdit.Name = "tsmiItemEdit";
-            this.tsmiItemEdit.Size = new System.Drawing.Size(100, 22);
-            this.tsmiItemEdit.Text = "编辑";
-            this.tsmiItemEdit.Click += new System.EventHandler(this.ShowForm);
-            // 
-            // tsmiItemDelete
-            // 
-            this.tsmiItemDelete.Name = "tsmiItemDelete";
-            this.tsmiItemDelete.Size = new System.Drawing.Size(100, 22);
-            this.tsmiItemDelete.Text = "删除";
-            this.tsmiItemDelete.Click += new System.EventHandler(this.ShowForm);
+            this.tsmiItem.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiMachine
             // 
@@ -410,21 +294,21 @@
             // tsmiMachineNew
             // 
             this.tsmiMachineNew.Name = "tsmiMachineNew";
-            this.tsmiMachineNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiMachineNew.Size = new System.Drawing.Size(94, 22);
             this.tsmiMachineNew.Text = "新建";
             this.tsmiMachineNew.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiMachineEdit
             // 
             this.tsmiMachineEdit.Name = "tsmiMachineEdit";
-            this.tsmiMachineEdit.Size = new System.Drawing.Size(152, 22);
+            this.tsmiMachineEdit.Size = new System.Drawing.Size(94, 22);
             this.tsmiMachineEdit.Text = "编辑";
             this.tsmiMachineEdit.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiMachineDelete
             // 
             this.tsmiMachineDelete.Name = "tsmiMachineDelete";
-            this.tsmiMachineDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiMachineDelete.Size = new System.Drawing.Size(94, 22);
             this.tsmiMachineDelete.Text = "删除";
             this.tsmiMachineDelete.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -447,7 +331,7 @@
             this.tsmiSiteEdit,
             this.tsmiSiteDelete});
             this.tsmiSite.Name = "tsmiSite";
-            this.tsmiSite.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSite.Size = new System.Drawing.Size(142, 22);
             this.tsmiSite.Text = "厂区信息管理";
             // 
             // tsmiSiteNew
@@ -479,13 +363,13 @@
             this.tsmiPostDelete});
             this.tsmiPost.Enabled = false;
             this.tsmiPost.Name = "tsmiPost";
-            this.tsmiPost.Size = new System.Drawing.Size(152, 22);
+            this.tsmiPost.Size = new System.Drawing.Size(142, 22);
             this.tsmiPost.Text = "岗位信息管理";
             // 
             // tsmiPostNew
             // 
             this.tsmiPostNew.Name = "tsmiPostNew";
-            this.tsmiPostNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiPostNew.Size = new System.Drawing.Size(94, 22);
             this.tsmiPostNew.Text = "新建";
             // 
             // tsmiPostEdit
@@ -507,27 +391,27 @@
             this.tsmiEmployeeEdit,
             this.tsmiEmployeeDelete});
             this.tsmiEmployee.Name = "tsmiEmployee";
-            this.tsmiEmployee.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEmployee.Size = new System.Drawing.Size(142, 22);
             this.tsmiEmployee.Text = "人员信息管理";
             // 
             // tsmiEmployeeNew
             // 
             this.tsmiEmployeeNew.Name = "tsmiEmployeeNew";
-            this.tsmiEmployeeNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEmployeeNew.Size = new System.Drawing.Size(94, 22);
             this.tsmiEmployeeNew.Text = "新建";
             this.tsmiEmployeeNew.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiEmployeeEdit
             // 
             this.tsmiEmployeeEdit.Name = "tsmiEmployeeEdit";
-            this.tsmiEmployeeEdit.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEmployeeEdit.Size = new System.Drawing.Size(94, 22);
             this.tsmiEmployeeEdit.Text = "编辑";
             this.tsmiEmployeeEdit.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiEmployeeDelete
             // 
             this.tsmiEmployeeDelete.Name = "tsmiEmployeeDelete";
-            this.tsmiEmployeeDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEmployeeDelete.Size = new System.Drawing.Size(94, 22);
             this.tsmiEmployeeDelete.Text = "删除";
             this.tsmiEmployeeDelete.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -585,51 +469,6 @@
             this.tsmihelp.Size = new System.Drawing.Size(94, 22);
             this.tsmihelp.Text = "帮助";
             // 
-            // tsmiAddRount
-            // 
-            this.tsmiAddRount.Name = "tsmiAddRount";
-            this.tsmiAddRount.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiEditRount
-            // 
-            this.tsmiEditRount.Name = "tsmiEditRount";
-            this.tsmiEditRount.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiDelRount
-            // 
-            this.tsmiDelRount.Name = "tsmiDelRount";
-            this.tsmiDelRount.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiEditPoint
-            // 
-            this.tsmiEditPoint.Name = "tsmiEditPoint";
-            this.tsmiEditPoint.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiDelPoint
-            // 
-            this.tsmiDelPoint.Name = "tsmiDelPoint";
-            this.tsmiDelPoint.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiEditItem
-            // 
-            this.tsmiEditItem.Name = "tsmiEditItem";
-            this.tsmiEditItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiDelItem
-            // 
-            this.tsmiDelItem.Name = "tsmiDelItem";
-            this.tsmiDelItem.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiEditMachine
-            // 
-            this.tsmiEditMachine.Name = "tsmiEditMachine";
-            this.tsmiEditMachine.Size = new System.Drawing.Size(32, 19);
-            // 
-            // tsmiDelMachine
-            // 
-            this.tsmiDelMachine.Name = "tsmiDelMachine";
-            this.tsmiDelMachine.Size = new System.Drawing.Size(32, 19);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -662,10 +501,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPlanExamine;
         private System.Windows.Forms.ToolStripMenuItem tsmiPlanToTask;
         private System.Windows.Forms.ToolStripMenuItem tsmiReport;
-        private System.Windows.Forms.ToolStripMenuItem tsmirenyuanchuqin;
-        private System.Windows.Forms.ToolStripMenuItem tsmixunjianxiang;
-        private System.Windows.Forms.ToolStripMenuItem tsmichuqinyichang;
-        private System.Windows.Forms.ToolStripMenuItem tsmidianjianyichang;
         private System.Windows.Forms.ToolStripMenuItem tsmiPatrolCheck;
         private System.Windows.Forms.ToolStripMenuItem tsmiRoute;
         private System.Windows.Forms.ToolStripMenuItem tsmiPoint;
@@ -698,15 +533,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiEmployeeEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiEmployeeDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmiCompany;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRouteNew;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRouteEdit;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRouteDelete;
-        private System.Windows.Forms.ToolStripMenuItem tsmiPointNew;
-        private System.Windows.Forms.ToolStripMenuItem tsmiPointEdit;
-        private System.Windows.Forms.ToolStripMenuItem tsmiPointDelete;
-        private System.Windows.Forms.ToolStripMenuItem tsmiItemNew;
-        private System.Windows.Forms.ToolStripMenuItem tsmiItemEdit;
-        private System.Windows.Forms.ToolStripMenuItem tsmiItemDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineDelete;
