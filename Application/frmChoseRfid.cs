@@ -124,5 +124,18 @@ namespace WorkStation
             getDgvRfid();
         }
 
+        private void dgvRfid_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void dgvRfid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0)
+                return;
+            this.RFID_ID = dgvRfid.Rows[e.RowIndex].Cells[1].Value.ToString();
+            this.RFID_Rfid = dgvRfid.Rows[e.RowIndex].Cells[2].Value.ToString();
+            this.Close();
+        }
+
     }
 }

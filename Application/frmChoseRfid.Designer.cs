@@ -81,6 +81,8 @@
             this.dgvRfid.Size = new System.Drawing.Size(512, 342);
             this.dgvRfid.TabIndex = 11;
             this.dgvRfid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRfid_CellClick);
+            this.dgvRfid.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRfid_CellContentDoubleClick);
+            this.dgvRfid.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRfid_CellDoubleClick);
             // 
             // chkColumn
             // 
