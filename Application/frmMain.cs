@@ -37,6 +37,12 @@ namespace WorkStation
         private void ShowForm(object sender, EventArgs e)
         {
             string className = (sender as ToolStripMenuItem).Name.Replace("tsmi", "frm");
+
+            if (className.Contains("Edit"))
+                className = className.Replace("Edit", "EditDelete");
+            else
+                className = className.Replace("Delete", "EditDelete");
+            this.Text = className;
             if (FormMap.Keys.Contains(className))
             {
                 if (FormMap[className] != null)

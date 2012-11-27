@@ -18,21 +18,39 @@ namespace WorkStation
         private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";      
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string selectPost = "insert into Post(Name,Alias,Site_ID) values(@name,@alias,@site_id)";
-            SqlParameter[] par = new SqlParameter[]{  new SqlParameter("@name",SqlDbType.Text),
-                                                      new SqlParameter("@alias",SqlDbType.Text),
-                                                      new SqlParameter("@site_id",SqlDbType.Int)  };
-            par[0].Value = this.txtName.Text;
-            par[1].Value = this.txtalias.Text;
-            par[2].Value = this.cboSite.SelectedValue;
-            int i = SqlHelper.ExecuteNonQuery(selectPost, par);
-            if (i > 0)
+            if (this.txtName.Text == "")
             {
-                MessageBox.Show("保存成功！");
+                MessageBox.Show("岗位名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtName.Focus();
+            }
+            else if (txtalias.Text == "")
+            {
+                MessageBox.Show("岗位别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.txtalias.Focus();
+            }
+            else if (this.cboSite.SelectedValue.ToString() == "")
+            {
+                MessageBox.Show("所属厂区不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                this.cboSite.Focus();
             }
             else
             {
-                MessageBox.Show("保存失败！");
+                string selectPost = "insert into Post(Name,Alias,Site_ID) values(@name,@alias,@site_id)";
+                SqlParameter[] par = new SqlParameter[]{  new SqlParameter("@name",SqlDbType.Text),
+                                                          new SqlParameter("@alias",SqlDbType.Text),
+                                                          new SqlParameter("@site_id",SqlDbType.Int)  };
+                par[0].Value = this.txtName.Text;
+                par[1].Value = this.txtalias.Text;
+                par[2].Value = this.cboSite.SelectedValue;
+                int i = SqlHelper.ExecuteNonQuery(selectPost, par);
+                if (i > 0)
+                {
+                    MessageBox.Show("保存成功！");
+                }
+                else
+                {
+                    MessageBox.Show("保存失败！");
+                }
             }
             BindPost();
         }

@@ -163,7 +163,7 @@
             this.Controls.Add(this.btnNew);
             this.Name = "frmPlan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "新建计划";
+            this.Text = "巡检计划管理";
             this.Load += new System.EventHandler(this.frmAddPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
             this.ResumeLayout(false);
