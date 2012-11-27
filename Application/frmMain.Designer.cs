@@ -75,6 +75,11 @@
             this.tsmiCardDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmhelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmihelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据统计分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据明细查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.人员出勤率ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.计划执行率ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.巡检点项执勤统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -242,6 +247,9 @@
             // 
             // tsmiReport
             // 
+            this.tsmiReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.数据统计分析ToolStripMenuItem,
+            this.数据明细查询ToolStripMenuItem});
             this.tsmiReport.Image = ((System.Drawing.Image)(resources.GetObject("tsmiReport.Image")));
             this.tsmiReport.Name = "tsmiReport";
             this.tsmiReport.Size = new System.Drawing.Size(81, 20);
@@ -469,6 +477,40 @@
             this.tsmihelp.Size = new System.Drawing.Size(94, 22);
             this.tsmihelp.Text = "帮助";
             // 
+            // 数据统计分析ToolStripMenuItem
+            // 
+            this.数据统计分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.人员出勤率ToolStripMenuItem,
+            this.计划执行率ToolStripMenuItem,
+            this.巡检点项执勤统计ToolStripMenuItem});
+            this.数据统计分析ToolStripMenuItem.Name = "数据统计分析ToolStripMenuItem";
+            this.数据统计分析ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.数据统计分析ToolStripMenuItem.Text = "数据统计分析";
+            // 
+            // 数据明细查询ToolStripMenuItem
+            // 
+            this.数据明细查询ToolStripMenuItem.Name = "数据明细查询ToolStripMenuItem";
+            this.数据明细查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.数据明细查询ToolStripMenuItem.Text = "数据明细查询";
+            // 
+            // 人员出勤率ToolStripMenuItem
+            // 
+            this.人员出勤率ToolStripMenuItem.Name = "人员出勤率ToolStripMenuItem";
+            this.人员出勤率ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.人员出勤率ToolStripMenuItem.Text = "人员出勤率";
+            // 
+            // 计划执行率ToolStripMenuItem
+            // 
+            this.计划执行率ToolStripMenuItem.Name = "计划执行率ToolStripMenuItem";
+            this.计划执行率ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.计划执行率ToolStripMenuItem.Text = "计划执行率";
+            // 
+            // 巡检点项执勤统计ToolStripMenuItem
+            // 
+            this.巡检点项执勤统计ToolStripMenuItem.Name = "巡检点项执勤统计ToolStripMenuItem";
+            this.巡检点项执勤统计ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.巡检点项执勤统计ToolStripMenuItem.Text = "巡检点项执勤统计";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -536,5 +578,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineDelete;
+        private System.Windows.Forms.ToolStripMenuItem 数据统计分析ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 人员出勤率ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 计划执行率ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 巡检点项执勤统计ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 数据明细查询ToolStripMenuItem;
     }
 }
