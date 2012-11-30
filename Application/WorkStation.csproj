@@ -112,6 +112,12 @@
     <Compile Include="frmPostNew.Designer.cs">
       <DependentUpon>frmPostNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportSearchByPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSearchByPoint.Designer.cs">
+      <DependentUpon>frmReportSearchByPoint.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportSearchByPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPostNew.resx">
       <DependentUpon>frmPostNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSearchByPoint.resx">
+      <DependentUpon>frmReportSearchByPoint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportSearchByPlan.resx">
       <DependentUpon>frmReportSearchByPlan.cs</DependentUpon>

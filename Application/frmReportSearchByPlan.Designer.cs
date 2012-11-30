@@ -28,23 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
-            this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
-            this.dtpStart = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cboState = new System.Windows.Forms.ComboBox();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.cboRoute = new System.Windows.Forms.ComboBox();
-            this.cboTask = new System.Windows.Forms.ComboBox();
-            this.cboPlan = new System.Windows.Forms.ComboBox();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
             this.gvShowPoint = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gvShowItem = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gvShowTask = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -52,15 +44,243 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            this.gvShowItem = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboState = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cboRoute = new System.Windows.Forms.ComboBox();
+            this.cboTask = new System.Windows.Forms.ComboBox();
+            this.cboPlan = new System.Windows.Forms.ComboBox();
+            this.cboOperator = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowPoint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvShowTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowItem)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gvShowPoint
+            // 
+            this.gvShowPoint.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11});
+            this.gvShowPoint.GridControl = this.gridControl1;
+            this.gvShowPoint.Name = "gvShowPoint";
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "巡检点";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 0;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "巡检点进入时间";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 1;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "巡检点离开时间";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 2;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "巡检状态";
+            this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.Visible = true;
+            this.gridColumn11.VisibleIndex = 3;
+            // 
+            // gridControl1
+            // 
+            gridLevelNode3.LevelTemplate = this.gvShowPoint;
+            gridLevelNode4.LevelTemplate = this.gvShowItem;
+            gridLevelNode4.RelationName = "PointToItem";
+            gridLevelNode3.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode4});
+            gridLevelNode3.RelationName = "TaskToPoint";
+            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode3});
+            this.gridControl1.Location = new System.Drawing.Point(14, 109);
+            this.gridControl1.MainView = this.gvShowTask;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(732, 365);
+            this.gridControl1.TabIndex = 65;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvShowTask,
+            this.gvShowItem,
+            this.gvShowPoint});
+            // 
+            // gvShowTask
+            // 
+            this.gvShowTask.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn13,
+            this.gridColumn12});
+            this.gvShowTask.GridControl = this.gridControl1;
+            this.gvShowTask.Name = "gvShowTask";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "巡检任务";
+            this.gridColumn1.FieldName = "TaskName";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 79;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "巡检路线";
+            this.gridColumn2.FieldName = "RouteName";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 79;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "巡检计划";
+            this.gridColumn3.FieldName = "PlanName";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 79;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "开始时间";
+            this.gridColumn4.FieldName = "StartTime";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 79;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "结束时间";
+            this.gridColumn5.FieldName = "EndTime";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 74;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "实际开始时间";
+            this.gridColumn6.FieldName = "ActualStartTime";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 80;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "实际结束时间";
+            this.gridColumn7.FieldName = "ActualEndTime";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 80;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "任务完成度";
+            this.gridColumn13.FieldName = "PercentComplete";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 7;
+            this.gridColumn13.Width = 80;
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "执行人";
+            this.gridColumn12.FieldName = "Operator";
+            this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.Visible = true;
+            this.gridColumn12.VisibleIndex = 8;
+            this.gridColumn12.Width = 81;
+            // 
+            // gvShowItem
+            // 
+            this.gvShowItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18,
+            this.gridColumn19});
+            this.gvShowItem.GridControl = this.gridControl1;
+            this.gvShowItem.Name = "gvShowItem";
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.Caption = "巡检项";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 0;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.Caption = "记录类型";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 1;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.Caption = "是否正常";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 2;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "值记录";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 3;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "文本记录";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 4;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "图片";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 5;
             // 
             // dtpEndTime
             // 
@@ -100,12 +320,13 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(670, 48);
+            this.btnSearch.Location = new System.Drawing.Point(322, 74);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 62;
             this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // label1
             // 
@@ -123,21 +344,6 @@
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(134, 20);
             this.cboState.TabIndex = 64;
-            // 
-            // gridControl1
-            // 
-            gridLevelNode2.LevelTemplate = this.gvShowItem;
-            gridLevelNode2.RelationName = "Level1";
-            this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
-            this.gridControl1.Location = new System.Drawing.Point(14, 77);
-            this.gridControl1.MainView = this.gvShowPoint;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(732, 397);
-            this.gridControl1.TabIndex = 65;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvShowPoint,
-            this.gvShowItem});
             // 
             // label2
             // 
@@ -168,11 +374,14 @@
             // 
             // cboRoute
             // 
+            this.cboRoute.DisplayMember = "Name";
             this.cboRoute.FormattingEnabled = true;
             this.cboRoute.Location = new System.Drawing.Point(71, 48);
             this.cboRoute.Name = "cboRoute";
             this.cboRoute.Size = new System.Drawing.Size(153, 20);
             this.cboRoute.TabIndex = 70;
+            this.cboRoute.ValueMember = "ID";
+            this.cboRoute.SelectedIndexChanged += new System.EventHandler(this.cboRoute_SelectedIndexChanged);
             // 
             // cboTask
             // 
@@ -189,120 +398,32 @@
             this.cboPlan.Name = "cboPlan";
             this.cboPlan.Size = new System.Drawing.Size(154, 20);
             this.cboPlan.TabIndex = 72;
+            this.cboPlan.SelectedIndexChanged += new System.EventHandler(this.cboPlan_SelectedIndexChanged);
             // 
-            // gvShowPoint
+            // cboOperator
             // 
-            this.gvShowPoint.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7});
-            this.gvShowPoint.GridControl = this.gridControl1;
-            this.gvShowPoint.Name = "gvShowPoint";
+            this.cboOperator.FormattingEnabled = true;
+            this.cboOperator.Location = new System.Drawing.Point(70, 74);
+            this.cboOperator.Name = "cboOperator";
+            this.cboOperator.Size = new System.Drawing.Size(154, 20);
+            this.cboOperator.TabIndex = 74;
             // 
-            // gvShowItem
+            // label3
             // 
-            this.gvShowItem.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn11,
-            this.gridColumn12});
-            this.gvShowItem.GridControl = this.gridControl1;
-            this.gvShowItem.Name = "gvShowItem";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "巡检点";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "巡检路线";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "进入巡检点时间";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 1;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "离开巡检点时间";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "巡检任务";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "任务执行状态";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "巡检计划";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "巡检点ID";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "巡检项";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 1;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "类型";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 2;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "文本";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 3;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "图片";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(11, 79);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 12);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "巡检人员";
             // 
             // frmReportSearchByPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 486);
+            this.Controls.Add(this.cboOperator);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.cboPlan);
             this.Controls.Add(this.cboTask);
             this.Controls.Add(this.cboRoute);
@@ -320,8 +441,9 @@
             this.Name = "frmReportSearchByPlan";
             this.Text = "按计划查询数据";
             this.Load += new System.EventHandler(this.frmReportSearchByPlan_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowPoint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvShowTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowItem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -344,12 +466,12 @@
         private System.Windows.Forms.ComboBox cboRoute;
         private System.Windows.Forms.ComboBox cboTask;
         private System.Windows.Forms.ComboBox cboPlan;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvShowItem;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvShowPoint;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvShowPoint;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvShowTask;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -357,6 +479,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvShowItem;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private System.Windows.Forms.ComboBox cboOperator;
+        private System.Windows.Forms.Label label3;
     }
 }
