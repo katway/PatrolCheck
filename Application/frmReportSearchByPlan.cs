@@ -50,7 +50,7 @@ namespace WorkStation
             cboOperator.DisplayMember = "Name";
             cboOperator.ValueMember = "ID";
             cboOperator.DataSource = ds.Tables[0];
-            ds.Dispose();
+            ds.Dispose(); 
         }
 
         private void bindPlan(object routeid,DateTime start,DateTime end)
@@ -109,7 +109,7 @@ namespace WorkStation
                        c.StartTime ,c.EndTime ,r.starttime as ActualStartTime,r.endtime as ActualEndTime,
                        r.PercentComplete as PercentComplete,
                        (select Name From Employee where id=c.operator) as Operator
-                       From routechecking r,checktask c where r.task_id=c.id and r.starttime>= '"+dtpStart.Value+
+                       From routechecking r,checktask c where r.tas_id=c.id and r.starttime>= '"+dtpStart.Value+
                        "' and r.endtime<='"+dtpEndTime.Value+"'";
             string sqlPoint = @"select 
                                    R.ID,p.ID as PointID,
@@ -117,7 +117,7 @@ namespace WorkStation
                                    p.StartTime,p.EndTime,p.Duration
                               From PointChecking p 
                                    left join LogicalCheckPoint l on p.LogicPoint_ID=l.id
-                                   left join Routechecking r on p.routechecking_id=r.id 
+                                   left join Routechecking r on p.route_id=r.id 
                               where p.StartTime>='" + dtpStart.Value + "' and p.EndTime<='" + dtpEndTime.Value+"'";
             string sqlItem = @"select 
                                  P.ID,i.ID as ItemID,c.name as ItemName,
@@ -141,13 +141,11 @@ namespace WorkStation
             {
                 sqlTask += " and c.Operator="+cboOperator.SelectedValue;
             }
-
             DataSet dsTables = new DataSet();
             dsTables = SqlHelper.ExecuteDataset(sqlTask+";"+sqlPoint+";"+sqlItem);
            
             dsTables.Relations.Add(new DataRelation("TaskToPoint", dsTables.Tables[0].Columns["ID"], dsTables.Tables[1].Columns["ID"]));
             dsTables.Relations.Add(new DataRelation("PointToItem", dsTables.Tables[1].Columns["ID"], dsTables.Tables[2].Columns["ID"]));
-
             gridControl1.DataSource = dsTables.Tables[0];
         }
     }

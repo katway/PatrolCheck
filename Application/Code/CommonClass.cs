@@ -12,7 +12,7 @@ namespace WorkStation
     {
         public BoxItem()
         { }
-        public BoxItem(string text, string value)
+        public BoxItem(string text, Object value)
         {
             this.Text = text;
             this.Value = value;

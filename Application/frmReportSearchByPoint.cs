@@ -50,7 +50,7 @@ namespace WorkStation
             }
             
             string sqlItem = @"select 
-                                 P.ID,i.ID as ItemID,c.name as ItemName,
+                                 P.ID,i.ID as ItemCheckingID,c.name as ItemName,
                                  i.BooleanValue,i.NumericalValue,i.TextValue,i.PictureFile 
                                from itemchecking i 
                                     left join pointchecking p  on i.pointchecking_id=p.id

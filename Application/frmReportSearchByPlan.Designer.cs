@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.gvShowPoint = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -68,6 +68,7 @@
             this.cboPlan = new System.Windows.Forms.ComboBox();
             this.cboOperator = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnImport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowTask)).BeginInit();
@@ -114,14 +115,14 @@
             // 
             // gridControl1
             // 
-            gridLevelNode3.LevelTemplate = this.gvShowPoint;
-            gridLevelNode4.LevelTemplate = this.gvShowItem;
-            gridLevelNode4.RelationName = "PointToItem";
-            gridLevelNode3.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode4});
-            gridLevelNode3.RelationName = "TaskToPoint";
+            gridLevelNode1.LevelTemplate = this.gvShowPoint;
+            gridLevelNode2.LevelTemplate = this.gvShowItem;
+            gridLevelNode2.RelationName = "PointToItem";
+            gridLevelNode1.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            gridLevelNode1.RelationName = "TaskToPoint";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode3});
+            gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(14, 109);
             this.gridControl1.MainView = this.gvShowTask;
             this.gridControl1.Name = "gridControl1";
@@ -320,7 +321,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(322, 74);
+            this.btnSearch.Location = new System.Drawing.Point(370, 74);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 62;
@@ -386,7 +387,7 @@
             // cboTask
             // 
             this.cboTask.FormattingEnabled = true;
-            this.cboTask.Location = new System.Drawing.Point(510, 50);
+            this.cboTask.Location = new System.Drawing.Point(510, 46);
             this.cboTask.Name = "cboTask";
             this.cboTask.Size = new System.Drawing.Size(134, 20);
             this.cboTask.TabIndex = 71;
@@ -417,11 +418,21 @@
             this.label3.TabIndex = 73;
             this.label3.Text = "巡检人员";
             // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(510, 75);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 23);
+            this.btnImport.TabIndex = 75;
+            this.btnImport.Text = "导出";
+            this.btnImport.UseVisualStyleBackColor = true;
+            // 
             // frmReportSearchByPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 486);
+            this.Controls.Add(this.btnImport);
             this.Controls.Add(this.cboOperator);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cboPlan);
@@ -490,5 +501,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private System.Windows.Forms.ComboBox cboOperator;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnImport;
     }
 }

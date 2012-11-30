@@ -26,7 +26,7 @@ namespace WorkStation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || txtRemarks.Text == "" || cboMachine.SelectedIndex < 0 || cboPoint.SelectedIndex < 0 || cboValue.SelectedIndex < 0)
+            if (txtName.Text == "" || txtRemarks.Text == "")
             {
                 MessageBox.Show("请确保没有空值");
                 return;
@@ -36,15 +36,33 @@ namespace WorkStation
                 MessageBox.Show("请确保名称的唯一性");
                 return;
             }
-            string str_insert = "Insert into CheckItem([Name],Alias,Machine_ID,ValueType,Phy_ID,Comment) Values(@name,@alias,@machineid,@valuetype,@pointid,@comment)";
+            string str_insert = "Insert into CheckItem([Name],Alias,Comment"; 
+            string str_value="Values(@name,@alias,@comment";
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
                 new SqlParameter("@alias",SqlDbType.NVarChar),
                 new SqlParameter("@machineid",SqlDbType.Int),
                 new SqlParameter("@valuetype",SqlDbType.Int),
-                new SqlParameter("@pointid",SqlDbType.Int),
+                new SqlParameter("@pointid",SqlDbType.Int),              
                 new SqlParameter("@comment",SqlDbType.NText)
             };
+            if (((BoxItem)(cboMachine.SelectedItem)).Value.ToString() != "-1")
+            {               
+                str_insert += ",Machine_ID";
+                str_value += ",@machineid";
+                
+            }
+            if (((BoxItem)cboPoint.SelectedItem).Value.ToString() != "-1")
+            {
+                str_insert += ",ValueType";
+                str_value += ",@valuetype";
+            }
+            if (((BoxItem)cboValue.SelectedItem).Value.ToString() != "-1")
+            {
+                str_insert += ",Phy_ID";
+                str_insert += ",@pointid";
+            }
+           
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
             pars[2].Value = (this.cboMachine.SelectedItem as BoxItem).Value;
@@ -52,7 +70,8 @@ namespace WorkStation
             pars[4].Value = (this.cboPoint.SelectedItem as BoxItem).Value;
             pars[5].Value = this.txtRemarks.Text;
 
-            int _ret = SqlHelper.ExecuteNonQuery(str_insert,pars);
+            string sql_insert = str_insert + ") " + str_value + ")";
+            int _ret = SqlHelper.ExecuteNonQuery(sql_insert, pars);
             if (_ret == 1)
             {
                 MessageBox.Show("保存成功");
@@ -70,8 +89,8 @@ namespace WorkStation
                         m.name as 所属机器,
                         p.name as 所属巡检点,
                         c.comment as 备注 
-                        from checkitem c,Machine m,PhysicalCheckPoint p 
-                        where c.machine_id=m.id and c.Phy_ID=p.id ";
+                        from checkitem c  left join Machine m on c.machine_id=m.id
+                                          left join PhysicalCheckPoint p  on c.Phy_ID=p.id";
             DataSet ds = SqlHelper.ExecuteDataset(str_select);
             dgvItems.DataSource=ds.Tables[0];
         }
@@ -181,7 +200,7 @@ namespace WorkStation
 
         private void bkwItem_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            BoxItem item_add = new BoxItem("不选择","");
+            BoxItem item_add = new BoxItem("不选择",-1);
             BoxItem item = null;
             cboMachine.Items.Add(item_add);
             cboPoint.Items.Add(item_add);
@@ -189,7 +208,7 @@ namespace WorkStation
 
             while (drMachine.Read())
             {
-                item = new BoxItem(drMachine["Name"].ToString(),drMachine["ID"].ToString());
+                item = new BoxItem(drMachine["Name"].ToString(),drMachine["ID"]);
                 cboMachine.Items.Add(item);
             }
             cboMachine.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;
@@ -198,7 +217,7 @@ namespace WorkStation
 
             while (drPoint.Read())
             {
-                item = new BoxItem(drPoint["Name"].ToString(), drPoint["ID"].ToString());
+                item = new BoxItem(drPoint["Name"].ToString(), drPoint["ID"]);
                 cboPoint.Items.Add(item);
             }
             this.cboPoint.SelectedIndex = cboPoint.Items.Count > 0 ? 0 : -1;
@@ -207,7 +226,7 @@ namespace WorkStation
             
             while (drValueType.Read())
             {
-                item = new BoxItem(drValueType["Meaning"].ToString(),drValueType["Code"].ToString());
+                item = new BoxItem(drValueType["Meaning"].ToString(),drValueType["Code"]);
                 cboValue.Items.Add(item);
             }
             this.cboValue.SelectedIndex = cboMachine.Items.Count > 0 ? 0 : -1;

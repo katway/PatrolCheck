@@ -26,11 +26,12 @@ namespace WorkStation
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == string.Empty || txtRelation.Text == string.Empty)
-            {
-                MessageBox.Show("请确保没有空值！");
-                return;
-            }
+            //注释掉 方便调试 
+            //if (txtName.Text == string.Empty || txtRelation.Text == string.Empty)
+            //{
+            //    MessageBox.Show("请确保没有空值！");
+            //    return;
+            //}
             if ((int)SqlHelper.ExecuteScalar("Select Count(1) From PhysicalCheckPoint Where [Name]='" + this.txtName.Text.Trim() + "'") > 0)
             {
                 MessageBox.Show("已存在巡检点名称.");
@@ -40,25 +41,25 @@ namespace WorkStation
             SqlParameter[] pars = new SqlParameter[] { 
                     new SqlParameter("@name",SqlDbType.NVarChar),
                     new SqlParameter("@alias",SqlDbType.NVarChar),
-                    new SqlParameter("@rfid",SqlDbType.BigInt),
+                    //new SqlParameter("@rfid",SqlDbType.BigInt),
                     new SqlParameter("@siteid",SqlDbType.BigInt)
             };
             pars[0].Value = this.txtName.Text.Trim();
             pars[1].Value = this.txtAlias.Text.Trim();
-            pars[3].Value = this.cboSite.SelectedValue;
+            pars[2].Value = this.cboSite.SelectedValue;
 
-            if ((int)SqlHelper.ExecuteScalar("Select Count(1) From Rfid Where Purpose=2 and Name='" + this.txtRelation.Text.Trim() + "'") == 1)
-            {
-                string str_select = "Select ID From Rfid Where Name='" + this.txtRelation.Text.Trim() + "'";
-                string str_rfid = SqlHelper.ExecuteScalar(str_select).ToString();
-                pars[2].Value = str_rfid;
-            }
-            else
-            {
-                MessageBox.Show("请确保有此标签卡");
-                return;
-            }
-            string str_insert = "Insert Into PhysicalCheckPoint([Name],Alias,Rfid_Id,Site_ID) values(@name,@alias,@rfid,@siteid)";
+            //if ((int)SqlHelper.ExecuteScalar("Select Count(1) From Rfid Where Purpose=2 and Name='" + this.txtRelation.Text.Trim() + "'") == 1)
+            //{
+            //    string str_select = "Select ID From Rfid Where Name='" + this.txtRelation.Text.Trim() + "'";
+            //    string str_rfid = SqlHelper.ExecuteScalar(str_select).ToString();
+            //    pars[2].Value = str_rfid;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("请确保有此标签卡");
+            //    return;
+            //}Rfid_Id,@rfid
+            string str_insert = "Insert Into PhysicalCheckPoint([Name],Alias,Site_ID) values(@name,@alias,@siteid)";
 
             Object obj_ret = SqlHelper.ExecuteNonQuery(str_insert,pars);
             if (obj_ret.ToString() == "1")

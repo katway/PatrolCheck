@@ -246,7 +246,7 @@ namespace WorkStation
                     new SqlParameter("@Alias",SqlDbType.VarChar),
                     new SqlParameter("@ItemsID",SqlDbType.VarChar),
                     new SqlParameter("@ItemsIndex",SqlDbType.VarChar),
-                    new SqlParameter("@CheckOrder",SqlDbType.Int)
+                    new SqlParameter("@OrderNumber",SqlDbType.Int)
                           };
                     pars[0].Value = labRouteID.Text;
                     pars[1].Value = tvLogicalPoint.Nodes[i].Tag;
@@ -284,14 +284,14 @@ namespace WorkStation
         private void getTvLogicalPoint(string route_id)
         {
             tvLogicalPoint.Nodes.Clear();
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id +" order by checkorder");
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id +" order by ordernumber");
             if (dr == null) return;
             while (dr.Read())
             {
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["PhysicalPoint_ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select l.ID as LIID,c.[Name],c.ID ,'' as Sequence from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID=" + dr["ID"].ToString().Trim() + " order by l.inorder");
+                tnode = tvNodeAdd(tnode, "select l.LogicPoint_ID as LIID,c.[Name],c.ID ,'' as Sequence from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.LogicPoint_ID=" + dr["ID"].ToString().Trim() + " order by l.inorder");
                 tvLogicalPoint.Nodes.Add(tnode);
             }
             if (chkLogicalPoint.Checked)
@@ -523,7 +523,7 @@ namespace WorkStation
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (tvRoute.SelectedNode.Level == 2)
+            if (tvRoute.SelectedNode!=null&& tvRoute.SelectedNode.Level == 2)
             {
                 frmRoutAdd fn = new frmRoutAdd();
                 fn.tView = tvRoute;
