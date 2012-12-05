@@ -149,12 +149,6 @@
     <Compile Include="frmMachine.Designer.cs">
       <DependentUpon>frmMachine.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaskNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTaskNew.Designer.cs">
-      <DependentUpon>frmTaskNew.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,23 +179,17 @@
     <Compile Include="frmPostEditDelete.Designer.cs">
       <DependentUpon>frmPostEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaskEditDelete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTaskEditDelete.Designer.cs">
-      <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmEmployeeAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmployeeAdd.Designer.cs">
       <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaskIssue.cs">
+    <Compile Include="frmTaskAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTaskIssue.Designer.cs">
-      <DependentUpon>frmTaskIssue.cs</DependentUpon>
+    <Compile Include="frmTaskAssignment.Designer.cs">
+      <DependentUpon>frmTaskAssignment.cs</DependentUpon>
     </Compile>
     <Compile Include="MyDataSet\ReportSearchByPoint.cs">
       <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
@@ -274,9 +262,6 @@
     <EmbeddedResource Include="frmMachine.resx">
       <DependentUpon>frmMachine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaskNew.resx">
-      <DependentUpon>frmTaskNew.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,14 +277,11 @@
     <EmbeddedResource Include="frmPostEditDelete.resx">
       <DependentUpon>frmPostEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaskEditDelete.resx">
-      <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeAdd.resx">
       <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaskIssue.resx">
-      <DependentUpon>frmTaskIssue.cs</DependentUpon>
+    <EmbeddedResource Include="frmTaskAssignment.resx">
+      <DependentUpon>frmTaskAssignment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyReport\ReportSearchByPlan.resx">
       <DependentUpon>ReportSearchByPlan.cs</DependentUpon>
