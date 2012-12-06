@@ -26,10 +26,14 @@ namespace WorkStation
         }
         private void cboShow_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.labState.Text = (this.cboShow.SelectedItem as BoxItem).Value.ToString() == "" ? "0,1,2,4,6,8,16" : (this.cboShow.SelectedItem as BoxItem).Value.ToString();
-            switch((this.cboShow.SelectedItem as BoxItem).Value.ToString())
+            if (cboShow.SelectedValue == null) return;
+            this.labState.Text = cboShow.SelectedValue.ToString() == "-1" ? "1,2,4,6,8,16,32" : cboShow.SelectedValue.ToString();
+            switch(this.cboShow.SelectedValue.ToString())
             {
-                case "":
+                case "-1":
+                case "8"://通过
+                case "16"://已下发
+                case "32"://丢弃
                     {
                         this.btnNew.Enabled = false;
                         this.btnEdit.Enabled = false;
@@ -38,7 +42,7 @@ namespace WorkStation
                         this.btnUnSub.Enabled = false;
                         break;
                     }
-                case "0":
+                case "1": //新建
                     {
                         this.btnNew.Enabled = true;
                         this.btnEdit.Enabled = true;
@@ -47,7 +51,7 @@ namespace WorkStation
                         this.btnUnSub.Enabled = false;
                         break;
                     }
-                case "1":
+                case "2"://提交 请求审核
                     {
                         this.btnNew.Enabled = false;
                         this.btnEdit.Enabled = false;
@@ -56,24 +60,12 @@ namespace WorkStation
                         this.btnUnSub.Enabled = true;
                         break;
                     }
-                case "2":
+                case "4": //未通过 否决
                     {
                         this.btnNew.Enabled = false;
                         this.btnEdit.Enabled = true;
                         this.btnDel.Enabled = true;
                         this.btnSubmit.Enabled = true;
-                        this.btnUnSub.Enabled = false;
-                        break;
-                    }
-                case"4":
-                case"8":
-                case"16":
-                case "32":
-                    {
-                        this.btnNew.Enabled = false;
-                        this.btnEdit.Enabled = false;
-                        this.btnDel.Enabled = false;
-                        this.btnSubmit.Enabled = false;
                         this.btnUnSub.Enabled = false;
                         break;
                     }
@@ -140,7 +132,7 @@ namespace WorkStation
             if (Del != "")
             {
                 Del = Del.Substring(0, Del.Length - 1);
-                strsql += Del + ") and PlanState=0";
+                strsql += Del + ") and PlanState in (1,4)";//状态为1和4的可以删除
                 SqlHelper.ExecuteNonQuery(strsql);
                 getDgvPlan(gridControlPlan, this.labState.Text);
             }
@@ -153,7 +145,7 @@ namespace WorkStation
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             string update = "";
-            string strUpdae = "Update CheckPlan Set PlanState=1 where Id in(";
+            string strUpdae = "Update CheckPlan Set PlanState=2 where Id in(";
             for (int i = 0; i < gvPlan.RowCount; i++)
             {
                 object isCheck = gvPlan.GetRowCellValue(i, "isCheck");
@@ -165,7 +157,7 @@ namespace WorkStation
             if (update != "")
             {
                 update = update.Substring(0, update.Length - 1);
-                strUpdae += update + ") and PlanState=0";
+                strUpdae += update + ") and PlanState in (1,4)";//状态为1.新建4.否决的可以提交
                 SqlHelper.ExecuteNonQuery(strUpdae);
                 getDgvPlan(gridControlPlan, this.labState.Text);
             }
@@ -178,7 +170,7 @@ namespace WorkStation
         private void btnUnSub_Click(object sender, EventArgs e)
         {
             string update = "";
-            string strUpdae = "Update CheckPlan Set PlanState=0 where Id in(";
+            string strUpdae = "Update CheckPlan Set PlanState=1 where Id in(";
             for (int i = 0; i < gvPlan.RowCount; i++)
             {
                 object isCheck = gvPlan.GetRowCellValue(i, "isCheck");
@@ -190,7 +182,7 @@ namespace WorkStation
             if (update != "")
             {
                 update = update.Substring(0, update.Length - 1);
-                strUpdae += update + ") and PlanState=1";
+                strUpdae += update + ") and PlanState=2";
                 SqlHelper.ExecuteNonQuery(strUpdae);
                 getDgvPlan(gridControlPlan, this.labState.Text);
             }
@@ -236,19 +228,23 @@ namespace WorkStation
 
         private void cboInit()
         {
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select Code,Meaning From Codes Where Purpose='PlanState'");
-            BoxItem item = null;
-            item = new BoxItem("全部", "");
-            cboShow.Items.Add(item);
-            while (dr.Read())
+            DataSet ds = SqlHelper.ExecuteDataset("Select Code,Meaning From Codes Where Purpose='PlanState'");
+            DataRow dr=ds.Tables[0].NewRow();
+            dr[0] = -1;
+            dr[1] = "全部";
+            ds.Tables[0].Rows.InsertAt(dr,0);
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                item = new BoxItem();
-                item.Text = dr["Meaning"].ToString();
-                item.Value = dr["Code"].ToString();
-                cboShow.Items.Add(item);
+                if (ds.Tables[0].Rows[i]["Code"].ToString() == "0")
+                {
+                    ds.Tables[0].Rows.RemoveAt(i);
+                    break;
+                }
             }
-            dr.Dispose();
-            cboShow.SelectedIndex = cboShow.Items.Count > 0 ? 0 : -1;
+            
+            cboShow.DisplayMember = "Meaning";
+            cboShow.ValueMember = "Code";
+            cboShow.DataSource=ds.Tables[0];
         }
 
     }

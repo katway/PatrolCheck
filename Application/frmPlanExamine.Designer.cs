@@ -63,7 +63,7 @@
             // 
             // btnPass
             // 
-            this.btnPass.Location = new System.Drawing.Point(241, 35);
+            this.btnPass.Location = new System.Drawing.Point(241, 12);
             this.btnPass.Name = "btnPass";
             this.btnPass.Size = new System.Drawing.Size(75, 23);
             this.btnPass.TabIndex = 1;
@@ -73,7 +73,7 @@
             // 
             // btnUnpass
             // 
-            this.btnUnpass.Location = new System.Drawing.Point(333, 35);
+            this.btnUnpass.Location = new System.Drawing.Point(333, 12);
             this.btnUnpass.Name = "btnUnpass";
             this.btnUnpass.Size = new System.Drawing.Size(75, 23);
             this.btnUnpass.TabIndex = 2;
@@ -84,7 +84,7 @@
             // cboState
             // 
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(83, 37);
+            this.cboState.Location = new System.Drawing.Point(83, 14);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(133, 20);
             this.cboState.TabIndex = 36;
@@ -93,7 +93,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 40);
+            this.label1.Location = new System.Drawing.Point(36, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 37;
@@ -102,7 +102,7 @@
             // labState
             // 
             this.labState.AutoSize = true;
-            this.labState.Location = new System.Drawing.Point(470, 40);
+            this.labState.Location = new System.Drawing.Point(470, 17);
             this.labState.Name = "labState";
             this.labState.Size = new System.Drawing.Size(77, 12);
             this.labState.TabIndex = 38;
@@ -111,12 +111,12 @@
             // gridControlPlan
             // 
             this.gridControlPlan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControlPlan.Location = new System.Drawing.Point(0, 66);
+            this.gridControlPlan.Location = new System.Drawing.Point(0, 41);
             this.gridControlPlan.MainView = this.gvPlan;
             this.gridControlPlan.Name = "gridControlPlan";
             this.gridControlPlan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlPlan.Size = new System.Drawing.Size(844, 486);
+            this.gridControlPlan.Size = new System.Drawing.Size(844, 511);
             this.gridControlPlan.TabIndex = 46;
             this.gridControlPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPlan});

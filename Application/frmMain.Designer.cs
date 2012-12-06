@@ -46,6 +46,7 @@
             this.tsmiPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPlanExamine = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPlanToTask = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTaskAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReport = new System.Windows.Forms.ToolStripMenuItem();
             this.数据统计分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.人员出勤率ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +83,6 @@
             this.tsmiCardDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmhelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmihelp = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiTaskAssignment = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -249,6 +249,13 @@
             this.tsmiPlanToTask.Text = "任务生成";
             this.tsmiPlanToTask.Click += new System.EventHandler(this.ShowForm);
             // 
+            // tsmiTaskAssignment
+            // 
+            this.tsmiTaskAssignment.Name = "tsmiTaskAssignment";
+            this.tsmiTaskAssignment.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTaskAssignment.Text = "任务指派";
+            this.tsmiTaskAssignment.Click += new System.EventHandler(this.ShowForm);
+            // 
             // tsmiReport
             // 
             this.tsmiReport.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -299,14 +306,14 @@
             // tsmiReportSearchByPlan
             // 
             this.tsmiReportSearchByPlan.Name = "tsmiReportSearchByPlan";
-            this.tsmiReportSearchByPlan.Size = new System.Drawing.Size(130, 22);
+            this.tsmiReportSearchByPlan.Size = new System.Drawing.Size(152, 22);
             this.tsmiReportSearchByPlan.Text = "按计划查询";
             this.tsmiReportSearchByPlan.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiReportSearchByPoint
             // 
             this.tsmiReportSearchByPoint.Name = "tsmiReportSearchByPoint";
-            this.tsmiReportSearchByPoint.Size = new System.Drawing.Size(130, 22);
+            this.tsmiReportSearchByPoint.Size = new System.Drawing.Size(152, 22);
             this.tsmiReportSearchByPoint.Text = "按地点查询";
             this.tsmiReportSearchByPoint.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -394,7 +401,7 @@
             this.tsmiSiteEdit,
             this.tsmiSiteDelete});
             this.tsmiSite.Name = "tsmiSite";
-            this.tsmiSite.Size = new System.Drawing.Size(152, 22);
+            this.tsmiSite.Size = new System.Drawing.Size(142, 22);
             this.tsmiSite.Text = "厂区信息管理";
             // 
             // tsmiSiteNew
@@ -426,7 +433,7 @@
             this.tsmiPostDelete});
             this.tsmiPost.Enabled = false;
             this.tsmiPost.Name = "tsmiPost";
-            this.tsmiPost.Size = new System.Drawing.Size(152, 22);
+            this.tsmiPost.Size = new System.Drawing.Size(142, 22);
             this.tsmiPost.Text = "岗位信息管理";
             // 
             // tsmiPostNew
@@ -454,7 +461,7 @@
             this.tsmiEmployeeEdit,
             this.tsmiEmployeeDelete});
             this.tsmiEmployee.Name = "tsmiEmployee";
-            this.tsmiEmployee.Size = new System.Drawing.Size(152, 22);
+            this.tsmiEmployee.Size = new System.Drawing.Size(142, 22);
             this.tsmiEmployee.Text = "人员信息管理";
             // 
             // tsmiEmployeeAdd
@@ -481,7 +488,7 @@
             // tsmiCompany
             // 
             this.tsmiCompany.Name = "tsmiCompany";
-            this.tsmiCompany.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCompany.Size = new System.Drawing.Size(142, 22);
             this.tsmiCompany.Text = "公司信息管理";
             this.tsmiCompany.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -499,21 +506,21 @@
             // tsmiCardNew
             // 
             this.tsmiCardNew.Name = "tsmiCardNew";
-            this.tsmiCardNew.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCardNew.Size = new System.Drawing.Size(118, 22);
             this.tsmiCardNew.Text = "录入新卡";
             this.tsmiCardNew.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiCardEdit
             // 
             this.tsmiCardEdit.Name = "tsmiCardEdit";
-            this.tsmiCardEdit.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCardEdit.Size = new System.Drawing.Size(118, 22);
             this.tsmiCardEdit.Text = "编辑用途";
             this.tsmiCardEdit.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiCardDelete
             // 
             this.tsmiCardDelete.Name = "tsmiCardDelete";
-            this.tsmiCardDelete.Size = new System.Drawing.Size(152, 22);
+            this.tsmiCardDelete.Size = new System.Drawing.Size(118, 22);
             this.tsmiCardDelete.Text = "注销卡片";
             this.tsmiCardDelete.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -531,12 +538,6 @@
             this.tsmihelp.Name = "tsmihelp";
             this.tsmihelp.Size = new System.Drawing.Size(94, 22);
             this.tsmihelp.Text = "帮助";
-            // 
-            // tsmiTaskAssignment
-            // 
-            this.tsmiTaskAssignment.Name = "tsmiTaskAssignment";
-            this.tsmiTaskAssignment.Size = new System.Drawing.Size(152, 22);
-            this.tsmiTaskAssignment.Text = "任务指派";
             // 
             // frmMain
             // 

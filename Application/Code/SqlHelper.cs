@@ -14,7 +14,7 @@ namespace WorkStation
     /// </summary>
     public sealed class SqlHelper
     {
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User Id=sa;Password=sa123";
+        public static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User Id=sa;Password=sa123";
         
         #region 私有构造函数和方法
         private SqlHelper() 

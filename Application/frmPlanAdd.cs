@@ -102,7 +102,7 @@ namespace WorkStation
             pars[9].Value = this.dtpEffect.Value;
             pars[10].Value = this.dtpIneffect.Value;
             pars[11].Value = 88888888;
-            pars[12].Value = 0;
+            pars[12].Value = 1;
             pars[13].Value = cboOperator.SelectedValue.ToString() == "-1" ? null : cboOperator.SelectedValue;
             pars[14].Value = txtTimeDeviation.Text;
             if (SqlHelper.ExecuteNonQuery(strInsert, pars) != 1)
@@ -171,7 +171,7 @@ namespace WorkStation
         {
             if (cboOperator.SelectedValue != null && cboOperator.SelectedValue.ToString() != "-1")
             {
-                object postid = SqlHelper.ExecuteScalar("select post_id From post_employee where employee_id="+cboOperator.SelectedValue);
+                object postid = SqlHelper.ExecuteScalar("select post_id From post_employee where validstate=1 and employee_id=" + cboOperator.SelectedValue);
                 cboPost.SelectedValue = postid == null ? "-1" : postid;
             }
         }

@@ -26,7 +26,7 @@ namespace WorkStation
         private void btnPass_Click(object sender, EventArgs e)
         {
             string id = "";
-            string update = "Update checkplan set planstate=4 where id in (";
+            string update = "Update checkplan set planstate=8 where id in (";
             for (int i = 0; i < gvPlan.RowCount; i++)
             {
                 object isCheck = gvPlan.GetRowCellValue(i, "isCheck");
@@ -39,7 +39,7 @@ namespace WorkStation
             if (id != "")
             {
                 id = id.Substring(0, id.Length - 1);
-                update += id + ") and planstate=1";
+                update += id + ") and planstate=2";
                 if (SqlHelper.ExecuteNonQuery(update) == 0)
                 {
                     MessageBox.Show("审核失败");
@@ -55,7 +55,7 @@ namespace WorkStation
         private void btnUnpass_Click(object sender, EventArgs e)
         {
             string id = "";
-            string update = "Update checkplan set planstate=2 where id in (";
+            string update = "Update checkplan set planstate=4 where id in (";
             for (int i = 0; i < gvPlan.RowCount; i++)
             {
                 object isCheck = gvPlan.GetRowCellValue(i, "isCheck");
@@ -68,7 +68,7 @@ namespace WorkStation
             if (id != "")
             {
                 id = id.Substring(0, id.Length - 1);
-                update += id + ") and planstate=1";
+                update += id + ") and planstate=2";
                 if (SqlHelper.ExecuteNonQuery(update) == 0)
                 {
                     MessageBox.Show("审核失败");
@@ -117,27 +117,27 @@ namespace WorkStation
 
         private void cboInit()
         {
-            cboState.Items.Add(new BoxItem("全部", ""));
-            cboState.Items.Add(new BoxItem("已提交", "1"));
-            cboState.Items.Add(new BoxItem("已审核", "4"));
-            cboState.Items.Add(new BoxItem("未通过", "2"));
+            cboState.Items.Add(new BoxItem("全部", "2,4,8"));
+            cboState.Items.Add(new BoxItem("请求审核", "2"));
+            cboState.Items.Add(new BoxItem("审核通过", "8"));
+            cboState.Items.Add(new BoxItem("否决", "4"));
             cboState.SelectedIndex = 0;
         }
 
         private void cboState_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.labState.Text = (this.cboState.SelectedItem as BoxItem).Value.ToString() == "" ? "0,1,2,4" : (this.cboState.SelectedItem as BoxItem).Value.ToString();
+            labState.Text = (cboState.SelectedItem as BoxItem).Value.ToString();
             switch ((cboState.SelectedItem as BoxItem).Value.ToString())
             {
-                case "":
-                case "2":
+                case "2,4,8":
                 case "4":
+                case "8":
                     {
                         this.btnPass.Enabled = false;
                         this.btnUnpass.Enabled = false;
                         break;
                     }
-                case "1":
+                case "2":
                     {
                         this.btnPass.Enabled = true;
                         this.btnUnpass.Enabled = true;

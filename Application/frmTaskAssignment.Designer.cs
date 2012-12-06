@@ -40,7 +40,6 @@
             this.btnShowAll = new System.Windows.Forms.Button();
             this.gridControlPlan = new DevExpress.XtraGrid.GridControl();
             this.gvPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -51,15 +50,20 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemImageComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemImageComboBox2_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox2_Edit)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpStart
@@ -141,7 +145,7 @@
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 64;
-            this.btnSearch.Text = "确定";
+            this.btnSearch.Text = "查询";
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
@@ -162,7 +166,8 @@
             this.gridControlPlan.MainView = this.gvPlan;
             this.gridControlPlan.Name = "gridControlPlan";
             this.gridControlPlan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit1});
+            this.repositoryItemImageComboBox1,
+            this.repositoryItemImageComboBox2_Edit});
             this.gridControlPlan.Size = new System.Drawing.Size(828, 499);
             this.gridControlPlan.TabIndex = 66;
             this.gridControlPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -186,21 +191,19 @@
             this.gridColumn13,
             this.gridColumn14,
             this.gridColumn15,
-            this.gridColumn16});
+            this.gridColumn16,
+            this.gridColumn17});
             this.gvPlan.GridControl = this.gridControlPlan;
             this.gvPlan.Name = "gvPlan";
             this.gvPlan.OptionsView.ColumnAutoWidth = false;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.gvPlan.CustomRowCellEditForEditing += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gvPlan_CustomRowCellEditForEditing);
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "任务ID";
             this.gridColumn1.FieldName = "ID";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
             // 
@@ -209,6 +212,7 @@
             this.gridColumn2.Caption = "任务名称";
             this.gridColumn2.FieldName = "Name";
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
             // 
@@ -217,6 +221,7 @@
             this.gridColumn3.Caption = "别名";
             this.gridColumn3.FieldName = "Alias";
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
             // 
@@ -225,6 +230,7 @@
             this.gridColumn4.Caption = "计划名称";
             this.gridColumn4.FieldName = "PlanName";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
             // 
@@ -233,6 +239,7 @@
             this.gridColumn5.Caption = "任务开始时间";
             this.gridColumn5.FieldName = "StartTime";
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
@@ -241,6 +248,7 @@
             this.gridColumn6.Caption = "任务结束时间";
             this.gridColumn6.FieldName = "EndTime";
             this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 5;
             // 
@@ -249,6 +257,7 @@
             this.gridColumn7.Caption = "持续时间";
             this.gridColumn7.FieldName = "Duration";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 6;
             // 
@@ -257,6 +266,7 @@
             this.gridColumn8.Caption = "允许误差时间";
             this.gridColumn8.FieldName = "TimeDeviation";
             this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 7;
             // 
@@ -265,22 +275,32 @@
             this.gridColumn9.Caption = "岗位名称";
             this.gridColumn9.FieldName = "PostName";
             this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 8;
             // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "执行人";
-            this.gridColumn10.FieldName = "OperatorName";
+            this.gridColumn10.ColumnEdit = this.repositoryItemImageComboBox1;
+            this.gridColumn10.FieldName = "OperatorID";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 9;
+            // 
+            // repositoryItemImageComboBox1
+            // 
+            this.repositoryItemImageComboBox1.AutoHeight = false;
+            this.repositoryItemImageComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageComboBox1.Name = "repositoryItemImageComboBox1";
             // 
             // gridColumn11
             // 
             this.gridColumn11.Caption = "路线名称";
             this.gridColumn11.FieldName = "RouteName";
             this.gridColumn11.Name = "gridColumn11";
+            this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 10;
             // 
@@ -289,6 +309,7 @@
             this.gridColumn12.Caption = "周期";
             this.gridColumn12.FieldName = "Interval";
             this.gridColumn12.Name = "gridColumn12";
+            this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 11;
             // 
@@ -297,6 +318,7 @@
             this.gridColumn13.Caption = "周期单位";
             this.gridColumn13.FieldName = "IntervalUnit";
             this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 12;
             // 
@@ -305,6 +327,7 @@
             this.gridColumn14.Caption = "计划制定者";
             this.gridColumn14.FieldName = "Planner";
             this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 13;
             // 
@@ -313,6 +336,7 @@
             this.gridColumn15.Caption = "生效时间";
             this.gridColumn15.FieldName = "EffectiveTime";
             this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
             this.gridColumn15.VisibleIndex = 14;
             // 
@@ -321,14 +345,40 @@
             this.gridColumn16.Caption = "失效时间";
             this.gridColumn16.FieldName = "IneffectiveTime";
             this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.Visible = true;
             this.gridColumn16.VisibleIndex = 15;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.Caption = "岗位ID";
+            this.gridColumn17.FieldName = "PostID";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.OptionsColumn.AllowEdit = false;
+            // 
+            // repositoryItemImageComboBox2_Edit
+            // 
+            this.repositoryItemImageComboBox2_Edit.AutoHeight = false;
+            this.repositoryItemImageComboBox2_Edit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemImageComboBox2_Edit.Name = "repositoryItemImageComboBox2_Edit";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(714, 51);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 67;
+            this.btnSave.Text = "保存";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // frmTaskAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 593);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gridControlPlan);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.btnSearch);
@@ -345,7 +395,8 @@
             this.Load += new System.EventHandler(this.frmTaskAssignment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox2_Edit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,7 +416,6 @@
         private System.Windows.Forms.Button btnShowAll;
         private DevExpress.XtraGrid.GridControl gridControlPlan;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPlan;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -382,5 +432,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox2_Edit;
+        private System.Windows.Forms.Button btnSave;
     }
 }

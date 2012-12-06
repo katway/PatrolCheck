@@ -31,7 +31,6 @@
             this.btnDown = new System.Windows.Forms.Button();
             this.cboState = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.labID = new System.Windows.Forms.Label();
             this.labState = new System.Windows.Forms.Label();
             this.gridControlPlan = new DevExpress.XtraGrid.GridControl();
             this.gvPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -95,15 +94,6 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "显示";
             // 
-            // labID
-            // 
-            this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(459, 18);
-            this.labID.Name = "labID";
-            this.labID.Size = new System.Drawing.Size(89, 12);
-            this.labID.TabIndex = 39;
-            this.labID.Text = "已下发任务的ID";
-            // 
             // labState
             // 
             this.labState.AutoSize = true;
@@ -115,12 +105,12 @@
             // 
             // gridControlPlan
             // 
-            this.gridControlPlan.Location = new System.Drawing.Point(12, 53);
+            this.gridControlPlan.Location = new System.Drawing.Point(12, 42);
             this.gridControlPlan.MainView = this.gvPlan;
             this.gridControlPlan.Name = "gridControlPlan";
             this.gridControlPlan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlPlan.Size = new System.Drawing.Size(785, 261);
+            this.gridControlPlan.Size = new System.Drawing.Size(785, 272);
             this.gridControlPlan.TabIndex = 47;
             this.gridControlPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPlan});
@@ -387,7 +377,6 @@
             this.Controls.Add(this.gridControlTask);
             this.Controls.Add(this.gridControlPlan);
             this.Controls.Add(this.labState);
-            this.Controls.Add(this.labID);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cboState);
             this.Controls.Add(this.btnDown);
@@ -411,7 +400,6 @@
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.ComboBox cboState;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label labID;
         private System.Windows.Forms.Label labState;
         private DevExpress.XtraGrid.GridControl gridControlPlan;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPlan;

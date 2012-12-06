@@ -42,9 +42,9 @@ namespace WorkStation
 
         private void cboInit()
         {
-            cboState.Items.Add(new BoxItem("全部", "4,8"));
-            cboState.Items.Add(new BoxItem("未下发", "4"));
-            cboState.Items.Add(new BoxItem("已下发", "8"));
+            cboState.Items.Add(new BoxItem("全部", "8,16"));
+            cboState.Items.Add(new BoxItem("未下发", "8"));
+            cboState.Items.Add(new BoxItem("已下发", "16"));
             cboState.SelectedIndex = 0;
         }
 
@@ -106,6 +106,7 @@ namespace WorkStation
 
         private void frmAddPlanToTask_Load(object sender, EventArgs e)
         {
+            this.labState.Visible = false;
             cboInit();
             getDgvPlan();
         }
@@ -115,15 +116,15 @@ namespace WorkStation
             labState.Text = (cboState.SelectedItem as BoxItem).Value.ToString();
             switch ((cboState.SelectedItem as BoxItem).Value.ToString())
             {
-                case "4,8":
+                case "8,16":
                 case "8":
                     {
-                        this.btnDown.Enabled = false;
+                        this.btnDown.Enabled = true;
                         break;
                     }
-                case "4":
+                case "16":
                     {
-                        this.btnDown.Enabled = true;
+                        this.btnDown.Enabled = false;
                         break;
                     }
             }
