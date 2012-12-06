@@ -171,7 +171,7 @@ namespace WorkStation
         {
             if (cboOperator.SelectedValue != null && cboOperator.SelectedValue.ToString() != "-1")
             {
-                object postid = SqlHelper.ExecuteScalar("select post_id From post_employee where validstate=1 and employee_id=" + cboOperator.SelectedValue);
+                object postid = SqlHelper.ExecuteScalar("select post_id From post_employee where  employee_id=" + cboOperator.SelectedValue);
                 cboPost.SelectedValue = postid == null ? "-1" : postid;
             }
         }

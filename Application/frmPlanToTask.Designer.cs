@@ -382,7 +382,7 @@
             this.Controls.Add(this.btnDown);
             this.Name = "frmPlanToTask";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "任务下发";
+            this.Text = "任务生成";
             this.Load += new System.EventHandler(this.frmAddPlanToTask_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).EndInit();

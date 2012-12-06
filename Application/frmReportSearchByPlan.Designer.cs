@@ -69,6 +69,8 @@
             this.cboOperator = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
+            this.cboPost = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowTask)).BeginInit();
@@ -291,6 +293,7 @@
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.Size = new System.Drawing.Size(156, 21);
             this.dtpEndTime.TabIndex = 61;
+            this.dtpEndTime.ValueChanged += new System.EventHandler(this.dtpValueChanged);
             // 
             // dtpStart
             // 
@@ -300,6 +303,7 @@
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(154, 21);
             this.dtpStart.TabIndex = 60;
+            this.dtpStart.ValueChanged += new System.EventHandler(this.dtpValueChanged);
             // 
             // label6
             // 
@@ -321,7 +325,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(370, 74);
+            this.btnSearch.Location = new System.Drawing.Point(510, 74);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 62;
@@ -343,13 +347,13 @@
             this.cboState.FormattingEnabled = true;
             this.cboState.Location = new System.Drawing.Point(510, 19);
             this.cboState.Name = "cboState";
-            this.cboState.Size = new System.Drawing.Size(134, 20);
+            this.cboState.Size = new System.Drawing.Size(156, 20);
             this.cboState.TabIndex = 64;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(449, 53);
+            this.label2.Location = new System.Drawing.Point(451, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 66;
@@ -387,9 +391,9 @@
             // cboTask
             // 
             this.cboTask.FormattingEnabled = true;
-            this.cboTask.Location = new System.Drawing.Point(510, 46);
+            this.cboTask.Location = new System.Drawing.Point(510, 48);
             this.cboTask.Name = "cboTask";
-            this.cboTask.Size = new System.Drawing.Size(134, 20);
+            this.cboTask.Size = new System.Drawing.Size(156, 20);
             this.cboTask.TabIndex = 71;
             // 
             // cboPlan
@@ -404,15 +408,16 @@
             // cboOperator
             // 
             this.cboOperator.FormattingEnabled = true;
-            this.cboOperator.Location = new System.Drawing.Point(70, 74);
+            this.cboOperator.Location = new System.Drawing.Point(289, 75);
             this.cboOperator.Name = "cboOperator";
             this.cboOperator.Size = new System.Drawing.Size(154, 20);
             this.cboOperator.TabIndex = 74;
+            this.cboOperator.SelectedIndexChanged += new System.EventHandler(this.cboOperator_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(11, 79);
+            this.label3.Location = new System.Drawing.Point(230, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 73;
@@ -420,18 +425,38 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(510, 75);
+            this.btnImport.Location = new System.Drawing.Point(591, 74);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
             this.btnImport.TabIndex = 75;
             this.btnImport.Text = "导出";
             this.btnImport.UseVisualStyleBackColor = true;
             // 
+            // cboPost
+            // 
+            this.cboPost.FormattingEnabled = true;
+            this.cboPost.Location = new System.Drawing.Point(70, 75);
+            this.cboPost.Name = "cboPost";
+            this.cboPost.Size = new System.Drawing.Size(154, 20);
+            this.cboPost.TabIndex = 77;
+            this.cboPost.SelectedIndexChanged += new System.EventHandler(this.cboPost_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(11, 80);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.TabIndex = 76;
+            this.label8.Text = "巡检岗位";
+            // 
             // frmReportSearchByPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 486);
+            this.Controls.Add(this.cboPost);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.cboOperator);
             this.Controls.Add(this.label3);
@@ -502,5 +527,7 @@
         private System.Windows.Forms.ComboBox cboOperator;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.ComboBox cboPost;
+        private System.Windows.Forms.Label label8;
     }
 }

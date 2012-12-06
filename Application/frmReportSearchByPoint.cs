@@ -19,9 +19,8 @@ namespace WorkStation
 
         private void frmReportSearchByOperator_Load(object sender, EventArgs e)
         {
-
             bindSite();
-            bindEmployee();
+            bindPost();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -64,22 +63,20 @@ namespace WorkStation
             gridControl1.DataSource = dsTables.Tables[0];
         }
 
-        private void bindEmployee()
+        private void bindPost()
         {
-            string sql = "select ID,Name from Employee";
+            string sql = "select ID,Name From Post where validstate=1";
             DataSet ds = SqlHelper.ExecuteDataset(sql);
             DataRow dr = ds.Tables[0].NewRow();
-            dr[0] = "-1";
-            dr[1] = "全部";
-            ds.Tables[0].Rows.InsertAt(dr,0);
-            cboOperator.DisplayMember = "Name";
-            cboOperator.ValueMember = "ID";
-            cboOperator.DataSource=ds.Tables[0];
-            ds.Dispose();
+            dr[0] = -1; dr[1] = "全部";
+            ds.Tables[0].Rows.InsertAt(dr, 0);
+            cboPost.DisplayMember = "Name";
+            cboPost.ValueMember = "ID";
+            cboPost.DataSource = ds.Tables[0];
         }
         private void bindSite()
         {
-            string sql = "select ID,Name From Site ";
+            string sql = "select ID,Name From Site where validstate=1";
             DataSet ds = SqlHelper.ExecuteDataset(sql);
             DataRow dr = ds.Tables[0].NewRow();
             dr[0] = "-1";
@@ -91,11 +88,7 @@ namespace WorkStation
         }
         private void bindPoint(object siteid)
         {
-            string sql = "select ID,Name From PhysicalCheckPoint";
-            if (siteid.ToString() != "-1")
-            {
-                sql += " where Site_ID="+siteid;
-            }
+            string sql = "select ID,Name From PhysicalCheckPoint where site_id="+siteid;
             DataSet ds = SqlHelper.ExecuteDataset(sql);
             DataRow dr = ds.Tables[0].NewRow();
             dr[0] = "-1";
@@ -107,11 +100,7 @@ namespace WorkStation
         }
         private void bindItem(object pointid)
         {
-            string sql = "select ID,Name From CheckItem";
-            if (pointid.ToString() != "-1")
-            {
-                sql += " where Phy_ID=" + pointid;
-            }
+            string sql = "select ID,Name From CheckItem where phy_id="+pointid;
             DataSet ds = SqlHelper.ExecuteDataset(sql);
             DataRow dr = ds.Tables[0].NewRow();
             dr[0] = "-1";
@@ -124,11 +113,27 @@ namespace WorkStation
 
         private void cboSite_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboSite.SelectedValue == null) return;
             bindPoint(cboSite.SelectedValue);
         }
         private void cboPoint_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboPoint.SelectedValue == null) return;
             bindItem(cboPoint.SelectedValue);
+        }
+        private void cboPost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPost.SelectedValue == null) return;
+            string sql = "select e.ID,e.Name from Employee e left join post_employee pe on e.id=pe.employee_id where pe.post_id="+cboPost.SelectedValue;
+            DataSet ds = SqlHelper.ExecuteDataset(sql);
+            DataRow dr = ds.Tables[0].NewRow();
+            dr[0] = "-1";
+            dr[1] = "全部";
+            ds.Tables[0].Rows.InsertAt(dr, 0);
+            cboOperator.DisplayMember = "Name";
+            cboOperator.ValueMember = "ID";
+            cboOperator.DataSource = ds.Tables[0];
+            ds.Dispose();
         }
     }
 }

@@ -25,12 +25,12 @@ namespace WorkStation
             {
                 bindRoute();
             });
-            bindEmployee();
+            bindPost();
         }
 
         private void bindRoute()
         {
-            DataSet ds = SqlHelper.ExecuteDataset("select ID,Name From CheckRoute");
+            DataSet ds = SqlHelper.ExecuteDataset("select ID,Name From CheckRoute where validstate=1");
             DataRow dr = ds.Tables[0].NewRow();
             dr[0] = -1;
             dr[1] = "全部";
@@ -39,9 +39,9 @@ namespace WorkStation
             ds.Dispose();
 
         }
-        private void bindEmployee()
+        private void bindEmployee(object postid)
         {
-            string sql = "select ID,Name from Employee";
+            string sql = "select e.ID,e.Name from employee e left join post_employee pe  on pe.employee_id=e.id where pe.post_id=" + postid;
             DataSet ds = SqlHelper.ExecuteDataset(sql);
             DataRow dr = ds.Tables[0].NewRow();
             dr[0] = "-1";
@@ -50,12 +50,21 @@ namespace WorkStation
             cboOperator.DisplayMember = "Name";
             cboOperator.ValueMember = "ID";
             cboOperator.DataSource = ds.Tables[0];
-            ds.Dispose(); 
         }
-
+        private void bindPost()
+        {
+            string sql = "select ID,Name From Post where validstate=1";
+            DataSet ds = SqlHelper.ExecuteDataset(sql);
+            DataRow dr = ds.Tables[0].NewRow();
+            dr[0] = -1; dr[1] = "全部";
+            ds.Tables[0].Rows.InsertAt(dr,0);
+            cboPost.DisplayMember = "Name";
+            cboPost.ValueMember = "ID";
+            cboPost.DataSource=ds.Tables[0];
+        }
         private void bindPlan(object routeid,DateTime start,DateTime end)
         {
-            string sql = "Select ID,Name from checkplan where  StartTime>='" + start+"' and StartTime<='"+end +"' and PlanState=4";
+            string sql = "Select ID,Name from checkplan where  StartTime>='" + start+"' and StartTime<='"+end +"' and PlanState=16";
             if (routeid.ToString() != "-1")
             {
                 sql += " and route_Id=" + routeid ;
@@ -70,14 +79,9 @@ namespace WorkStation
             cboPlan.DataSource = ds.Tables[0];
             ds.Dispose();
         }
-
         private void bindTask(object planid,DateTime start,DateTime end)
         {
-            string sql = "Select ID,Name From CheckTask Where StartTime>='"+start+"' and EndTime<='"+end+"' and Plan_ID="+planid;
-            if (planid.ToString() != "-1")
-            {
-                sql += " and PlanID="+planid;
-            }
+            string sql = "Select ID,Name From CheckTask Where StartTime>='"+start+"' and EndTime<='"+end+"' and plan_id="+planid;
             DataSet ds = SqlHelper.ExecuteDataset(sql);
             DataRow dr = ds.Tables[0].NewRow();
             dr[0] = -1;
@@ -93,10 +97,32 @@ namespace WorkStation
         {
             bindPlan(cboRoute.SelectedValue,dtpStart.Value,dtpEndTime.Value);
         }
-
         private void cboPlan_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cboPlan.SelectedValue == null) return;
             bindTask(cboPlan.SelectedValue, dtpStart.Value, dtpEndTime.Value);
+            object postid = SqlHelper.ExecuteScalar("Select post from checkplan where id="+cboPlan.SelectedValue);
+            cboPost.SelectedValue = postid == null ? "-1" : postid;
+        }
+        private void cboPost_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPost.SelectedValue != null)
+            {
+                bindEmployee(cboPost.SelectedValue);
+            }
+        }
+        private void cboOperator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cboOperator.SelectedValue != null && cboOperator.SelectedValue.ToString()!="-1")
+            {
+                string sql = "select post_id From post_employee where employee_id="+cboOperator.SelectedValue;
+                object postid = SqlHelper.ExecuteScalar(sql);
+                cboPost.SelectedValue = postid == null ? "-1" : postid;
+            }
+        }
+        private void dtpValueChanged(object sender, EventArgs e)
+        {
+            bindPlan(cboRoute.SelectedValue, dtpStart.Value, dtpEndTime.Value);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -109,7 +135,7 @@ namespace WorkStation
                        c.StartTime ,c.EndTime ,r.starttime as ActualStartTime,r.endtime as ActualEndTime,
                        r.PercentComplete as PercentComplete,
                        (select Name From Employee where id=c.operator) as Operator
-                       From routechecking r,checktask c where r.tas_id=c.id and r.starttime>= '"+dtpStart.Value+
+                       From routechecking r,checktask c where r.task_id=c.id and r.starttime>= '"+dtpStart.Value+
                        "' and r.endtime<='"+dtpEndTime.Value+"'";
             string sqlPoint = @"select 
                                    R.ID,p.ID as PointID,
@@ -117,7 +143,7 @@ namespace WorkStation
                                    p.StartTime,p.EndTime,p.Duration
                               From PointChecking p 
                                    left join LogicalCheckPoint l on p.LogicPoint_ID=l.id
-                                   left join Routechecking r on p.route_id=r.id 
+                                   left join Routechecking r on p.routechecking_id=r.id 
                               where p.StartTime>='" + dtpStart.Value + "' and p.EndTime<='" + dtpEndTime.Value+"'";
             string sqlItem = @"select 
                                  P.ID,i.ID as ItemID,c.name as ItemName,
@@ -147,6 +173,7 @@ namespace WorkStation
             dsTables.Relations.Add(new DataRelation("TaskToPoint", dsTables.Tables[0].Columns["ID"], dsTables.Tables[1].Columns["ID"]));
             dsTables.Relations.Add(new DataRelation("PointToItem", dsTables.Tables[1].Columns["ID"], dsTables.Tables[2].Columns["ID"]));
             gridControl1.DataSource = dsTables.Tables[0];
-        }
+        } 
+      
     }
 }
