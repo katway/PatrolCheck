@@ -201,6 +201,7 @@
             this.dgvItems.Size = new System.Drawing.Size(659, 236);
             this.dgvItems.TabIndex = 19;
             this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
+            this.dgvItems.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellContentClick);
             // 
             // chkColumn
             // 

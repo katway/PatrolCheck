@@ -55,7 +55,6 @@ namespace WorkStation
             pars[3].Value = ((BoxItem)this.cboValue.SelectedItem).Value;
             pars[4].Value = this.cboPoint.SelectedValue;
             pars[5].Value = this.txtRemarks.Text;
-
             int _ret = SqlHelper.ExecuteNonQuery(str_insert,pars);
             if (_ret == 1)
             {
@@ -150,8 +149,7 @@ namespace WorkStation
             {
                 MessageBox.Show("请选择所属地点");
                 return;
-            }
-            
+            }            
             string str_insert = "Update CheckItem set [Name]=@name,Alias=@alias,Machine_ID=@machineid,ValueType=@valuetype,Phy_ID=@phyid,Comment=@comment where ID=" + labID.Text.Trim();
             SqlParameter[] pars = new SqlParameter[]{
                 new SqlParameter("@name",SqlDbType.NVarChar),
@@ -167,7 +165,6 @@ namespace WorkStation
             pars[3].Value = ((BoxItem)this.cboValue.SelectedItem).Value;
             pars[4].Value = this.cboPoint.SelectedValue;
             pars[5].Value = this.txtRemarks.Text;
-
             int _ret = SqlHelper.ExecuteNonQuery(str_insert, pars);
             if (_ret == 1)
             {
@@ -204,6 +201,11 @@ namespace WorkStation
             {
                 MessageBox.Show("请选择要删除的项");
             }
+        }
+
+        private void dgvItems_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

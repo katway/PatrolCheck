@@ -9,12 +9,11 @@ using System.Windows.Forms;
 
 namespace WorkStation
 {
-    public partial class frmPointStatistics : Form
+    public partial class frmItemOrPointStatisics : Form
     {
-        public frmPointStatistics()
+        public frmItemOrPointStatisics()
         {
             InitializeComponent();
         }
-
     }
 }

@@ -15,7 +15,7 @@ namespace WorkStation
         {
             InitializeComponent();
         }
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";  
+        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";  
         /// <summary>
         /// 编辑
         /// </summary>
@@ -23,8 +23,8 @@ namespace WorkStation
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            string selectEmpoyee = "select Employee.Name emName,Employee.Alias,Rfid.Name,Post.Name  postName from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.ID=Post.ID and Employee.ID=@id";
-            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dataGridView1.SelectedCells[0].Value) };
+            string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.ID=Post.ID and Employee.ID=@id";
+            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", this.dgvEmployessDel.GetRowCellValue(dgvEmployessDel.FocusedRowHandle,"ID")) };
             SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text, selectEmpoyee,par);
             while(dr.Read())
             {
@@ -32,6 +32,7 @@ namespace WorkStation
                 this.txtAlias.Text = dr[1].ToString();               
                 this.cboCard.Text = dr[2].ToString();
                 this.cboPost.Text = dr[3].ToString();
+                this.cboState.Text = dr[4].ToString();
             }
         }
         /// <summary>
@@ -41,18 +42,36 @@ namespace WorkStation
         /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
-            string deleteEmployee = "delete from Employee where ID=@id";
-            SqlParameter[] par = new SqlParameter[] {new SqlParameter("@id",dataGridView1.SelectedCells[0].Value) };
-            int i = SqlHelper.ExecuteNonQuery(deleteEmployee,par);
-            if (i > 0)
+            string del = "";
+            string delCard = "delete from  Employee  where  ID in (";
+            for (int i = 0; i < dgvEmployessDel.DataRowCount; i++)
             {
-                MessageBox.Show("删除成功！");
+                object idCheck = dgvEmployessDel.GetRowCellValue(i, gridColumn_check);
+                if (idCheck != null && (bool)idCheck == true)
+                {
+                    del += dgvEmployessDel.GetRowCellValue(i, "ID").ToString() + ",";
+                }
+            }
+            if (del != "")
+            {
+                del = del.Substring(0, del.Length - 1);
+                delCard += del + ")";
+                int i = SqlHelper.ExecuteNonQuery(delCard);
+                if (i > 0)
+                {
+                    MessageBox.Show("删除成功！");
+                }
+                else
+                {
+                    MessageBox.Show("删除失败！");
+                }
             }
             else
             {
-                MessageBox.Show("删除失败！");
+                MessageBox.Show("请选择要删除的项");
             }
-            BindEmployee();
+            BindEmployee();     
+           
         }
         /// <summary>
         /// 更新
@@ -71,12 +90,12 @@ namespace WorkStation
                 MessageBox.Show("人员别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 this.txtAlias.Focus();
             }
-            else if (this.cboCard.SelectedValue.ToString() == "")
+            else if (this.cboCard.SelectedValue == null)
             {
                 MessageBox.Show("所属卡片不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 this.cboCard.Focus();
             }
-             else if (this.cboPost.SelectedValue.ToString() == "")
+             else if (this.cboPost.SelectedValue.ToString() == null)
              {
                  MessageBox.Show("所属岗位不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                  this.cboPost.Focus();
@@ -84,14 +103,16 @@ namespace WorkStation
 
              else
              {
-                 string UpdateEmployee = "update Employee set Employee.Name=@name,Employee.Alias=@alias,Rfid_ID=@rfid_id where Employee.ID=@id;select  @@identity";
-                 SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@id",dataGridView1.SelectedCells[0].Value),
+                 string UpdateEmployee = "update Employee set Employee.Name=@name,Employee.Alias=@alias,Rfid_ID=@rfid_id,Employee.ValidState=@ValidState where Employee.ID=@id;select  @@identity";
+                 SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@id",this.dgvEmployessDel.GetRowCellValue(dgvEmployessDel.FocusedRowHandle, "ID")),
                                                           new SqlParameter("@name",SqlDbType.NVarChar),
                                                           new SqlParameter("@alias",SqlDbType.NVarChar),
-                                                          new SqlParameter("@rfid_id",SqlDbType.Int) };                
+                                                          new SqlParameter("@rfid_id",SqlDbType.Int),
+                                                          new SqlParameter("@ValidState",SqlDbType.Int)};              
                  par[1].Value = this.txtName.Text;
                  par[2].Value = this.txtAlias.Text;
                  par[3].Value = this.cboCard.SelectedValue;
+                 par[4].Value = this.cboState.SelectedValue;
                  string a = SqlHelper.ExecuteScalar(sqlConnectionStr, CommandType.Text, UpdateEmployee, par).ToString();
                  if (a != null)
                  {
@@ -106,8 +127,8 @@ namespace WorkStation
                  {
                    new SqlParameter("@emID",SqlDbType.Int),
                    new SqlParameter("@id",SqlDbType.Int)
-                  };
-                 par2[0].Value = dataGridView1.SelectedCells[0].Value;
+                  };         
+                 par2[0].Value = this.dgvEmployessDel.GetRowCellValue(dgvEmployessDel.FocusedRowHandle, "ID");
                  par2[1].Value = cboPost.SelectedValue.ToString();
                  int i = SqlHelper.ExecuteNonQuery(UpdateEmPost, par2);
              }
@@ -130,16 +151,22 @@ namespace WorkStation
         private void frmEditOrDeleteEmployee_Load(object sender, EventArgs e)
         {
             string selectPost = "select * from Post";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, selectPost);
+            DataSet ds = SqlHelper.ExecuteDataset(selectPost);
             cboPost.DataSource = ds.Tables[0];
             cboPost.DisplayMember = "Name";
             cboPost.ValueMember = "ID";
 
             string selectCard = "select * from Rfid";
-            DataSet dsd = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, selectCard);
+            DataSet dsd = SqlHelper.ExecuteDataset(selectCard);
             cboCard.DataSource = dsd.Tables[0];
             cboCard.DisplayMember = "Name";
             cboCard.ValueMember = "ID";
+
+            string selectState = "select Code,Meaning from Codes where Purpose='ValidState' ";
+            DataSet dse = SqlHelper.ExecuteDataset(selectState);
+            cboState.DataSource = dse.Tables[0];
+            cboState.DisplayMember = "Meaning";
+            cboState.ValueMember = "Code";
             BindEmployee();
         }
         /// <summary>
@@ -147,9 +174,14 @@ namespace WorkStation
         /// </summary>
         public void BindEmployee()
         {
-            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias,Rfid.Name,Post.Name  postName from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.ID=Post.ID";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, selectEmployee);
-            dataGridView1.DataSource = ds.Tables[0];
+            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name  postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.ID=Post.ID";
+            DataSet ds = SqlHelper.ExecuteDataset(selectEmployee);
+            ds.Tables[0].Columns.Add(new DataColumn("check", typeof(System.Boolean)));
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                ds.Tables[0].Rows[i]["check"] = false;
+            }
+            this.gridControl1.DataSource = ds.Tables[0];
         }
     }
 }

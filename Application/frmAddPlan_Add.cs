@@ -68,7 +68,7 @@ namespace WorkStation
                 strInsert = @"Insert into CheckPlan(Name,Alias,StartTime,Duration,EndTime,Post,Route_ID,Interval,IntervalUnit,EffectiveTime,IneffectiveTime,Planner,PlanState) values
                                                       (@Name,@Alias,@StartTime,@Duration,@EndTime,@Post,@Route_ID,@Interval,@IntervalUnit,@EffectiveTime,@IneffectiveTime,@Planner,@PlanState)";
             }
-             SqlParameter[] pars = new SqlParameter[] { 
+             SqlParameter[] pars = new SqlParameter[]{ 
                 new SqlParameter("@Name",SqlDbType.VarChar),
                 new SqlParameter("@Alias",SqlDbType.VarChar),
                 new SqlParameter("@StartTime",SqlDbType.DateTime),

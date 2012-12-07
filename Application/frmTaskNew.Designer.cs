@@ -187,7 +187,7 @@
             this.cboUnit.FormattingEnabled = true;
             this.cboUnit.Items.AddRange(new object[] {
             "选择路线"});
-            this.cboUnit.Location = new System.Drawing.Point(179, 177);
+            this.cboUnit.Location = new System.Drawing.Point(189, 177);
             this.cboUnit.Name = "cboUnit";
             this.cboUnit.Size = new System.Drawing.Size(59, 20);
             this.cboUnit.TabIndex = 24;

@@ -101,6 +101,7 @@ namespace WorkStation
 
         private void frmAddPlanToTask_Load(object sender, EventArgs e)
         {
+            
             cboInit();
             getDgvPlan();
         }

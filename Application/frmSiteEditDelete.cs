@@ -11,7 +11,7 @@ namespace WorkStation
 {
     public partial class frmSiteEditDelete : Form
     {
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";         
+        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";         
         public frmSiteEditDelete()
         {
             InitializeComponent();
@@ -33,21 +33,23 @@ namespace WorkStation
                 MessageBox.Show("厂区别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 this.txtAlias.Focus();
              }
-              else if (this.cboCompany.SelectedValue.ToString() == "")
+              else if (this.cboCompany.SelectedValue == null)
               {
                   MessageBox.Show("所属公司不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                   this.cboCompany.Focus();
               }
               else
               {
-                  string b = "update Site set Site.Name=@name,Site.Alias=@alias,Site.Company_ID=@comid where Site.ID=@id";
-                  SqlParameter[] par = new SqlParameter[] { new  SqlParameter("@id",dgvSite.SelectedCells[0].Value),
-                                                      new  SqlParameter("@name",SqlDbType.NVarChar),
-                                                      new  SqlParameter("@alias",SqlDbType.NVarChar),
-                                                      new  SqlParameter("@comid",SqlDbType.Int) };
+                  string b = "update Site set Site.Name=@name,Site.Alias=@alias,Site.Company_ID=@comid,ValidState=@ValidState where Site.ID=@id";
+                  SqlParameter[] par = new SqlParameter[] { new  SqlParameter("@id",this.dgvSiteDel.GetRowCellValue(this.dgvSiteDel.FocusedRowHandle,"ID")),
+                                                            new  SqlParameter("@name",SqlDbType.NVarChar),
+                                                            new  SqlParameter("@alias",SqlDbType.NVarChar),
+                                                            new  SqlParameter("@comid",SqlDbType.Int),
+                                                            new  SqlParameter("@ValidState",SqlDbType.Int) };                                                   
                   par[1].Value = this.txtName.Text.Trim();
                   par[2].Value = this.txtAlias.Text.Trim();
                   par[3].Value = this.cboCompany.SelectedValue;
+                  par[4].Value = this.cboState.SelectedValue;
                   int i = SqlHelper.ExecuteNonQuery(sqlConnectionStr, CommandType.Text, b, par);
                   if (i > 0)
                   {
@@ -77,14 +79,15 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string a = "select Site.Name,Site.Alias,Company.Name from Site,Company where Site.Company_ID=Company.ID and  Site.ID=@id";
-            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dgvSite.SelectedCells[0].Value) };
+            string a = "select Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState from Site,Company where Site.Company_ID=Company.ID and  Site.ID=@id";
+            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", this.dgvSiteDel.GetRowCellValue(this.dgvSiteDel.FocusedRowHandle, "ID")) };
             SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr,CommandType.Text,a,par);
             while (dr.Read())
             {
                 this.txtName.Text = dr[0].ToString();
                 this.txtAlias.Text = dr[1].ToString();
                 this.cboCompany.Text= dr[2].ToString();
+                this.cboState.Text = dr[3].ToString();
             }
             
         }
@@ -95,19 +98,35 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string delSite = "delete  from Site where ID=@id";
-            SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dgvSite.SelectedCells[0].Value) };
-            int i = SqlHelper.ExecuteNonQuery(sqlConnectionStr, CommandType.Text, delSite,par);
-            if (i > 0)
+            string del = "";
+            string delCard = "delete from  Site  where  ID in (";
+            for (int i = 0; i < dgvSiteDel.DataRowCount; i++)
             {
-                MessageBox.Show("删除成功！");
+                object idCheck = dgvSiteDel.GetRowCellValue(i, gridColumn_check);
+                if (idCheck != null && (bool)idCheck == true)
+                {
+                    del += dgvSiteDel.GetRowCellValue(i, "ID").ToString() + ",";
+                }
+            }
+            if (del != "")
+            {
+                del = del.Substring(0, del.Length - 1);
+                delCard += del + ")";
+                int i = SqlHelper.ExecuteNonQuery(delCard);
+                if (i > 0)
+                {
+                    MessageBox.Show("删除成功！");
+                }
+                else
+                {
+                    MessageBox.Show("删除失败！");
+                }
             }
             else
             {
-                MessageBox.Show("删除失败！");
-
+                MessageBox.Show("请选择要删除的项");
             }
-            SelectSiteBind();
+            SelectSiteBind();           
 
         }
         /// <summary>
@@ -115,9 +134,14 @@ namespace WorkStation
         /// </summary>
         public void SelectSiteBind()
         {
-            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name from Site,Company where Site.Company_ID=Company.ID";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, SelectSite);
-            this.dgvSite.DataSource = ds.Tables[0];
+            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name Name1,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState  from Site,Company where Site.Company_ID=Company.ID";
+            DataSet ds = SqlHelper.ExecuteDataset(SelectSite);
+            ds.Tables[0].Columns.Add(new DataColumn("check", typeof(System.Boolean)));
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+            {
+                ds.Tables[0].Rows[i]["check"] = false;
+            }
+            this.gridControl1.DataSource = ds.Tables[0];
         }
         /// <summary>
         /// 窗体加载
@@ -127,10 +151,16 @@ namespace WorkStation
         private void SiteEditDelete_Load(object sender, EventArgs e)
         {
             string SelectCompanyName = "select * from  Company";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, SelectCompanyName);
+            DataSet ds = SqlHelper.ExecuteDataset(SelectCompanyName);
             cboCompany.DataSource = ds.Tables[0];
             cboCompany.DisplayMember = "Name";
             cboCompany.ValueMember = "ID";
+
+            string selectState = "select Code,Meaning from Codes where Purpose='ValidState'";
+            DataSet dse = SqlHelper.ExecuteDataset(selectState);
+            cboState.DataSource = dse.Tables[0];
+            cboState.DisplayMember = "Meaning";
+            cboState.ValueMember = "Code";
             SelectSiteBind();
         }
     }

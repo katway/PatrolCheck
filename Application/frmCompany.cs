@@ -14,8 +14,7 @@ namespace WorkStation
         public frmCompany()
         {
             InitializeComponent();
-        }
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";         
+        }      
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (this.txtName.Text == "")
