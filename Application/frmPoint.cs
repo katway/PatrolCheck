@@ -80,30 +80,13 @@ namespace WorkStation
 
         private void getDgvPoint()
         {
-            DataSet ds = SqlHelper.ExecuteDataset("Select P.ID as 编号,P.Name as 巡检名称,P.Alias as 别名,R.Name as 关联标签卡,S.Name from PhysicalCheckPoint as P left  join  Rfid as R on P.Rfid_ID=R.ID Left Join Site S on P.Site_ID=S.ID");
-            dgvPoint.DataSource=ds.Tables[0];
-        }
-
-        private void dgvPoint_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex == -1) return;
-
-            labID.Text = dgvPoint.Rows[e.RowIndex].Cells[1].Value.ToString();
-            txtName.Text = dgvPoint.Rows[e.RowIndex].Cells[2].Value.ToString();
-            txtAlias.Text = dgvPoint.Rows[e.RowIndex].Cells[3].Value.ToString();
-            txtRelation.Text = dgvPoint.Rows[e.RowIndex].Cells[4].Value.ToString();
-            cboSite.Text = dgvPoint.Rows[e.RowIndex].Cells[5].Value.ToString();
-            if (e.ColumnIndex == 0)
+            DataSet ds = SqlHelper.ExecuteDataset("Select P.ID ,P.Name ,P.Alias,R.Name as RName,R.RFID,R.ID as RID,S.Name as SiteName,s.ID as SiteID from PhysicalCheckPoint as P left  join  Rfid as R on P.Rfid_ID=R.ID Left Join Site S on P.Site_ID=S.ID");
+            ds.Tables[0].Columns.Add(new DataColumn("isCheck",typeof(System.Boolean)));
+            for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
-                if ((bool)dgvPoint.Rows[e.RowIndex].Cells[0].EditedFormattedValue == false)
-                {
-                    dgvPoint.Rows[e.RowIndex].Cells[0].Value = true;
-                }
-                else
-                {
-                    dgvPoint.Rows[e.RowIndex].Cells[0].Value = false;
-                }
-            }            
+                ds.Tables[0].Rows[i]["isCheck"] = false;
+            }
+            gridControlPoint.DataSource = ds.Tables[0];
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -131,7 +114,7 @@ namespace WorkStation
             pars[1].Value = this.txtAlias.Text.Trim();
             pars[3].Value = this.cboSite.SelectedValue;
 
-            if ((int)SqlHelper.ExecuteScalar("Select Count(1) From Rfid Where Purpose=2 and Name='" + this.txtRelation.Text.Trim() + "'") == 1)
+            if ((int)SqlHelper.ExecuteScalar("Select Count(1) From Rfid Where Purpose=2 and RFID='" + this.txtRelation.Text.Trim() + "'") == 1)
             {
                 string str_select = "Select ID From Rfid Where Name='" + this.txtRelation.Text.Trim() + "'";
                 string str_rfid = SqlHelper.ExecuteScalar(str_select).ToString();
@@ -157,18 +140,12 @@ namespace WorkStation
         {
             string Del = "";
             string strsql = "Delete From PhysicalCheckPoint Where ID in(";
-            for (int i = 0; i < dgvPoint.Rows.Count; i++)
+            for (int i = 0; i < gvPoint.RowCount; i++)
             {
-                try
+                object isCheck = gvPoint.GetRowCellValue(i,"isCheck");
+                if (isCheck != null && (bool)isCheck == true)
                 {
-                    if ((bool)dgvPoint.Rows[i].Cells[0].Value == true)
-                    {
-                        Del += dgvPoint.Rows[i].Cells[1].Value.ToString() + ",";
-                    }
-                }
-                catch
-                {
-                    continue;
+                    Del += gvPoint.GetRowCellValue(i,"isCheck")+",";
                 }
             }
             if (Del != "")
@@ -206,6 +183,16 @@ namespace WorkStation
             cboSite.ValueMember = "ID";
             this.cboSite.SelectedIndex = cboSite.Items.Count > 0 ? 0 : -1;
             dsSite.Dispose();
+        }
+
+        private void gvPoint_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            if (e.RowHandle < 0) return;
+            labID.Text = gvPoint.GetRowCellValue(e.RowHandle, "ID").ToString();
+            txtName.Text = gvPoint.GetRowCellValue(e.RowHandle, "Name").ToString();
+            txtAlias.Text = gvPoint.GetRowCellValue(e.RowHandle, "Alias").ToString();
+            txtRelation.Text = gvPoint.GetRowCellValue(e.RowHandle, "RName").ToString();
+            cboSite.SelectedValue = gvPoint.GetRowCellValue(e.RowHandle, "SiteID");
         }
      
        

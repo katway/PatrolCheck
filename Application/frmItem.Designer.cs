@@ -43,17 +43,28 @@
             this.cboMachine = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
-            this.dgvItems = new System.Windows.Forms.DataGridView();
-            this.chkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.labID = new System.Windows.Forms.Label();
             this.bkwItem = new System.ComponentModel.BackgroundWorker();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            this.gridControlItems = new DevExpress.XtraGrid.GridControl();
+            this.gvItems = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvItems)).BeginInit();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(48, 31);
+            this.lblName.Location = new System.Drawing.Point(48, 20);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 0;
@@ -61,7 +72,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(101, 24);
+            this.txtName.Location = new System.Drawing.Point(101, 13);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(171, 21);
             this.txtName.TabIndex = 1;
@@ -69,7 +80,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(324, 31);
+            this.lblAlias.Location = new System.Drawing.Point(324, 20);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 2;
@@ -78,7 +89,7 @@
             // lblValue
             // 
             this.lblValue.AutoSize = true;
-            this.lblValue.Location = new System.Drawing.Point(312, 74);
+            this.lblValue.Location = new System.Drawing.Point(312, 51);
             this.lblValue.Name = "lblValue";
             this.lblValue.Size = new System.Drawing.Size(41, 12);
             this.lblValue.TabIndex = 3;
@@ -87,7 +98,7 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
-            this.lblPoints.Location = new System.Drawing.Point(18, 109);
+            this.lblPoints.Location = new System.Drawing.Point(18, 79);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(65, 12);
             this.lblPoints.TabIndex = 4;
@@ -96,7 +107,7 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(30, 152);
+            this.lblRemarks.Location = new System.Drawing.Point(30, 116);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(29, 12);
             this.lblRemarks.TabIndex = 5;
@@ -104,7 +115,7 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(383, 24);
+            this.txtAlias.Location = new System.Drawing.Point(383, 13);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(171, 21);
             this.txtAlias.TabIndex = 2;
@@ -113,14 +124,14 @@
             // 
             this.cboValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboValue.FormattingEnabled = true;
-            this.cboValue.Location = new System.Drawing.Point(383, 71);
+            this.cboValue.Location = new System.Drawing.Point(383, 48);
             this.cboValue.Name = "cboValue";
             this.cboValue.Size = new System.Drawing.Size(171, 20);
             this.cboValue.TabIndex = 4;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(101, 149);
+            this.txtRemarks.Location = new System.Drawing.Point(101, 113);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -131,14 +142,14 @@
             // 
             this.cboPoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPoint.FormattingEnabled = true;
-            this.cboPoint.Location = new System.Drawing.Point(101, 109);
+            this.cboPoint.Location = new System.Drawing.Point(101, 79);
             this.cboPoint.Name = "cboPoint";
             this.cboPoint.Size = new System.Drawing.Size(171, 20);
             this.cboPoint.TabIndex = 5;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(278, 234);
+            this.btnSave.Location = new System.Drawing.Point(278, 198);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -149,7 +160,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 71);
+            this.label1.Location = new System.Drawing.Point(30, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 14;
@@ -159,14 +170,14 @@
             // 
             this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
-            this.cboMachine.Location = new System.Drawing.Point(101, 68);
+            this.cboMachine.Location = new System.Drawing.Point(101, 45);
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Size = new System.Drawing.Size(171, 20);
             this.cboMachine.TabIndex = 3;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(383, 234);
+            this.btnUpdate.Location = new System.Drawing.Point(383, 198);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
@@ -176,7 +187,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(488, 234);
+            this.btnDel.Location = new System.Drawing.Point(488, 198);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 9;
@@ -184,37 +195,10 @@
             this.btnDel.UseVisualStyleBackColor = true;
             this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
-            // dgvItems
-            // 
-            this.dgvItems.AllowUserToAddRows = false;
-            this.dgvItems.AllowUserToDeleteRows = false;
-            this.dgvItems.AllowUserToResizeRows = false;
-            this.dgvItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.chkColumn});
-            this.dgvItems.Location = new System.Drawing.Point(14, 291);
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.ReadOnly = true;
-            this.dgvItems.RowTemplate.Height = 23;
-            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(659, 236);
-            this.dgvItems.TabIndex = 10;
-            this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
-            // 
-            // chkColumn
-            // 
-            this.chkColumn.HeaderText = "选择";
-            this.chkColumn.Name = "chkColumn";
-            this.chkColumn.ReadOnly = true;
-            this.chkColumn.Width = 38;
-            // 
             // labID
             // 
             this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(383, 116);
+            this.labID.Location = new System.Drawing.Point(383, 86);
             this.labID.Name = "labID";
             this.labID.Size = new System.Drawing.Size(53, 12);
             this.labID.TabIndex = 20;
@@ -226,14 +210,125 @@
             this.bkwItem.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bkwItem_DoWork);
             this.bkwItem.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bkwItem_RunWorkerCompleted);
             // 
+            // gridControlItems
+            // 
+            this.gridControlItems.Location = new System.Drawing.Point(20, 229);
+            this.gridControlItems.MainView = this.gvItems;
+            this.gridControlItems.Name = "gridControlItems";
+            this.gridControlItems.Size = new System.Drawing.Size(684, 345);
+            this.gridControlItems.TabIndex = 21;
+            this.gridControlItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvItems});
+            // 
+            // gvItems
+            // 
+            this.gvItems.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8,
+            this.gridColumn9,
+            this.gridColumn10});
+            this.gvItems.GridControl = this.gridControlItems;
+            this.gvItems.Name = "gvItems";
+            this.gvItems.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvItem_RowClick);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "编号";
+            this.gridColumn1.FieldName = "ID";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "巡检项名称";
+            this.gridColumn2.FieldName = "Name";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "别名";
+            this.gridColumn3.FieldName = "Alias";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "值类型";
+            this.gridColumn4.FieldName = "ValueTypeMeaning";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowEdit = false;
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "ValueType";
+            this.gridColumn5.FieldName = "ValueType";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "机器名称";
+            this.gridColumn6.FieldName = "MachineName";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.OptionsColumn.AllowEdit = false;
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "MachineID";
+            this.gridColumn7.FieldName = "MachineID";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "巡检点";
+            this.gridColumn8.FieldName = "PointName";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 5;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "PointID";
+            this.gridColumn9.FieldName = "PointID";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "Comment";
+            this.gridColumn10.FieldName = "Comment";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 6;
+            // 
             // frmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(716, 586);
+            this.Controls.Add(this.gridControlItems);
             this.Controls.Add(this.labID);
-            this.Controls.Add(this.dgvItems);
             this.Controls.Add(this.btnDel);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.cboMachine);
@@ -253,7 +348,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建巡检项";
             this.Load += new System.EventHandler(this.frmAddItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvItems)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,9 +372,19 @@
         private System.Windows.Forms.ComboBox cboMachine;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.DataGridView dgvItems;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn chkColumn;
         private System.Windows.Forms.Label labID;
         private System.ComponentModel.BackgroundWorker bkwItem;
+        private DevExpress.XtraGrid.GridControl gridControlItems;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvItems;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
     }
 }

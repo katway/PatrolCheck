@@ -125,7 +125,8 @@ namespace WorkStation
         {
             if (e.Column.FieldName == "OperatorID")
             {
-                object postid = gvPlan.GetRowCellValue(1, "PostID");
+                object postid = gvPlan.GetRowCellValue(e.RowHandle, "PostID");
+                if (postid == null) return;
                 SqlDataReader dr = SqlHelper.ExecuteReader("select e.name as OperatorName,e.id as OperatorID from post_employee pe left join employee e on pe.employee_id=e.id where pe.post_id=" + postid);
                 repositoryItemImageComboBox2_Edit.Items.Clear();
                 while (dr.Read())

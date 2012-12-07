@@ -191,6 +191,12 @@
     <Compile Include="frmTaskAssignment.Designer.cs">
       <DependentUpon>frmTaskAssignment.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTaskExecution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskExecution.Designer.cs">
+      <DependentUpon>frmTaskExecution.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyDataSet\ReportSearchByPoint.cs">
       <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaskAssignment.resx">
       <DependentUpon>frmTaskAssignment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskExecution.resx">
+      <DependentUpon>frmTaskExecution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyReport\ReportSearchByPlan.resx">
       <DependentUpon>ReportSearchByPlan.cs</DependentUpon>

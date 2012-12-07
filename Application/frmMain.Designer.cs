@@ -83,6 +83,7 @@
             this.tsmiCardDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmhelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmihelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTaskExecution = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -222,7 +223,8 @@
             this.tsmiPlan,
             this.tsmiPlanExamine,
             this.tsmiPlanToTask,
-            this.tsmiTaskAssignment});
+            this.tsmiTaskAssignment,
+            this.tsmiTaskExecution});
             this.tsmiTask.Image = ((System.Drawing.Image)(resources.GetObject("tsmiTask.Image")));
             this.tsmiTask.Name = "tsmiTask";
             this.tsmiTask.Size = new System.Drawing.Size(81, 20);
@@ -273,7 +275,7 @@
             this.计划执行率ToolStripMenuItem,
             this.巡检点项执勤统计ToolStripMenuItem});
             this.数据统计分析ToolStripMenuItem.Name = "数据统计分析ToolStripMenuItem";
-            this.数据统计分析ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.数据统计分析ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.数据统计分析ToolStripMenuItem.Text = "数据统计分析";
             // 
             // 人员出勤率ToolStripMenuItem
@@ -300,20 +302,20 @@
             this.tsmiReportSearchByPlan,
             this.tsmiReportSearchByPoint});
             this.数据明细查询ToolStripMenuItem.Name = "数据明细查询ToolStripMenuItem";
-            this.数据明细查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.数据明细查询ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.数据明细查询ToolStripMenuItem.Text = "数据明细查询";
             // 
             // tsmiReportSearchByPlan
             // 
             this.tsmiReportSearchByPlan.Name = "tsmiReportSearchByPlan";
-            this.tsmiReportSearchByPlan.Size = new System.Drawing.Size(152, 22);
+            this.tsmiReportSearchByPlan.Size = new System.Drawing.Size(130, 22);
             this.tsmiReportSearchByPlan.Text = "按计划查询";
             this.tsmiReportSearchByPlan.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiReportSearchByPoint
             // 
             this.tsmiReportSearchByPoint.Name = "tsmiReportSearchByPoint";
-            this.tsmiReportSearchByPoint.Size = new System.Drawing.Size(152, 22);
+            this.tsmiReportSearchByPoint.Size = new System.Drawing.Size(130, 22);
             this.tsmiReportSearchByPoint.Text = "按地点查询";
             this.tsmiReportSearchByPoint.Click += new System.EventHandler(this.ShowForm);
             // 
@@ -539,6 +541,13 @@
             this.tsmihelp.Size = new System.Drawing.Size(94, 22);
             this.tsmihelp.Text = "帮助";
             // 
+            // tsmiTaskExecution
+            // 
+            this.tsmiTaskExecution.Name = "tsmiTaskExecution";
+            this.tsmiTaskExecution.Size = new System.Drawing.Size(152, 22);
+            this.tsmiTaskExecution.Text = "任务执行";
+            this.tsmiTaskExecution.Click += new System.EventHandler(this.ShowForm);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -614,5 +623,6 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiReportSearchByPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmiReportSearchByPoint;
         private System.Windows.Forms.ToolStripMenuItem tsmiTaskAssignment;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTaskExecution;
     }
 }

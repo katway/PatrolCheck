@@ -15,8 +15,7 @@ namespace WorkStation
     {
         public frmReportSearchByPlan()
         {
-            InitializeComponent();
-         
+            InitializeComponent();       
         }
 
         private void frmReportSearchByPlan_Load(object sender, EventArgs e)
@@ -151,19 +150,23 @@ namespace WorkStation
                                from itemchecking i 
                                     left join pointchecking p  on i.pointchecking_id=p.id
                                     left join checkitem c on i.item_id=c.id where p.StartTime>='" + dtpStart.Value + "' and p.EndTime<='" + dtpEndTime.Value+"'";
-            if (cboRoute.SelectedValue.ToString() != "-1")
+            if (cboPlan.SelectedValue!=null&&cboRoute.SelectedValue.ToString() != "-1")
             {
                 sqlTask += " and c.route_id=" + cboRoute.SelectedValue;
             }
-            if (cboPlan.SelectedValue.ToString() != "-1")
+            if (cboPlan.SelectedValue!=null&&cboPlan.SelectedValue.ToString() != "-1")
             {
                 sqlTask += " and c.plan_id=" + cboPlan.SelectedValue;
             }
-            if (cboRoute.SelectedValue.ToString() != "-1")
+            if (cboTask.SelectedValue!=null&&cboTask.SelectedValue.ToString() != "-1")
             {
-                sqlTask += " and r.id=" + cboTask.SelectedValue;
+                sqlTask += " and c.id=" + cboTask.SelectedValue;
             }
-            if (cboOperator.SelectedValue.ToString() != "-1")
+            if (cboPost.SelectedValue != null && cboPost.SelectedValue.ToString() != "-1")
+            {
+                sqlTask += " and c.post=" + cboPost.SelectedValue;
+            }
+            if (cboOperator.SelectedValue!=null&&cboOperator.SelectedValue.ToString() != "-1")
             {
                 sqlTask += " and c.Operator="+cboOperator.SelectedValue;
             }
