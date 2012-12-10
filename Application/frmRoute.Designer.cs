@@ -50,7 +50,6 @@
             this.btnMoveUp = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.customizationControl1 = new DevExpress.XtraBars.Customization.CustomizationControl();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,28 +63,28 @@
             this.删除路线ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(751, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(751, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // 新建路线ToolStripMenuItem
             // 
             this.新建路线ToolStripMenuItem.Name = "新建路线ToolStripMenuItem";
-            this.新建路线ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.新建路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.新建路线ToolStripMenuItem.Text = "新建路线";
             this.新建路线ToolStripMenuItem.Click += new System.EventHandler(this.新建路线ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(68, 21);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(65, 20);
             this.toolStripMenuItem1.Text = "编辑路线";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // 删除路线ToolStripMenuItem
             // 
             this.删除路线ToolStripMenuItem.Name = "删除路线ToolStripMenuItem";
-            this.删除路线ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.删除路线ToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.删除路线ToolStripMenuItem.Text = "删除路线";
             this.删除路线ToolStripMenuItem.Click += new System.EventHandler(this.删除路线ToolStripMenuItem_Click);
             // 
@@ -282,14 +281,7 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // customizationControl1
-            // 
-            this.customizationControl1.Location = new System.Drawing.Point(0, 0);
-            this.customizationControl1.Name = "customizationControl1";
-            this.customizationControl1.Size = new System.Drawing.Size(373, 322);
-            this.customizationControl1.TabIndex = 0;
-            // 
-            // frmRoute
+            // frmAddRoute
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -341,7 +333,6 @@
         private System.Windows.Forms.TreeView tvLogicalPoint;
         private System.Windows.Forms.Label labRouteID;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private DevExpress.XtraBars.Customization.CustomizationControl customizationControl1;
 
 
     }

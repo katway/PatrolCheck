@@ -34,10 +34,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -52,9 +64,14 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.7.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\CommonClass.cs" />
+    <Compile Include="Code\GlobalConfig.cs" />
     <Compile Include="Code\SqlHelper.cs" />
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
@@ -68,11 +85,23 @@
     <Compile Include="frmCardNew.Designer.cs">
       <DependentUpon>frmCardNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPointChoseRfid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPointChoseRfid.Designer.cs">
+      <DependentUpon>frmPointChoseRfid.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCompany.Designer.cs">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainTool.Designer.cs">
+      <DependentUpon>frmMainTool.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPlan.cs">
       <SubType>Form</SubType>
@@ -86,29 +115,41 @@
     <Compile Include="frmPlanExamine.Designer.cs">
       <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPlanToTask.cs">
+    <Compile Include="frmPlanToTask.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPlanToTask.Designer.cs">
-      <DependentUpon>frmAddPlanToTask.cs</DependentUpon>
+    <Compile Include="frmPlanToTask.Designer.cs">
+      <DependentUpon>frmPlanToTask.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddPlan_Add.cs">
+    <Compile Include="frmPlanAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddPlan_Add.Designer.cs">
-      <DependentUpon>frmAddPlan_Add.cs</DependentUpon>
+    <Compile Include="frmPlanAdd.Designer.cs">
+      <DependentUpon>frmPlanAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPointNew.cs">
+    <Compile Include="frmPoint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPointNew.Designer.cs">
-      <DependentUpon>frmPointNew.cs</DependentUpon>
+    <Compile Include="frmPoint.Designer.cs">
+      <DependentUpon>frmPoint.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPostNew.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPostNew.Designer.cs">
       <DependentUpon>frmPostNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportSearchByPoint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSearchByPoint.Designer.cs">
+      <DependentUpon>frmReportSearchByPoint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportSearchByPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportSearchByPlan.Designer.cs">
+      <DependentUpon>frmReportSearchByPlan.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRoute.cs">
       <SubType>Form</SubType>
@@ -122,17 +163,11 @@
     <Compile Include="frmRouteNew.Designer.cs">
       <DependentUpon>frmRouteNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMachineNew.cs">
+    <Compile Include="frmMachine.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMachineNew.Designer.cs">
-      <DependentUpon>frmMachineNew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTaskNew.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTaskNew.Designer.cs">
-      <DependentUpon>frmTaskNew.cs</DependentUpon>
+    <Compile Include="frmMachine.Designer.cs">
+      <DependentUpon>frmMachine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -140,11 +175,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmItemNew.cs">
+    <Compile Include="frmItem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmItemNew.Designer.cs">
-      <DependentUpon>frmItemNew.cs</DependentUpon>
+    <Compile Include="frmItem.Designer.cs">
+      <DependentUpon>frmItem.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCardEditDelete.cs">
       <SubType>Form</SubType>
@@ -158,35 +193,11 @@
     <Compile Include="frmEmployeeEditDelete.Designer.cs">
       <DependentUpon>frmEmployeeEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmItemEditDelete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmItemEditDelete.Designer.cs">
-      <DependentUpon>frmItemEditDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPointEditDelete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPointEditDelete.Designer.cs">
-      <DependentUpon>frmPointEditDelete.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPostEditDelete.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPostEditDelete.Designer.cs">
       <DependentUpon>frmPostEditDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmRouteEditDelete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmRouteEditDelete.Designer.cs">
-      <DependentUpon>frmRouteEditDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmTaskEditDelete.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTaskEditDelete.Designer.cs">
-      <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmployeeNew.cs">
       <SubType>Form</SubType>
@@ -194,11 +205,26 @@
     <Compile Include="frmEmployeeNew.Designer.cs">
       <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaskIssue.cs">
+    <Compile Include="frmTaskAssignment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTaskIssue.Designer.cs">
-      <DependentUpon>frmTaskIssue.cs</DependentUpon>
+    <Compile Include="frmTaskAssignment.Designer.cs">
+      <DependentUpon>frmTaskAssignment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTaskExecution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaskExecution.Designer.cs">
+      <DependentUpon>frmTaskExecution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyDataSet\ReportSearchByPoint.cs">
+      <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyDataSet\ReportSearchByPoint.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -214,14 +240,23 @@
     <Compile Include="frmSiteNew.Designer.cs">
       <DependentUpon>frmSiteNew.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmReport.resx">
-      <DependentUpon>frmReport.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="MyReport\ReportSearchByPlan.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MyReport\ReportSearchByPlan.Designer.cs">
+      <DependentUpon>ReportSearchByPlan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCardNew.resx">
       <DependentUpon>frmCardNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPointChoseRfid.resx">
+      <DependentUpon>frmPointChoseRfid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompany.resx">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainTool.resx">
+      <DependentUpon>frmMainTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlan.resx">
       <DependentUpon>frmPlan.cs</DependentUpon>
@@ -229,35 +264,38 @@
     <EmbeddedResource Include="frmPlanExamine.resx">
       <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPlanToTask.resx">
-      <DependentUpon>frmAddPlanToTask.cs</DependentUpon>
+    <EmbeddedResource Include="frmPlanToTask.resx">
+      <DependentUpon>frmPlanToTask.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddPlan_Add.resx">
-      <DependentUpon>frmAddPlan_Add.cs</DependentUpon>
+    <EmbeddedResource Include="frmPlanAdd.resx">
+      <DependentUpon>frmPlanAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPointNew.resx">
-      <DependentUpon>frmPointNew.cs</DependentUpon>
+    <EmbeddedResource Include="frmPoint.resx">
+      <DependentUpon>frmPoint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPostNew.resx">
       <DependentUpon>frmPostNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSearchByPoint.resx">
+      <DependentUpon>frmReportSearchByPoint.cs</DependentUpon>
+    </EmbeddedResource>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportSearchByPlan.resx">
+      <DependentUpon>frmReportSearchByPlan.cs</DependentUpon>
     <EmbeddedResource Include="frmRoute.resx">
       <DependentUpon>frmRoute.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRouteNew.resx">
       <DependentUpon>frmRouteNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMachineNew.resx">
-      <DependentUpon>frmMachineNew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTaskNew.resx">
-      <DependentUpon>frmTaskNew.cs</DependentUpon>
+    <EmbeddedResource Include="frmMachine.resx">
+      <DependentUpon>frmMachine.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmItemNew.resx">
-      <DependentUpon>frmItemNew.cs</DependentUpon>
+    <EmbeddedResource Include="frmItem.resx">
+      <DependentUpon>frmItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCardEditDelete.resx">
       <DependentUpon>frmCardEditDelete.cs</DependentUpon>
@@ -265,27 +303,22 @@
     <EmbeddedResource Include="frmEmployeeEditDelete.resx">
       <DependentUpon>frmEmployeeEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmItemEditDelete.resx">
-      <DependentUpon>frmItemEditDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPointEditDelete.resx">
-      <DependentUpon>frmPointEditDelete.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPostEditDelete.resx">
       <DependentUpon>frmPostEditDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmRouteEditDelete.resx">
-      <DependentUpon>frmRouteEditDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmTaskEditDelete.resx">
-      <DependentUpon>frmTaskEditDelete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeNew.resx">
       <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaskIssue.resx">
-      <DependentUpon>frmTaskIssue.cs</DependentUpon>
+    <EmbeddedResource Include="frmTaskAssignment.resx">
+      <DependentUpon>frmTaskAssignment.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTaskExecution.resx">
+      <DependentUpon>frmTaskExecution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyReport\ReportSearchByPlan.resx">
+      <DependentUpon>ReportSearchByPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -306,6 +339,17 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="ClassDiagram3.cd" />
+    <None Include="MyDataSet\ReportSearchByPoint.xsc">
+      <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
+    </None>
+    <None Include="MyDataSet\ReportSearchByPoint.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportSearchByPoint.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="MyDataSet\ReportSearchByPoint.xss">
+      <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

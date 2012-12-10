@@ -26,8 +26,8 @@ namespace WorkStation
             //tvRouteInit(this.tvRoute);
             Thread th1 = new Thread(tvRouteInit);
             th1.Start(this.tvRoute);
-            Thread th2 = new Thread(new ThreadStart(getTvPhysicalPoint));
-            th2.Start();
+            //Thread th2 = new Thread(new ThreadStart(getTvPhysicalPoint));
+            //th2.Start();
             //Thread th3 = new Thread(FM_Init);
             //th3.Start();  
 
@@ -61,9 +61,14 @@ namespace WorkStation
             if (tvRoute.SelectedNode.Nodes.Count == 0 && tvRoute.SelectedNode.Level == 2)
             {
                 getTvLogicalPoint(tvRoute.SelectedNode.Tag.ToString());
+                getTvPhysicalPoint(tvRoute.SelectedNode.Parent.Tag.ToString());
                 tbRoute.ForeColor = tvRoute.SelectedNode.ForeColor;
                 tbRoute.Text = tvRoute.SelectedNode.Text;
                 labRouteID.Text = tvRoute.SelectedNode.Tag.ToString();
+            }
+            else if (tvRoute.SelectedNode.Level == 1)
+            {
+                getTvPhysicalPoint(tvRoute.SelectedNode.Tag.ToString());
             }
             else
             {
@@ -128,10 +133,10 @@ namespace WorkStation
                     }
                     if (isExitNode == false)
                     {
-                        TreeNode tn = new TreeNode();
-                        tn.Text = node.Text;
-                        tn.Tag = node.Tag;
-                        tvLogicalPoint.Nodes.Add(tn);
+                        //TreeNode tn = new TreeNode();
+                        //tn.Text = node.Text;
+                        //tn.Tag = node.Tag;
+                        tvLogicalPoint.Nodes.Add((TreeNode)(node.Clone()));
                     }
                 }
             }
@@ -241,7 +246,7 @@ namespace WorkStation
                     new SqlParameter("@Alias",SqlDbType.VarChar),
                     new SqlParameter("@ItemsID",SqlDbType.VarChar),
                     new SqlParameter("@ItemsIndex",SqlDbType.VarChar),
-                    new SqlParameter("@CheckOrder",SqlDbType.Int)
+                    new SqlParameter("@OrderNumber",SqlDbType.Int)
                           };
                     pars[0].Value = labRouteID.Text;
                     pars[1].Value = tvLogicalPoint.Nodes[i].Tag;
@@ -279,23 +284,24 @@ namespace WorkStation
         private void getTvLogicalPoint(string route_id)
         {
             tvLogicalPoint.Nodes.Clear();
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id +" order by checkorder");
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select PhysicalPoint_ID,Name,ID From LogicalCheckPoint where route_ID=" + route_id +" order by ordernumber");
             if (dr == null) return;
             while (dr.Read())
             {
                 TreeNode tnode = new TreeNode();
                 tnode.Text = dr["Name"].ToString();
                 tnode.Tag = dr["PhysicalPoint_ID"].ToString();
-                tnode = tvNodeAdd(tnode, "select l.ID as LIID,c.[Name],c.ID ,'' as Sequence from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.ID=" + dr["ID"].ToString().Trim() + " order by l.inorder");
+                tnode = tvNodeAdd(tnode, "select l.LogicPoint_ID as LIID,c.[Name],c.ID ,'' as Sequence from LogicalPoint_Item  l ,CheckItem c where l.Item_ID=c.ID and l.LogicPoint_ID=" + dr["ID"].ToString().Trim() + " order by l.inorder");
                 tvLogicalPoint.Nodes.Add(tnode);
             }
             if (chkLogicalPoint.Checked)
                 tvLogicalPoint.ExpandAll();
         }
         //获取物理巡检点
-        private void getTvPhysicalPoint()
+        private void getTvPhysicalPoint(string siteID)
         {
-            SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From PhysicalCheckPoint");
+            tvPhysicalPoint.Nodes.Clear(); 
+            SqlDataReader dr = SqlHelper.ExecuteReader("Select ID,Name From PhysicalCheckPoint Where Site_ID="+siteID);
             if (dr == null) { dr.Dispose(); return; }
             while (dr.Read())
             {
@@ -517,7 +523,7 @@ namespace WorkStation
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (tvRoute.SelectedNode.Level == 2)
+            if (tvRoute.SelectedNode!=null&& tvRoute.SelectedNode.Level == 2)
             {
                 frmRouteNew fn = new frmRouteNew();
                 fn.tView = tvRoute;

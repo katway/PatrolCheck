@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmPlan
+    partial class frmPlanToTask
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUnSub = new System.Windows.Forms.Button();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.cboShow = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.cboState = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.labState = new System.Windows.Forms.Label();
             this.gridControlPlan = new DevExpress.XtraGrid.GridControl();
             this.gvPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -59,99 +55,63 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridControlTask = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTask)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnUnSub
+            // btnDown
             // 
-            this.btnUnSub.Location = new System.Drawing.Point(590, 31);
-            this.btnUnSub.Name = "btnUnSub";
-            this.btnUnSub.Size = new System.Drawing.Size(75, 23);
-            this.btnUnSub.TabIndex = 41;
-            this.btnUnSub.Text = "撤销提交";
-            this.btnUnSub.UseVisualStyleBackColor = true;
-            this.btnUnSub.Click += new System.EventHandler(this.btnUnSub_Click);
+            this.btnDown.Location = new System.Drawing.Point(209, 13);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(75, 23);
+            this.btnDown.TabIndex = 0;
+            this.btnDown.Text = "生成任务";
+            this.btnDown.UseVisualStyleBackColor = true;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
-            // btnSubmit
+            // cboState
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(497, 31);
-            this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
-            this.btnSubmit.TabIndex = 40;
-            this.btnSubmit.Text = "请求审核";
-            this.btnSubmit.UseVisualStyleBackColor = true;
-            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
+            this.cboState.FormattingEnabled = true;
+            this.cboState.Location = new System.Drawing.Point(63, 14);
+            this.cboState.Name = "cboState";
+            this.cboState.Size = new System.Drawing.Size(121, 20);
+            this.cboState.TabIndex = 37;
+            this.cboState.SelectedIndexChanged += new System.EventHandler(this.cboState_SelectedIndexChanged);
             // 
-            // btnDel
+            // label1
             // 
-            this.btnDel.Location = new System.Drawing.Point(411, 31);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 23);
-            this.btnDel.TabIndex = 39;
-            this.btnDel.Text = "删除";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(322, 31);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnEdit.TabIndex = 38;
-            this.btnEdit.Text = "编辑";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(235, 31);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(75, 23);
-            this.btnNew.TabIndex = 37;
-            this.btnNew.Text = "新建";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // cboShow
-            // 
-            this.cboShow.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboShow.FormattingEnabled = true;
-            this.cboShow.Location = new System.Drawing.Point(51, 34);
-            this.cboShow.Name = "cboShow";
-            this.cboShow.Size = new System.Drawing.Size(152, 20);
-            this.cboShow.TabIndex = 43;
-            this.cboShow.SelectedIndexChanged += new System.EventHandler(this.cboShow_SelectedIndexChanged);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 38);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
-            this.label2.TabIndex = 42;
-            this.label2.Text = "显示";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "显示";
             // 
             // labState
             // 
             this.labState.AutoSize = true;
-            this.labState.Location = new System.Drawing.Point(238, 14);
+            this.labState.Location = new System.Drawing.Point(388, 17);
             this.labState.Name = "labState";
-            this.labState.Size = new System.Drawing.Size(29, 12);
-            this.labState.TabIndex = 44;
-            this.labState.Text = "状态";
+            this.labState.Size = new System.Drawing.Size(53, 12);
+            this.labState.TabIndex = 40;
+            this.labState.Text = "所选状态";
             // 
             // gridControlPlan
             // 
-            this.gridControlPlan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControlPlan.Location = new System.Drawing.Point(0, 70);
+            this.gridControlPlan.Location = new System.Drawing.Point(12, 42);
             this.gridControlPlan.MainView = this.gvPlan;
             this.gridControlPlan.Name = "gridControlPlan";
             this.gridControlPlan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlPlan.Size = new System.Drawing.Size(776, 486);
-            this.gridControlPlan.TabIndex = 45;
+            this.gridControlPlan.Size = new System.Drawing.Size(785, 272);
+            this.gridControlPlan.TabIndex = 47;
             this.gridControlPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPlan});
             // 
@@ -181,6 +141,7 @@
             this.gvPlan.GridControl = this.gridControlPlan;
             this.gvPlan.Name = "gvPlan";
             this.gvPlan.OptionsView.ColumnAutoWidth = false;
+            this.gvPlan.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPlan_RowClick);
             // 
             // gridColumn1
             // 
@@ -385,27 +346,50 @@
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 15;
             // 
-            // frmPlan
+            // gridControlTask
+            // 
+            this.gridControlTask.Location = new System.Drawing.Point(12, 332);
+            this.gridControlTask.MainView = this.gridView1;
+            this.gridControlTask.Name = "gridControlTask";
+            this.gridControlTask.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit2});
+            this.gridControlTask.Size = new System.Drawing.Size(785, 263);
+            this.gridControlTask.TabIndex = 48;
+            this.gridControlTask.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControlTask;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            // 
+            // frmPlanToTask
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(776, 556);
+            this.ClientSize = new System.Drawing.Size(809, 607);
+            this.Controls.Add(this.gridControlTask);
             this.Controls.Add(this.gridControlPlan);
             this.Controls.Add(this.labState);
-            this.Controls.Add(this.cboShow);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnUnSub);
-            this.Controls.Add(this.btnSubmit);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnNew);
-            this.Name = "frmPlan";
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cboState);
+            this.Controls.Add(this.btnDown);
+            this.Name = "frmPlanToTask";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "巡检计划管理";
-            this.Load += new System.EventHandler(this.frmAddPlan_Load);
+            this.Text = "任务生成";
+            this.Load += new System.EventHandler(this.frmAddPlanToTask_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlTask)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -413,17 +397,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnUnSub;
-        private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.ComboBox cboShow;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.ComboBox cboState;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labState;
         private DevExpress.XtraGrid.GridControl gridControlPlan;
         private DevExpress.XtraGrid.Views.Grid.GridView gvPlan;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
@@ -432,7 +413,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
@@ -444,5 +424,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private DevExpress.XtraGrid.GridControl gridControlTask;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
     }
 }

@@ -6,82 +6,49 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DevExpress.XtraGrid;
+using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmPlanExamine : Form
+    public partial class frmPlanToTask : Form
     {
-        public frmPlanExamine()
+        public frmPlanToTask()
         {
             InitializeComponent();
         }
 
-        private void frmAddPlanExamine_Load(object sender, EventArgs e)
+        private void btnDown_Click(object sender, EventArgs e)
         {
-            cboInit();
-            this.labState.Text = (this.cboState.SelectedItem as BoxItem).Value.ToString() == "" ? "1,2,4" : (this.cboState.SelectedItem as BoxItem).Value.ToString();
-            getDgvPlan();
-        }
-        private void btnPass_Click(object sender, EventArgs e)
-        {
-            string id = "";
-            string update = "Update checkplan set planstate=8 where id in (";
+            string strIDs = "";
             for (int i = 0; i < gvPlan.RowCount; i++)
             {
-                object isCheck = gvPlan.GetRowCellValue(i, "isCheck");
+                object isCheck = gvPlan.GetRowCellValue(i,"isCheck");
                 if (isCheck != null && (bool)isCheck == true)
                 {
-                    id += gvPlan.GetRowCellValue(i, "ID") + ",";
+                    strIDs += gvPlan.GetRowCellValue(i,"ID")+",";
                 }
             }
-
-            if (id != "")
+            if (strIDs == "")
             {
-                id = id.Substring(0, id.Length - 1);
-                update += id + ") and planstate=2";
-                if (SqlHelper.ExecuteNonQuery(update) == 0)
-                {
-                    MessageBox.Show("审核失败");
-                }
+                MessageBox.Show("请选择要下发的计划");
+                return;
             }
-            else
-            {
-                MessageBox.Show("请选择要审核的项");
-            }
+            SqlParameter[] pars = new SqlParameter[] { 
+                 new SqlParameter("@PlanIDs",strIDs)
+            };
+            SqlHelper.ExecuteNonQuery("CreateTask", CommandType.StoredProcedure, pars);
             getDgvPlan();
         }
 
-        private void btnUnpass_Click(object sender, EventArgs e)
+        private void cboInit()
         {
-            string id = "";
-            string update = "Update checkplan set planstate=4 where id in (";
-            for (int i = 0; i < gvPlan.RowCount; i++)
-            {
-                object isCheck = gvPlan.GetRowCellValue(i, "isCheck");
-                if (isCheck!=null&&(bool)isCheck == true)
-                {
-                    id += gvPlan.GetRowCellValue(i,"ID")+",";
-                }
-            }
-
-            if (id != "")
-            {
-                id = id.Substring(0, id.Length - 1);
-                update += id + ") and planstate=2";
-                if (SqlHelper.ExecuteNonQuery(update) == 0)
-                {
-                    MessageBox.Show("审核失败");
-                }
-            }
-            else
-            {
-                MessageBox.Show("请选择要审核的项");
-            }
-            getDgvPlan();
+            cboState.Items.Add(new BoxItem("全部", "8,16"));
+            cboState.Items.Add(new BoxItem("未下发", "8"));
+            cboState.Items.Add(new BoxItem("已下发", "16"));
+            cboState.SelectedIndex = 0;
         }
 
-        public  void getDgvPlan()
+        private void getDgvPlan()
         {
             DataSet ds = SqlHelper.ExecuteDataset(@"Select 
                                                     c.ID,
@@ -115,13 +82,33 @@ namespace WorkStation
             gridControlPlan.DataSource = ds.Tables[0];
         }
 
-        private void cboInit()
+        private void getDgvTask(string planid)
         {
-            cboState.Items.Add(new BoxItem("全部", "2,4,8"));
-            cboState.Items.Add(new BoxItem("请求审核", "2"));
-            cboState.Items.Add(new BoxItem("审核通过", "8"));
-            cboState.Items.Add(new BoxItem("否决", "4"));
-            cboState.SelectedIndex = 0;
+            DataSet ds = SqlHelper.ExecuteDataset(@"Select 
+                                                    c.ID as 任务编号,
+                                                    c.Name as 任务名称,
+                                                    c.Alias as 别名,
+                                                    c.StartTime as 任务开始时间,  
+                                                    c.Duration as 持续时间,
+                                                    c.EndTime as 任务结束时间,
+                                                    p.Name as 指派岗位,
+                                                    r.Name as 路线, 
+                                                    c.Interval as 周期,
+                                                    (select meaning from codes where code= c.IntervalUnit and purpose='intervalunit') as 周期单位,
+                                                    c.EffectiveTime as 任务生效时间,
+                                                    c.IneffectiveTime as 任务失效时间 
+                                                     From Checktask as  c left join CheckRoute  as r on c.route_id=r.id 
+                                                              left join Post p on c.post=p.id 
+                                                              left join checkplan pn on c.plan_id=pn.id 
+                                                              where c.plan_id="+planid);
+            gridControlTask.DataSource = ds.Tables[0];
+        }
+
+        private void frmAddPlanToTask_Load(object sender, EventArgs e)
+        {
+            this.labState.Visible = false;
+            cboInit();
+            getDgvPlan();
         }
 
         private void cboState_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,22 +116,26 @@ namespace WorkStation
             labState.Text = (cboState.SelectedItem as BoxItem).Value.ToString();
             switch ((cboState.SelectedItem as BoxItem).Value.ToString())
             {
-                case "2,4,8":
-                case "4":
+                case "8,16":
                 case "8":
                     {
-                        this.btnPass.Enabled = false;
-                        this.btnUnpass.Enabled = false;
+                        this.btnDown.Enabled = true;
                         break;
                     }
-                case "2":
+                case "16":
                     {
-                        this.btnPass.Enabled = true;
-                        this.btnUnpass.Enabled = true;
+                        this.btnDown.Enabled = false;
                         break;
                     }
             }
             getDgvPlan();
         }
+
+        private void gvPlan_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            getDgvTask(gvPlan.GetRowCellValue(e.RowHandle,"ID").ToString());
+        }
+
+      
     }
 }

@@ -16,6 +16,7 @@ namespace WorkStation
         public object routeID;
         public string routeName, routeAlias, routeArea;
         public TreeView tView;
+        DataSet dsCboinorder, dsCboSitearea;
         public frmRouteNew()
         {
             InitializeComponent();
@@ -61,6 +62,7 @@ namespace WorkStation
 
         private void btnTrue_Click(object sender, EventArgs e)
         {
+            if (cboSiteArea.SelectedValue == null) return;
             int _ret=(int)SqlHelper.ExecuteScalar("Select Count(1) From CheckRoute Where Name='" + this.tbRouteName.Text.Trim() + "' and Site_ID=" + cboSiteArea.SelectedValue.ToString());
             if ( isEdit==false&&_ret!= 0)
             {
@@ -95,17 +97,6 @@ namespace WorkStation
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        DataSet dsCboinorder, dsCboSitearea;
-        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
-        {
-            
-        }
-
-        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-           
-        }
+        } 
     }
 }
