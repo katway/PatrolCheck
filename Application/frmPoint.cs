@@ -81,6 +81,7 @@ namespace WorkStation
         private void getDgvPoint()
         {
             DataSet ds = SqlHelper.ExecuteDataset("Select P.ID ,P.Name ,P.Alias,R.Name as RName,R.RFID,R.ID as RID,S.Name as SiteName,s.ID as SiteID from PhysicalCheckPoint as P left  join  Rfid as R on P.Rfid_ID=R.ID Left Join Site S on P.Site_ID=S.ID");
+            if (ds == null) return; 
             ds.Tables[0].Columns.Add(new DataColumn("isCheck",typeof(System.Boolean)));
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
