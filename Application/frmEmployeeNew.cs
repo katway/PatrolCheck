@@ -9,9 +9,9 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace WorkStation
 {
-    public partial class frmEmployeeAdd : Form
+    public partial class frmEmployeeNew : Form
     {
-        public frmEmployeeAdd()
+        public frmEmployeeNew()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmMachineNew
+    partial class frmMachine
     {
         /// <summary>
         /// Required designer variable.
