@@ -279,9 +279,9 @@
     <EmbeddedResource Include="frmReportSearchByPoint.resx">
       <DependentUpon>frmReportSearchByPoint.cs</DependentUpon>
     </EmbeddedResource>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmReportSearchByPlan.resx">
       <DependentUpon>frmReportSearchByPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRoute.resx">
       <DependentUpon>frmRoute.cs</DependentUpon>
     </EmbeddedResource>

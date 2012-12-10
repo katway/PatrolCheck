@@ -89,7 +89,7 @@
             this.tsmiPostEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiPostDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEmployee = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiEmployeeAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiEmployeeNew = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEmployeeEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiEmployeeDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCompany = new System.Windows.Forms.ToolStripMenuItem();
@@ -482,7 +482,7 @@
             // tsmiEmployee
             // 
             this.tsmiEmployee.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiEmployeeAdd,
+            this.tsmiEmployeeNew,
             this.tsmiEmployeeEdit,
             this.tsmiEmployeeDelete});
             this.tsmiEmployee.Name = "tsmiEmployee";
@@ -492,9 +492,9 @@
             // tsmiEmployeeAdd
             // 
             this.tsmiEmployeeNew.Name = "tsmiEmployeeNew";
-            this.tsmiEmployeeAdd.Size = new System.Drawing.Size(94, 22);
-            this.tsmiEmployeeAdd.Text = "新建";
-            this.tsmiEmployeeAdd.Click += new System.EventHandler(this.ShowForm);
+            this.tsmiEmployeeNew.Size = new System.Drawing.Size(94, 22);
+            this.tsmiEmployeeNew.Text = "新建";
+            this.tsmiEmployeeNew.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmiEmployeeEdit
             // 
@@ -679,7 +679,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiPostNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiPostEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiPostDelete;
-        private System.Windows.Forms.ToolStripMenuItem tsmiEmployeeAdd;
+        private System.Windows.Forms.ToolStripMenuItem tsmiEmployeeNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiEmployeeEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiEmployeeDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmiCompany;
