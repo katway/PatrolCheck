@@ -10,14 +10,14 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmRoutAdd : Form
+    public partial class frmRouteAdd : Form
     {
         public Boolean isEdit=false;
         public object routeID;
         public string routeName, routeAlias, routeArea;
         public TreeView tView;
         DataSet dsCboinorder, dsCboSitearea;
-        public frmRoutAdd()
+        public frmRouteAdd()
         {
             InitializeComponent();
         }

@@ -137,11 +137,11 @@
     <Compile Include="frmRoute.Designer.cs">
       <DependentUpon>frmRoute.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRoutAdd.cs">
+    <Compile Include="frmRouteAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRoutAdd.Designer.cs">
-      <DependentUpon>frmRoutAdd.cs</DependentUpon>
+    <Compile Include="frmRouteAdd.Designer.cs">
+      <DependentUpon>frmRouteAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMachine.cs">
       <SubType>Form</SubType>
@@ -262,8 +262,8 @@
     <EmbeddedResource Include="frmRoute.resx">
       <DependentUpon>frmRoute.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRoutAdd.resx">
-      <DependentUpon>frmRoutAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmRouteAdd.resx">
+      <DependentUpon>frmRouteAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMachine.resx">
       <DependentUpon>frmMachine.cs</DependentUpon>
