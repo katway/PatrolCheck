@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace WorkStation
 {
-    public partial class frmChoseRfid : Form
+    public partial class frmPointChoseRfid : Form
     {
-        public frmChoseRfid()
+        public frmPointChoseRfid()
         {
             InitializeComponent();
         }

@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -60,6 +64,10 @@
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.7.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\CommonClass.cs" />
@@ -71,17 +79,23 @@
     <Compile Include="frmCardNew.Designer.cs">
       <DependentUpon>frmCardNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmChoseRfid.cs">
+    <Compile Include="frmPointChoseRfid.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmChoseRfid.Designer.cs">
-      <DependentUpon>frmChoseRfid.cs</DependentUpon>
+    <Compile Include="frmPointChoseRfid.Designer.cs">
+      <DependentUpon>frmPointChoseRfid.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCompany.Designer.cs">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMainTool.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMainTool.Designer.cs">
+      <DependentUpon>frmMainTool.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPlan.cs">
       <SubType>Form</SubType>
@@ -137,11 +151,11 @@
     <Compile Include="frmRoute.Designer.cs">
       <DependentUpon>frmRoute.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRouteAdd.cs">
+    <Compile Include="frmRouteNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRouteAdd.Designer.cs">
-      <DependentUpon>frmRouteAdd.cs</DependentUpon>
+    <Compile Include="frmRouteNew.Designer.cs">
+      <DependentUpon>frmRouteNew.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMachine.cs">
       <SubType>Form</SubType>
@@ -179,11 +193,11 @@
     <Compile Include="frmPostEditDelete.Designer.cs">
       <DependentUpon>frmPostEditDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployeeAdd.cs">
+    <Compile Include="frmEmployeeNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmployeeAdd.Designer.cs">
-      <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
+    <Compile Include="frmEmployeeNew.Designer.cs">
+      <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTaskAssignment.cs">
       <SubType>Form</SubType>
@@ -229,11 +243,14 @@
     <EmbeddedResource Include="frmCardNew.resx">
       <DependentUpon>frmCardNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmChoseRfid.resx">
-      <DependentUpon>frmChoseRfid.cs</DependentUpon>
+    <EmbeddedResource Include="frmPointChoseRfid.resx">
+      <DependentUpon>frmPointChoseRfid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompany.resx">
       <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMainTool.resx">
+      <DependentUpon>frmMainTool.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlan.resx">
       <DependentUpon>frmPlan.cs</DependentUpon>
@@ -262,8 +279,8 @@
     <EmbeddedResource Include="frmRoute.resx">
       <DependentUpon>frmRoute.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRouteAdd.resx">
-      <DependentUpon>frmRouteAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmRouteNew.resx">
+      <DependentUpon>frmRouteNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMachine.resx">
       <DependentUpon>frmMachine.cs</DependentUpon>
@@ -283,8 +300,8 @@
     <EmbeddedResource Include="frmPostEditDelete.resx">
       <DependentUpon>frmPostEditDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployeeAdd.resx">
-      <DependentUpon>frmEmployeeAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeNew.resx">
+      <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaskAssignment.resx">
       <DependentUpon>frmTaskAssignment.cs</DependentUpon>

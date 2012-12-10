@@ -273,7 +273,7 @@ namespace WorkStation
 
         private void 新建路线ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRouteAdd rn = new frmRouteAdd();
+            frmRouteNew rn = new frmRouteNew();
             rn.Left=this.Left+(this.Width-rn.Width)/2;
             rn.Top=this.Top+(this.Height-rn.Height)/2;
             rn.tView = this.tvRoute;
@@ -511,7 +511,7 @@ namespace WorkStation
         {
             if (e.Node.Level == 2)
             {
-                frmRouteAdd fn = new frmRouteAdd();
+                frmRouteNew fn = new frmRouteNew();
                 fn.Left=this.Left+(this.Width-fn.Width)/2;
                 fn.Top = this.Top + (this.Height - fn.Height) / 2;
                 fn.tView = tvRoute;
@@ -525,7 +525,7 @@ namespace WorkStation
         {
             if (tvRoute.SelectedNode!=null&& tvRoute.SelectedNode.Level == 2)
             {
-                frmRouteAdd fn = new frmRouteAdd();
+                frmRouteNew fn = new frmRouteNew();
                 fn.tView = tvRoute;
                 fn.Left=this.Left+(this.Width-fn.Width)/2;
                 fn.Top = this.Top + (this.Height - fn.Height) / 2;

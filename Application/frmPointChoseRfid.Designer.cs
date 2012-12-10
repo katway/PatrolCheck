@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmChoseRfid
+    partial class frmPointChoseRfid
     {
         /// <summary>
         /// Required designer variable.

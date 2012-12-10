@@ -71,7 +71,7 @@ namespace WorkStation
 
         private void btnRead_Click(object sender, EventArgs e)
         {
-            frmChoseRfid f = new frmChoseRfid();
+            frmPointChoseRfid f = new frmPointChoseRfid();
             f.ShowDialog();
             this.txtRelation.Text = f.RFID_Rfid;
             this.btnSave.Enabled = true;
