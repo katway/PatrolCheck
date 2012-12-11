@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="12.Designer.cs">
+      <DependentUpon>12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Code\CommonClass.cs" />
     <Compile Include="Code\SqlHelper.cs" />
     <Compile Include="frmCardEditDelete.cs">
@@ -196,6 +202,9 @@
     <Compile Include="frmReportAnalysisByPlan.Designer.cs">
       <DependentUpon>frmReportAnalysisByPlan.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="12.resx">
+      <DependentUpon>12.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCardEditDelete.resx">
       <DependentUpon>frmCardEditDelete.cs</DependentUpon>
     </EmbeddedResource>

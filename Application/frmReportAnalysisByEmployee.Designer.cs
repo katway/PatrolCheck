@@ -30,16 +30,6 @@
         {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dgvPerson = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cboPerson = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -51,7 +41,6 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cboPost = new System.Windows.Forms.ComboBox();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).BeginInit();
             this.SuspendLayout();
@@ -68,110 +57,8 @@
             // 
             // dgvPerson
             // 
-            this.dgvPerson.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gridColumn10,
-            this.gridColumn1,
-            this.gridColumn2,
-            this.gridColumn3,
-            this.gridColumn4,
-            this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7,
-            this.gridColumn8,
-            this.gridColumn9,
-            this.gridColumn11});
             this.dgvPerson.GridControl = this.gridControl1;
             this.dgvPerson.Name = "dgvPerson";
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "巡检路线编号";
-            this.gridColumn10.FieldName = "RouteID";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.OptionsColumn.AllowEdit = false;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 0;
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "巡检路线名称";
-            this.gridColumn1.FieldName = "a";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "开始时间";
-            this.gridColumn2.FieldName = "b";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.OptionsColumn.AllowEdit = false;
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "结束时间";
-            this.gridColumn3.FieldName = "c";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.OptionsColumn.AllowEdit = false;
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "人员名称";
-            this.gridColumn4.FieldName = "d";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.OptionsColumn.AllowEdit = false;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "已执行巡检数";
-            this.gridColumn5.FieldName = "e";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 5;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "未执行巡检数";
-            this.gridColumn6.FieldName = "f";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.OptionsColumn.AllowEdit = false;
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 6;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "漏检次数";
-            this.gridColumn7.FieldName = "g";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.OptionsColumn.AllowEdit = false;
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 7;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "应检总次数";
-            this.gridColumn8.FieldName = "h";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.OptionsColumn.AllowEdit = false;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 8;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "人员出勤率";
-            this.gridColumn9.FieldName = "i";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.OptionsColumn.AllowEdit = false;
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 9;
             // 
             // cboPerson
             // 
@@ -273,14 +160,6 @@
             this.cboPost.TabIndex = 20;
             this.cboPost.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "所属岗位";
-            this.gridColumn11.FieldName = "Post";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
-            // 
             // frmReportAnalysisByEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -321,18 +200,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSearch;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboPost;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
     }
 }
