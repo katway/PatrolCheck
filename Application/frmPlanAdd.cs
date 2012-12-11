@@ -46,7 +46,7 @@ namespace WorkStation
         }
 
         private void btnSave_Click(object sender, EventArgs e)
-        {
+        {                           
             if (txtName.Text.Trim() == "" || txtInterval.Text.Trim() == "")
             {
                 MessageBox.Show("请确保没有空值");
@@ -147,7 +147,6 @@ namespace WorkStation
             cboRoute.DisplayMember = "Name";
             cboRoute.ValueMember = "ID";
             cboRoute.SelectedIndex = cboRoute.Items.Count > 0 ? 0 : -1;
-
             ds.Dispose();
         }
 

@@ -31,9 +31,7 @@ namespace WorkStation
                        new SqlParameter("@site_id",SqlDbType.BigInt)
             };
             pars[2].Value = cboArea.SelectedValue;
-
-             string strSql = "insert into machine([Name],Alias,Site_ID) values(@name,@alias,@site_id)";
-
+            string strSql = "insert into machine([Name],Alias,Site_ID) values(@name,@alias,@site_id)";
             if (SqlHelper.ExecuteNonQuery(strSql, pars) == 1)
             {
                 MessageBox.Show("保存成功");
@@ -131,7 +129,6 @@ namespace WorkStation
                 bindDgvMachine();
             }
         }
-
 
     }
 }

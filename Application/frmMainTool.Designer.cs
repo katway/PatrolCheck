@@ -1,4 +1,4 @@
-﻿namespace WorkStation
+namespace WorkStation
 {
     partial class frmMainTool
     {

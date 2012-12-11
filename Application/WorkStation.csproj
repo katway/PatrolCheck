@@ -70,6 +70,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="12.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="12.Designer.cs">
+      <DependentUpon>12.cs</DependentUpon>
+    </Compile>
     <Compile Include="Code\CommonClass.cs" />
     <Compile Include="Code\GlobalConfig.cs" />
     <Compile Include="Code\SqlHelper.cs" />
@@ -103,6 +109,12 @@
     <Compile Include="frmMainTool.Designer.cs">
       <DependentUpon>frmMainTool.cs</DependentUpon>
     </Compile>
+     <Compile Include="frmReportAnalysisByEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportAnalysisByEmployee.Designer.cs">
+      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,8 @@
       <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPlanToTask.cs">
+    <Compile Include="frmPlanToTask.Designer.cs">
+      <DependentUpon>frmPlanToTask.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPlanToTask.Designer.cs">
@@ -246,6 +260,12 @@
     <Compile Include="MyReport\ReportSearchByPlan.Designer.cs">
       <DependentUpon>ReportSearchByPlan.cs</DependentUpon>
     </Compile>
+ <Compile Include="frmReportAnalysisByPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportAnalysisByPlan.Designer.cs">
+      <DependentUpon>frmReportAnalysisByPlan.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmCardNew.resx">
       <DependentUpon>frmCardNew.cs</DependentUpon>
     </EmbeddedResource>
@@ -257,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainTool.resx">
       <DependentUpon>frmMainTool.cs</DependentUpon>
+    </EmbeddedResource>
+     <EmbeddedResource Include="frmReportAnalysisByEmployee.resx">
+      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlan.resx">
       <DependentUpon>frmPlan.cs</DependentUpon>
@@ -308,6 +331,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeNew.resx">
       <DependentUpon>frmEmployeeNew.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeNew.resx">
+      <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaskAssignment.resx">
       <DependentUpon>frmTaskAssignment.cs</DependentUpon>
@@ -335,6 +360,9 @@
     <EmbeddedResource Include="frmSiteNew.resx">
       <DependentUpon>frmSiteNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportAnalysisByPlan.resx">
+      <DependentUpon>frmReportAnalysisByPlan.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -349,6 +377,8 @@
     </None>
     <None Include="MyDataSet\ReportSearchByPoint.xss">
       <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
+    </None>
+      <DependentUpon>HflDataSet_Plan.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="HflDataSet_Plan" targetNamespace="http://tempuri.org/HflDataSet_Plan.xsd" xmlns:mstns="http://tempuri.org/HflDataSet_Plan.xsd" xmlns="http://tempuri.org/HflDataSet_Plan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="HflDataSet_Plan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="HflDataSet_Plan" msprop:Generator_UserDSName="HflDataSet_Plan">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Task" msprop:Generator_TableClassName="TaskDataTable" msprop:Generator_TableVarName="tableTask" msprop:Generator_TablePropName="Task" msprop:Generator_RowDeletingName="TaskRowDeleting" msprop:Generator_UserTableName="Task" msprop:Generator_RowChangingName="TaskRowChanging" msprop:Generator_RowEvHandlerName="TaskRowChangeEventHandler" msprop:Generator_RowDeletedName="TaskRowDeleted" msprop:Generator_RowEvArgName="TaskRowChangeEvent" msprop:Generator_RowChangedName="TaskRowChanged" msprop:Generator_RowClassName="TaskRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Plan_ID" msdata:Caption="计划的ID" msprop:Generator_ColumnVarNameInTable="columnPlan_ID" msprop:Generator_ColumnPropNameInRow="Plan_ID" msprop:Generator_ColumnPropNameInTable="Plan_IDColumn" msprop:Generator_UserColumnName="Plan_ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Nmae" msdata:Caption="计划的名称" msprop:Generator_ColumnVarNameInTable="columnNmae" msprop:Generator_ColumnPropNameInRow="Nmae" msprop:Generator_ColumnPropNameInTable="NmaeColumn" msprop:Generator_UserColumnName="Nmae" type="xs:string" minOccurs="0" />
+              <xs:element name="ID" msdata:Caption="任务的ID" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Plan" msprop:Generator_TableClassName="PlanDataTable" msprop:Generator_TableVarName="tablePlan" msprop:Generator_TablePropName="Plan" msprop:Generator_RowDeletingName="PlanRowDeleting" msprop:Generator_UserTableName="Plan" msprop:Generator_RowChangingName="PlanRowChanging" msprop:Generator_RowEvHandlerName="PlanRowChangeEventHandler" msprop:Generator_RowDeletedName="PlanRowDeleted" msprop:Generator_RowEvArgName="PlanRowChangeEvent" msprop:Generator_RowChangedName="PlanRowChanged" msprop:Generator_RowClassName="PlanRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PlanID" msdata:Caption="计划ID" msprop:Generator_ColumnVarNameInTable="columnPlanID" msprop:Generator_ColumnPropNameInRow="PlanID" msprop:Generator_ColumnPropNameInTable="PlanIDColumn" msprop:Generator_UserColumnName="PlanID" type="xs:string" minOccurs="0" />
+              <xs:element name="Name" msdata:Caption="计划的名称" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn3" msprop:Generator_ColumnVarNameInTable="columnDataColumn3" msprop:Generator_ColumnPropNameInRow="DataColumn3" msprop:Generator_ColumnPropNameInTable="DataColumn3Column" msprop:Generator_UserColumnName="DataColumn3" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Plan_Task" msdata:parent="Plan" msdata:child="Task" msdata:parentkey="PlanID" msdata:childkey="Plan_ID" msprop:Generator_UserChildTable="Task" msprop:Generator_ChildPropName="GetTaskRows" msprop:Generator_ParentPropName="PlanRow" msprop:Generator_UserRelationName="Plan_Task" msprop:Generator_RelationVarName="relationPlan_Task" msprop:Generator_UserParentTable="Plan" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

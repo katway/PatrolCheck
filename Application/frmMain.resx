@@ -302,14 +302,10 @@
         3JRk3IRU3JRk9LR0+MSM////////////////////////////////////
 </value>
   </data>
-  <data name="tsmiReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
         R0lGODlhEAAQAPMAAMDcwP/78D4+Pv///9Tj/8DAwICAgKCgpFAZAKqqqv/w1AAAAAAAAAAAAAAAAAAA
         ACwAAAAAEAAQAAAEehDISasAI2hQuiQFEFxEABjGUZRaQBBXcCBG6GbBkF2GcAAJVO2QKA14iSBiuSwC
         VJcC0aBMGXSyqOQQWAoChpwuSuAQDIgDgYuNrg5qSU23exYUhGSnQNdcJHguRjh+IhwKCi2KYyJlAIiJ
         GnRHIoIsYpMXApucnZ4RADs=
-</value>
-  </data>
   <data name="tsmiPatrolCheck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         Qk2eEwAAAAAAADYAAAAoAAAAJAAAAC4AAAABABgAAAAAAAAAAAASCwAAEgsAAAAAAAAAAAAA99nC99nB
@@ -572,6 +568,14 @@
         /fbu/fTs/fTq/fPn/fHm/PDj/O/g/O7e/Ozb++va++rX++jU++bR++XQ++TN++LK+uHJ+uDH9tjA9tjA
         99rB8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j
         8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j8M6j
+</value>
+  </data>
+  <data name="tsmiReport.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        R0lGODlhEAAQAPMAAMDcwP/78D4+Pv///9Tj/8DAwICAgKCgpFAZAKqqqv/w1AAAAAAAAAAAAAAAAAAA
+        ACwAAAAAEAAQAAAEehDISasAI2hQuiQFEFxEABjGUZRaQBBXcCBG6GbBkF2GcAAJVO2QKA14iSBiuSwC
+        VJcC0aBMGXSyqOQQWAoChpwuSuAQDIgDgYuNrg5qSU23exYUhGSnQNdcJHguRjh+IhwKCi2KYyJlAIiJ
+        GnRHIoIsYpMXApucnZ4RADs=
 </value>
   </data>
   <data name="tsmhelp.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

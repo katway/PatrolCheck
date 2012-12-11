@@ -105,7 +105,7 @@ namespace WorkStation
                                                     c.Planner,
                                                     (select meaning from codes where code= planstate and purpose='planstate') as 状态 
                                                      From Checkplan as  c left join CheckRoute  as r on c.route_id=r.id 
-                                                              left join Post p on c.post=p.id 
+                                                     left join Post p on c.post=p.id 
                                                               where c.PlanState in (" + labState.Text + ")");
             ds.Tables[0].Columns.Add(new DataColumn("isCheck", typeof(System.Boolean)));
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)

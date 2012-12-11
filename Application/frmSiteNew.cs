@@ -10,8 +10,7 @@ using System.Data.SqlClient;
 namespace WorkStation
 {
     public partial class frmSiteNew : Form
-    {
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";         
+    {        
         public frmSiteNew()
         {
             InitializeComponent();
@@ -23,7 +22,7 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnSave_Click(object sender, EventArgs e)
         {
-             if (this.txtName.Text == "")
+            if (this.txtName.Text == "")
             {
                 MessageBox.Show("厂区名称不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 this.txtName.Focus();
@@ -33,21 +32,22 @@ namespace WorkStation
                 MessageBox.Show("厂区别名不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                 this.txtAlias.Focus();
             }
-             else if (this.cboCompany.SelectedValue.ToString() == "")
+             else if (this.cboCompany.SelectedValue ==null )
              {
                  MessageBox.Show("所属公司不能为空", "友情提示", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                  this.cboCompany.Focus();
              }
              else
              {
-                 string insertSite = "insert into Site(Name,Alias,Company_ID) values(@name,@alias,@com_id)";
-                 SqlParameter[] par = new SqlParameter[] {new SqlParameter("@name",SqlDbType.NVarChar),
-                                                     new SqlParameter("@alias",SqlDbType.NVarChar),
-                                                     new SqlParameter("@com_id",SqlDbType.Int)};
-
+                 string insertSite = "insert into Site(Name,Alias,Company_ID,ValidState) values(@name,@alias,@com_id,@ValidState)";
+                 SqlParameter[] par = new SqlParameter[] { new SqlParameter("@name",SqlDbType.NVarChar),
+                                                           new SqlParameter("@alias",SqlDbType.NVarChar),
+                                                           new SqlParameter("@com_id",SqlDbType.Int),
+                                                           new SqlParameter("@ValidState",SqlDbType.Int)};             
                  par[0].Value = this.txtName.Text;
                  par[1].Value = this.txtAlias.Text;
                  par[2].Value = this.cboCompany.SelectedValue;
+                 par[3].Value = this.cboState.SelectedValue;
                  int i = SqlHelper.ExecuteNonQuery(insertSite, par);
                  if (i > 0)
                  {
@@ -59,7 +59,6 @@ namespace WorkStation
                  }
              }
             SelectSiteBind();
-
         }
         /// <summary>
         /// 数据加载
@@ -75,9 +74,9 @@ namespace WorkStation
         /// </summary>
         public void SelectSiteBind()
         {
-            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name from Site,Company where Site.Company_ID=Company.ID";
-            DataSet ds = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, SelectSite);
-            this.dgvSite.DataSource = ds.Tables[0];
+            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState  from Site,Company where Site.Company_ID=Company.ID";
+            DataSet ds = SqlHelper.ExecuteDataset(SelectSite);         
+            this.gridControl1.DataSource = ds.Tables[0];
         }
         /// <summary>
         /// 取消
@@ -93,12 +92,15 @@ namespace WorkStation
         /// </summary>
         DataSet dsSite = null;
         DataSet dsCompany = null;
+        DataSet dsState = null;
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
         {
             string SelectCompanyName = "select * from  Company";
-            dsSite = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, SelectCompanyName);
-            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name from Site,Company where Site.Company_ID=Company.ID";
-            dsCompany = SqlHelper.ExecuteDataset(sqlConnectionStr, CommandType.Text, SelectSite);
+            dsSite = SqlHelper.ExecuteDataset(SelectCompanyName);
+            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState  from Site,Company where Site.Company_ID=Company.ID";
+            dsCompany = SqlHelper.ExecuteDataset(SelectSite);
+            string selectState = "select Code,Meaning from Codes where Purpose='ValidState'";
+            dsState = SqlHelper.ExecuteDataset(selectState);
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -106,7 +108,11 @@ namespace WorkStation
             cboCompany.DataSource = dsSite.Tables[0];
             cboCompany.DisplayMember = "Name";
             cboCompany.ValueMember = "ID";
-            this.dgvSite.DataSource = dsCompany.Tables[0];
+
+            cboState.DataSource = dsState.Tables[0];
+            cboState.DisplayMember = "Meaning";
+            cboState.ValueMember = "Code";
+            this.gridControl1.DataSource = dsCompany.Tables[0];
         }
 
 
