@@ -49,6 +49,9 @@
             System.Windows.Forms.TreeNode treeNode12 = new System.Windows.Forms.TreeNode("数据明细查询", new System.Windows.Forms.TreeNode[] {
             treeNode10,
             treeNode11});
+            System.Windows.Forms.TreeNode treeNode13 = new System.Windows.Forms.TreeNode("路线管理");
+            System.Windows.Forms.TreeNode treeNode14 = new System.Windows.Forms.TreeNode("巡检点管理");
+            System.Windows.Forms.TreeNode treeNode15 = new System.Windows.Forms.TreeNode("巡检项管理");
             this.xPanderPanelList1 = new BSE.Windows.Forms.XPanderPanelList();
             this.xPanderPanel1 = new BSE.Windows.Forms.XPanderPanel();
             this.treeView1 = new System.Windows.Forms.TreeView();
@@ -56,9 +59,11 @@
             this.treeView2 = new System.Windows.Forms.TreeView();
             this.xPanderPanel3 = new BSE.Windows.Forms.XPanderPanel();
             this.xPanderPanel4 = new BSE.Windows.Forms.XPanderPanel();
+            this.treeView3 = new System.Windows.Forms.TreeView();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
+            this.xPanderPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // xPanderPanelList1
@@ -138,6 +143,7 @@
             treeNode6});
             this.treeView1.Size = new System.Drawing.Size(227, 0);
             this.treeView1.TabIndex = 0;
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // xPanderPanel2
             // 
@@ -165,12 +171,11 @@
             this.xPanderPanel2.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.xPanderPanel2.Expand = true;
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
-            this.xPanderPanel2.Size = new System.Drawing.Size(229, 415);
+            this.xPanderPanel2.Size = new System.Drawing.Size(229, 25);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "统计报表";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -197,13 +202,14 @@
             this.treeView2.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode9,
             treeNode12});
-            this.treeView2.Size = new System.Drawing.Size(227, 390);
+            this.treeView2.Size = new System.Drawing.Size(227, 0);
             this.treeView2.TabIndex = 0;
             // 
             // xPanderPanel3
             // 
             this.xPanderPanel3.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel3.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
+            this.xPanderPanel3.Controls.Add(this.treeView3);
             this.xPanderPanel3.CustomColors.BackColor = System.Drawing.SystemColors.Control;
             this.xPanderPanel3.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
             this.xPanderPanel3.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(154)))));
@@ -225,11 +231,12 @@
             this.xPanderPanel3.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel3.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel3.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.xPanderPanel3.Expand = true;
             this.xPanderPanel3.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel3.Image = null;
             this.xPanderPanel3.Name = "xPanderPanel3";
             this.xPanderPanel3.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
-            this.xPanderPanel3.Size = new System.Drawing.Size(229, 25);
+            this.xPanderPanel3.Size = new System.Drawing.Size(229, 415);
             this.xPanderPanel3.TabIndex = 2;
             this.xPanderPanel3.Text = "巡检信息";
             this.xPanderPanel3.ToolTipTextCloseIcon = null;
@@ -272,6 +279,25 @@
             this.xPanderPanel4.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel4.ToolTipTextExpandIconPanelExpanded = null;
             // 
+            // treeView3
+            // 
+            this.treeView3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView3.Location = new System.Drawing.Point(1, 25);
+            this.treeView3.Name = "treeView3";
+            treeNode13.Name = "nodeRoute";
+            treeNode13.Text = "路线管理";
+            treeNode14.Name = "nodePoint";
+            treeNode14.Text = "巡检点管理";
+            treeNode15.Name = "nodeItem";
+            treeNode15.Text = "巡检项管理";
+            this.treeView3.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode13,
+            treeNode14,
+            treeNode15});
+            this.treeView3.Size = new System.Drawing.Size(227, 390);
+            this.treeView3.TabIndex = 1;
+            this.treeView3.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView3_NodeMouseClick);
+            // 
             // frmMainTool
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -287,6 +313,7 @@
             this.xPanderPanelList1.ResumeLayout(false);
             this.xPanderPanel1.ResumeLayout(false);
             this.xPanderPanel2.ResumeLayout(false);
+            this.xPanderPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -300,6 +327,7 @@
         private BSE.Windows.Forms.XPanderPanel xPanderPanel4;
         private System.Windows.Forms.TreeView treeView1;
         private System.Windows.Forms.TreeView treeView2;
+        private System.Windows.Forms.TreeView treeView3;
 
 
     }

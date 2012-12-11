@@ -16,7 +16,7 @@ namespace WorkStation
         {
             InitializeComponent();
         }
-        private Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent> FormMap = new Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent>();
+        public Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent> FormMap = new Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent>();
         private WeifenLuo.WinFormsUI.Docking.DockContent CreteFormFormName(string formName)
         {
             Assembly assem = Assembly.GetExecutingAssembly();

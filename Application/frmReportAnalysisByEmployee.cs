@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Collections;
 
 namespace WorkStation
 {
@@ -54,7 +56,72 @@ namespace WorkStation
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
+            Dictionary<object, object> DirOperator = new Dictionary<object, object>();
+            if (cboPost.SelectedValue.ToString() != "-1")
+            {
+                if (cboOperator.SelectedValue != null && cboOperator.SelectedValue.ToString() == "-1")
+                {
+                    SqlDataReader dr = SqlHelper.ExecuteReader("select post_id,employee_id from post_employee where post_id=" + cboPost.SelectedValue);
+                    if (dr != null)
+                    {
+                        while (dr.Read())
+                        {
+
+                            DirOperator.Add(dr["employee_id"], dr["post_id"]);
+
+                        }
+                    }
+                    dr.Close();
+                }
+                else
+                {
+                    DirOperator.Add(cboPost.SelectedValue, cboOperator.SelectedValue);
+                }
+            }
+            else
+            {
+                //所有岗位下所有人员
+                SqlDataReader dr = SqlHelper.ExecuteReader("select post_id,employee_id from post_employee");
+                if (dr != null)
+                {
+                    while (dr.Read())
+                    {
+                        DirOperator.Add(dr["employee_id"], dr["post_id"]);
+                    }
+                }
+                dr.Close();
+            }
+            SqlParameter[] pars = null;
+            DataSet dsCollect = null;
+            bool isFirst = true;
+            IDictionaryEnumerator ide = DirOperator.GetEnumerator();
+            while (ide.MoveNext())
+            {
+                
+                pars = new SqlParameter[]{
+                    new SqlParameter("@StartTime",dtpStart.Value),
+                    new SqlParameter("@EndTime",dtpEndTime.Value),
+                    new SqlParameter("@PostID",ide.Value),
+                    new SqlParameter("@OperatorID",ide.Key)
+                };
+                DataSet ds = SqlHelper.ExecuteDataset("GetAttendance", CommandType.StoredProcedure, pars);
+                if (isFirst == true)
+                {
+                    dsCollect = ds.Clone();
+                    isFirst = false;
+                }
+                if (dsCollect != null)
+                {
+                    DataRow dr = ds.Tables[0].NewRow();
+                    for (int i = 0; i < ds.Tables[0].Columns.Count; i++)
+                    {
+                        dr[i] = ds.Tables[0].Rows[0][i];
+                    }
+                    dsCollect.Tables[0].ImportRow(ds.Tables[0].Rows[0]);
+                }
+            }
+            this.gridControl1.DataSource = dsCollect.Tables[0];
+
         }
     }
 }
