@@ -65,9 +65,8 @@
             this.tsmiTaskExecution = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReport = new System.Windows.Forms.ToolStripMenuItem();
             this.数据统计分析ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.人员出勤率ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiReportAnalysisByEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.计划执行率ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.巡检点项执勤统计ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.数据明细查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReportSearchByPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReportSearchByPoint = new System.Windows.Forms.ToolStripMenuItem();
@@ -294,30 +293,24 @@
             // 数据统计分析ToolStripMenuItem
             // 
             this.数据统计分析ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.人员出勤率ToolStripMenuItem,
-            this.计划执行率ToolStripMenuItem,
-            this.巡检点项执勤统计ToolStripMenuItem});
+            this.tsmiReportAnalysisByEmployee,
+            this.计划执行率ToolStripMenuItem});
             this.数据统计分析ToolStripMenuItem.Name = "数据统计分析ToolStripMenuItem";
-            this.数据统计分析ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.数据统计分析ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.数据统计分析ToolStripMenuItem.Text = "数据统计分析";
             // 
-            // 人员出勤率ToolStripMenuItem
+            // tsmiReportAnalysisByEmployee
             // 
-            this.人员出勤率ToolStripMenuItem.Name = "人员出勤率ToolStripMenuItem";
-            this.人员出勤率ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.人员出勤率ToolStripMenuItem.Text = "人员出勤率";
+            this.tsmiReportAnalysisByEmployee.Name = "tsmiReportAnalysisByEmployee";
+            this.tsmiReportAnalysisByEmployee.Size = new System.Drawing.Size(152, 22);
+            this.tsmiReportAnalysisByEmployee.Text = "人员出勤率";
+            this.tsmiReportAnalysisByEmployee.Click += new System.EventHandler(this.ShowForm);
             // 
             // 计划执行率ToolStripMenuItem
             // 
             this.计划执行率ToolStripMenuItem.Name = "计划执行率ToolStripMenuItem";
-            this.计划执行率ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.计划执行率ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.计划执行率ToolStripMenuItem.Text = "计划执行率";
-            // 
-            // 巡检点项执勤统计ToolStripMenuItem
-            // 
-            this.巡检点项执勤统计ToolStripMenuItem.Name = "巡检点项执勤统计ToolStripMenuItem";
-            this.巡检点项执勤统计ToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
-            this.巡检点项执勤统计ToolStripMenuItem.Text = "巡检点项执勤统计";
             // 
             // 数据明细查询ToolStripMenuItem
             // 
@@ -325,7 +318,7 @@
             this.tsmiReportSearchByPlan,
             this.tsmiReportSearchByPoint});
             this.数据明细查询ToolStripMenuItem.Name = "数据明细查询ToolStripMenuItem";
-            this.数据明细查询ToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
+            this.数据明细查询ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.数据明细查询ToolStripMenuItem.Text = "数据明细查询";
             // 
             // tsmiReportSearchByPlan
@@ -567,9 +560,10 @@
             // dockPanel
             // 
             this.dockPanel.AllowDrop = true;
-            this.dockPanel.Location = new System.Drawing.Point(12, 450);
+            this.dockPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dockPanel.Location = new System.Drawing.Point(0, 0);
             this.dockPanel.Name = "dockPanel";
-            this.dockPanel.Size = new System.Drawing.Size(200, 100);
+            this.dockPanel.Size = new System.Drawing.Size(860, 551);
             dockPanelGradient1.EndColor = System.Drawing.SystemColors.ControlLight;
             dockPanelGradient1.StartColor = System.Drawing.SystemColors.ControlLight;
             autoHideStripSkin1.DockStripGradient = dockPanelGradient1;
@@ -624,11 +618,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(860, 551);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.dockPanel);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.dockPanel);
             this.IsMdiContainer = true;
             this.Name = "frmMain";
             this.Text = "RFID巡检系统";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -687,9 +682,8 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineEdit;
         private System.Windows.Forms.ToolStripMenuItem tsmiMachineDelete;
         private System.Windows.Forms.ToolStripMenuItem 数据统计分析ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 人员出勤率ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiReportAnalysisByEmployee;
         private System.Windows.Forms.ToolStripMenuItem 计划执行率ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 巡检点项执勤统计ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 数据明细查询ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiReportSearchByPlan;
         private System.Windows.Forms.ToolStripMenuItem tsmiReportSearchByPoint;

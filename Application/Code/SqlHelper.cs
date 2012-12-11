@@ -456,6 +456,17 @@ namespace WorkStation
             return ExecuteDataset(sqlConnectionStr, CommandType.Text, commandText);
         }
         /// <summary>
+        /// 执行指定命令，返回Dataset
+        /// </summary>
+        /// <param name="commandText">存储过程名称或T-SQL语句</param>
+        /// <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
+        /// <param name="commandParameters">SqlParamters参数数组</param>
+        /// <returns></returns>
+        public static DataSet ExecuteDataset(string commandText, CommandType commandType, params SqlParameter[] commandParameters)
+        {
+            return ExecuteDataset(sqlConnectionStr, commandType, commandText, commandParameters);
+        }
+        /// <summary>
         /// 执行指定数据库连接字符串的命令,返回DataSet.
         /// </summary>
         /// <remarks>

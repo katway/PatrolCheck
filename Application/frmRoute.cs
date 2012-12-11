@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace WorkStation
 {
-    public partial class frmRoute : Form
+    public partial class frmRoute : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmRoute()
         {
