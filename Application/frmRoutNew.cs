@@ -10,13 +10,13 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmRoutNameAdd : Form
+    public partial class frmRoutNew : Form
     {
         public Boolean isEdit=false;
         public object routeID;
         public string routeName, routeAlias, routeArea;
         public TreeView tView;
-        public frmRoutNameAdd()
+        public frmRoutNew()
         {
             InitializeComponent();
         }
@@ -70,7 +70,7 @@ namespace WorkStation
             pars[3].Value = routeID;
             pars[4].Value = this.cboInOrder.SelectedValue;
             SqlHelper.ExecuteNonQuery(strsql, pars);
-            frmRouteNew.tvRouteInit(tView);
+            frmRoute.tvRouteInit(tView);
             tView.ExpandAll();
         }
 

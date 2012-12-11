@@ -99,9 +99,7 @@
     <Compile Include="frmPlanExamine.Designer.cs">
       <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPlanToTask.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="frmPlanToTask.cs" />
     <Compile Include="frmPlanToTask.Designer.cs">
       <DependentUpon>frmPlanToTask.cs</DependentUpon>
     </Compile>
@@ -111,11 +109,11 @@
     <Compile Include="frmPlanAdd.Designer.cs">
       <DependentUpon>frmPlanAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPointNew.cs">
+    <Compile Include="frmPoint.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPointNew.Designer.cs">
-      <DependentUpon>frmPointNew.cs</DependentUpon>
+    <Compile Include="frmPoint.Designer.cs">
+      <DependentUpon>frmPoint.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPostNew.cs">
       <SubType>Form</SubType>
@@ -123,17 +121,17 @@
     <Compile Include="frmPostNew.Designer.cs">
       <DependentUpon>frmPostNew.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRouteNew.cs">
+    <Compile Include="frmRoute.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRouteNew.Designer.cs">
-      <DependentUpon>frmRouteNew.cs</DependentUpon>
+    <Compile Include="frmRoute.Designer.cs">
+      <DependentUpon>frmRoute.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRoutNameAdd.cs">
+    <Compile Include="frmRoutNew.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRoutNameAdd.Designer.cs">
-      <DependentUpon>frmRoutNameAdd.cs</DependentUpon>
+    <Compile Include="frmRoutNew.Designer.cs">
+      <DependentUpon>frmRoutNew.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMachine.cs">
       <SubType>Form</SubType>
@@ -229,17 +227,17 @@
     <EmbeddedResource Include="frmPlanAdd.resx">
       <DependentUpon>frmPlanAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPointNew.resx">
-      <DependentUpon>frmPointNew.cs</DependentUpon>
+    <EmbeddedResource Include="frmPoint.resx">
+      <DependentUpon>frmPoint.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPostNew.resx">
       <DependentUpon>frmPostNew.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRouteNew.resx">
-      <DependentUpon>frmRouteNew.cs</DependentUpon>
+    <EmbeddedResource Include="frmRoute.resx">
+      <DependentUpon>frmRoute.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRoutNameAdd.resx">
-      <DependentUpon>frmRoutNameAdd.cs</DependentUpon>
+    <EmbeddedResource Include="frmRoutNew.resx">
+      <DependentUpon>frmRoutNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMachine.resx">
       <DependentUpon>frmMachine.cs</DependentUpon>

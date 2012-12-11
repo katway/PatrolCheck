@@ -10,9 +10,9 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmRouteNew : Form
+    public partial class frmRoute : Form
     {
-        public frmRouteNew()
+        public frmRoute()
         {
             InitializeComponent();
         }       
@@ -242,7 +242,7 @@ namespace WorkStation
 
         private void 新建路线ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmRoutNameAdd rn = new frmRoutNameAdd();
+            frmRoutNew rn = new frmRoutNew();
             rn.Left=this.Left+(this.Width-rn.Width)/2;
             rn.Top=this.Top+(this.Height-rn.Height)/2;
             rn.tView = this.tvRoute;
@@ -470,7 +470,7 @@ namespace WorkStation
         {
             if (e.Node.Level == 2)
             {
-                frmRoutNameAdd fn = new frmRoutNameAdd();
+                frmRoutNew fn = new frmRoutNew();
                 fn.Left=this.Left+(this.Width-fn.Width)/2;
                 fn.Top = this.Top + (this.Height - fn.Height) / 2;
                 fn.tView = tvRoute;
@@ -484,7 +484,7 @@ namespace WorkStation
         {
             if (tvRoute.SelectedNode.Level == 2)
             {
-                frmRoutNameAdd fn = new frmRoutNameAdd();
+                frmRoutNew fn = new frmRoutNew();
                 fn.tView = tvRoute;
                 fn.Left=this.Left+(this.Width-fn.Width)/2;
                 fn.Top = this.Top + (this.Height - fn.Height) / 2;

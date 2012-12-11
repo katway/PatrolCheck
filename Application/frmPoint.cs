@@ -10,9 +10,9 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmPointNew : Form
+    public partial class frmPoint : Form
     {
-        public frmPointNew()
+        public frmPoint()
         {
             InitializeComponent();
         }

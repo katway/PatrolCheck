@@ -1,6 +1,6 @@
 ﻿namespace WorkStation
 {
-    partial class frmPointNew
+    partial class frmPoint
     {
         /// <summary>
         /// Required designer variable.
