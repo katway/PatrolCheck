@@ -109,7 +109,7 @@
     <Compile Include="frmMainTool.Designer.cs">
       <DependentUpon>frmMainTool.cs</DependentUpon>
     </Compile>
-     <Compile Include="frmReportAnalysisByEmployee.cs">
+    <Compile Include="frmReportAnalysisByEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmReportAnalysisByEmployee.Designer.cs">
@@ -128,7 +128,6 @@
       <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPlanToTask.cs">
-    <Compile Include="frmPlanToTask.Designer.cs">
       <DependentUpon>frmPlanToTask.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
@@ -260,7 +259,7 @@
     <Compile Include="MyReport\ReportSearchByPlan.Designer.cs">
       <DependentUpon>ReportSearchByPlan.cs</DependentUpon>
     </Compile>
- <Compile Include="frmReportAnalysisByPlan.cs">
+    <Compile Include="frmReportAnalysisByPlan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmReportAnalysisByPlan.Designer.cs">
@@ -278,7 +277,7 @@
     <EmbeddedResource Include="frmMainTool.resx">
       <DependentUpon>frmMainTool.cs</DependentUpon>
     </EmbeddedResource>
-     <EmbeddedResource Include="frmReportAnalysisByEmployee.resx">
+    <EmbeddedResource Include="frmReportAnalysisByEmployee.resx">
       <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlan.resx">
@@ -331,8 +330,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeNew.resx">
       <DependentUpon>frmEmployeeNew.cs</DependentUpon>
-    <EmbeddedResource Include="frmEmployeeNew.resx">
-      <DependentUpon>frmEmployeeNew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTaskAssignment.resx">
       <DependentUpon>frmTaskAssignment.cs</DependentUpon>
@@ -377,8 +374,6 @@
     </None>
     <None Include="MyDataSet\ReportSearchByPoint.xss">
       <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
-    </None>
-      <DependentUpon>HflDataSet_Plan.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

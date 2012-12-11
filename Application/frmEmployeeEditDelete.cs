@@ -174,7 +174,7 @@ namespace WorkStation
         /// </summary>
         public void BindEmployee()
         {
-            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name  postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.ID=Post.ID";
+            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name  postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
             DataSet ds = SqlHelper.ExecuteDataset(selectEmployee);
             ds.Tables[0].Columns.Add(new DataColumn("check", typeof(System.Boolean)));
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)

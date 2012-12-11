@@ -39,7 +39,6 @@
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.hflDataSetPlan1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.hflDataSet_Plan1 = new WorkStation.HflDataSet.HflDataSet_Plan();
             this.dgvPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -60,7 +59,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hflDataSetPlan1BindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hflDataSet_Plan1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -149,13 +147,9 @@
             // 
             // hflDataSetPlan1BindingSource
             // 
-            this.hflDataSetPlan1BindingSource.DataSource = this.hflDataSet_Plan1;
-            this.hflDataSetPlan1BindingSource.Position = 0;
-            // 
-            // hflDataSet_Plan1
-            // 
-            this.hflDataSet_Plan1.DataSetName = "HflDataSet_Plan";
-            this.hflDataSet_Plan1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+#warning 注意hflDataSet是否真的不需要
+            //this.hflDataSetPlan1BindingSource.DataSource = this.hflDataSet_Plan1;
+            //this.hflDataSetPlan1BindingSource.Position = 0;
             // 
             // dgvPlan
             // 
@@ -338,7 +332,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hflDataSetPlan1BindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hflDataSet_Plan1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -370,7 +363,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private HflDataSet.HflDataSet_Plan hflDataSet_Plan1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private System.Windows.Forms.BindingSource hflDataSetPlan1BindingSource;
