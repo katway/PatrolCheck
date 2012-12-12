@@ -50,7 +50,7 @@ namespace WorkStation
                   par[2].Value = this.txtAlias.Text.Trim();
                   par[3].Value = this.cboCompany.SelectedValue;
                   par[4].Value = this.cboState.SelectedValue;
-                  int i = SqlHelper.ExecuteNonQuery(sqlConnectionStr, CommandType.Text, b, par);
+                  int i = SqlHelper.ExecuteNonQuery(b, par);
                   if (i > 0)
                   {
                       MessageBox.Show("更新成功！");
@@ -79,9 +79,10 @@ namespace WorkStation
         /// <param name="e"></param>
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string a = "select Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState from Site,Company where Site.Company_ID=Company.ID and  Site.ID=@id";
+            string a = "select Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState from Site left join Company on  Site.Company_ID=Company.ID where  Site.ID=@id";
             SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", this.dgvSiteDel.GetRowCellValue(this.dgvSiteDel.FocusedRowHandle, "ID")) };
-            SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr,CommandType.Text,a,par);
+            //SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr,CommandType.Text,a,par);
+            SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text, a, par);
             while (dr.Read())
             {
                 this.txtName.Text = dr[0].ToString();

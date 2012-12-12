@@ -66,7 +66,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.7.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <HintPath>Code\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +79,9 @@
     <Compile Include="Code\CommonClass.cs" />
     <Compile Include="Code\GlobalConfig.cs" />
     <Compile Include="Code\SqlHelper.cs" />
+    <Compile Include="frmPlanToTask.Designer.cs">
+      <DependentUpon>frmPlanToTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,9 +133,6 @@
     <Compile Include="frmPlanToTask.cs">
       <DependentUpon>frmPlanToTask.cs</DependentUpon>
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPlanToTask.Designer.cs">
-      <DependentUpon>frmPlanToTask.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPlanAdd.cs">
       <SubType>Form</SubType>
@@ -268,6 +268,9 @@
     <EmbeddedResource Include="frmCardNew.resx">
       <DependentUpon>frmCardNew.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanToTask.resx">
+      <DependentUpon>frmPlanToTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPointChoseRfid.resx">
       <DependentUpon>frmPointChoseRfid.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,9 +288,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlanExamine.resx">
       <DependentUpon>frmPlanExamine.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPlanToTask.resx">
-      <DependentUpon>frmPlanToTask.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlanAdd.resx">
       <DependentUpon>frmPlanAdd.cs</DependentUpon>

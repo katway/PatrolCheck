@@ -14,8 +14,7 @@ namespace WorkStation
         public frmPostNew()
         {
             InitializeComponent();
-        }
-       // private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";      
+        }      
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (this.txtName.Text == "")
@@ -84,7 +83,7 @@ namespace WorkStation
         }
         public void BindPost()
         {
-            string sql = "select Post.ID, Post.Name,Post.Alias,Site.Name Name1,(select meaning from codes where code=Post.validstate and purpose='validstate') as ValidState from Post,Site where Post.Site_ID=Site.ID";
+            string sql = "select Post.ID, Post.Name,Post.Alias,Site.Name Name1,(select meaning from codes where code=Post.validstate and purpose='validstate') as ValidState from Post left join Site on Post.Site_ID=Site.ID";
             DataSet ds = SqlHelper.ExecuteDataset(sql);           
             this.gridControl1.DataSource = ds.Tables[0];
         }

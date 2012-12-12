@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             this.dgvTask = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -38,7 +37,6 @@
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.hflDataSetPlan1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +56,6 @@
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hflDataSetPlan1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,11 +128,10 @@
             // gridControl1
             // 
             this.gridControl1.DataMember = "Plan";
-            this.gridControl1.DataSource = this.hflDataSetPlan1BindingSource;
-            gridLevelNode1.LevelTemplate = this.dgvTask;
-            gridLevelNode1.RelationName = "PlanToTask";
+            gridLevelNode2.LevelTemplate = this.dgvTask;
+            gridLevelNode2.RelationName = "PlanToTask";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode1});
+            gridLevelNode2});
             this.gridControl1.Location = new System.Drawing.Point(12, 92);
             this.gridControl1.MainView = this.dgvPlan;
             this.gridControl1.Name = "gridControl1";
@@ -144,12 +140,6 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgvPlan,
             this.dgvTask});
-            // 
-            // hflDataSetPlan1BindingSource
-            // 
-#warning 注意hflDataSet是否真的不需要
-            //this.hflDataSetPlan1BindingSource.DataSource = this.hflDataSet_Plan1;
-            //this.hflDataSetPlan1BindingSource.Position = 0;
             // 
             // dgvPlan
             // 
@@ -251,14 +241,14 @@
             // cboPlanName
             // 
             this.cboPlanName.FormattingEnabled = true;
-            this.cboPlanName.Location = new System.Drawing.Point(74, 6);
+            this.cboPlanName.Location = new System.Drawing.Point(87, 46);
             this.cboPlanName.Name = "cboPlanName";
             this.cboPlanName.Size = new System.Drawing.Size(151, 20);
             this.cboPlanName.TabIndex = 24;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(417, 49);
+            this.btnSearch.Location = new System.Drawing.Point(412, 44);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 23;
@@ -270,7 +260,7 @@
             // 
             this.dateTimePicker2.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(74, 45);
+            this.dateTimePicker2.Location = new System.Drawing.Point(353, 9);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(151, 21);
             this.dateTimePicker2.TabIndex = 22;
@@ -280,7 +270,7 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(341, 9);
+            this.dateTimePicker1.Location = new System.Drawing.Point(87, 9);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(151, 21);
             this.dateTimePicker1.TabIndex = 21;
@@ -289,7 +279,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 49);
+            this.label4.Location = new System.Drawing.Point(294, 13);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 20;
@@ -298,7 +288,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(262, 13);
+            this.label3.Location = new System.Drawing.Point(12, 18);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 19;
@@ -307,7 +297,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(12, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 17;
@@ -331,7 +321,6 @@
             this.Load += new System.EventHandler(this.frmReportAnalysisByPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hflDataSetPlan1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,6 +354,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private System.Windows.Forms.BindingSource hflDataSetPlan1BindingSource;
+       // private System.Windows.Forms.BindingSource hflDataSetPlan1BindingSource;
     }
 }

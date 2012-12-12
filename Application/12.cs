@@ -94,8 +94,6 @@ namespace WorkStation
                     }
 
                     dsComo.Tables[0].Rows.InsertAt(dr, 0);
-
-
                 }
 
                 if (dsComo != null && dsComo.Tables.Count == 1)

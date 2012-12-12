@@ -6,7 +6,6 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -30,14 +29,12 @@
         {
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.dgvPerson = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cboPerson = new System.Windows.Forms.ComboBox();
+            this.cboOperator = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndTime = new System.Windows.Forms.DateTimePicker();
+            this.dtpStart = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.cboPost = new System.Windows.Forms.ComboBox();
@@ -60,13 +57,13 @@
             this.dgvPerson.GridControl = this.gridControl1;
             this.dgvPerson.Name = "dgvPerson";
             // 
-            // cboPerson
+            // cboOperator
             // 
-            this.cboPerson.FormattingEnabled = true;
-            this.cboPerson.Location = new System.Drawing.Point(405, 53);
-            this.cboPerson.Name = "cboPerson";
-            this.cboPerson.Size = new System.Drawing.Size(161, 20);
-            this.cboPerson.TabIndex = 17;
+            this.cboOperator.FormattingEnabled = true;
+            this.cboOperator.Location = new System.Drawing.Point(405, 53);
+            this.cboOperator.Name = "cboOperator";
+            this.cboOperator.Size = new System.Drawing.Size(161, 20);
+            this.cboOperator.TabIndex = 17;
             // 
             // label4
             // 
@@ -77,25 +74,25 @@
             this.label4.TabIndex = 16;
             this.label4.Text = "人员名称";
             // 
-            // dateTimePicker2
+            // dtpEndTime
             // 
-            this.dateTimePicker2.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(405, 13);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(161, 21);
-            this.dateTimePicker2.TabIndex = 15;
-            this.dateTimePicker2.Value = new System.DateTime(2012, 11, 29, 10, 14, 0, 0);
+            this.dtpEndTime.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
+            this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpEndTime.Location = new System.Drawing.Point(405, 13);
+            this.dtpEndTime.Name = "dtpEndTime";
+            this.dtpEndTime.Size = new System.Drawing.Size(161, 21);
+            this.dtpEndTime.TabIndex = 15;
+            this.dtpEndTime.Value = new System.DateTime(2012, 11, 29, 10, 14, 0, 0);
             // 
-            // dateTimePicker1
+            // dtpStart
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 13);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(157, 21);
-            this.dateTimePicker1.TabIndex = 14;
-            this.dateTimePicker1.Value = new System.DateTime(2012, 11, 29, 10, 12, 0, 0);
+            this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
+            this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStart.Location = new System.Drawing.Point(141, 13);
+            this.dtpStart.Name = "dtpStart";
+            this.dtpStart.Size = new System.Drawing.Size(157, 21);
+            this.dtpStart.TabIndex = 14;
+            this.dtpStart.Value = new System.DateTime(2012, 11, 29, 10, 12, 0, 0);
             // 
             // label3
             // 
@@ -114,23 +111,6 @@
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 12;
             this.label2.Text = "开始时间";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(141, 86);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 20);
-            this.comboBox1.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 12);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "巡检路线名称";
             // 
             // btnSearch
             // 
@@ -168,14 +148,12 @@
             this.Controls.Add(this.cboPost);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.cboPerson);
+            this.Controls.Add(this.cboOperator);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpEndTime);
+            this.Controls.Add(this.dtpStart);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.gridControl1);
             this.Name = "frmReportAnalysisByEmployee";
             this.Text = "人员统计率";
@@ -184,21 +162,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPerson)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
 
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView dgvPerson;
-        private System.Windows.Forms.ComboBox cboPerson;
+        private System.Windows.Forms.ComboBox cboOperator;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpEndTime;
+        private System.Windows.Forms.DateTimePicker dtpStart;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cboPost;

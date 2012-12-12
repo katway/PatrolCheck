@@ -14,7 +14,7 @@ namespace WorkStation
     /// </summary>
     public sealed class SqlHelper
     {
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User Id=sa;Password=sa123";
+        public static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User Id=sa;Password=sa123";
         
         #region 私有构造函数和方法
         private SqlHelper() 
@@ -454,6 +454,17 @@ namespace WorkStation
         public static DataSet ExecuteDataset(string commandText)
         {
             return ExecuteDataset(sqlConnectionStr, CommandType.Text, commandText);
+        }
+        /// <summary>
+        /// 执行指定命令，返回Dataset
+        /// </summary>
+        /// <param name="commandText">存储过程名称或T-SQL语句</param>
+        /// <param name="commandType">命令类型 (存储过程,命令文本或其它)</param>
+        /// <param name="commandParameters">SqlParamters参数数组</param>
+        /// <returns></returns>
+        public static DataSet ExecuteDataset(string commandText, CommandType commandType, params SqlParameter[] commandParameters)
+        {
+            return ExecuteDataset(sqlConnectionStr, commandType, commandText, commandParameters);
         }
         /// <summary>
         /// 执行指定数据库连接字符串的命令,返回DataSet.
