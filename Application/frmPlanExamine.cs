@@ -10,7 +10,7 @@ using DevExpress.XtraGrid;
 
 namespace WorkStation
 {
-    public partial class frmPlanExamine : Form
+    public partial class frmPlanExamine : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmPlanExamine()
         {

@@ -22,29 +22,11 @@ namespace WorkStation
         {
         }
 
-        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            
+            Program.MainForm.ShowForm(e.Node.Name);
         }
 
-        private void treeView3_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-            string nodeName = e.Node.Name.Replace("node","frm");
-            Assembly assem = Assembly.GetExecutingAssembly();
-            Type t = assem.GetType("WorkStation." + nodeName);
-            object obj=null;
-            if (t != null)
-            {
-                obj = Activator.CreateInstance(t);
-            }
-            if (obj != null)
-            {
-                (obj as WeifenLuo.WinFormsUI.Docking.DockContent).MdiParent = this.ParentForm;
-                (obj as WeifenLuo.WinFormsUI.Docking.DockContent).Show();
-                
-            }
-
-            
-        }
+ 
     }
 }

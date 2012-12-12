@@ -60,17 +60,19 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemImageComboBox2_Edit = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox2_Edit)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtpStart
             // 
             this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(95, 17);
+            this.dtpStart.Location = new System.Drawing.Point(70, 18);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(148, 21);
             this.dtpStart.TabIndex = 56;
@@ -79,7 +81,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 21);
+            this.label1.Location = new System.Drawing.Point(11, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 57;
@@ -88,7 +90,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(259, 21);
+            this.label2.Location = new System.Drawing.Point(234, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 58;
@@ -98,7 +100,7 @@
             // 
             this.dtpEnd.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dtpEnd.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEnd.Location = new System.Drawing.Point(318, 17);
+            this.dtpEnd.Location = new System.Drawing.Point(293, 18);
             this.dtpEnd.Name = "dtpEnd";
             this.dtpEnd.Size = new System.Drawing.Size(148, 21);
             this.dtpEnd.TabIndex = 59;
@@ -107,7 +109,7 @@
             // cboPlan
             // 
             this.cboPlan.FormattingEnabled = true;
-            this.cboPlan.Location = new System.Drawing.Point(95, 54);
+            this.cboPlan.Location = new System.Drawing.Point(70, 52);
             this.cboPlan.Name = "cboPlan";
             this.cboPlan.Size = new System.Drawing.Size(148, 20);
             this.cboPlan.TabIndex = 60;
@@ -116,7 +118,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(44, 58);
+            this.label3.Location = new System.Drawing.Point(19, 56);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 61;
@@ -125,7 +127,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(267, 58);
+            this.label4.Location = new System.Drawing.Point(242, 56);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(29, 12);
             this.label4.TabIndex = 63;
@@ -134,14 +136,14 @@
             // cboTask
             // 
             this.cboTask.FormattingEnabled = true;
-            this.cboTask.Location = new System.Drawing.Point(318, 54);
+            this.cboTask.Location = new System.Drawing.Point(293, 52);
             this.cboTask.Name = "cboTask";
             this.cboTask.Size = new System.Drawing.Size(148, 20);
             this.cboTask.TabIndex = 62;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(521, 51);
+            this.btnSearch.Location = new System.Drawing.Point(469, 49);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 64;
@@ -151,7 +153,7 @@
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(619, 51);
+            this.btnShowAll.Location = new System.Drawing.Point(567, 49);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(75, 23);
             this.btnShowAll.TabIndex = 65;
@@ -161,14 +163,16 @@
             // 
             // gridControlPlan
             // 
-            this.gridControlPlan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControlPlan.Location = new System.Drawing.Point(0, 94);
+            this.gridControlPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlPlan.Location = new System.Drawing.Point(0, 108);
             this.gridControlPlan.MainView = this.gvPlan;
             this.gridControlPlan.Name = "gridControlPlan";
             this.gridControlPlan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemImageComboBox1,
             this.repositoryItemImageComboBox2_Edit});
-            this.gridControlPlan.Size = new System.Drawing.Size(828, 499);
+            this.gridControlPlan.Size = new System.Drawing.Size(828, 485);
             this.gridControlPlan.TabIndex = 66;
             this.gridControlPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPlan});
@@ -365,7 +369,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(714, 51);
+            this.btnSave.Location = new System.Drawing.Point(662, 49);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 67;
@@ -373,23 +377,36 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dtpStart);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.btnShowAll);
+            this.groupBox1.Controls.Add(this.dtpEnd);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.cboPlan);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cboTask);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(804, 90);
+            this.groupBox1.TabIndex = 68;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "任务指派";
+            // 
             // frmTaskAssignment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 593);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControlPlan);
-            this.Controls.Add(this.btnShowAll);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cboTask);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cboPlan);
-            this.Controls.Add(this.dtpEnd);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dtpStart);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "frmTaskAssignment";
             this.Text = "任务指派";
             this.Load += new System.EventHandler(this.frmTaskAssignment_Load);
@@ -397,8 +414,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemImageComboBox2_Edit)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -436,5 +454,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox1;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox repositoryItemImageComboBox2_Edit;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

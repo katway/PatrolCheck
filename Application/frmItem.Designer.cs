@@ -59,15 +59,17 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(48, 20);
+            this.lblName.Location = new System.Drawing.Point(73, 27);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(29, 12);
             this.lblName.TabIndex = 0;
@@ -75,7 +77,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(101, 13);
+            this.txtName.Location = new System.Drawing.Point(126, 20);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(171, 21);
             this.txtName.TabIndex = 1;
@@ -83,7 +85,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(324, 20);
+            this.lblAlias.Location = new System.Drawing.Point(349, 27);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 2;
@@ -92,7 +94,7 @@
             // lblValue
             // 
             this.lblValue.AutoSize = true;
-            this.lblValue.Location = new System.Drawing.Point(312, 51);
+            this.lblValue.Location = new System.Drawing.Point(337, 55);
             this.lblValue.Name = "lblValue";
             this.lblValue.Size = new System.Drawing.Size(41, 12);
             this.lblValue.TabIndex = 3;
@@ -101,7 +103,7 @@
             // lblPoints
             // 
             this.lblPoints.AutoSize = true;
-            this.lblPoints.Location = new System.Drawing.Point(18, 79);
+            this.lblPoints.Location = new System.Drawing.Point(43, 79);
             this.lblPoints.Name = "lblPoints";
             this.lblPoints.Size = new System.Drawing.Size(65, 12);
             this.lblPoints.TabIndex = 4;
@@ -110,7 +112,7 @@
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(30, 116);
+            this.lblRemarks.Location = new System.Drawing.Point(55, 110);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(29, 12);
             this.lblRemarks.TabIndex = 5;
@@ -118,7 +120,7 @@
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(383, 13);
+            this.txtAlias.Location = new System.Drawing.Point(408, 20);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(171, 21);
             this.txtAlias.TabIndex = 2;
@@ -127,14 +129,14 @@
             // 
             this.cboValue.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboValue.FormattingEnabled = true;
-            this.cboValue.Location = new System.Drawing.Point(383, 48);
+            this.cboValue.Location = new System.Drawing.Point(408, 52);
             this.cboValue.Name = "cboValue";
             this.cboValue.Size = new System.Drawing.Size(171, 20);
             this.cboValue.TabIndex = 4;
             // 
             // txtRemarks
             // 
-            this.txtRemarks.Location = new System.Drawing.Point(101, 113);
+            this.txtRemarks.Location = new System.Drawing.Point(126, 107);
             this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -145,14 +147,14 @@
             // 
             this.cboPoint.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPoint.FormattingEnabled = true;
-            this.cboPoint.Location = new System.Drawing.Point(101, 79);
+            this.cboPoint.Location = new System.Drawing.Point(126, 79);
             this.cboPoint.Name = "cboPoint";
             this.cboPoint.Size = new System.Drawing.Size(171, 20);
             this.cboPoint.TabIndex = 5;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(278, 198);
+            this.btnSave.Location = new System.Drawing.Point(303, 180);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
@@ -163,7 +165,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 48);
+            this.label1.Location = new System.Drawing.Point(55, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 14;
@@ -173,14 +175,14 @@
             // 
             this.cboMachine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboMachine.FormattingEnabled = true;
-            this.cboMachine.Location = new System.Drawing.Point(101, 45);
+            this.cboMachine.Location = new System.Drawing.Point(126, 49);
             this.cboMachine.Name = "cboMachine";
             this.cboMachine.Size = new System.Drawing.Size(171, 20);
             this.cboMachine.TabIndex = 3;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(383, 198);
+            this.btnUpdate.Location = new System.Drawing.Point(408, 180);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
@@ -190,7 +192,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(488, 198);
+            this.btnDel.Location = new System.Drawing.Point(513, 180);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 9;
@@ -201,7 +203,7 @@
             // labID
             // 
             this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(383, 86);
+            this.labID.Location = new System.Drawing.Point(408, 86);
             this.labID.Name = "labID";
             this.labID.Size = new System.Drawing.Size(53, 12);
             this.labID.TabIndex = 20;
@@ -215,12 +217,15 @@
             // 
             // gridControlItems
             // 
-            this.gridControlItems.Location = new System.Drawing.Point(20, 229);
+            this.gridControlItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlItems.Location = new System.Drawing.Point(12, 234);
             this.gridControlItems.MainView = this.gvItems;
             this.gridControlItems.Name = "gridControlItems";
             this.gridControlItems.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlItems.Size = new System.Drawing.Size(684, 345);
+            this.gridControlItems.Size = new System.Drawing.Size(692, 340);
             this.gridControlItems.TabIndex = 21;
             this.gridControlItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvItems});
@@ -339,29 +344,42 @@
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 6;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cboMachine);
+            this.groupBox1.Controls.Add(this.lblName);
+            this.groupBox1.Controls.Add(this.labID);
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.btnDel);
+            this.groupBox1.Controls.Add(this.lblAlias);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.lblValue);
+            this.groupBox1.Controls.Add(this.lblPoints);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblRemarks);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Controls.Add(this.txtAlias);
+            this.groupBox1.Controls.Add(this.cboPoint);
+            this.groupBox1.Controls.Add(this.cboValue);
+            this.groupBox1.Controls.Add(this.txtRemarks);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(692, 216);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // frmItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(716, 586);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControlItems);
-            this.Controls.Add(this.labID);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.cboMachine);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.cboPoint);
-            this.Controls.Add(this.txtRemarks);
-            this.Controls.Add(this.cboValue);
-            this.Controls.Add(this.txtAlias);
-            this.Controls.Add(this.lblRemarks);
-            this.Controls.Add(this.lblPoints);
-            this.Controls.Add(this.lblValue);
-            this.Controls.Add(this.lblAlias);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "frmItem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "新建巡检项";
@@ -369,8 +387,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -407,5 +426,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
