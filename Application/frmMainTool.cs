@@ -41,6 +41,7 @@ namespace WorkStation
             {
                 (obj as WeifenLuo.WinFormsUI.Docking.DockContent).MdiParent = this.ParentForm;
                 (obj as WeifenLuo.WinFormsUI.Docking.DockContent).Show();
+                
             }
 
             

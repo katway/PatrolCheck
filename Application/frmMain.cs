@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace WorkStation
 {
@@ -69,6 +70,24 @@ namespace WorkStation
         {
             frmMainTool tool = new frmMainTool();
             tool.Show(this.dockPanel);
+            timer1.Start();
         }
+
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    foreach (Form f in MdiChildren)
+        //    {
+        //        if (!FormMap.Keys.Contains(f.Name))
+        //        {
+        //            (f as DockContent).Show(dockPanel);
+        //        }
+        //        else
+        //        {
+        //            FormMap
+        //        }
+        //    }
+        //}
+
+        
     }
 }
