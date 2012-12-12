@@ -17,8 +17,13 @@ namespace WorkStation
         {
             InitializeComponent();
         }
+<<<<<<< JieMian2
         public Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent> FormMap = new Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent>();
         private WeifenLuo.WinFormsUI.Docking.DockContent CreteFormFormName(string formName)
+=======
+        private Dictionary<string, Form> FormMap = new Dictionary<string, Form>();
+        private Form CreteFormFormName(string formName)
+>>>>>>> local
         {
             Assembly assem = Assembly.GetExecutingAssembly();
             System.Type t = assem.GetType("WorkStation." + formName);
@@ -27,8 +32,8 @@ namespace WorkStation
                 obj = Activator.CreateInstance(t);
             if (obj != null)
             {
-                (obj as WeifenLuo.WinFormsUI.Docking.DockContent).MdiParent = this;
-                return (obj as WeifenLuo.WinFormsUI.Docking.DockContent);
+                (obj as Form).MdiParent = this;
+                return (obj as Form);
             }
             else
             {
@@ -51,7 +56,7 @@ namespace WorkStation
                     if (FormMap[className].IsDisposed)
                     {
                         FormMap[className] = this.CreteFormFormName(className);
-                        FormMap[className].Show(this.dockPanel);
+                        FormMap[className].Show();
                     }
                 }
                 else
@@ -62,7 +67,7 @@ namespace WorkStation
             else
             {
                 FormMap.Add(className, this.CreteFormFormName(className));
-                if (FormMap[className] != null) FormMap[className].Show(this.dockPanel);
+                if (FormMap[className] != null) FormMap[className].Show();
             }
         }
 

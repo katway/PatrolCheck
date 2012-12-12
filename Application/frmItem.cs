@@ -180,7 +180,7 @@ namespace WorkStation
         private void bkwItem_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             DataRow dr = dsMachine.Tables[0].NewRow();
-            dr[0] = "-1"; dr[1] = "全部";
+            dr[0] = "-1"; dr[1] = "不选择";
             dsMachine.Tables[0].Rows.InsertAt(dr,0);
             cboMachine.ValueMember = "ID";
             cboMachine.DisplayMember = "Name";
@@ -188,7 +188,7 @@ namespace WorkStation
             dsMachine.Dispose();
 
             DataRow dr1 = dsPoint.Tables[0].NewRow();
-            dr1[0] = "-1"; dr1[1] = "全部";
+            dr1[0] = "-1"; dr1[1] = "不选择";
             dsPoint.Tables[0].Rows.InsertAt(dr1, 0);
             cboPoint.ValueMember = "ID";
             cboPoint.DisplayMember = "Name";
@@ -196,7 +196,7 @@ namespace WorkStation
             dsPoint.Dispose();
 
             DataRow dr2 = dsValueType.Tables[0].NewRow();
-            dr2[0] = "-1"; dr2[1] = "全部";
+            dr2[0] = "-1"; dr2[1] = "不选择";
             dsValueType.Tables[0].Rows.InsertAt(dr2, 0);
             cboValue.ValueMember = "Code";
             cboValue.DisplayMember = "Meaning";
@@ -210,9 +210,9 @@ namespace WorkStation
             labID.Text = gvItems.GetRowCellValue(e.RowHandle,"ID").ToString();
             txtName.Text = gvItems.GetRowCellValue(e.RowHandle, "Name").ToString();
             txtAlias.Text = gvItems.GetRowCellValue(e.RowHandle, "Alias").ToString();
-            cboValue.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "ValueType");
-            cboMachine.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "MachineID") ;
-            cboPoint.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "PointID");
+            cboValue.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "ValueType").ToString() == "" ? -1 : gvItems.GetRowCellValue(e.RowHandle, "ValueType");
+            cboMachine.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "MachineID").ToString() == "" ? -1 : gvItems.GetRowCellValue(e.RowHandle, "MachineID");
+            cboPoint.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "PointID").ToString() == "" ? -1 : gvItems.GetRowCellValue(e.RowHandle, "PointID");
             txtRemarks.Text = gvItems.GetRowCellValue(e.RowHandle, "Comment").ToString();
         }
     }
