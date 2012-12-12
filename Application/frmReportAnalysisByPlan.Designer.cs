@@ -38,7 +38,6 @@
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.hflDataSetPlan1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvPlan = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -58,7 +57,6 @@
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hflDataSetPlan1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,7 +129,6 @@
             // gridControl1
             // 
             this.gridControl1.DataMember = "Plan";
-            this.gridControl1.DataSource = this.hflDataSetPlan1BindingSource;
             gridLevelNode1.LevelTemplate = this.dgvTask;
             gridLevelNode1.RelationName = "PlanToTask";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
@@ -331,7 +328,6 @@
             this.Load += new System.EventHandler(this.frmReportAnalysisByPlan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hflDataSetPlan1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlan)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -365,6 +361,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private System.Windows.Forms.BindingSource hflDataSetPlan1BindingSource;
     }
 }
