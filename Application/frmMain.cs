@@ -17,13 +17,8 @@ namespace WorkStation
         {
             InitializeComponent();
         }
-<<<<<<< JieMian2
-        public Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent> FormMap = new Dictionary<string, WeifenLuo.WinFormsUI.Docking.DockContent>();
-        private WeifenLuo.WinFormsUI.Docking.DockContent CreteFormFormName(string formName)
-=======
         private Dictionary<string, Form> FormMap = new Dictionary<string, Form>();
         private Form CreteFormFormName(string formName)
->>>>>>> local
         {
             Assembly assem = Assembly.GetExecutingAssembly();
             System.Type t = assem.GetType("WorkStation." + formName);
@@ -78,20 +73,20 @@ namespace WorkStation
             timer1.Start();
         }
 
-        //private void timer1_Tick(object sender, EventArgs e)
-        //{
-        //    foreach (Form f in MdiChildren)
-        //    {
-        //        if (!FormMap.Keys.Contains(f.Name))
-        //        {
-        //            (f as DockContent).Show(dockPanel);
-        //        }
-        //        else
-        //        {
-        //            FormMap
-        //        }
-        //    }
-        //}
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            //foreach (Form f in MdiChildren)
+            //{
+            //    if (!FormMap.Keys.Contains(f.Name))
+            //    {
+            //        (f as DockContent).Show(dockPanel);
+            //    }
+            //    else
+            //    {
+            //        FormMap
+            //    }
+            //}
+        }
 
         
     }
