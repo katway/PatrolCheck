@@ -111,7 +111,7 @@ namespace WorkStation
             // 
             // xPanderPanel1
             // 
-            this.xPanderPanel1.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel1.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel1.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel1.Controls.Add(this.tvPlan);
             this.xPanderPanel1.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -174,7 +174,7 @@ namespace WorkStation
             // 
             // xPanderPanel2
             // 
-            this.xPanderPanel2.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel2.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel2.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel2.Controls.Add(this.tvSearch);
             this.xPanderPanel2.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -198,11 +198,12 @@ namespace WorkStation
             this.xPanderPanel2.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel2.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel2.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.xPanderPanel2.Expand = true;
             this.xPanderPanel2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel2.Image = null;
             this.xPanderPanel2.Name = "xPanderPanel2";
             this.xPanderPanel2.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
-            this.xPanderPanel2.Size = new System.Drawing.Size(229, 25);
+            this.xPanderPanel2.Size = new System.Drawing.Size(229, 390);
             this.xPanderPanel2.TabIndex = 1;
             this.xPanderPanel2.Text = "统计报表";
             this.xPanderPanel2.ToolTipTextCloseIcon = null;
@@ -216,7 +217,7 @@ namespace WorkStation
             this.tvSearch.Name = "tvSearch";
             treeNode6.Name = "frmReportAnalysisByEmployee";
             treeNode6.Text = "人员出勤率";
-            treeNode7.Name = "节点3";
+            treeNode7.Name = "frmReportAnalysisByPlan";
             treeNode7.Text = "计划执行率";
             treeNode8.Name = "节点0";
             treeNode8.Text = "数据统计分析";
@@ -229,13 +230,13 @@ namespace WorkStation
             this.tvSearch.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode8,
             treeNode11});
-            this.tvSearch.Size = new System.Drawing.Size(227, 0);
+            this.tvSearch.Size = new System.Drawing.Size(227, 365);
             this.tvSearch.TabIndex = 0;
             this.tvSearch.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
             // 
             // xPanderPanel3
             // 
-            this.xPanderPanel3.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel3.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel3.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel3.Controls.Add(this.tvXunjian);
             this.xPanderPanel3.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -291,7 +292,7 @@ namespace WorkStation
             // 
             // xPanderPanel4
             // 
-            this.xPanderPanel4.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel4.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel4.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel4.Controls.Add(this.tvJiChu);
             this.xPanderPanel4.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -315,12 +316,11 @@ namespace WorkStation
             this.xPanderPanel4.CustomColors.FlatCaptionGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(225)))), ((int)(((byte)(252)))));
             this.xPanderPanel4.CustomColors.FlatCaptionGradientEnd = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.xPanderPanel4.CustomColors.InnerBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.xPanderPanel4.Expand = true;
             this.xPanderPanel4.ForeColor = System.Drawing.SystemColors.ControlText;
             this.xPanderPanel4.Image = null;
             this.xPanderPanel4.Name = "xPanderPanel4";
             this.xPanderPanel4.PanelStyle = BSE.Windows.Forms.PanelStyle.Office2007;
-            this.xPanderPanel4.Size = new System.Drawing.Size(229, 390);
+            this.xPanderPanel4.Size = new System.Drawing.Size(229, 25);
             this.xPanderPanel4.TabIndex = 3;
             this.xPanderPanel4.Text = "基础管理";
             this.xPanderPanel4.ToolTipTextCloseIcon = null;
@@ -363,13 +363,13 @@ namespace WorkStation
             treeNode22,
             treeNode26,
             treeNode27});
-            this.tvJiChu.Size = new System.Drawing.Size(227, 365);
+            this.tvJiChu.Size = new System.Drawing.Size(227, 0);
             this.tvJiChu.TabIndex = 2;
             this.tvJiChu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
             // 
             // xPanderPanel5
             // 
-            this.xPanderPanel5.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel5.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel5.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel5.Controls.Add(this.treeView1);
             this.xPanderPanel5.CustomColors.BackColor = System.Drawing.SystemColors.Control;
