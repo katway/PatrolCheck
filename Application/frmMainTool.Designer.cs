@@ -111,7 +111,7 @@ namespace WorkStation
             // 
             // xPanderPanel1
             // 
-            this.xPanderPanel1.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel1.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel1.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel1.Controls.Add(this.tvPlan);
             this.xPanderPanel1.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -174,7 +174,7 @@ namespace WorkStation
             // 
             // xPanderPanel2
             // 
-            this.xPanderPanel2.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel2.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel2.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel2.Controls.Add(this.tvSearch);
             this.xPanderPanel2.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -236,7 +236,7 @@ namespace WorkStation
             // 
             // xPanderPanel3
             // 
-            this.xPanderPanel3.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel3.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel3.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel3.Controls.Add(this.tvXunjian);
             this.xPanderPanel3.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -292,7 +292,7 @@ namespace WorkStation
             // 
             // xPanderPanel4
             // 
-            this.xPanderPanel4.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel4.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel4.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel4.Controls.Add(this.tvJiChu);
             this.xPanderPanel4.CustomColors.BackColor = System.Drawing.SystemColors.Control;
@@ -369,7 +369,7 @@ namespace WorkStation
             // 
             // xPanderPanel5
             // 
-            this.xPanderPanel5.CaptionFont = new System.Drawing.Font("Blackadder ITC", 8.75F, System.Drawing.FontStyle.Bold);
+            this.xPanderPanel5.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel5.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
             this.xPanderPanel5.Controls.Add(this.tvCard);
             this.xPanderPanel5.CustomColors.BackColor = System.Drawing.SystemColors.Control;
