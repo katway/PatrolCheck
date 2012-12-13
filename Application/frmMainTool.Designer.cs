@@ -81,7 +81,7 @@ namespace WorkStation
             this.xPanderPanel4 = new BSE.Windows.Forms.XPanderPanel();
             this.tvJiChu = new System.Windows.Forms.TreeView();
             this.xPanderPanel5 = new BSE.Windows.Forms.XPanderPanel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.tvCard = new System.Windows.Forms.TreeView();
             this.xPanderPanelList1.SuspendLayout();
             this.xPanderPanel1.SuspendLayout();
             this.xPanderPanel2.SuspendLayout();
@@ -219,7 +219,7 @@ namespace WorkStation
             treeNode6.Text = "人员出勤率";
             treeNode7.Name = "frmReportAnalysisByPlan";
             treeNode7.Text = "计划执行率";
-            treeNode8.Name = "节点0";
+            treeNode8.Name = "frmEmpOrPlan";
             treeNode8.Text = "数据统计分析";
             treeNode9.Name = "frmReportSearchByPlan";
             treeNode9.Text = "按计划查询";
@@ -338,7 +338,7 @@ namespace WorkStation
             treeNode16.Text = "编辑";
             treeNode17.Name = "frmSiteEditDelete";
             treeNode17.Text = "删除";
-            treeNode18.Name = "厂区信息管理";
+            treeNode18.Name = "frmSite";
             treeNode18.Text = "厂区信息管理";
             treeNode19.Name = "frmPostNew";
             treeNode19.Text = "新建";
@@ -346,15 +346,15 @@ namespace WorkStation
             treeNode20.Text = "编辑";
             treeNode21.Name = "frmPostEditDelete";
             treeNode21.Text = "删除";
-            treeNode22.Name = "frmPoint";
+            treeNode22.Name = "frmPost";
             treeNode22.Text = "岗位信息管理";
             treeNode23.Name = "frmEmployeeNew";
             treeNode23.Text = "新建";
-            treeNode24.Name = "frmEmployeeNewDelete";
+            treeNode24.Name = "frmEmployeeEditDelete";
             treeNode24.Text = "编辑";
-            treeNode25.Name = "frmEmployeeNewDelete";
+            treeNode25.Name = "frmEmployeeEditDelete";
             treeNode25.Text = "删除";
-            treeNode26.Name = "frmItem";
+            treeNode26.Name = "frmEmp";
             treeNode26.Text = "人员信息管理";
             treeNode27.Name = "frmCompany";
             treeNode27.Text = "公司信息管理";
@@ -371,7 +371,7 @@ namespace WorkStation
             // 
             this.xPanderPanel5.CaptionFont = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold);
             this.xPanderPanel5.ColorScheme = BSE.Windows.Forms.ColorScheme.Custom;
-            this.xPanderPanel5.Controls.Add(this.treeView1);
+            this.xPanderPanel5.Controls.Add(this.tvCard);
             this.xPanderPanel5.CustomColors.BackColor = System.Drawing.SystemColors.Control;
             this.xPanderPanel5.CustomColors.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(65)))), ((int)(((byte)(118)))));
             this.xPanderPanel5.CustomColors.CaptionCheckedGradientBegin = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(223)))), ((int)(((byte)(154)))));
@@ -404,24 +404,24 @@ namespace WorkStation
             this.xPanderPanel5.ToolTipTextExpandIconPanelCollapsed = null;
             this.xPanderPanel5.ToolTipTextExpandIconPanelExpanded = null;
             // 
-            // treeView1
+            // tvCard
             // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(1, 25);
-            this.treeView1.Name = "treeView1";
+            this.tvCard.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvCard.Location = new System.Drawing.Point(1, 25);
+            this.tvCard.Name = "tvCard";
             treeNode28.Name = "frmCardNew";
             treeNode28.Text = "录入卡片";
             treeNode29.Name = "frmCardEditDelete";
             treeNode29.Text = "编辑用途";
             treeNode30.Name = "frmCardEditDelete";
             treeNode30.Text = "注销卡片";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            this.tvCard.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode28,
             treeNode29,
             treeNode30});
-            this.treeView1.Size = new System.Drawing.Size(227, 0);
-            this.treeView1.TabIndex = 3;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
+            this.tvCard.Size = new System.Drawing.Size(227, 0);
+            this.tvCard.TabIndex = 3;
+            this.tvCard.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
             // 
             // frmMainTool
             // 
@@ -457,7 +457,7 @@ namespace WorkStation
         private System.Windows.Forms.TreeView tvXunjian;
         private BSE.Windows.Forms.XPanderPanel xPanderPanel5;
         private System.Windows.Forms.TreeView tvJiChu;
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView tvCard;
 
 
     }
