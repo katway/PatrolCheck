@@ -84,9 +84,17 @@ namespace WorkStation
         /// 数据绑定
         /// </summary>
         public void BindEmployee()
-        { 
-            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias as alias ,Rfid.Name as Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
-           //string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias as alias ,Rfid.Name as Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee left join Rfid on Employee.Rfid_ID=Rfid.ID left join Post on Post_Employee.Post_ID=Post.ID left join Post_Employee on Employee.ID=Post_Employee.Employee_ID ";
+        {
+//            string selectEmployee = @"select 
+// ID,Name as emName,Alias,
+// (select name from rfid where id=Rfid_ID) as Name,
+// (select name from post where id=(SELECT post_id from Post_Employee where Employee_ID=ID)) as postname,
+// (select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState
+//from Employee";
+            //string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias,Rfid.Name as Name ,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
+            //DataSet ds = SqlHelper.ExecuteDataset(selectEmployee);
+            //this.gridControl1.DataSource = ds.Tables[0];
+            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias,Rfid.Name as Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate')  from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
             DataSet ds = SqlHelper.ExecuteDataset(selectEmployee);
             gridControl1.DataSource = ds.Tables[0];
         }
