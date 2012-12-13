@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BSE.Windows.Forms">
+      <HintPath>..\DLLs\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.RichEdit.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -106,12 +109,6 @@
     </Compile>
     <Compile Include="frmMainTool.Designer.cs">
       <DependentUpon>frmMainTool.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmReportAnalysisByEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReportAnalysisByEmployee.Designer.cs">
-      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPlan.cs">
       <SubType>Form</SubType>
@@ -279,9 +276,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMainTool.resx">
       <DependentUpon>frmMainTool.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmReportAnalysisByEmployee.resx">
-      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlan.resx">
       <DependentUpon>frmPlan.cs</DependentUpon>
