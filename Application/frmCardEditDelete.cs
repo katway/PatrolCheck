@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using WeifenLuo.WinFormsUI.Docking;
 namespace WorkStation
 {
-    public partial class frmCardEditDelete : Form
+    public partial class frmCardEditDelete : DockContent
     {
         private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";  
         public frmCardEditDelete()

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace WorkStation
 {
-    public partial class frmPostNew : Form
+    public partial class frmPostNew : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmPostNew()
         {

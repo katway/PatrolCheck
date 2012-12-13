@@ -57,6 +57,17 @@
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControlTask = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn21 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn22 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn24 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn25 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn26 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn27 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn23 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn28 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn29 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn30 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn31 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).BeginInit();
@@ -367,9 +378,129 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn21,
+            this.gridColumn22,
+            this.gridColumn24,
+            this.gridColumn25,
+            this.gridColumn26,
+            this.gridColumn27,
+            this.gridColumn23,
+            this.gridColumn28,
+            this.gridColumn29,
+            this.gridColumn30,
+            this.gridColumn31});
             this.gridView1.GridControl = this.gridControlTask;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ColumnAutoWidth = false;
+            // 
+            // gridColumn21
+            // 
+            this.gridColumn21.Caption = "任务编号";
+            this.gridColumn21.FieldName = "ID";
+            this.gridColumn21.Name = "gridColumn21";
+            this.gridColumn21.OptionsColumn.AllowEdit = false;
+            this.gridColumn21.Visible = true;
+            this.gridColumn21.VisibleIndex = 0;
+            // 
+            // gridColumn22
+            // 
+            this.gridColumn22.Caption = "任务名称";
+            this.gridColumn22.FieldName = "TaskName";
+            this.gridColumn22.Name = "gridColumn22";
+            this.gridColumn22.OptionsColumn.AllowEdit = false;
+            this.gridColumn22.Visible = true;
+            this.gridColumn22.VisibleIndex = 1;
+            // 
+            // gridColumn24
+            // 
+            this.gridColumn24.Caption = "开始时间";
+            this.gridColumn24.DisplayFormat.FormatString = "yyyy\'-\'MM\'-\'dd HH\':\'mm";
+            this.gridColumn24.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn24.FieldName = "StartTime";
+            this.gridColumn24.Name = "gridColumn24";
+            this.gridColumn24.OptionsColumn.AllowEdit = false;
+            this.gridColumn24.Visible = true;
+            this.gridColumn24.VisibleIndex = 2;
+            // 
+            // gridColumn25
+            // 
+            this.gridColumn25.Caption = "持续时间";
+            this.gridColumn25.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn25.FieldName = "Duration";
+            this.gridColumn25.Name = "gridColumn25";
+            this.gridColumn25.OptionsColumn.AllowEdit = false;
+            this.gridColumn25.Visible = true;
+            this.gridColumn25.VisibleIndex = 3;
+            // 
+            // gridColumn26
+            // 
+            this.gridColumn26.Caption = "结束时间";
+            this.gridColumn26.DisplayFormat.FormatString = "yyyy\'-\'MM\'-\'dd HH\':\'mm";
+            this.gridColumn26.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn26.FieldName = "EndTime";
+            this.gridColumn26.Name = "gridColumn26";
+            this.gridColumn26.OptionsColumn.AllowEdit = false;
+            this.gridColumn26.Visible = true;
+            this.gridColumn26.VisibleIndex = 4;
+            // 
+            // gridColumn27
+            // 
+            this.gridColumn27.Caption = "岗位";
+            this.gridColumn27.FieldName = "PostName";
+            this.gridColumn27.Name = "gridColumn27";
+            this.gridColumn27.OptionsColumn.AllowEdit = false;
+            this.gridColumn27.Visible = true;
+            this.gridColumn27.VisibleIndex = 5;
+            // 
+            // gridColumn23
+            // 
+            this.gridColumn23.Caption = "路线名称";
+            this.gridColumn23.FieldName = "RouteName";
+            this.gridColumn23.Name = "gridColumn23";
+            this.gridColumn23.OptionsColumn.AllowEdit = false;
+            this.gridColumn23.Visible = true;
+            this.gridColumn23.VisibleIndex = 6;
+            // 
+            // gridColumn28
+            // 
+            this.gridColumn28.Caption = "周期";
+            this.gridColumn28.FieldName = "Interval";
+            this.gridColumn28.Name = "gridColumn28";
+            this.gridColumn28.OptionsColumn.AllowEdit = false;
+            this.gridColumn28.Visible = true;
+            this.gridColumn28.VisibleIndex = 7;
+            // 
+            // gridColumn29
+            // 
+            this.gridColumn29.Caption = "周期单位";
+            this.gridColumn29.FieldName = "IntervalUnit";
+            this.gridColumn29.Name = "gridColumn29";
+            this.gridColumn29.OptionsColumn.AllowEdit = false;
+            this.gridColumn29.Visible = true;
+            this.gridColumn29.VisibleIndex = 8;
+            // 
+            // gridColumn30
+            // 
+            this.gridColumn30.Caption = "计划生效时间";
+            this.gridColumn30.DisplayFormat.FormatString = "yyyy\'-\'MM\'-\'dd HH\':\'mm";
+            this.gridColumn30.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn30.FieldName = "EffectiveTime";
+            this.gridColumn30.Name = "gridColumn30";
+            this.gridColumn30.OptionsColumn.AllowEdit = false;
+            this.gridColumn30.Visible = true;
+            this.gridColumn30.VisibleIndex = 9;
+            // 
+            // gridColumn31
+            // 
+            this.gridColumn31.Caption = "计划失效时间";
+            this.gridColumn31.DisplayFormat.FormatString = "yyyy\'-\'MM\'-\'dd HH\':\'mm";
+            this.gridColumn31.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.gridColumn31.FieldName = "IneffectiveTime";
+            this.gridColumn31.Name = "gridColumn31";
+            this.gridColumn31.OptionsColumn.AllowEdit = false;
+            this.gridColumn31.Visible = true;
+            this.gridColumn31.VisibleIndex = 10;
             // 
             // repositoryItemCheckEdit2
             // 
@@ -449,5 +580,16 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn21;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn22;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn24;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn25;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn26;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn27;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn23;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn28;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn29;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn30;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn31;
     }
 }

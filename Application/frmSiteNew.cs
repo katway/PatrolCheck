@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace WorkStation
 {
-    public partial class frmSiteNew : Form
+    public partial class frmSiteNew : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=Patrol;User ID=sa;Password=sa123";         
         public frmSiteNew()
