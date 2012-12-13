@@ -81,6 +81,7 @@
             this.tsmiTaskExecution = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReport = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDataStatisticalAnalysis = new System.Windows.Forms.ToolStripMenuItem();
+            this.数据明细查询ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReportAnalysisByEmployee = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReportAnalysisByPlan = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiReportSearchByPlan = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,11 +111,10 @@
             this.tsmiRfi = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCardNew = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiCardEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmiCardEditDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiCardDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmhelp = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmihelp = new System.Windows.Forms.ToolStripMenuItem();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -534,7 +534,7 @@
             this.tsmiRfi.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiCardNew,
             this.tsmiCardEdit,
-            this.tsmiCardEditDelete});
+            this.tsmiCardDelete});
             this.tsmiRfi.Image = ((System.Drawing.Image)(resources.GetObject("tsmiRfi.Image")));
             this.tsmiRfi.Name = "tsmiRfi";
             this.tsmiRfi.Size = new System.Drawing.Size(81, 20);
@@ -556,10 +556,10 @@
             // 
             // tsmiCardEditDelete
             // 
-            this.tsmiCardEditDelete.Name = "tsmiCardEditDelete";
+            this.tsmiCardDelete.Name = "tsmiCardDelete";
             this.tsmiCardDelete.Size = new System.Drawing.Size(118, 22);
-            this.tsmiCardEditDelete.Text = "注销卡片";
-            this.tsmiCardEditDelete.Click += new System.EventHandler(this.ShowForm);
+            this.tsmiCardDelete.Text = "注销卡片";
+            this.tsmiCardDelete.Click += new System.EventHandler(this.ShowForm);
             // 
             // tsmhelp
             // 
@@ -631,10 +631,6 @@
             this.dockPanel.Skin = dockPanelSkin1;
             this.dockPanel.TabIndex = 6;
             // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -683,7 +679,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiRfi;
         private System.Windows.Forms.ToolStripMenuItem tsmiCardNew;
         private System.Windows.Forms.ToolStripMenuItem tsmiCardEdit;
-        private System.Windows.Forms.ToolStripMenuItem tsmiCardEditDelete;
+        private System.Windows.Forms.ToolStripMenuItem tsmiCardDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmhelp;
         private System.Windows.Forms.ToolStripMenuItem tsmihelp;
         private System.Windows.Forms.ToolStripButton 打开OToolStripButton;

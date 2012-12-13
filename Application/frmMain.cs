@@ -76,7 +76,7 @@ namespace WorkStation
         {
             frmMainTool tool = new frmMainTool();
             tool.Show(this.dockPanel);
-            timer1.Start();
+            //timer1.Start();
         }
         //测试使用
         private void timer1_Tick(object sender, EventArgs e)
