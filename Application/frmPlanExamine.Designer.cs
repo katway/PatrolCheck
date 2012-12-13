@@ -56,14 +56,16 @@
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn20 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPass
             // 
-            this.btnPass.Location = new System.Drawing.Point(241, 12);
+            this.btnPass.Location = new System.Drawing.Point(232, 18);
             this.btnPass.Name = "btnPass";
             this.btnPass.Size = new System.Drawing.Size(75, 23);
             this.btnPass.TabIndex = 1;
@@ -73,7 +75,7 @@
             // 
             // btnUnpass
             // 
-            this.btnUnpass.Location = new System.Drawing.Point(333, 12);
+            this.btnUnpass.Location = new System.Drawing.Point(334, 18);
             this.btnUnpass.Name = "btnUnpass";
             this.btnUnpass.Size = new System.Drawing.Size(75, 23);
             this.btnUnpass.TabIndex = 2;
@@ -84,7 +86,7 @@
             // cboState
             // 
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(83, 14);
+            this.cboState.Location = new System.Drawing.Point(71, 20);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(133, 20);
             this.cboState.TabIndex = 36;
@@ -93,7 +95,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 17);
+            this.label1.Location = new System.Drawing.Point(24, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 37;
@@ -102,7 +104,7 @@
             // labState
             // 
             this.labState.AutoSize = true;
-            this.labState.Location = new System.Drawing.Point(470, 17);
+            this.labState.Location = new System.Drawing.Point(458, 23);
             this.labState.Name = "labState";
             this.labState.Size = new System.Drawing.Size(77, 12);
             this.labState.TabIndex = 38;
@@ -110,13 +112,15 @@
             // 
             // gridControlPlan
             // 
-            this.gridControlPlan.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridControlPlan.Location = new System.Drawing.Point(0, 41);
+            this.gridControlPlan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlPlan.Location = new System.Drawing.Point(0, 95);
             this.gridControlPlan.MainView = this.gvPlan;
             this.gridControlPlan.Name = "gridControlPlan";
             this.gridControlPlan.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlPlan.Size = new System.Drawing.Size(844, 511);
+            this.gridControlPlan.Size = new System.Drawing.Size(844, 457);
             this.gridControlPlan.TabIndex = 46;
             this.gridControlPlan.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvPlan});
@@ -351,17 +355,30 @@
             this.gridColumn20.Visible = true;
             this.gridColumn20.VisibleIndex = 15;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.cboState);
+            this.groupBox1.Controls.Add(this.btnPass);
+            this.groupBox1.Controls.Add(this.labState);
+            this.groupBox1.Controls.Add(this.btnUnpass);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(805, 66);
+            this.groupBox1.TabIndex = 47;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "计划审核";
+            // 
             // frmPlanExamine
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(844, 552);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControlPlan);
-            this.Controls.Add(this.labState);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboState);
-            this.Controls.Add(this.btnUnpass);
-            this.Controls.Add(this.btnPass);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "frmPlanExamine";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "计划审核";
@@ -369,8 +386,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPlan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -404,6 +422,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn20;
+        private System.Windows.Forms.GroupBox groupBox1;
 
     }
 }

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Reflection;
 
 namespace WorkStation
 {
@@ -15,5 +17,16 @@ namespace WorkStation
         {
             InitializeComponent();
         }
+
+        private void frmMainTool_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void treeView_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            Program.MainForm.ShowForm(e.Node.Name);
+        }
+
+ 
     }
 }

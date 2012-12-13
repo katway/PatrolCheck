@@ -8,22 +8,24 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Threading;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace WorkStation
 {
-    public partial class frmRoute : Form
+    public partial class frmRoute : DockContent
     {
         public frmRoute()
         {
             InitializeComponent();
         }
+        public bool isInParent = false;
         WorkStation.Properties.Settings wset = new Properties.Settings();
 
         List<TreeNode> listPhy = new List<TreeNode>();
         List<TreeNode> listLogical = new List<TreeNode>();
         private void frmAddRoute_Load(object sender, EventArgs e)
         {
-            //tvRouteInit(this.tvRoute);
+            isInParent = true;
             Thread th1 = new Thread(tvRouteInit);
             th1.Start(this.tvRoute);
             //Thread th2 = new Thread(new ThreadStart(getTvPhysicalPoint));

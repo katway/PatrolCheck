@@ -71,10 +71,12 @@
             this.btnImport = new System.Windows.Forms.Button();
             this.cboPost = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowTask)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowItem)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gvShowPoint
@@ -117,6 +119,9 @@
             // 
             // gridControl1
             // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             gridLevelNode1.LevelTemplate = this.gvShowPoint;
             gridLevelNode2.LevelTemplate = this.gvShowItem;
             gridLevelNode2.RelationName = "PointToItem";
@@ -125,10 +130,10 @@
             gridLevelNode1.RelationName = "TaskToPoint";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(14, 109);
+            this.gridControl1.Location = new System.Drawing.Point(14, 130);
             this.gridControl1.MainView = this.gvShowTask;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(732, 365);
+            this.gridControl1.Size = new System.Drawing.Size(732, 344);
             this.gridControl1.TabIndex = 65;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvShowTask,
@@ -289,7 +294,7 @@
             // 
             this.dtpEndTime.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dtpEndTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpEndTime.Location = new System.Drawing.Point(289, 19);
+            this.dtpEndTime.Location = new System.Drawing.Point(296, 19);
             this.dtpEndTime.Name = "dtpEndTime";
             this.dtpEndTime.Size = new System.Drawing.Size(156, 21);
             this.dtpEndTime.TabIndex = 61;
@@ -299,7 +304,7 @@
             // 
             this.dtpStart.CustomFormat = "yyyy\'年\'MM\'月\'dd\'日\' HH\':\'mm";
             this.dtpStart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpStart.Location = new System.Drawing.Point(70, 19);
+            this.dtpStart.Location = new System.Drawing.Point(77, 19);
             this.dtpStart.Name = "dtpStart";
             this.dtpStart.Size = new System.Drawing.Size(154, 21);
             this.dtpStart.TabIndex = 60;
@@ -308,7 +313,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 23);
+            this.label6.Location = new System.Drawing.Point(18, 23);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 59;
@@ -317,7 +322,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(230, 23);
+            this.label5.Location = new System.Drawing.Point(237, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 58;
@@ -325,7 +330,7 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(510, 74);
+            this.btnSearch.Location = new System.Drawing.Point(517, 74);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(75, 23);
             this.btnSearch.TabIndex = 62;
@@ -336,7 +341,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(463, 23);
+            this.label1.Location = new System.Drawing.Point(470, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 63;
@@ -345,7 +350,7 @@
             // cboState
             // 
             this.cboState.FormattingEnabled = true;
-            this.cboState.Location = new System.Drawing.Point(510, 19);
+            this.cboState.Location = new System.Drawing.Point(517, 19);
             this.cboState.Name = "cboState";
             this.cboState.Size = new System.Drawing.Size(156, 20);
             this.cboState.TabIndex = 64;
@@ -353,7 +358,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(451, 51);
+            this.label2.Location = new System.Drawing.Point(458, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 66;
@@ -362,7 +367,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 51);
+            this.label4.Location = new System.Drawing.Point(19, 51);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 12);
             this.label4.TabIndex = 68;
@@ -371,7 +376,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(230, 54);
+            this.label7.Location = new System.Drawing.Point(237, 54);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 12);
             this.label7.TabIndex = 69;
@@ -381,7 +386,7 @@
             // 
             this.cboRoute.DisplayMember = "Name";
             this.cboRoute.FormattingEnabled = true;
-            this.cboRoute.Location = new System.Drawing.Point(71, 48);
+            this.cboRoute.Location = new System.Drawing.Point(78, 48);
             this.cboRoute.Name = "cboRoute";
             this.cboRoute.Size = new System.Drawing.Size(153, 20);
             this.cboRoute.TabIndex = 70;
@@ -391,7 +396,7 @@
             // cboTask
             // 
             this.cboTask.FormattingEnabled = true;
-            this.cboTask.Location = new System.Drawing.Point(510, 48);
+            this.cboTask.Location = new System.Drawing.Point(517, 48);
             this.cboTask.Name = "cboTask";
             this.cboTask.Size = new System.Drawing.Size(156, 20);
             this.cboTask.TabIndex = 71;
@@ -399,7 +404,7 @@
             // cboPlan
             // 
             this.cboPlan.FormattingEnabled = true;
-            this.cboPlan.Location = new System.Drawing.Point(289, 47);
+            this.cboPlan.Location = new System.Drawing.Point(296, 47);
             this.cboPlan.Name = "cboPlan";
             this.cboPlan.Size = new System.Drawing.Size(154, 20);
             this.cboPlan.TabIndex = 72;
@@ -408,7 +413,7 @@
             // cboOperator
             // 
             this.cboOperator.FormattingEnabled = true;
-            this.cboOperator.Location = new System.Drawing.Point(289, 75);
+            this.cboOperator.Location = new System.Drawing.Point(296, 75);
             this.cboOperator.Name = "cboOperator";
             this.cboOperator.Size = new System.Drawing.Size(154, 20);
             this.cboOperator.TabIndex = 74;
@@ -417,7 +422,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 80);
+            this.label3.Location = new System.Drawing.Point(237, 80);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 73;
@@ -425,7 +430,7 @@
             // 
             // btnImport
             // 
-            this.btnImport.Location = new System.Drawing.Point(591, 74);
+            this.btnImport.Location = new System.Drawing.Point(598, 74);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
             this.btnImport.TabIndex = 75;
@@ -435,7 +440,7 @@
             // cboPost
             // 
             this.cboPost.FormattingEnabled = true;
-            this.cboPost.Location = new System.Drawing.Point(70, 75);
+            this.cboPost.Location = new System.Drawing.Point(77, 75);
             this.cboPost.Name = "cboPost";
             this.cboPost.Size = new System.Drawing.Size(154, 20);
             this.cboPost.TabIndex = 77;
@@ -444,36 +449,49 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(11, 80);
+            this.label8.Location = new System.Drawing.Point(18, 80);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 12);
             this.label8.TabIndex = 76;
             this.label8.Text = "巡检岗位";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.cboPost);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.dtpStart);
+            this.groupBox1.Controls.Add(this.btnImport);
+            this.groupBox1.Controls.Add(this.dtpEndTime);
+            this.groupBox1.Controls.Add(this.cboOperator);
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cboPlan);
+            this.groupBox1.Controls.Add(this.cboState);
+            this.groupBox1.Controls.Add(this.cboTask);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.cboRoute);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(733, 112);
+            this.groupBox1.TabIndex = 78;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "条件";
             // 
             // frmReportSearchByPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 486);
-            this.Controls.Add(this.cboPost);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.btnImport);
-            this.Controls.Add(this.cboOperator);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.cboPlan);
-            this.Controls.Add(this.cboTask);
-            this.Controls.Add(this.cboRoute);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.cboState);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.dtpEndTime);
-            this.Controls.Add(this.dtpStart);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Name = "frmReportSearchByPlan";
             this.Text = "按计划查询数据";
             this.Load += new System.EventHandler(this.frmReportSearchByPlan_Load);
@@ -481,8 +499,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowTask)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvShowItem)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -529,5 +548,6 @@
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.ComboBox cboPost;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

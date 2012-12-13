@@ -16,7 +16,6 @@ namespace WorkStation
         public object routeID;
         public string routeName, routeAlias, routeArea;
         public TreeView tView;
-        DataSet dsCboinorder, dsCboSitearea;
         public frmRouteNew()
         {
             InitializeComponent();

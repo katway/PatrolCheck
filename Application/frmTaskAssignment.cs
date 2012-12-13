@@ -12,7 +12,7 @@ using DevExpress.XtraEditors.Controls;
 
 namespace WorkStation
 {
-    public partial class frmTaskAssignment : Form
+    public partial class frmTaskAssignment : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmTaskAssignment()
         {

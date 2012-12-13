@@ -43,19 +43,24 @@
             this.cboSite = new System.Windows.Forms.ComboBox();
             this.gridControlPoint = new DevExpress.XtraGrid.GridControl();
             this.gvPoint = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPoint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPoint)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(37, 18);
+            this.lblName.Location = new System.Drawing.Point(14, 23);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(53, 12);
             this.lblName.TabIndex = 0;
@@ -64,7 +69,7 @@
             // lblAlias
             // 
             this.lblAlias.AutoSize = true;
-            this.lblAlias.Location = new System.Drawing.Point(412, 18);
+            this.lblAlias.Location = new System.Drawing.Point(389, 23);
             this.lblAlias.Name = "lblAlias";
             this.lblAlias.Size = new System.Drawing.Size(29, 12);
             this.lblAlias.TabIndex = 1;
@@ -73,7 +78,7 @@
             // lblRelated
             // 
             this.lblRelated.AutoSize = true;
-            this.lblRelated.Location = new System.Drawing.Point(25, 59);
+            this.lblRelated.Location = new System.Drawing.Point(2, 59);
             this.lblRelated.Name = "lblRelated";
             this.lblRelated.Size = new System.Drawing.Size(65, 12);
             this.lblRelated.TabIndex = 2;
@@ -81,21 +86,21 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(96, 15);
+            this.txtName.Location = new System.Drawing.Point(73, 20);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(286, 21);
             this.txtName.TabIndex = 3;
             // 
             // txtAlias
             // 
-            this.txtAlias.Location = new System.Drawing.Point(447, 15);
+            this.txtAlias.Location = new System.Drawing.Point(424, 20);
             this.txtAlias.Name = "txtAlias";
             this.txtAlias.Size = new System.Drawing.Size(229, 21);
             this.txtAlias.TabIndex = 4;
             // 
             // txtRelation
             // 
-            this.txtRelation.Location = new System.Drawing.Point(96, 53);
+            this.txtRelation.Location = new System.Drawing.Point(73, 53);
             this.txtRelation.Name = "txtRelation";
             this.txtRelation.ReadOnly = true;
             this.txtRelation.Size = new System.Drawing.Size(205, 21);
@@ -104,7 +109,7 @@
             // 
             // btnRead
             // 
-            this.btnRead.Location = new System.Drawing.Point(307, 54);
+            this.btnRead.Location = new System.Drawing.Point(284, 54);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
             this.btnRead.TabIndex = 6;
@@ -114,17 +119,17 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(414, 90);
+            this.btnSave.Location = new System.Drawing.Point(391, 86);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "新建";
+            this.btnSave.Text = "保存";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(518, 90);
+            this.btnUpdate.Location = new System.Drawing.Point(495, 86);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnUpdate.TabIndex = 8;
@@ -134,7 +139,7 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(616, 90);
+            this.btnDel.Location = new System.Drawing.Point(593, 86);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(75, 23);
             this.btnDel.TabIndex = 9;
@@ -145,7 +150,7 @@
             // labID
             // 
             this.labID.AutoSize = true;
-            this.labID.Location = new System.Drawing.Point(682, 18);
+            this.labID.Location = new System.Drawing.Point(318, 91);
             this.labID.Name = "labID";
             this.labID.Size = new System.Drawing.Size(41, 12);
             this.labID.TabIndex = 12;
@@ -155,7 +160,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(412, 57);
+            this.label1.Location = new System.Drawing.Point(389, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 13;
@@ -165,16 +170,21 @@
             // 
             this.cboSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSite.FormattingEnabled = true;
-            this.cboSite.Location = new System.Drawing.Point(448, 54);
+            this.cboSite.Location = new System.Drawing.Point(425, 54);
             this.cboSite.Name = "cboSite";
             this.cboSite.Size = new System.Drawing.Size(229, 20);
             this.cboSite.TabIndex = 14;
             // 
             // gridControlPoint
             // 
-            this.gridControlPoint.Location = new System.Drawing.Point(12, 119);
+            this.gridControlPoint.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridControlPoint.Location = new System.Drawing.Point(12, 135);
             this.gridControlPoint.MainView = this.gvPoint;
             this.gridControlPoint.Name = "gridControlPoint";
+            this.gridControlPoint.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
             this.gridControlPoint.Size = new System.Drawing.Size(727, 403);
             this.gridControlPoint.TabIndex = 15;
             this.gridControlPoint.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -183,6 +193,7 @@
             // gvPoint
             // 
             this.gvPoint.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn6,
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
@@ -192,6 +203,20 @@
             this.gvPoint.Name = "gvPoint";
             this.gvPoint.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gvPoint_RowClick);
             // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "选择";
+            this.gridColumn6.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.gridColumn6.FieldName = "isCheck";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 0;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "巡检点名称";
@@ -199,7 +224,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.VisibleIndex = 1;
             // 
             // gridColumn2
             // 
@@ -208,7 +233,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
@@ -217,7 +242,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.VisibleIndex = 3;
             // 
             // gridColumn4
             // 
@@ -226,7 +251,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.OptionsColumn.AllowEdit = false;
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -234,8 +259,30 @@
             this.gridColumn5.FieldName = "SiteID";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.OptionsColumn.AllowEdit = false;
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.txtName);
+            this.groupBox1.Controls.Add(this.lblName);
+            this.groupBox1.Controls.Add(this.cboSite);
+            this.groupBox1.Controls.Add(this.lblAlias);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.lblRelated);
+            this.groupBox1.Controls.Add(this.labID);
+            this.groupBox1.Controls.Add(this.txtAlias);
+            this.groupBox1.Controls.Add(this.btnDel);
+            this.groupBox1.Controls.Add(this.txtRelation);
+            this.groupBox1.Controls.Add(this.btnUpdate);
+            this.groupBox1.Controls.Add(this.btnRead);
+            this.groupBox1.Controls.Add(this.btnSave);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(727, 117);
+            this.groupBox1.TabIndex = 16;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "功能";
             // 
             // frmPoint
             // 
@@ -243,20 +290,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(751, 550);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridControlPoint);
-            this.Controls.Add(this.cboSite);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.labID);
-            this.Controls.Add(this.btnDel);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnRead);
-            this.Controls.Add(this.txtRelation);
-            this.Controls.Add(this.txtAlias);
-            this.Controls.Add(this.txtName);
-            this.Controls.Add(this.lblRelated);
-            this.Controls.Add(this.lblAlias);
-            this.Controls.Add(this.lblName);
+            this.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.MaximizeBox = false;
             this.Name = "frmPoint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -264,8 +300,10 @@
             this.Load += new System.EventHandler(this.frmAddPoint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlPoint)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPoint)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -291,5 +329,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

@@ -8,10 +8,11 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.XtraGrid;
+using WeifenLuo.WinFormsUI.Docking;
 
 namespace WorkStation
 {
-    public partial class frmPlan : Form
+    public partial class frmPlan : DockContent
     {
         public frmPlan()
         {
@@ -246,6 +247,7 @@ namespace WorkStation
             cboShow.ValueMember = "Code";
             cboShow.DataSource=ds.Tables[0];
         }
+
 
     }
 }
