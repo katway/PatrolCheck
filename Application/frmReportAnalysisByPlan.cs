@@ -57,13 +57,12 @@ namespace WorkStation
             string SelectTask = "select Plan_ID as PlanID,Name,Alias,StartTime,EndTime,(select name from checkroute where id=route_id) as route_name,(select meaning from codes where code=taskstate and purpose='taskstate') as TaskState  from CheckTask  where StartTime> cast(('{0}') as datetime) and EndTime< cast(('{1}') as datetime)";
             SelectTask = string.Format(SelectTask, new object[] {  this.dateTimePicker1.Value.ToString(),
             this.dateTimePicker2.Value.ToString()
-            });
-          
-                  DataSet ds2 = new DataSet();
-                  ds2 = SqlHelper.ExecuteDataset(str + ";" + SelectTask);
-                 // ds2 = SqlHelper.ExecuteDataset(str);  
-                  ds2.Relations.Add(new DataRelation("PlanToTask", ds2.Tables[0].Columns["PlanID"], ds2.Tables[1].Columns["PlanID"]));
-                 this.gridControl1.DataSource = ds2.Tables[0];           
+            });          
+            DataSet ds2 = new DataSet();
+            ds2 = SqlHelper.ExecuteDataset(str + ";" + SelectTask);
+            //ds2 = SqlHelper.ExecuteDataset(str);  
+            ds2.Relations.Add(new DataRelation("PlanToTask", ds2.Tables[0].Columns["PlanID"], ds2.Tables[1].Columns["PlanID"]));
+            this.gridControl1.DataSource = ds2.Tables[0];          
 
         }
 
