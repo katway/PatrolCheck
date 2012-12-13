@@ -11,7 +11,8 @@
     <RootNamespace>WorkStation</RootNamespace>
     <AssemblyName>WorkStation</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -34,9 +35,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BSE.Windows.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\BSE.Windows.Forms.dll</HintPath>
+    <Reference Include="BSE.Windows.Forms">
+      <HintPath>..\DLLs\BSE.Windows.Forms.dll</HintPath>
     </Reference>
     <Reference Include="DevExpress.Charts.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -50,6 +50,7 @@
     <Reference Include="DevExpress.XtraPivotGrid.v10.1.Core, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraRichEdit.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v10.1, Version=10.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -66,7 +67,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.7.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>Code\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <HintPath>..\DLLs\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -112,12 +113,6 @@
     <Compile Include="frmMainTool.Designer.cs">
       <DependentUpon>frmMainTool.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReportAnalysisByEmployee.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmReportAnalysisByEmployee.Designer.cs">
-      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPlan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -131,7 +126,6 @@
       <DependentUpon>frmPlanExamine.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPlanToTask.cs">
-      <DependentUpon>frmPlanToTask.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPlanAdd.cs">
@@ -151,6 +145,12 @@
     </Compile>
     <Compile Include="frmPostNew.Designer.cs">
       <DependentUpon>frmPostNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportAnalysisByEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportAnalysisByEmployee.Designer.cs">
+      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportSearchByPoint.cs">
       <SubType>Form</SubType>
@@ -280,9 +280,6 @@
     <EmbeddedResource Include="frmMainTool.resx">
       <DependentUpon>frmMainTool.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReportAnalysisByEmployee.resx">
-      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPlan.resx">
       <DependentUpon>frmPlan.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPostNew.resx">
       <DependentUpon>frmPostNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportAnalysisByEmployee.resx">
+      <DependentUpon>frmReportAnalysisByEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportSearchByPoint.resx">
       <DependentUpon>frmReportSearchByPoint.cs</DependentUpon>
@@ -363,7 +363,6 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <None Include="ClassDiagram3.cd" />
     <None Include="MyDataSet\ReportSearchByPoint.xsc">
       <DependentUpon>ReportSearchByPoint.xsd</DependentUpon>
     </None>

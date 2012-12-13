@@ -10,11 +10,12 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmItem : Form
+    public partial class frmItem : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmItem()
         {
             InitializeComponent();
+           
         }
 
         private void frmAddItem_Load(object sender, EventArgs e)
@@ -46,28 +47,28 @@ namespace WorkStation
                 new SqlParameter("@pointid",SqlDbType.Int),              
                 new SqlParameter("@comment",SqlDbType.NText)
             };
-            if (((BoxItem)(cboMachine.SelectedItem)).Value.ToString() != "-1")
+            if (cboMachine.SelectedValue!=null&&cboMachine.SelectedValue.ToString() != "-1")
             {               
                 str_insert += ",Machine_ID";
                 str_value += ",@machineid";
                 
             }
-            if (((BoxItem)cboPoint.SelectedItem).Value.ToString() != "-1")
+            if (cboValue.SelectedValue!=null&&cboValue.SelectedValue.ToString() != "-1")
             {
                 str_insert += ",ValueType";
                 str_value += ",@valuetype";
             }
-            if (((BoxItem)cboValue.SelectedItem).Value.ToString() != "-1")
+            if (cboPoint.SelectedValue!=null&&cboPoint.SelectedValue.ToString() != "-1")
             {
                 str_insert += ",Phy_ID";
-                str_insert += ",@pointid";
+                str_value += ",@pointid";
             }
            
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
-            pars[2].Value = (this.cboMachine.SelectedItem as BoxItem).Value;
-            pars[3].Value = (this.cboValue.SelectedItem as BoxItem).Value;
-            pars[4].Value = (this.cboPoint.SelectedItem as BoxItem).Value;
+            pars[2].Value = ((cboMachine.SelectedValue==null||cboMachine.SelectedValue.ToString() == "-1" ) ? null : cboMachine.SelectedValue);
+            pars[3].Value = ((cboPoint.SelectedValue ==null||cboPoint.SelectedValue.ToString() == "-1" )? null : cboPoint.SelectedValue);
+            pars[4].Value = ((cboValue.SelectedValue==null||cboValue.SelectedValue.ToString() == "-1") ? null : cboValue.SelectedValue);
             pars[5].Value = this.txtRemarks.Text;
 
             string sql_insert = str_insert + ") " + str_value + ")";
@@ -95,6 +96,7 @@ namespace WorkStation
                         from checkitem c  left join Machine m on c.machine_id=m.id
                                           left join PhysicalCheckPoint p  on c.Phy_ID=p.id";
             DataSet ds = SqlHelper.ExecuteDataset(str_select);
+            if (ds == null) return;
             ds.Tables[0].Columns.Add(new DataColumn("isCheck",typeof(System.Boolean)));
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
@@ -130,9 +132,9 @@ namespace WorkStation
             };
             pars[0].Value = this.txtName.Text.ToString().Trim();
             pars[1].Value = this.txtAlias.Text.ToString().Trim();
-            pars[2].Value = (this.cboMachine.SelectedItem as BoxItem).Value;
-            pars[3].Value = (this.cboValue.SelectedItem as BoxItem).Value;
-            pars[4].Value = (this.cboPoint.SelectedItem as BoxItem).Value;
+            pars[2].Value = ((cboMachine.SelectedValue == null || cboMachine.SelectedValue.ToString() == "-1") ? null : cboMachine.SelectedValue);
+            pars[3].Value = ((cboPoint.SelectedValue == null || cboPoint.SelectedValue.ToString() == "-1") ? null : cboPoint.SelectedValue);
+            pars[4].Value = ((cboValue.SelectedValue == null || cboValue.SelectedValue.ToString() == "-1") ? null : cboValue.SelectedValue);
             pars[5].Value = this.txtRemarks.Text;
 
             int _ret = SqlHelper.ExecuteNonQuery(str_insert, pars);
@@ -148,7 +150,11 @@ namespace WorkStation
             string strsql = "Delete From CheckItem Where ID in(";
             for (int i = 0; i < gvItems.RowCount; i++)
             {
-                Del += gvItems.GetRowCellValue(i,"ID")+",";
+                object isCheck = gvItems.GetRowCellValue(i,"isCheck");
+                if (isCheck != null && (bool)isCheck == true)
+                {
+                    Del += gvItems.GetRowCellValue(i, "ID") + ",";
+                }
             }
             if (Del != "")
             {
@@ -174,7 +180,7 @@ namespace WorkStation
         private void bkwItem_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             DataRow dr = dsMachine.Tables[0].NewRow();
-            dr[0] = "-1"; dr[1] = "全部";
+            dr[0] = "-1"; dr[1] = "不选择";
             dsMachine.Tables[0].Rows.InsertAt(dr,0);
             cboMachine.ValueMember = "ID";
             cboMachine.DisplayMember = "Name";
@@ -182,16 +188,16 @@ namespace WorkStation
             dsMachine.Dispose();
 
             DataRow dr1 = dsPoint.Tables[0].NewRow();
-            dr1[0] = "-1"; dr1[1] = "全部";
+            dr1[0] = "-1"; dr1[1] = "不选择";
             dsPoint.Tables[0].Rows.InsertAt(dr1, 0);
             cboPoint.ValueMember = "ID";
             cboPoint.DisplayMember = "Name";
             cboPoint.DataSource = dsPoint.Tables[0];
             dsPoint.Dispose();
 
-            DataRow dr2 = dsPoint.Tables[0].NewRow();
-            dr2[0] = "-1"; dr2[1] = "全部";
-            dsPoint.Tables[0].Rows.InsertAt(dr2, 0);
+            DataRow dr2 = dsValueType.Tables[0].NewRow();
+            dr2[0] = "-1"; dr2[1] = "不选择";
+            dsValueType.Tables[0].Rows.InsertAt(dr2, 0);
             cboValue.ValueMember = "Code";
             cboValue.DisplayMember = "Meaning";
             cboValue.DataSource = dsValueType.Tables[0];
@@ -204,9 +210,9 @@ namespace WorkStation
             labID.Text = gvItems.GetRowCellValue(e.RowHandle,"ID").ToString();
             txtName.Text = gvItems.GetRowCellValue(e.RowHandle, "Name").ToString();
             txtAlias.Text = gvItems.GetRowCellValue(e.RowHandle, "Alias").ToString();
-            cboValue.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "ValueType");
-            cboMachine.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "MachineID") ;
-            cboPoint.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "PointID");
+            cboValue.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "ValueType").ToString() == "" ? -1 : gvItems.GetRowCellValue(e.RowHandle, "ValueType");
+            cboMachine.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "MachineID").ToString() == "" ? -1 : gvItems.GetRowCellValue(e.RowHandle, "MachineID");
+            cboPoint.SelectedValue = gvItems.GetRowCellValue(e.RowHandle, "PointID").ToString() == "" ? -1 : gvItems.GetRowCellValue(e.RowHandle, "PointID");
             txtRemarks.Text = gvItems.GetRowCellValue(e.RowHandle, "Comment").ToString();
         }
     }

@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmPlanToTask : Form
+    public partial class frmPlanToTask : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmPlanToTask()
         {
@@ -85,22 +85,22 @@ namespace WorkStation
         private void getDgvTask(string planid)
         {
             DataSet ds = SqlHelper.ExecuteDataset(@"Select 
-                                                    c.ID as 任务编号,
-                                                    c.Name as 任务名称,
-                                                    c.Alias as 别名,
-                                                    c.StartTime as 任务开始时间,  
-                                                    c.Duration as 持续时间,
-                                                    c.EndTime as 任务结束时间,
-                                                    p.Name as 指派岗位,
-                                                    r.Name as 路线, 
-                                                    c.Interval as 周期,
-                                                    (select meaning from codes where code= c.IntervalUnit and purpose='intervalunit') as 周期单位,
-                                                    c.EffectiveTime as 任务生效时间,
-                                                    c.IneffectiveTime as 任务失效时间 
+                                                    c.ID as ID,
+                                                    c.Name as TaskName,
+                                                    c.Alias as Alias,
+                                                    c.StartTime as StartTime,  
+                                                    c.Duration as Duration,
+                                                    c.EndTime as EndTime,
+                                                    p.Name as PostName,
+                                                    r.Name as RouteName, 
+                                                    c.Interval as Interval,
+                                                    (select meaning from codes where code= c.IntervalUnit and purpose='intervalunit') as IntervalUnit,
+                                                    c.EffectiveTime as EffectiveTime,
+                                                    c.IneffectiveTime as IneffectiveTime 
                                                      From Checktask as  c left join CheckRoute  as r on c.route_id=r.id 
                                                               left join Post p on c.post=p.id 
                                                               left join checkplan pn on c.plan_id=pn.id 
-                                                              where c.plan_id="+planid);
+                                                              where c.plan_id=" + planid);
             gridControlTask.DataSource = ds.Tables[0];
         }
 

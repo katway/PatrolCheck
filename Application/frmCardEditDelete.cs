@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using WeifenLuo.WinFormsUI.Docking;
 namespace WorkStation
 {
-    public partial class frmCardEditDelete : Form
+    public partial class frmCardEditDelete : DockContent
     {
         public frmCardEditDelete()
         {

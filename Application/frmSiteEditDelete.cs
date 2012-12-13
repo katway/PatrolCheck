@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace WorkStation
 {
-    public partial class frmSiteEditDelete : Form
+    public partial class frmSiteEditDelete : WeifenLuo.WinFormsUI.Docking.DockContent
     {
        // private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";         
         public frmSiteEditDelete()

@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace WorkStation
 {
-    public partial class frmReportSearchByPoint : Form
+    public partial class frmReportSearchByPoint : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmReportSearchByPoint()
         {

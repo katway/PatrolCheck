@@ -1007,8 +1007,8 @@ namespace WorkStation
         /// <summary>
         /// 执行带有参数的语句，返回结果集的第一行第一列
         /// </summary>
-        /// <param name="commandText"></param>
-        /// <param name="commandParameters"></param>
+        /// <param name="commandText">Sql语句</param>
+        /// <param name="commandParameters">参数</param>
         /// <returns></returns>
         public static object ExecuteScalar(string commandText, params  SqlParameter[] commandParameters)
         {

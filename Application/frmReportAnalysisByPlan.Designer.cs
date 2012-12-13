@@ -354,6 +354,5 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-       // private System.Windows.Forms.BindingSource hflDataSetPlan1BindingSource;
     }
 }

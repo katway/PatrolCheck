@@ -11,7 +11,7 @@ using WorkStation;
 using System.Configuration;
 namespace WorkStation
 {
-    public partial class frmCardNew : Form
+    public partial class frmCardNew : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmCardNew()
         {

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace WorkStation
 {
-    public partial class frmPostEditDelete : Form
+    public partial class frmPostEditDelete : WeifenLuo.WinFormsUI.Docking.DockContent
     {
         public frmPostEditDelete()
         {
