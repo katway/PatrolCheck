@@ -22,8 +22,8 @@ namespace WorkStation
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            //string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.ID=Post.ID and Employee.ID=@id";
-            string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee left join Rfid on Employee.Rfid_ID=Rfid.ID left join Post_Employee on  Employee.ID=Post_Employee.Employee_ID left join Post on  Post_Employee.ID=Post.ID where Employee.ID=@id";
+            string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID and Employee.ID=@id";
+            //string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee left join Rfid on Employee.Rfid_ID=Rfid.ID left join Post_Employee on  Employee.ID=Post_Employee.Employee_ID left join Post on  Post_Employee.ID=Post.ID where Employee.ID=@id";
             SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", this.dgvEmployessDel.GetRowCellValue(dgvEmployessDel.FocusedRowHandle,"ID")) };
             SqlDataReader dr = SqlHelper.ExecuteReader(selectEmpoyee,par);
             while(dr.Read())
@@ -174,8 +174,8 @@ namespace WorkStation
         /// </summary>
         public void BindEmployee()
         {
-            //string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name  postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
-            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name  postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee left join Rfid on  Employee.Rfid_ID=Rfid.ID left join Post on Post_Employee.Post_ID=Post.ID left join Post_Employee on Employee.ID=Post_Employee.Employee_ID";
+            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name  postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
+           //string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name  postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee left join Rfid on  Employee.Rfid_ID=Rfid.ID left join Post on Post_Employee.Post_ID=Post.ID left join Post_Employee on Employee.ID=Post_Employee.Employee_ID";
             DataSet ds = SqlHelper.ExecuteDataset(selectEmployee);
             ds.Tables[0].Columns.Add(new DataColumn("check", typeof(System.Boolean)));
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
