@@ -48,6 +48,10 @@ namespace WorkStation
                         FormMap[className] = this.CreteFormFormName(className);
                         FormMap[className].Show(dockPanel);
                     }
+                    else
+                    {
+                        FormMap[className].Show();
+                    }
                 }
                 else
                 {
