@@ -52,7 +52,7 @@ namespace WorkStation
                 else
                 {
                     string insertEmpoyee = "insert into Employee(Name,Alias,Rfid_ID,ValidState) values(@name,@alias,@rfid_id,@ValidState);select  @@identity";
-                    string insertEmpoyeePost = "insert into Post_Employee(Employee_ID,ID) values(@em_id,@id)";
+                    string insertEmpoyeePost = "insert into Post_Employee(Employee_ID,Post_ID) values(@em_id,@id)";
                     SqlParameter[] par = new SqlParameter[]{ new SqlParameter("@name",SqlDbType.NVarChar),
                                                              new SqlParameter("@alias",SqlDbType.NVarChar),
                                                              new SqlParameter("@rfid_id",SqlDbType.Int), 
@@ -61,9 +61,8 @@ namespace WorkStation
                     par[1].Value = this.txtAlias.Text;
                     par[2].Value = this.cboCard.SelectedValue.ToString();
                     par[3].Value = this.cboState.SelectedValue.ToString();
-                  //  string id = SqlHelper.ExecuteScalar( CommandType.Text, insertEmpoyee, par).ToString();
-                    int id = SqlHelper.ExecuteNonQuery(insertEmpoyee,par);
-                    if (id != null)
+                    string id = SqlHelper.ExecuteScalar(insertEmpoyee, par).ToString();                  
+                    if (id != null )
                     {
                         MessageBox.Show("保存成功！");
                     }
@@ -86,14 +85,18 @@ namespace WorkStation
         /// </summary>
         public void BindEmployee()
         {
-            string selectEmployee = @"select 
- ID,Name as emName,Alias,
- (select name from rfid where id=Rfid_ID) as Name,
- (select name from post where id=(SELECT post_id from Post_Employee where Employee_ID=ID)) as postname,
- (select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState
-from Employee";
+//            string selectEmployee = @"select 
+// ID,Name as emName,Alias,
+// (select name from rfid where id=Rfid_ID) as Name,
+// (select name from post where id=(SELECT post_id from Post_Employee where Employee_ID=ID)) as postname,
+// (select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState
+//from Employee";
+            //string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias,Rfid.Name as Name ,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
+            //DataSet ds = SqlHelper.ExecuteDataset(selectEmployee);
+            //this.gridControl1.DataSource = ds.Tables[0];
+            string selectEmployee = "select Employee.ID,Employee.Name emName,Employee.Alias,Rfid.Name as Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate')  from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.Post_ID=Post.ID";
             DataSet ds = SqlHelper.ExecuteDataset(selectEmployee);
-            this.gridControl1.DataSource = ds.Tables[0];
+            gridControl1.DataSource = ds.Tables[0];
         }
         /// <summary>
         /// 取消

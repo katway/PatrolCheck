@@ -11,7 +11,7 @@ namespace WorkStation
 {
     public partial class frmSiteEditDelete : Form
     {
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";         
+       // private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";         
         public frmSiteEditDelete()
         {
             InitializeComponent();
@@ -82,7 +82,7 @@ namespace WorkStation
             string a = "select Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState from Site left join Company on  Site.Company_ID=Company.ID where  Site.ID=@id";
             SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", this.dgvSiteDel.GetRowCellValue(this.dgvSiteDel.FocusedRowHandle, "ID")) };
             //SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr,CommandType.Text,a,par);
-            SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text, a, par);
+            SqlDataReader dr = SqlHelper.ExecuteReader(a, par);
             while (dr.Read())
             {
                 this.txtName.Text = dr[0].ToString();

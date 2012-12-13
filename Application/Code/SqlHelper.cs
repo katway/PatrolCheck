@@ -719,6 +719,16 @@ namespace WorkStation
             return ExecuteReader(sqlConnectionStr,CommandType.Text,commandText);
         }
         /// <summary>
+        /// 执行带参数的SQL语句，返回数据阅读器
+        /// </summary>
+        /// <param name="commandText">Sql语句</param>
+        /// <param name="commandParameters">参数</param>
+        /// <returns></returns>
+        public static SqlDataReader ExecuteReader(string commandText, params  SqlParameter[] commandParameters)
+        {
+            return ExecuteReader(sqlConnectionStr, CommandType.Text, commandText,commandParameters);
+        }
+        /// <summary>
         /// 执行指定数据库连接字符串的数据阅读器.
         /// </summary>
         /// <remarks>
@@ -993,6 +1003,16 @@ namespace WorkStation
         public static object ExecuteScalar(string commandText)
         {
             return ExecuteScalar(sqlConnectionStr,CommandType.Text,commandText);
+        }
+        /// <summary>
+        /// 执行带有参数的语句，返回结果集的第一行第一列
+        /// </summary>
+        /// <param name="commandText"></param>
+        /// <param name="commandParameters"></param>
+        /// <returns></returns>
+        public static object ExecuteScalar(string commandText, params  SqlParameter[] commandParameters)
+        {
+            return ExecuteScalar(sqlConnectionStr, CommandType.Text, commandText, commandParameters);
         }
         /// <summary>
         /// 执行指定数据库连接字符串的命令,返回结果集中的第一行第一列.

@@ -98,6 +98,34 @@ namespace WorkStation
             cboPost.ValueMember = "ID";
             cboPost.DisplayMember = "Name";
             cboPost.DataSource = ds.Tables[0];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         private void frmPersonStatistics2_Load(object sender, EventArgs e)

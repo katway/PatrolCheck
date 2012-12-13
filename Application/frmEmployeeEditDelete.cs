@@ -14,8 +14,7 @@ namespace WorkStation
         public frmEmployeeEditDelete()
         {
             InitializeComponent();
-        }
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";  
+        }      
         /// <summary>
         /// 编辑
         /// </summary>
@@ -24,9 +23,9 @@ namespace WorkStation
         private void button1_Click(object sender, EventArgs e)
         {
             //string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee,Rfid,Post,Post_Employee where Employee.ID=Post_Employee.Employee_ID and Employee.Rfid_ID=Rfid.ID and Post_Employee.ID=Post.ID and Employee.ID=@id";
-            string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee left join Rfid on Employee.Rfid_ID=Rfid.ID  left join Post_Employee on  Employee.ID=Post_Employee.Employee_ID left join Post on  Post_Employee.ID=Post.ID where Employee.ID=@id";
+            string selectEmpoyee = "select Employee.Name emName,Employee.Alias alias,Rfid.Name Name,Post.Name postName,(select meaning from codes where code=Employee.validstate and purpose='validstate') as ValidState from Employee left join Rfid on Employee.Rfid_ID=Rfid.ID left join Post_Employee on  Employee.ID=Post_Employee.Employee_ID left join Post on  Post_Employee.ID=Post.ID where Employee.ID=@id";
             SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", this.dgvEmployessDel.GetRowCellValue(dgvEmployessDel.FocusedRowHandle,"ID")) };
-            SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text, selectEmpoyee,par);
+            SqlDataReader dr = SqlHelper.ExecuteReader(selectEmpoyee,par);
             while(dr.Read())
             {
                 this.txtName.Text = dr[0].ToString();
@@ -114,7 +113,7 @@ namespace WorkStation
                  par[2].Value = this.txtAlias.Text;
                  par[3].Value = this.cboCard.SelectedValue;
                  par[4].Value = this.cboState.SelectedValue;
-                 string a = SqlHelper.ExecuteScalar(sqlConnectionStr, CommandType.Text, UpdateEmployee, par).ToString();
+                 string a = SqlHelper.ExecuteScalar(UpdateEmployee, par).ToString();
                  if (a != null)
                  {
                      MessageBox.Show("更新成功！");
@@ -123,7 +122,7 @@ namespace WorkStation
                  {
                      MessageBox.Show("更新失败！");
                  }
-                 string UpdateEmPost = "update Post_Employee set ID=@id where Employee_ID=@emID";
+                 string UpdateEmPost = "update Post_Employee set Post_ID=@id where Employee_ID=@emID";
                  SqlParameter[] par2 = new SqlParameter[]
                  {
                    new SqlParameter("@emID",SqlDbType.Int),
