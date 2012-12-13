@@ -23,7 +23,7 @@ namespace WorkStation
         /// </summary>
         public void Bind()
         {
-            string sql2 = "select ID,Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState  from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
+            string sql2 = "select ID,Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState from Rfid left join RfidPurpose on Rfid.Purpose = RfidPurpose.Code";
             DataSet ds = SqlHelper.ExecuteDataset(sql2);      
             this.gridControl1.DataSource = ds.Tables[0];
         }    
@@ -89,7 +89,7 @@ namespace WorkStation
         {
             string sql2 = "select * from RfidPurpose ";
             dsRfidPurpose = SqlHelper.ExecuteDataset(sql2);
-            sql2 = "select ID,Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
+            sql2 = "select ID,Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState from Rfid left join RfidPurpose on Rfid.Purpose = RfidPurpose.Code";
             dsRfid = SqlHelper.ExecuteDataset(sql2);
             sql2 = "select Code,Meaning from Codes where Purpose='ValidState'";
             dse = SqlHelper.ExecuteDataset(sql2);

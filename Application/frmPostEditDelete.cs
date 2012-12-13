@@ -15,7 +15,7 @@ namespace WorkStation
         {
             InitializeComponent();
         }
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";      
+       // private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";      
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (this.txtName.Text == "")
@@ -66,9 +66,9 @@ namespace WorkStation
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            string sql = "select Post.Name,Post.Alias,Site.Name,(select meaning from codes where code=Post.validstate and purpose='validstate') as ValidState from Post,Site where Post.Site_ID=Site.ID and Post.ID=@id";
+            string sql = "select Post.Name,Post.Alias,Site.Name,(select meaning from codes where code=Post.validstate and purpose='validstate') as ValidState from Post left join Site on  Post.Site_ID=Site.ID where Post.ID=@id";
             SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", dgvPostDel.GetRowCellValue(dgvPostDel.FocusedRowHandle, "ID")) }; 
-            SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text,sql,par);
+            SqlDataReader dr = SqlHelper.ExecuteReader(sql,par);
             while(dr.Read())
             {
                 this.txtName.Text = dr[0].ToString();

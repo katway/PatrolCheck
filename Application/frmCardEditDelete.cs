@@ -16,12 +16,11 @@ namespace WorkStation
         {
             InitializeComponent();
         }
-        private static string sqlConnectionStr = "Data Source=192.168.1.221;Initial Catalog=PatrolCheck;User ID=sa;Password=sa123";  
         private void button1_Click(object sender, EventArgs e)
         {
-            string sql4 = "select Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code and ID=@id";
+            string sql4 = "select Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState from Rfid left join RfidPurpose on Rfid.Purpose = RfidPurpose.Code where ID=@id";
             SqlParameter[] par = new SqlParameter[] { new SqlParameter("@id", this.dgvCardDelete.GetRowCellValue(dgvCardDelete.FocusedRowHandle, "ID")) };
-            SqlDataReader dr = SqlHelper.ExecuteReader(sqlConnectionStr, CommandType.Text, sql4, par);
+            SqlDataReader dr = SqlHelper.ExecuteReader(sql4, par);
             while (dr.Read())
             {
                 this.txtName.Text = dr[0].ToString();
@@ -120,7 +119,7 @@ namespace WorkStation
         }
         private void Bind()
         {
-            string sql2 = "select ID,Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState from Rfid,RfidPurpose where Rfid.Purpose = RfidPurpose.Code";
+            string sql2 = "select ID,Name,Alias,RFID,Meaning,(select meaning from codes where code=validstate and purpose='validstate') as ValidState from Rfid left join RfidPurpose on Rfid.Purpose = RfidPurpose.Code";
             DataSet ds = SqlHelper.ExecuteDataset(sql2);
             ds.Tables[0].Columns.Add(new DataColumn("Check",typeof(System.Boolean)));
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)

@@ -74,7 +74,7 @@ namespace WorkStation
         /// </summary>
         public void SelectSiteBind()
         {
-            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState  from Site,Company where Site.Company_ID=Company.ID";
+            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState  from Site left join Company on Site.Company_ID=Company.ID";
             DataSet ds = SqlHelper.ExecuteDataset(SelectSite);         
             this.gridControl1.DataSource = ds.Tables[0];
         }
@@ -97,7 +97,7 @@ namespace WorkStation
         {
             string SelectCompanyName = "select * from  Company";
             dsSite = SqlHelper.ExecuteDataset(SelectCompanyName);
-            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState  from Site,Company where Site.Company_ID=Company.ID";
+            string SelectSite = "select Site.ID, Site.Name,Site.Alias,Company.Name,(select meaning from codes where code=Site.validstate and purpose='validstate') as ValidState  from Site left join Company on Site.Company_ID=Company.ID";
             dsCompany = SqlHelper.ExecuteDataset(SelectSite);
             string selectState = "select Code,Meaning from Codes where Purpose='ValidState'";
             dsState = SqlHelper.ExecuteDataset(selectState);
